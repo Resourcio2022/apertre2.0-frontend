@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        'iphone-xr': '25.87rem',
+      },
+      fontFamily:{
+        "mokoto": "var(--font-mokoto)",
+      },
     },
   },
   plugins: [],
