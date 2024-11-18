@@ -12,6 +12,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        'md': '767px',
+        'lg': '1023px',
+        "iphone":"319px",
+        "xl":"1279px",
+      },
+      fontFamily:{
+        "mokoto": "var(--font-mokoto)",
+      },
     },
   },
   plugins: [],
