@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import {Poppins} from "next/font/google"
+import Navbar from "./componnets/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body
         className={`${mokotoVF.variable} ${poppins.className} antialiased`}
       >
+        <Navbar/>
         {children}
       </body>
     </html>
