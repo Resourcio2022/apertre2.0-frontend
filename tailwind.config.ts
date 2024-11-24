@@ -11,15 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        textyellow: "#FBCE1F",
+        customPurple: "#F01DD4",
+        customYellow: "#F9CB1A",
       },
       screens: {
-        'md': '767px',
-        'lg': '1023px',
-        "iphone":"319px",
-        "xl":"1279px",
+        md: "767px",
+        lg: "1023px",
+        iphone: "319px",
+        xl: "1279px",
       },
-      fontFamily:{
-        "mokoto": "var(--font-mokoto)",
+      fontFamily: {
+        mokoto: "var(--font-mokoto)",
       },
     },
   },
