@@ -1,3 +1,4 @@
+import { Poppins } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -14,6 +15,7 @@ export default {
         textyellow: "#FBCE1F",
         customPurple: "#F01DD4",
         customYellow: "#F9CB1A",
+        footer:"#252323",
       },
       screens: {
         md: "767px",
@@ -23,6 +25,7 @@ export default {
       },
       fontFamily: {
         mokoto: "var(--font-mokoto)",
+        Poppins: "var(--font-poppins)",
       },
     },
   },
