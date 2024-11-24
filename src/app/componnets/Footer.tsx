@@ -126,7 +126,7 @@ const Footer = () => {
                 className={`absolute top-1/2 left-0 transform -translate-y-1/2 transition-transform duration-[2000ms] ease-in ${hovered ? 'translate-x-[300px] opacity-100' : '-translate-x-full opacity-0'}`}
               />
               <span className={`absolute top-0 left-0 w-full h-full text-white flex items-center justify-center font-Poppins font-bold text-lg transition-opacity duration-75 ${hovered ? 'opacity-100' : 'opacity-0'} delay-1000`}>
-                <span className="border-b-[5px] border-yellow-500">Season</span>
+                <span className="border-b-[5px] border-yellow-500">Season 1</span>
               </span>
             </span>
           )}
