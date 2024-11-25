@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import "@google/model-viewer";
 
 export default function Hero() {
   const stars = [
@@ -49,13 +52,27 @@ export default function Hero() {
         </div>
 
         <div className="lg:w-1/2 mt-16 lg:mt-0 flex justify-center lg:justify-end">
-          <Image
-            src="/planet_motion.png"
-            alt="Planet"
-            width={300}
-            height={300}
-            className="w-72 md:w-96 lg:w-[30rem]"
-          />
+
+          <model-viewer
+            src="/apertre.glb"
+            alt="3D Planet Model"
+            auto-rotate
+            camera-controls
+            style={{ width: "300px", height: "300px" }}
+            shadow-intensity="1"
+            exposure="1.0"
+            lighting="neutral"
+            onModelVisibilityChanged={() => {
+              const modelViewer = document.querySelector("model-viewer");
+              const model = modelViewer.model;
+
+              if (model) {
+                model.materials.forEach((material) => {
+                  material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 1]); // Yellow in RGBA
+                });
+              }
+            }}
+          ></model-viewer>
         </div>
       </div>
 
