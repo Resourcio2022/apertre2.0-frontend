@@ -1,10 +1,36 @@
 "use client";
-
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import "@google/model-viewer";
 
 export default function Hero() {
+  const modelViewerRef = useRef(null);
+
+  useEffect(() => {
+    const modelViewer = modelViewerRef.current;
+
+    const applyYellowColor = () => {
+      if (modelViewer) {
+        const scene = modelViewer.model;
+        if (scene) {
+          scene.materials.forEach((material) => {
+            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 1]); // Explicit Yellow in RGBA
+          });
+        }
+      }
+    };
+
+    if (modelViewerRef.current) {
+      modelViewerRef.current.addEventListener('load', applyYellowColor);
+    }
+
+    return () => {
+      if (modelViewerRef.current) {
+        modelViewerRef.current.removeEventListener('load', applyYellowColor);
+      }
+    };
+  }, []);
+
   const stars = [
     { id: 1, src: "/star.png", left: "10%", top: "20%", size: 35 },
     { id: 2, src: "/star.png", left: "30%", top: "10%", size: 40 },
@@ -40,7 +66,6 @@ export default function Hero() {
           <button className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-4 w-64 rounded-xl border border-customYellow hover:bg-yellow-100/10 hover:text-textyellow transition-all duration-300 text-xl md:text-2xl">
             REGISTER
           </button>
-
           <p>Presented by</p>
           <Image
             src="/Resourcio_Logo.png"
@@ -50,10 +75,9 @@ export default function Hero() {
             className="inline-block mr-2.5"
           />
         </div>
-
         <div className="lg:w-1/2 mt-16 lg:mt-0 flex justify-center lg:justify-end">
-
           <model-viewer
+            ref={modelViewerRef}
             src="/apertre.glb"
             alt="3D Planet Model"
             auto-rotate
@@ -62,24 +86,12 @@ export default function Hero() {
             shadow-intensity="1"
             exposure="1.0"
             lighting="neutral"
-            onModelVisibilityChanged={() => {
-              const modelViewer = document.querySelector("model-viewer");
-              const model = modelViewer.model;
-
-              if (model) {
-                model.materials.forEach((material) => {
-                  material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 1]); // Yellow in RGBA
-                });
-              }
-            }}
           ></model-viewer>
         </div>
       </div>
-
       <div className="absolute bottom-0 right-0 mb-0 mr-0">
         <Image src="/astronaut.png" alt="Astronaut" width={200} height={200} />
       </div>
-
       {stars.map((star) => (
         <Image
           key={star.id}
