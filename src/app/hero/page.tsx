@@ -1,7 +1,57 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import "@google/model-viewer";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "model-viewer": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & {
+        src: string;
+        alt: string;
+        "auto-rotate"?: boolean;
+        "camera-controls"?: boolean;
+        style?: React.CSSProperties;
+        "shadow-intensity"?: string;
+        exposure?: string;
+        lighting?: string;
+      };
+    }
+  }
+}
 
 export default function Hero() {
+  const modelViewerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const modelViewer = modelViewerRef.current as any;
+
+    const applyCustomColor = () => {
+      if (modelViewer && modelViewer.model) {
+        const scene = modelViewer.model;
+        scene.materials.forEach((material: any) => {
+          const r = parseInt("FB", 16) / 255;
+          const g = parseInt("CE", 16) / 255;
+          const b = parseInt("1F", 16) / 255;
+          material.pbrMetallicRoughness.setBaseColorFactor([r, g, b, 1]);
+        });
+      }
+    };
+
+    if (modelViewer) {
+      modelViewer.addEventListener("load", applyCustomColor);
+    }
+
+    return () => {
+      if (modelViewer) {
+        modelViewer.removeEventListener("load", applyCustomColor);
+      }
+    };
+  }, []);
+
   const stars = [
     { id: 1, src: "/star.png", left: "10%", top: "20%", size: 35 },
     { id: 2, src: "/star.png", left: "30%", top: "10%", size: 40 },
@@ -37,7 +87,6 @@ export default function Hero() {
           <button className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-4 w-64 rounded-xl border border-customYellow hover:bg-yellow-100/10 hover:text-textyellow transition-all duration-300 text-xl md:text-2xl">
             REGISTER
           </button>
-
           <p>Presented by</p>
           <Image
             src="/Resourcio_Logo.png"
@@ -47,22 +96,23 @@ export default function Hero() {
             className="inline-block mr-2.5"
           />
         </div>
-
         <div className="lg:w-1/2 mt-16 lg:mt-0 flex justify-center lg:justify-end">
-          <Image
-            src="/planet_motion.png"
-            alt="Planet"
-            width={300}
-            height={300}
-            className="w-72 md:w-96 lg:w-[30rem]"
-          />
+          <model-viewer
+            ref={modelViewerRef}
+            src="/apertre.glb"
+            alt="3D Planet Model"
+            auto-rotate
+            camera-controls
+            style={{ width: "300px", height: "300px" }}
+            shadow-intensity="1"
+            exposure="1.0"
+            lighting="neutral"
+          ></model-viewer>
         </div>
       </div>
-
       <div className="absolute bottom-0 right-0 mb-0 mr-0">
         <Image src="/astronaut.png" alt="Astronaut" width={200} height={200} />
       </div>
-
       {stars.map((star) => (
         <Image
           key={star.id}

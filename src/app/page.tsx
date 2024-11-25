@@ -4,10 +4,10 @@ import Footer from "./componnets/Footer";
 
 export default function Home() {
   return (
-      <>
-        <Hero/>
-        <AboutUs/>
-        <Footer/>
-      </>
+    <>
+      <Hero />
+      <AboutUs />
+      <Footer />
+    </>
   )
 }
