@@ -3,30 +3,51 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import "@google/model-viewer";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "model-viewer": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & {
+        src: string;
+        alt: string;
+        "auto-rotate"?: boolean;
+        "camera-controls"?: boolean;
+        style?: React.CSSProperties;
+        "shadow-intensity"?: string;
+        exposure?: string;
+        lighting?: string;
+      };
+    }
+  }
+}
+
 export default function Hero() {
-  const modelViewerRef = useRef(null);
+  const modelViewerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const modelViewer = modelViewerRef.current;
+    const modelViewer = modelViewerRef.current as any;
 
-    const applyYellowColor = () => {
-      if (modelViewer) {
+    const applyCustomColor = () => {
+      if (modelViewer && modelViewer.model) {
         const scene = modelViewer.model;
-        if (scene) {
-          scene.materials.forEach((material) => {
-            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 1]); // Explicit Yellow in RGBA
-          });
-        }
+        scene.materials.forEach((material: any) => {
+          const r = parseInt("FB", 16) / 255;
+          const g = parseInt("CE", 16) / 255;
+          const b = parseInt("1F", 16) / 255;
+          material.pbrMetallicRoughness.setBaseColorFactor([r, g, b, 1]);
+        });
       }
     };
 
-    if (modelViewerRef.current) {
-      modelViewerRef.current.addEventListener('load', applyYellowColor);
+    if (modelViewer) {
+      modelViewer.addEventListener("load", applyCustomColor);
     }
 
     return () => {
-      if (modelViewerRef.current) {
-        modelViewerRef.current.removeEventListener('load', applyYellowColor);
+      if (modelViewer) {
+        modelViewer.removeEventListener("load", applyCustomColor);
       }
     };
   }, []);
