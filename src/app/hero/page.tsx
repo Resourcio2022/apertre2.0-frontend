@@ -103,7 +103,12 @@ export default function Hero() {
             alt="3D Planet Model"
             auto-rotate
             camera-controls
-            style={{ width: "300px", height: "300px" }}
+            style={{
+              width: "600px",
+              height: "600px",
+              background: "transparent",
+              "--model-viewer-background-color": "transparent"
+            }}
             shadow-intensity="1"
             exposure="1.0"
             lighting="neutral"
