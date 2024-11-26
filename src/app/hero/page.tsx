@@ -3,7 +3,11 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import "@google/model-viewer";
 
-declare global {
+type CustomCSSProperties = React.CSSProperties & {
+  '--model-viewer-background-color'?: string;
+};
+
+declare module "react" {
   namespace JSX {
     interface IntrinsicElements {
       "model-viewer": React.DetailedHTMLProps<
@@ -108,7 +112,7 @@ export default function Hero() {
               height: "600px",
               background: "transparent",
               "--model-viewer-background-color": "transparent"
-            }}
+            } as CustomCSSProperties }
             shadow-intensity="1"
             exposure="1.0"
             lighting="neutral"

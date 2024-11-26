@@ -4,16 +4,7 @@ import "./globals.css";
 import {Poppins} from "next/font/google"
 import Navbar from "./components/Navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 const mokotoVF=localFont({
   src:"./fonts/mokoto.woff",
   variable:"--font-mokoto",
@@ -40,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${mokotoVF.variable} ${poppins.className} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
       </body>
     </html>
