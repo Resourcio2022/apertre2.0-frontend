@@ -22,19 +22,19 @@ const Footer = () => {
         <div className="flex flex-col gap-5">
           <Image src="/apertrelogo.svg" width={170} height={97} alt="" />
           <div className="flex gap-7 size-6 text-white">
-            <Link href="/">
+            <Link href="/public">
               <FaWhatsapp />
             </Link>
-            <Link href="/">
+            <Link href="/public">
               <FaInstagram />
             </Link>
-            <Link href="/">
+            <Link href="/public">
               <FaLinkedin />
             </Link>
-            <Link href="/">
+            <Link href="/public">
               <FaFacebook />
             </Link>
-            <Link href="/">
+            <Link href="/public">
               <FaTwitter />
             </Link>
           </div>
@@ -68,19 +68,19 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <Image src="/Resourcio_Logo.png" width={200} height={119} alt="" className="pl-7" />
             <div className="flex justify-center gap-7 text-white">
-              <Link href="/">
+              <Link href="/public">
                 <FaWhatsapp />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaInstagram />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaLinkedin />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaFacebook />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaTwitter />
               </Link>
             </div>
@@ -88,19 +88,19 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <Image src="/gdglogo.svg" width={232} height={96} alt="" />
             <div className="flex justify-center gap-7 text-white">
-              <Link href="/">
+              <Link href="/public">
                 <FaWhatsapp />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaInstagram />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaLinkedin />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaFacebook />
               </Link>
-              <Link href="/">
+              <Link href="/public">
                 <FaTwitter />
               </Link>
             </div>

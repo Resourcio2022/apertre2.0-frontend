@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import {Poppins} from "next/font/google"
-import Navbar from "./components/Navbar";
-
+import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 
 const mokotoVF=localFont({
   src:"./fonts/mokoto.woff",
@@ -31,8 +31,11 @@ export default function RootLayout({
       <body
         className={`${mokotoVF.variable} ${poppins.className} antialiased`}
       >
-        <Navbar />
-        {children}
+        <main>
+          <Navbar/>
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );

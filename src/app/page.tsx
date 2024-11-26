@@ -1,13 +1,12 @@
-import AboutUs from "@/app/components/About";
-import Hero from "@/app/hero/page";
-import Footer from "./components/Footer";
+
+import AboutUs from "@/app/_components/about-us";
+import Hero from "@/app/_components/hero-section";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AboutUs />
-      <Footer />
     </>
   )
 }
