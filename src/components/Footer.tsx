@@ -59,7 +59,7 @@ const Footer = () => {
                   width={50}
                   height={50}
                   alt="Rocket"
-                  className={`absolute top-1/2 left-0 transform -translate-y-1/2 transition-transform duration-[3000ms] ${
+                  className={`absolute top-1/2 left-0 transform -translate-y-1/2 transition-transform duration-[2000ms] ${
                     hovered ? "translate-x-[300px] opacity-100" : "-translate-x-full opacity-0"
                   }`}
                 />
@@ -74,33 +74,35 @@ const Footer = () => {
             )}
           </div>
         </div>
+
         <div className="grid grid-cols-2 gap-5 md:gap-10 mt-5">
-          <div className="flex flex-col gap-3">
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+          <div className="flex flex-col gap-3 text-center md:text-left">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Brand Assets
             </Link>
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Rules and Guidelines
             </Link>
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Code of Conduct
             </Link>
           </div>
-          <div className="flex flex-col gap-3">
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+          <div className="flex flex-col gap-3 text-center md:text-left">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Support
             </Link>
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Privacy Policy
             </Link>
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Terms of Use
             </Link>
-            <Link href="" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
+            <Link href="/" className="text-white font-Poppins font-normal text-sm md:text-base hover:text-yellow-500">
               Contact Us
             </Link>
           </div>
         </div>
+
         <div className="flex flex-col gap-8 items-center md:items-end">
           <div className="flex flex-col gap-3 items-center md:items-end">
             <Image src="/Resourcio_Logo.png" width={200} height={119} alt="Resourcio Logo" />
@@ -144,9 +146,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className="flex justify-center mt-10">
-        <span className="text-white font-Poppins font-normal text-sm md:text-base ">
-          © All Rights Reserved Apretre 2.0
+        <span className="text-white font-Poppins font-normal text-sm md:text-base">
+          © All Rights Reserved Apretre2.0
         </span>
       </div>
     </div>

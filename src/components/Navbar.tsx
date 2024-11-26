@@ -8,6 +8,7 @@ interface INavLink {
   url: string;
 }
 
+// Update links to redirect to sections and not page.
 const NAV_LINKS: INavLink[] = [
   { name: "Home", url: "/" },
   { name: "About Us", url: "/about-us" },
