@@ -59,7 +59,7 @@ function MainCard() {
 
                 {/* Quote section */}
                 <div className="w-full lg:w-full xl:text-start 2xl:text-[1.25rem] p-4 xl:p-0 dotted-border-fade text-sm md:text-base lg:text-[1.2rem] xl:text-[1.25rem] lg:pt-[28rem] xl:pt-4 xl:pb-4 font-bold text-white leading-relaxed md:leading-[1.25rem]">
-                    <p className="mb-2">"When we have welcoming communities of contributors, open source software gets better and more useful to everyone."</p>
+                    <p className="mb-2">&#34;When we have welcoming communities of contributors, open source software gets better and more useful to everyone.&#34;</p>
                     <p className="text-[#FBCE1F] font-mokoto" style={{ textTransform: "uppercase" }}>- Limor Fried</p>
                 </div>
             </div>

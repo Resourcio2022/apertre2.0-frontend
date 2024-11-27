@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babylonjs/core": "^7.35.1",
+    "@babylonjs/gui": "^7.35.1",
+    "@babylonjs/loaders": "^7.35.1",
+    "@google/model-viewer": "^4.0.0",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
     "apertre2.0-frontend": "file:",
