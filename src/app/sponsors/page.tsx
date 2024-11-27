@@ -1,6 +1,6 @@
 'use client'
 
-import { sponsors, sponsorTiers, Sponsor, SponsorTier } from '../../constants/sponsor.constants';
+import { sponsors, sponsorTiers } from '../../constants/sponsor.constants';
 
 const PlaceholderSVG = () => (
     <svg
@@ -34,7 +34,19 @@ export default function SponsorsSection() {
                 <div className="space-y-16">
                     {sponsorTiers.map((tier) => (
                         <div key={tier.name} className="space-y-6">
-                            <h2 className={`text-2xl font-semibold ${tier.color} tracking-wide`}>
+                           <h2
+                                className={`text-2xl font-semibold ${
+                                    tier.name === "PLATINUM SPONSORS"
+                                        ? "text-gray-300"  
+                                        : tier.name === "GOLD SPONSORS"
+                                        ? "text-yellow-400" 
+                                        : tier.name === "SILVER SPONSORS"
+                                        ? "text-gray-400" 
+                                        : tier.name === "BRONZE SPONSORS"
+                                        ? "text-orange-600" 
+                                        : "text-white" 
+                                } tracking-wide`}
+                            >
                                 {tier.name}
                             </h2>
                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
