@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import {Button} from '@/components/ui/button'
+
 import { TestimonialCard } from './testimonal-card'
 import { testimonials } from '../../constants/testimonial.constants'
 
@@ -39,26 +39,24 @@ export default function Testimonials() {
           </div>
 
           <div className="flex justify-end gap-2 mt-6">
-            <Button
-              variant="outline"
-              size="icon"
+            <button
+             
               className="rounded-full border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
               disabled={!canScrollPrev}
               onClick={() => emblaApi?.scrollPrev()}
             >
               <ChevronLeft className="h-4 w-4" />
               <span className="sr-only">Previous slide</span>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
+            </button>
+            <button
+              
               className="rounded-full border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
               disabled={!canScrollNext}
               onClick={() => emblaApi?.scrollNext()}
             >
               <ChevronRight className="h-4 w-4" />
               <span className="sr-only">Next slide</span>
-            </Button>
+            </button>
           </div>
         </div>
       </div>
