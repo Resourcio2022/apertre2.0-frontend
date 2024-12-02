@@ -1,6 +1,4 @@
 import React from "react";
-import "./about-us.css";
-import Image from "next/image";
 import Rocket from "../../../public/rocket.svg";
 
 interface MiniComp {
@@ -33,7 +31,7 @@ const TestObj: MiniComp[] = [
 
 export default function AboutUs() {
     return (
-        <div className="w-full xl:pl-[4rem] min-h-screen gradient px-4 md:px-8 lg:px-16 py-8 md:py-12  overflow-x-hidden">
+        <div style={{ background: "linear-gradient(135deg, #0F0F0F, #262222, #0F0F0F)" }} className=" w-full h-full  xl:pl-[4rem] min-h-screen gradient px-4 md:px-8 lg:px-16 py-8 md:py-12  overflow-x-hidden">
             <div className="xl:w-fit sm:p-[3rem] md:p-0 md:text-center iphone:w-full font-mokoto text-[#FBCE1F] text-2xl md:text-4xl iphone:text-center lg:text-[3.75rem] md:[4.27rem] tracking-[0.2rem] md:tracking-[0.45rem] mb-8 md:mb-16 lg:mb-24 relative xl:top-[8rem] 2xl:text-[3.75rem] 2xl:left-[8.87rem] "
                 style={{ textTransform: "uppercase" }}>
                 About Apertre 2.0
@@ -58,14 +56,14 @@ function MainCard() {
                 </div>
 
                 {/* Quote section */}
-                <div className="w-full lg:w-full xl:text-start 2xl:text-[1.25rem] p-4 xl:p-0 dotted-border-fade text-sm md:text-base lg:text-[1.2rem] xl:text-[1.25rem] lg:pt-[28rem] xl:pt-4 xl:pb-4 font-bold text-white leading-relaxed md:leading-[1.25rem]">
-                    <p className="mb-2">&#34;When we have welcoming communities of contributors, open source software gets better and more useful to everyone.&#34;</p>
-                    <p className="text-[#FBCE1F] font-mokoto" style={{ textTransform: "uppercase" }}>- Limor Fried</p>
+                
+                <div className="w-full lg:w-full xl:text-start 2xl:text-[1.25rem] p-4 xl:p-0 dotted-border-fade text-sm md:text-base lg:text-[1.2rem] xl:text-[1.25rem]  xl:pt-4 xl:pb-4 font-bold text-white leading-relaxed md:leading-[1.25rem]">
+                    <p className="mb-2">&quot;When we have welcoming communities of contributors, open source software gets better and more useful to everyone.&quot; <span className="text-[#FBCE1F] font-mokoto" style={{ textTransform: "uppercase" }}>- Limor Fried</span></p>
                 </div>
             </div>
 
             {/* Stats Card */}
-            <div className="text-white flex xl:items-end w-full lg:w-auto md:justify-center  lg:absolute xl:relative lg:top-[30rem] lg:left-[30%] xl:top-0 xl:left-0">
+            <div className="text-white flex xl:items-end w-full lg:w-auto md:justify-center   xl:relative lg:absolute lg:top-[105rem] lg:left-[30%] xl:top-0 xl:left-0">
                 <SideCard />
             </div>
         </div>
@@ -119,20 +117,3 @@ const MiniComponent: React.FC<MiniComp> = ({ num, text }) => {
         </div>
     );
 };
-
-export function Background() {
-    return (
-        <Image
-            alt="Rocket"
-            src={Rocket}
-            placeholder="blur"
-            quality={100}
-            fill
-            sizes="100vw"
-            style={{
-                objectFit: 'cover',
-                opacity: 0.1,
-            }}
-        />
-    );
-}
