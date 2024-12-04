@@ -1,6 +1,18 @@
 import { Poppins } from "next/font/google";
 import type { Config } from "tailwindcss";
-
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -22,6 +34,7 @@ export default {
         customviolet:"#5865F2",
         customgrey:"#383434",
         'custom-gradient': 'linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)',
+        customblack:"#111010"
       },
       screens: {
         md: "767px",
@@ -38,8 +51,20 @@ export default {
         "aboutus": "url('/aboutus.svg')",
         "faq": "url('/faq.svg')",
         "loginbg":"url('/loginbg.png')",
+        "testcard":"url('/testimonialcard.svg')",
+      },
+      animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 } satisfies Config;
