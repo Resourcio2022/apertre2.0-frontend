@@ -16,6 +16,11 @@ export default {
         customPurple: "#F01DD4",
         customYellow: "#F9CB1A",
         footer:"#252323",
+        customtransparent:"#3E3B3B80",
+        customgreen:"#215521",
+        bordergreen:"#4ED16D",
+        customviolet:"#5865F2",
+        customgrey:"#383434"
       },
       screens: {
         md: "767px",
@@ -26,6 +31,12 @@ export default {
       fontFamily: {
         mokoto: "var(--font-mokoto)",
         Poppins: "var(--font-poppins)",
+      },
+      backgroundImage:{
+        
+        "aboutus": "url('/aboutus.svg')",
+        "faq": "url('/faq.svg')",
+        "loginbg":"url('/loginbg.png')",
       },
     },
   },
