@@ -1,4 +1,4 @@
-
+"use client"
 import { useState,useEffect } from "react";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import React from "react";
@@ -16,16 +16,20 @@ interface InputField {
 
 interface InputGroup {
   fields: InputField[];
+
 }
 
 interface LoginFormProps {
   words: { text: string }[];
   inputGroups: InputGroup[];
+  additionalInputGroups?: InputGroup[];
   discordLink: string;
   onSubmit: (formData: Record<string, string>) => void;
+  firstheading?: string;
+  secondheading?: string;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ words, inputGroups, discordLink, onSubmit }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ words, inputGroups, discordLink, onSubmit,additionalInputGroups,firstheading,secondheading }) => {
     const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -54,8 +58,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ words, inputGroups, discordLink, 
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="absolute inset-0 z-20 bg-customtransparent ">
-        <Image src="/login.png" width={1728} height={1000} alt="Background Image 2" className="bg-cover" />
+      <div className="absolute inset-0 z-20 bg-customtransparent h-full ">
+        <Image src="/login.png" width={1728} height={2000} alt="Background Image 2" className="bg-cover h-full" />
       </div>
 
       
@@ -70,21 +74,39 @@ const LoginForm: React.FC<LoginFormProps> = ({ words, inputGroups, discordLink, 
         <div className="flex justify-between gap-10">
           <div className="flex flex-col gap-5">
           {isClient && (
-            <form className="flex flex-col gap-5 font-Poppins " onSubmit={handleFormSubmit}>
-              {inputGroups.map((group, groupIndex) => (
-                <div className="flex gap-7 w-full justify-between" key={groupIndex}>
-                  {group.fields.map((field, fieldIndex) => (
-                    <input
-                      key={fieldIndex}
-                      name={field.name}
-                      type={field.type}
-                      placeholder={field.placeholder}
-                      required={field.required}
-                      className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname}`}
-                    />
-                  ))}
-                </div>
-              ))}
+            <form className="flex flex-col gap-5 font-Poppins " >
+              <span className="text-left font-Poppins text-white text-[18px]">{firstheading}</span>
+{inputGroups.map((group, groupIndex) => (
+  <div className="flex gap-7 w-full justify-between" key={groupIndex}>
+    {group.fields.map((field, fieldIndex) => (
+      <input
+        key={fieldIndex}
+        name={field.name}
+        type={field.type}
+        placeholder={field.placeholder}
+        required={field.required}
+        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname} `}
+      />
+    ))}
+  </div>
+))}
+
+<span className="text-left font-Poppins text-white text-[18px]">{secondheading}</span>
+{additionalInputGroups && additionalInputGroups.map((group, groupIndex) => (
+  <div className="flex gap-7 w-full justify-between" key={groupIndex}>
+    {group.fields.map((field, fieldIndex) => (
+      <input
+        key={fieldIndex}
+        name={field.name}
+        type={field.type}
+        placeholder={field.placeholder}
+        required={field.required}
+        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname} `}
+      />
+    ))}
+  </div>
+))}
+              
 
 <div className="flex justify-between gap-10">
         <div className="mt-4 w-full">
@@ -149,7 +171,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ words, inputGroups, discordLink, 
                 </div>
               </div>
 
-              {/* Submit Button */}
+              
               <div className="flex w-full justify-center">
                 <button className="font-mokoto text-[24px] text-white bg-customgreen border-2 border-bordergreen rounded-md px-3 py-1 mt-5">
                   SUBMIT
