@@ -32,9 +32,9 @@ export default function RootLayout({
         className={`${mokotoVF.variable} ${poppins.className} antialiased`}
       >
         <main>
-          <Navbar/>
+          
           {children}
-          <Footer />
+          
         </main>
       </body>
     </html>
