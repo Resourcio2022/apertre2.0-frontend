@@ -20,7 +20,8 @@ export default {
         customgreen:"#215521",
         bordergreen:"#4ED16D",
         customviolet:"#5865F2",
-        customgrey:"#383434"
+        customgrey:"#383434",
+        'custom-gradient': 'linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)',
       },
       screens: {
         md: "767px",
@@ -33,7 +34,7 @@ export default {
         Poppins: "var(--font-poppins)",
       },
       backgroundImage:{
-        
+        "card":"url('/card.svg')",
         "aboutus": "url('/aboutus.svg')",
         "faq": "url('/faq.svg')",
         "loginbg":"url('/loginbg.png')",

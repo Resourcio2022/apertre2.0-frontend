@@ -15,6 +15,7 @@
     "@google/model-viewer": "^4.0.0",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
+    "@tabler/icons-react": "^3.24.0",
     "apertre2.0-frontend": "file:",
     "clsx": "^2.1.1",
     "framer-motion": "^11.13.1",
