@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import "@google/model-viewer";
 type CustomCSSProperties = React.CSSProperties & {
-  '--model-viewer-background-color'?: string;
+  "--model-viewer-background-color"?: string;
 };
 
 declare module "react" {
@@ -56,12 +56,12 @@ export default function Hero() {
   }, []);
 
   const stars = [
-    { id: 1, src: "/star.png", left: "10%", top: "20%", size: 35 },
-    { id: 2, src: "/star.png", left: "30%", top: "10%", size: 40 },
+    { id: 1, src: "/star.png", left: "5%", top: "15%", size: 35 },
+    { id: 2, src: "/star.png", left: "35%", top: "55%", size: 40 },
     { id: 3, src: "/star.png", left: "50%", top: "15%", size: 25 },
     { id: 4, src: "/star.png", left: "70%", top: "25%", size: 35 },
     { id: 5, src: "/star.png", left: "90%", top: "35%", size: 38 },
-    { id: 6, src: "/star.png", left: "20%", top: "89%", size: 45 },
+    { id: 6, src: "/star.png", left: "10%", top: "75%", size: 45 },
     { id: 7, src: "/star.png", left: "40%", top: "75%", size: 50 },
     { id: 8, src: "/star.png", left: "60%", top: "90%", size: 33 },
     { id: 9, src: "/star.png", left: "80%", top: "75%", size: 30 },
@@ -71,7 +71,7 @@ export default function Hero() {
     <section className="bg-black text-white min-h-screen flex items-center pt-24 px-8 md:px-16 font-mokoto relative">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full">
         <div className="lg:w-1/2 space-y-8">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight lg:mt-20">
             THE <span className="text-textyellow">OPEN SOURCE</span> <br />
             CONTRIBUTION
             <br />
@@ -97,6 +97,14 @@ export default function Hero() {
             width={150}
             height={150}
             className="inline-block mr-2.5"
+            style={{ position: "relative", top: "20px" }}
+          />
+          <Image
+            src="/gdglogo.svg"
+            alt="GDG Logo"
+            width={200}
+            height={150}
+            className="inline-block ml-2.5"
           />
         </div>
         <div className="lg:w-1/2 mt-16 lg:mt-0 flex justify-center lg:justify-end">
@@ -105,20 +113,17 @@ export default function Hero() {
             src="/apertre.glb"
             alt="3D Planet Model"
             auto-rotate
-            data-js-focus-visible=""
-            style={{
-              width: "600px",
-              height: "600px",
-              background: "transparent",
-              "--model-viewer-background-color": "transparent",
-              border: "none",
-              outline: "none",
-              boxShadow: "none"
-            } as CustomCSSProperties}
+            style={
+              {
+                background: "transparent",
+                "--model-viewer-background-color": "transparent",
+              } as CustomCSSProperties
+            }
+            className="w-[250px] sm:w-[350px] md:w-[550px] lg:w-[600px] xl:w-[700px] h-[250px] sm:h-[350px] md:h-[550px] lg:h-[600px] xl:h-[700px]"
             shadow-intensity="1"
             exposure="1.0"
             lighting="neutral"
-          ></model-viewer>
+          />
         </div>
       </div>
       <div className="absolute bottom-0 right-0 mb-0 mr-0">
