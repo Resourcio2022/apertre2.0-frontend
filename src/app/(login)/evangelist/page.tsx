@@ -1,9 +1,11 @@
-"use client"
-import LoginForm from "../_components/loginform";
 
-const page = () => {
+"use client"
+
+import LoginForm from "../_components/loginform";
+import { SubmitHandler } from "react-hook-form";
+
+const Page = () => {
   const words = [
-    
     { text: "EVANGELIST" },
   ];
 
@@ -17,27 +19,27 @@ const page = () => {
     {
       fields: [
         { name: "linkedinProfile", type: "text", placeholder: "LinkedIn Profile", required: true },
-        { name: "Referral Code", type: "text", placeholder: "Referral Code", required: true },
+        { name: "referralCode", type: "text", placeholder: "Referral Code", required: true },
       ],
     },
     {
       fields: [
-        { name: "Address", type: "textarea", placeholder: "Address", required: true ,classname: "h-[101px] w-full"},
+        { name: "address", type: "textarea", placeholder: "Address", required: true, classname: "h-[101px] w-full" },
       ],
     },
     {
       fields: [
-        { name: "Phone Number", type: "number", placeholder: "Phone Number", required: true },
-        { name: "Discord Username", type: "text", placeholder: "Discord Username", required: true },
+        { name: "phoneNumber", type: "tel", placeholder: "Phone Number", required: true },
+        { name: "discordUsername", type: "text", placeholder: "Discord Username", required: true },
       ],
     },
   ];
 
   const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
 
-  const handleSubmit = (data: Record<string, string>) => {
+  const handleSubmit: SubmitHandler<Record<string, string>> = (data) => {
     console.log("Form Data:", data);
-    //post the form data with API
+    // Here you would typically send the data to your API
   };
 
   return (
@@ -46,8 +48,11 @@ const page = () => {
       inputGroups={inputGroups}
       discordLink={discordLink}
       onSubmit={handleSubmit}
+      firstheading="Personal Information"
+      secondheading="Contact Information"
     />
   );
 };
 
-export default page;
+export default Page;
+
