@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import "@google/model-viewer";
-
 type CustomCSSProperties = React.CSSProperties & {
   '--model-viewer-background-color'?: string;
 };
@@ -106,13 +105,16 @@ export default function Hero() {
             src="/apertre.glb"
             alt="3D Planet Model"
             auto-rotate
-            camera-controls
+            data-js-focus-visible=""
             style={{
               width: "600px",
               height: "600px",
               background: "transparent",
-              "--model-viewer-background-color": "transparent"
-            } as CustomCSSProperties }
+              "--model-viewer-background-color": "transparent",
+              border: "none",
+              outline: "none",
+              boxShadow: "none"
+            } as CustomCSSProperties}
             shadow-intensity="1"
             exposure="1.0"
             lighting="neutral"

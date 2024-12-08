@@ -9,13 +9,13 @@ import Testimonials from "@/app/_components/testimonials";
 export default function Home() {
   return (
     <>
-      <Navbar/>
-      {/* <Hero /> */}
+      <Navbar />
+      <Hero /> 
       <AboutUs />
-      <Registration/>
-      <Testimonials/>
-      <FAQ/>
-      <Footer/>
+      <Registration />
+      <Testimonials />
+      <FAQ />
+      <Footer />
     </>
   )
 }
