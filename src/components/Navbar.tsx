@@ -1,14 +1,15 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs"; // Import Clerk components
 
 interface INavLink {
   name: string;
   url: string;
 }
 
-// Update links to redirect to sections and not page.
 const NAV_LINKS: INavLink[] = [
   { name: "Home", url: "/" },
   { name: "About Us", url: "/about-us" },
@@ -20,6 +21,7 @@ const NAV_LINKS: INavLink[] = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isSignedIn } = useUser(); 
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -28,8 +30,32 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent text-white z-50">
       <div className="flex items-center justify-between px-6 lg:px-20 py-6">
+        {/* Logo aligned to the left */}
         <div className="flex items-center">
           <Image src="/Logo_primary.svg" alt="Logo" width={120} height={120} />
+        </div>
+
+        <div className="hidden lg:flex items-center justify-end gap-8 flex-grow">
+          <div className="flex flex-wrap justify-center gap-4 text-sm md:gap-6 lg:gap-8 md:text-base font-mokoto">
+            {NAV_LINKS.map((item, index) => (
+              <Link key={index} href={item.url} className="relative group">
+                <span>{item.name}</span>
+                <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center space-x-4">
+            {!isSignedIn ? (
+              <SignInButton>
+                <button className="px-4 py-2 bg-customYellow text-black rounded hover:bg-yellow-600 transition">
+                  Sign In
+                </button>
+              </SignInButton>
+            ) : (
+              <UserButton />
+            )}
+          </div>
         </div>
 
         <button className="lg:hidden text-white" onClick={toggleMobileMenu}>
@@ -37,21 +63,11 @@ export default function Navbar() {
           <span className="block w-6 h-0.5 bg-white mb-1"></span>
           <span className="block w-6 h-0.5 bg-white"></span>
         </button>
-
-        <div className="hidden lg:flex flex-wrap justify-center gap-4 text-sm md:gap-6 lg:gap-8 md:text-base font-mokoto">
-          {NAV_LINKS.map((item, index) => (
-            <Link key={index} href={item.url} className="relative group">
-              <span>{item.name}</span>
-              <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
       </div>
 
       <div
-        className={`lg:hidden ${
-          isMobileMenuOpen ? "block" : "hidden"
-        } bg-black p-6 absolute top-full left-0 w-full`}
+        className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"
+          } bg-black p-6 absolute top-full left-0 w-full`}
       >
         {NAV_LINKS.map((item, index) => (
           <Link
