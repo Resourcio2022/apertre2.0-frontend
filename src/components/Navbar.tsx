@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { SignInButton, UserButton, useUser } from "@clerk/nextjs"; // Import Clerk components
 
 interface INavLink {
   name: string;
@@ -21,7 +20,6 @@ const NAV_LINKS: INavLink[] = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { isSignedIn } = useUser(); 
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -45,7 +43,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             {!isSignedIn ? (
               <SignInButton>
                 <button className="px-4 py-2 bg-customYellow text-black rounded hover:bg-yellow-600 transition">
@@ -55,7 +53,7 @@ export default function Navbar() {
             ) : (
               <UserButton />
             )}
-          </div>
+          </div> */}
         </div>
 
         <button className="lg:hidden text-white" onClick={toggleMobileMenu}>

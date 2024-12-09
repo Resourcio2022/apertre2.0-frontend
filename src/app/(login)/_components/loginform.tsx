@@ -63,12 +63,12 @@ const LoginForm: React.FC<LoginFormProps> = ({
     resolver: zodResolver(schema),
   });
   const onSubmit: SubmitHandler<Record<string, string>> = (data) => {
-    switch (words.text.toLowerCase()) {
-      case 'evangelist':
-        console.log(data)
-      case 'community partner':
-        console.log(data)
-    }
+    // switch (words.text.toLowerCase()) {
+    //   case 'evangelist':
+    //     console.log(data)
+    //   case 'community partner':
+    //     console.log(data)
+    // }
   }
   useEffect(() => {
     setIsClient(true);
@@ -154,7 +154,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                       />
                       <button
                         type="button"
-                        onClick={() => navigator.clipboard.writeText(discordLink)}
+                        // onClick={() => navigator.clipboard.writeText(discordLink)}
                       >
                         <FaCopy className="text-white" />
                       </button>
