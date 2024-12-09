@@ -10,6 +10,7 @@ import Image from "next/image";
 import { FaDiscord, FaCopy } from "react-icons/fa";
 import Link from "next/link";
 
+const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
 interface InputField {
   name: string;
   type: string;
@@ -26,8 +27,6 @@ interface LoginFormProps {
   words: { text: string }[];
   inputGroups: InputGroup[];
   additionalInputGroups?: InputGroup[];
-  discordLink: string;
-  onSubmit: SubmitHandler<Record<string, string>>;
   firstheading?: string;
   secondheading?: string;
 }
@@ -35,8 +34,6 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({
   words,
   inputGroups,
-  discordLink,
-  onSubmit,
   additionalInputGroups,
   firstheading,
   secondheading,
@@ -65,7 +62,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
   } = useForm<Record<string, string>>({
     resolver: zodResolver(schema),
   });
-
+  const onSubmit: SubmitHandler<Record<string, string>> = (data) => {
+    switch (words.text.toLowerCase()) {
+      case 'evangelist':
+        console.log(data)
+      case 'community partner':
+        console.log(data)
+    }
+  }
   useEffect(() => {
     setIsClient(true);
   }, []);

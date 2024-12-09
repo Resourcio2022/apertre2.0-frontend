@@ -12,6 +12,7 @@
     "@babylonjs/core": "^7.35.1",
     "@babylonjs/gui": "^7.35.1",
     "@babylonjs/loaders": "^7.35.1",
+    "@clerk/nextjs": "^6.8.2",
     "@google/model-viewer": "^4.0.0",
     "@hookform/resolvers": "^3.9.1",
     "@react-three/drei": "^9.117.3",

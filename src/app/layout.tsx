@@ -1,20 +1,24 @@
+import { ClerkProvider } from "@clerk/nextjs"; // Import ClerkProvider
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {Poppins} from "next/font/google"
+import { Poppins } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 
-const mokotoVF=localFont({
-  src:"./fonts/mokoto.woff",
-  variable:"--font-mokoto",
+// Local font configuration
+const mokotoVF = localFont({
+  src: "./fonts/mokoto.woff",
+  variable: "--font-mokoto",
   weight: "100 900",
-})
-const poppins=Poppins({
-  subsets:["latin"],
-  weight:"400",
-  display:"swap",
-})
+});
+
+// Google font configuration
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,16 +31,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${mokotoVF.variable} ${poppins.className} antialiased`}
-      >
-        <main>
-          
-          {children}
-          
-        </main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${mokotoVF.variable} ${poppins.className} antialiased`}
+        >
+          <Navbar /> {/* Include Navbar */}
+          <main>{children}</main>
+          <Footer /> {/* Include Footer */}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
