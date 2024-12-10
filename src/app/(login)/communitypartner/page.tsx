@@ -3,9 +3,8 @@ import LoginForm from "../_components/loginform";
 
 const page = () => {
   const words = [
-    
-    { text: "COMMUNITY" },
-    { text: "PARTNER" },
+
+    { text: "COMMUNITY PARTNER" },
   ];
   const inputGroups = [
     {
@@ -25,7 +24,7 @@ const page = () => {
         { name: "Email", type: "text", placeholder: "Email", required: true },
       ],
     },
-   
+
   ];
   const additionalInputGroups = [
     {
@@ -42,18 +41,18 @@ const page = () => {
     },
     {
       fields: [
-        { name: "Community Website url ", type: "url", placeholder: "Community Website url ", required: true,classname: "w-full" },
+        { name: "Community Website url ", type: "url", placeholder: "Community Website url ", required: true, classname: "w-full" },
       ],
     },
     {
       fields: [
-        { name: "What are your expectation from this partnership? ", type: "text", placeholder: "What are your expectation from this partnership? ", required: true,classname: " w-full" },
+        { name: "What are your expectation from this partnership? ", type: "text", placeholder: "What are your expectation from this partnership? ", required: true, classname: " w-full" },
       ],
     },
-   
+
   ];
-  const firstheading="Person of contact information";
-  const secondheading="Community information";
+  const firstheading = "Person of contact information";
+  const secondheading = "Community information";
 
   const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
 
@@ -64,14 +63,12 @@ const page = () => {
 
   return (
     <LoginForm
-    words={words}
-    inputGroups={inputGroups}
-    additionalInputGroups={additionalInputGroups}
-    discordLink={discordLink}
-    onSubmit={handleSubmit}
-    firstheading={firstheading}
-    secondheading={secondheading}
-  />
+      words={words}
+      inputGroups={inputGroups}
+      additionalInputGroups={additionalInputGroups}
+      firstheading={firstheading}
+      secondheading={secondheading}
+    />
   );
 };
 

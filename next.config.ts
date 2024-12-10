@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
   images: {
-    domains: ['utfs.io','assets.aceternity.com'],
+    remotePatterns: [
+      {
+        hostname: 'utfs.io',
+        protocol: 'https'
+      }
+    ]
   },
 };
 
