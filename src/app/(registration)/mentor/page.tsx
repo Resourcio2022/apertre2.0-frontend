@@ -1,10 +1,7 @@
-"use client"
-import { className } from "@babylonjs/core";
 import LoginForm from "../_components/loginform";
 
 const page = () => {
   const words = [
-    
     { text: "MENTOR" },
   ];
 
@@ -23,7 +20,7 @@ const page = () => {
     },
     {
       fields: [
-        { name: "TechStacks", type: "textarea", placeholder: "Tech Stacks", required: true ,classname: "h-[101px] w-full"},
+        { name: "TechStacks", type: "textarea", placeholder: "Tech Stacks", required: true, classname: "h-[101px] w-full" },
       ],
     },
     {
@@ -34,18 +31,10 @@ const page = () => {
     },
   ];
 
-  const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
-
-  const handleSubmit = (data: Record<string, string>) => {
-    console.log("Form Data:", data);
-  };
-
   return (
     <LoginForm
       words={words}
       inputGroups={inputGroups}
-      discordLink={discordLink}
-      onSubmit={handleSubmit}
     />
   );
 };

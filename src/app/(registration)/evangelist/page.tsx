@@ -1,8 +1,4 @@
-"use client";
-
 import LoginForm from "../_components/loginform";
-import { SubmitHandler } from "react-hook-form";
-import useGitHubUsername from "@/hooks/useGithubUser";
 
 const Page = () => {
   const words = [{ text: "EVANGELIST" }];
@@ -40,39 +36,14 @@ const Page = () => {
 
   ];
 
-  const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
+  return (
+    <LoginForm
+      words={words}
+      inputGroups={inputGroups}
+      firstheading="Personal Information"
+      secondheading="Contact Information"
+    />
+  );
+};
 
-  const { githubUsername, loading, email, isSignedIn } = useGitHubUsername();
-
-  const handleSubmit: SubmitHandler<Record<string, string>> = async (data) => {
-    if (!isSignedIn) {
-      alert("You need to be signed in to submit this form.");
-      return;
-    }
-
-    if (!email && !githubUsername) {
-      alert("Please login to continue");
-      return;
-    }
-
-
-
-    const { firstName, lastName } = data;
-    const fullName = `${firstName} ${lastName}`.trim();
-
-
-    if (loading) {
-      return <p>Loading GitHub username...</p>;
-    }
-
-    return (
-      <LoginForm
-        words={words}
-        inputGroups={inputGroups}
-        firstheading="Personal Information"
-        secondheading="Contact Information"
-      />
-    );
-  };
-}
 export default Page;

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 
-const useGitHubUsername = () => {
+export const useGitHub = () => {
   const { isLoaded, isSignedIn, user } = useUser();
   const [githubUsername, setGitHubUsername] = useState<string | null>(null);
   const [email, setEmail] = useState<string>('');
@@ -28,5 +28,3 @@ const useGitHubUsername = () => {
   console.log(user);
   return { githubUsername, email, loading, isSignedIn };
 };
-
-export default useGitHubUsername;

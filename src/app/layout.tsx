@@ -1,4 +1,4 @@
-import { ClerkProvider } from "@clerk/nextjs"; // Import ClerkProvider
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";

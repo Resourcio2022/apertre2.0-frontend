@@ -1,20 +1,10 @@
 "use client";
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  createContext,
-  useContext,
-} from "react";
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-  IconX,
-} from "@tabler/icons-react";
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
+import { useEffect, useState, createContext, useRef } from "react";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
 interface CarouselProps {
   items: JSX.Element[];
   initialScroll?: number;
@@ -32,42 +22,38 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
-  const carouselRef = React.useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
-      checkScrollability();
+      // checkScrollability();
     }
   }, [initialScroll]);
 
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-    }
-  };
+  // const checkScrollability = () => {
+  //   if (carouselRef.current) {
+  //     const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+  //   }
+  // };
 
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
-  };
+  // const scrollLeft = () => {
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  //   }
+  // };
 
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
+  // const scrollRight = () => {
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  //   }
+  // };
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
@@ -94,7 +80,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
-          onScroll={checkScrollability}
+          // onScroll={checkScrollability}
         >
           <div
             className={cn(
@@ -105,7 +91,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           <div
             className={cn(
               "flex flex-row justify-start gap-4",
-              " mx-auto" 
+              " mx-auto"
             )}
           >
             {items.map((item, index) => (
@@ -132,22 +118,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        {/* <div className="flex justify-end gap-2 mr-10">
-          <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
-          </button>
-          <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
-          </button>
-        </div> */}
       </div>
     </CarouselContext.Provider>
   );
@@ -155,20 +125,16 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
 export const Card = ({
   card,
-  index,
   layout = false,
 }: {
   card: Card;
-  index: number;
   layout?: boolean;
 }) => {
-  
-return (
+
+  return (
     <>
-      
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        
         className="rounded-lg border-2 border-textyellow h-80 w-56 md:h-[280px] bg-card md:w-[466px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
@@ -177,7 +143,7 @@ return (
             layoutId={layout ? `usertype-${card.usertype}` : undefined}
             className="text-textyellow font-mokoto font-normal text-lg md:text-2xl text-left flex flex-col gap-3"
           >
-            APPLY AS 
+            APPLY AS
             <span className="text-textyellow font-mokoto text-xl md:text-5xl">{card.usertype}</span>
           </motion.p>
           <motion.p
@@ -188,9 +154,9 @@ return (
           </motion.p>
           <Link href={card.registerlink} className="text-textyellow font-mokoto text-xl mt-4 flex w-fit justify-start bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4]">
             REGISTER
-            </Link>
+          </Link>
         </div>
-        
+
       </motion.button>
     </>
   );

@@ -1,8 +1,8 @@
 "use client";
-
-import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
+
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
@@ -14,36 +14,39 @@ export const InfiniteMovingCards = ({
     quote: string;
     name: string;
     title: string;
-    pic:string;
+    pic: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
+    function addAnimation() {
+      if (containerRef.current && scrollerRef.current) {
+        const scrollerContent = Array.from(scrollerRef.current.children);
+
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          if (scrollerRef.current) {
+            scrollerRef.current.appendChild(duplicatedItem);
+          }
+        });
+
+        getDirection();
+        getSpeed();
+        setStart(true);
+      }
+    }
+
     addAnimation();
   }, []);
+
   const [start, setStart] = useState(false);
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "right") {
@@ -59,6 +62,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -70,11 +74,12 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  w-full overflow-hidden  ",
+        "scroller relative z-20  w-full overflow-hidden",
         className
       )}
     >
@@ -89,18 +94,17 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             className="w-[350px] h-full relative rounded-r-[21px] mx-14 border-r-4 border-textyellow bg-testcard bg-cover bg-no-repeat flex-shrink-0  pl-20 pr-3 py-6 "
-            
-            key={item.name}
+            key={idx}
           >
             <div className="relative top-0 right-40 bg-gray-800 border-4 border-yellow-500 rounded-full w-[150px] h-[150px] overflow-hidden">
-  <Image
-    src={item.pic}
-    alt={item.name}
-    layout="fill"
-    objectFit="cover"
-    className="rounded-full"
-  />
-</div>
+              <Image
+                src={item.pic}
+                alt={item.name}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
+            </div>
             <blockquote className="flex flex-col  pl-7 items-center w-full h-full z-50 -mt-36 pr-4">
               <div
                 aria-hidden="true"

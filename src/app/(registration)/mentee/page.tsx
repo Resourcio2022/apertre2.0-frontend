@@ -1,9 +1,7 @@
-"use client"
 import LoginForm from "../_components/loginform";
 
 const page = () => {
   const words = [
-    
     { text: "MENTEE" },
   ];
 
@@ -22,7 +20,7 @@ const page = () => {
     },
     {
       fields: [
-        { name: "Address", type: "textarea", placeholder: "Address", required: true ,classname: "h-[101px] w-full"},
+        { name: "Address", type: "textarea", placeholder: "Address", required: true, classname: "h-[101px] w-full" },
       ],
     },
     {
@@ -33,19 +31,10 @@ const page = () => {
     },
   ];
 
-  const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
-
-  const handleSubmit = (data: Record<string, string>) => {
-    console.log("Form Data:", data);
-    //post the form data with API
-  };
-
   return (
     <LoginForm
       words={words}
       inputGroups={inputGroups}
-      discordLink={discordLink}
-      onSubmit={handleSubmit}
     />
   );
 };
