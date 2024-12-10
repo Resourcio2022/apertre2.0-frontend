@@ -1,11 +1,10 @@
-"use client"
 import LoginForm from "../_components/loginform";
 
 const page = () => {
   const words = [
-
     { text: "COMMUNITY PARTNER" },
   ];
+
   const inputGroups = [
     {
       fields: [
@@ -26,6 +25,7 @@ const page = () => {
     },
 
   ];
+
   const additionalInputGroups = [
     {
       fields: [
@@ -51,15 +51,9 @@ const page = () => {
     },
 
   ];
+
   const firstheading = "Person of contact information";
   const secondheading = "Community information";
-
-  const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
-
-  const handleSubmit = (data: Record<string, string>) => {
-    console.log("Form Data:", data);
-    //post the form data with API
-  };
 
   return (
     <LoginForm

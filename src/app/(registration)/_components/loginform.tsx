@@ -1,16 +1,16 @@
 "use client";
-
+import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z, ZodType } from "zod";
+import { z } from "zod";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
-import React from "react";
-import Image from "next/image";
 import { FaDiscord, FaCopy } from "react-icons/fa";
-import Link from "next/link";
+import { useGitHub } from "@/hooks/useGithubUser";
 
 const discordLink = "https://discord.com/invite/example?ref=abc123xyz";
+
 interface InputField {
   name: string;
   type: string;
@@ -31,16 +31,15 @@ interface LoginFormProps {
   secondheading?: string;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({
-  words,
-  inputGroups,
-  additionalInputGroups,
-  firstheading,
-  secondheading,
-}) => {
+const LoginForm: React.FC<LoginFormProps> = ({ words, inputGroups, additionalInputGroups, firstheading, secondheading }) => {
   const [isClient, setIsClient] = useState(false);
 
-  // Define Zod schema
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const { githubUsername, loading, email, isSignedIn } = useGitHub();
+
   const schema = z.object({
     joinedDiscord: z.boolean().refine(val => val, { message: "You must join Discord." }),
     rules: z.boolean().refine(val => val, { message: "You must accept the rules." }),
@@ -55,24 +54,27 @@ const LoginForm: React.FC<LoginFormProps> = ({
     }, {} as Record<string, z.ZodTypeAny>),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Record<string, string>>({
+  const { register, handleSubmit, formState: { errors }, } = useForm<Record<string, string>>({
     resolver: zodResolver(schema),
   });
-  const onSubmit: SubmitHandler<Record<string, string>> = (data) => {
-    // switch (words.text.toLowerCase()) {
-    //   case 'evangelist':
-    //     console.log(data)
-    //   case 'community partner':
-    //     console.log(data)
-    // }
+
+  const onSubmit: SubmitHandler<Record<string, string>> = async (data) => {
+    if (!isSignedIn) {
+      alert("You need to be signed in to submit this form.");
+      return;
+    }
+
+    if (!email && !githubUsername) {
+      alert("Please login to continue");
+      return;
+    }
+
+    if (loading) {
+      return <p>Loading GitHub username...</p>;
+    }
+    
+    console.log(data)
   }
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <div className="relative w-full min-h-screen flex items-center justify-center py-7 px-5">
@@ -154,7 +156,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                       />
                       <button
                         type="button"
-                        // onClick={() => navigator.clipboard.writeText(discordLink)}
+                        onClick={() => navigator.clipboard.writeText(discordLink)}
                       >
                         <FaCopy className="text-white" />
                       </button>
