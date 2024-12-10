@@ -26,7 +26,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-transparent text-white z-50">
+        <nav className="sticky top-0 bg-black left-0 w-full text-white z-[999]">
             <div className="flex items-center justify-between px-6 lg:px-20 py-6">
                 {/* Logo aligned to the left */}
                 <div className="flex items-center">
@@ -80,7 +80,7 @@ export default function Navbar() {
                 ))}
             </div>
 
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+            {/* <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div> */}
         </nav>
     );
 }
