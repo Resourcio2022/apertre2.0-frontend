@@ -22,25 +22,25 @@ const Footer = () => {
 
     const socialLinks = {
         apertre: [
-            { icon: <FaWhatsapp />, href: "" },
-            { icon: <FaInstagram />, href: "" },
-            { icon: <FaLinkedin />, href: "" },
-            { icon: <FaFacebook />, href: "" },
-            { icon: <FaTwitter />, href: "" },
+            { icon: <FaWhatsapp />, href: "/" },
+            { icon: <FaInstagram />, href: " https://www.instagram.com/apertre25/" },
+            { icon: <FaLinkedin />, href: "https://www.linkedin.com/showcase/apertre25/posts/?feedView=all" },
+            { icon: <FaFacebook />, href: "/" },
+            { icon: <FaTwitter />, href: "https://x.com/apertre25" },
         ],
         resourcio: [
-            { icon: <FaWhatsapp />, href: "/" },
-            { icon: <FaInstagram />, href: "/" },
-            { icon: <FaLinkedin />, href: "/" },
-            { icon: <FaFacebook />, href: "/" },
-            { icon: <FaTwitter />, href: "/" },
+            { icon: <FaWhatsapp />, href: "https://www.whatsapp.com/channel/0029Va9B4nV2phHFjixIKj0G" },
+            { icon: <FaInstagram />, href: "https://www.instagram.com/resourcio_/" },
+            { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/resourcioc/posts/?feedView=all" },
+            { icon: <FaFacebook />, href: "https://www.facebook.com/resourcio/" },
+            { icon: <FaTwitter />, href: "https://x.com/resourcio_" },
         ],
         gdg: [
-            { icon: <FaWhatsapp />, href: "/" },
-            { icon: <FaInstagram />, href: "/" },
-            { icon: <FaLinkedin />, href: "/" },
-            { icon: <FaFacebook />, href: "/" },
-            { icon: <FaTwitter />, href: "/" },
+            { icon: <FaWhatsapp />, href: "https://chat.whatsapp.com/EQPRJZxqOBL4nHEdMyUcF1" },
+            { icon: <FaInstagram />, href: "https://www.instagram.com/gdgocaot/" },
+            { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/gdsc-aot/" },
+            { icon: <FaFacebook />, href: "https://www.facebook.com/gdgocaot/" },
+            { icon: <FaTwitter />, href: "https://x.com/gdgocaot" },
         ],
     } as socialLink;
 
