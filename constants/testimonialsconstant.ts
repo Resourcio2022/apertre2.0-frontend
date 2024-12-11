@@ -4,27 +4,27 @@ export const testimonialsdata = [
             "Being part of Apertre as a project admin and speaker was an incredible experience. The event provided a fantastic platform to share insights",
         name: "-Bishakh Neogi",
         title: "",
-        pic: '/bisakh.png'
+        pic: '/bisakh.webp'
     },
     {
         quote:
             "It was an absolute honor to be a speaker at Apertre last year! Huge kudos to the organizing team for putting together such a seamless and impactful event.",
         name: "-Arnab Chatterjee",
         title: "",
-        pic: '/arnab.jpeg'
+        pic: '/arnab.webp'
     },
     {
         quote: "I was truly honored to be a part of Apertre as a speaker last year! A big shoutout to the organizers for creating such a well-executed and meaningful event.",
         name: "-Ronit Banerjee",
         title: "",
-        pic: '/ronit.jpeg'
+        pic: '/ronit.webp'
     },
     {
         quote:
             "It was very nice to be a part of such a grand event...may Reasourcio Community soar to great heights!",
         name: "-Sayak Sengupta",
         title: "",
-        pic: '/sayak.jpeg'
+        pic: '/sayak.webp'
     },
     {
         quote:
