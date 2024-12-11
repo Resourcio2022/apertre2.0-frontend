@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { FaDiscord, FaCopy } from "react-icons/fa";
@@ -157,11 +156,10 @@ const SignupForm: React.FC<LoginFormProps> = ({
           if (!response.ok)
             throw new Error(data.message)
           console.log(data)
-        } catch (e) {
-          console.log(e.message)
         }
-
-
+        catch (e) {
+          console.log(e)
+        }
         break;
       }
       default:
