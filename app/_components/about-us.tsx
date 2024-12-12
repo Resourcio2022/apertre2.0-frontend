@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutUs() {
     return (
         <div
-            className="w-full flex items-center justify-center p-10 md:p-20 text-white font-Poppins"
+            className="w-full flex items-center justify-center p-10 md:p-20 text-white font-Poppins scroll-smooth"
             style={{
                 backgroundImage: 'url("/aboutus.svg")',
                 backgroundRepeat: "no-repeat",
@@ -11,6 +11,7 @@ export default function AboutUs() {
                 backgroundPosition: "center",
                 minHeight: "100vh",
             }}
+            id="about"
         >
             <div className="flex flex-col md:flex-row justify-between items-center gap-10 max-w-7xl mx-auto">
                 <div className="flex-1 flex flex-col gap-5 text-center md:text-left">
@@ -26,7 +27,7 @@ export default function AboutUs() {
                         us to skyrocket your experience, portfolio, and career.
                     </p>
                     <div className="border-t-2 border-b-2 border-textyellow border-opacity-30 py-5 border-dashed">
-                        <p className="text-sm md:text-lg font-normal">
+                        <p className="text-sm md:text-lg font-normaln italic">
                             “When we have welcoming communities of contributors, open source
                             software gets better and more useful to everyone.” -{" "}
                             <span className="text-textyellow">Limor Fried</span>
