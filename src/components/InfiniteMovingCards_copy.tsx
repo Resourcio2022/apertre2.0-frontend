@@ -74,7 +74,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "hidden md:block scroller relative z-20  w-full overflow-hidden  ",
+        "scroller relative z-20  w-full overflow-hidden  ",
         className
       )}
     >
@@ -87,7 +87,7 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <li 
+          <li
             className="w-[350px] h-full relative rounded-r-[21px] mx-14 border-r-4 border-textyellow bg-testcard bg-cover bg-no-repeat flex-shrink-0  pl-20 pr-3 py-6 "
             
             key={item.name}
