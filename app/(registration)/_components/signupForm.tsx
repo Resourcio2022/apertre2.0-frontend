@@ -1,17 +1,17 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
+import { z } from "zod";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { FaDiscord, FaCopy } from "react-icons/fa";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import { useGitHub } from "@/hooks/useGithubUser";
+import { communityPartnerSignup, evangelistSignup, Role } from "../_utils/apiCalls";
+import { toast } from "sonner";
 
 const DISCORD_LINK = "https://discord.com/invite/example?ref=abc123xyz";
-const API_URL = `https://apertre-api.up.railway.app`;
+
 interface InputField {
   name: string;
   type: string;
@@ -24,7 +24,7 @@ interface InputGroup {
   fields: InputField[];
 }
 
-interface LoginFormProps {
+interface SignupFormProps {
   words: { text: string }[];
   inputGroups: InputGroup[];
   additionalInputGroups?: InputGroup[];
@@ -32,20 +32,8 @@ interface LoginFormProps {
   secondheading?: string;
 }
 
-const SignupForm: React.FC<LoginFormProps> = ({
-  words,
-  inputGroups,
-  additionalInputGroups,
-  firstheading,
-  secondheading,
-}) => {
-  const [isClient, setIsClient] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const { githubUsername, loading, email, isSignedIn, clerk_userId } = useGitHub();
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+export default function SignupForm({ words, inputGroups, additionalInputGroups, firstheading, secondheading }: SignupFormProps) {
+  const { clerk_userId, email, githubUsername, isSignedIn } = useGitHub();
 
   const schema = z.object({
     joinedDiscord: z.boolean().refine((val) => val, {
@@ -77,89 +65,45 @@ const SignupForm: React.FC<LoginFormProps> = ({
   });
 
   const onSubmit: SubmitHandler<Record<string, string>> = async (data) => {
+    console.log(isSignedIn)
     if (!isSignedIn) {
-      alert("You need to be signed in to submit this form.");
+    // put toast You need to Sign In first
       return;
     }
 
-    if (!email && !githubUsername) {
-      alert("Please log in to continue.");
+    if (!clerk_userId || !email || !githubUsername) {
+      // toast make sure you have github username and primary email address
       return;
     }
 
-    if (loading) {
-      alert("Loading GitHub username, please wait...");
-      return;
-    }
+    const role = words.map((item) => item.text.toLowerCase()).join(" ") as Role;
 
-    const result = words.map((item) => item.text.toLowerCase()).join(" ");
-
-    switch (result) {
+    switch (role) {
       case "evangelist": {
         const fullname = `${data.firstName} ${data.lastName}`;
-        const payload = {
-          username: githubUsername,
-          fullname: fullname,
-          address: data.address,
-          phoneNumber: data.phoneNumber,
-          linkedinUrl: data.linkedinUrl,
-          instagramUsername: data.instagramUsername,
-          discordUsername: data.discordUsername,
-          twitterUsername: data.twitterUsername,
-          email,
-          role: result,
-          clerk_userId,
-          collegeName: data.collegeName
-        };
-        try {
-          const response = await fetch(`${API_URL}/evangelists`, {
-            method: 'POST',
-            body: JSON.stringify(payload),
-            headers: { "Content-Type": "application/json" }
-          });
-          const data = await response.json()
-          if (!response.ok)
-            throw new Error(data.message)
-          console.log(data)
-        } catch (e) {
-          console.log(e)
-        }
 
+        try {
+          const response = await evangelistSignup(clerk_userId, role, email, githubUsername, fullname, data.address, data.phoneNumber, data.linkedinUrl, data.instagramUsername, data.discordUsername, data.twitterUsername, data.collegeName)
+
+          console.log(response) // put toast
+        }
+        catch (err) {
+          console.error(err)
+        }
+        break;
       }
       case "community partner": {
         const fullname = `${data.firstName} ${data.lastName}`;
-        console.log(data)
-        const payload = {
-          communityUrl: data.communityUrl,
-          communityStrength: parseInt(data.communityStrength),
-          communityName: data.communityName,
 
-          username: githubUsername,
-          fullname: fullname,
-          address: data.address,
-          phoneNumber: data.phoneNumber,
-          linkedinUrl: data.linkedinUrl,
-          instagramUsername: data.instagramUsername,
-          discordUsername: data.discordUsername,
-          twitterUsername: data.twitterUsername,
-          email,
-          role: result,
-          clerk_userId,
-        };
         try {
-          const response = await fetch(`${API_URL}/community-partner`, {
-            method: 'POST',
-            body: JSON.stringify(payload),
-            headers: { "Content-Type": "application/json" }
-          });
-          const data = await response.json()
-          if (!response.ok)
-            throw new Error(data.message)
-          console.log(data)
+          const response = await communityPartnerSignup(clerk_userId, role, email, githubUsername, fullname, data.address, data.phoneNumber, data.linkedinUrl, data.instagramUsername, data.discordUsername, data.twitterUsername, data.communityName, data.communityUrl, parseInt(data.communityStrength))
+
+          console.log(response)
         }
-        catch (e) {
-          console.log(e)
+        catch (err) {
+          console.error(err)
         }
+
         break;
       }
       default:
@@ -213,151 +157,149 @@ const SignupForm: React.FC<LoginFormProps> = ({
         <div className="flex justify-between gap-10">
           {/* Form Section */}
           <div className="flex flex-col gap-5">
-            {isClient && (
-              <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 font-Poppins">
-                {/* Primary Fields */}
-                <span className="text-left font-Poppins text-white text-[18px]">
-                  {firstheading}
-                </span>
-                {inputGroups.map((group, groupIndex) => (
-                  <div className="flex gap-7 w-full justify-between" key={groupIndex}>
-                    {group.fields.map((field, fieldIndex) => (
-                      <div key={fieldIndex}>
-                        <input
-                          {...register(field.name)}
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname}`}
-                        />
-                        {errors[field.name] && (
-                          <p className="text-red-500 text-xs mt-1">
-                            {errors[field.name]?.message}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-
-                {/* Additional Fields */}
-                {secondheading && (
-                  <span className="text-left font-Poppins text-white text-[18px]">
-                    {secondheading}
-                  </span>
-                )}
-
-                {additionalInputGroups?.map((group, groupIndex) => (
-                  <div className="flex gap-7 w-full justify-between" key={groupIndex}>
-                    {group.fields.map((field, fieldIndex) => (
-                      <div key={fieldIndex}>
-                        <input
-                          {...register(field.name)}
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname}`}
-                        />
-                        {errors[field.name] && (
-                          <p className="text-red-500 text-xs mt-1">
-                            {errors[field.name]?.message}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-
-                {/* Discord Section */}
-                <div className="flex justify-between gap-10">
-                  <div className="mt-4 w-full">
-                    <label className="text-sm font-medium mb-2 text-white">
-                      Your Discord Referral Link
-                    </label>
-                    <div className="flex gap-7 w-full px-3 py-2 bg-transparent text-white rounded-md border-2 border-black focus:outline-none focus:ring focus:ring-yellow-300 overflow-x-auto whitespace-nowrap">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 font-Poppins">
+              {/* Primary Fields */}
+              <span className="text-left font-Poppins text-white text-[18px]">
+                {firstheading}
+              </span>
+              {inputGroups.map((group, groupIndex) => (
+                <div className="flex gap-7 w-full justify-between" key={groupIndex}>
+                  {group.fields.map((field, fieldIndex) => (
+                    <div key={fieldIndex}>
                       <input
-                        type="url"
-                        defaultValue={DISCORD_LINK}
-                        readOnly
-                        className="w-full bg-transparent text-white placeholder-white placeholder-opacity-50 focus:outline-none whitespace-nowrap"
+                        {...register(field.name)}
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname}`}
                       />
-                      <button
-                        type="button"
-                        onClick={() => navigator.clipboard.writeText(DISCORD_LINK)}
-                      >
-                        <FaCopy className="text-white" />
-                      </button>
+                      {errors[field.name] && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors[field.name]?.message}
+                        </p>
+                      )}
                     </div>
-                  </div>
-                  <div className="flex items-center mt-10">
-                    <input
-                      type="checkbox"
-                      id="joinedDiscord"
-                      {...register("joinedDiscord")}
-                      className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
-                    />
-                    <label htmlFor="joinedDiscord" className="text-sm text-white ml-1 text-nowrap">
-                      Joined Discord*
-                    </label>
-                    {errors.joinedDiscord && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.joinedDiscord?.message}
-                      </p>
-                    )}
-                  </div>
+                  ))}
                 </div>
+              ))}
 
-                {/* Terms Section */}
-                <div className="flex justify-between gap-10">
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="rules"
-                      {...register("rules")}
-                      className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
-                    />
-                    <label htmlFor="rules" className="text-sm text-white ml-1">
-                      I have read{" "}
-                      <Link href="#" className="text-textyellow">
-                        Rules and Guidelines*
-                      </Link>
-                    </label>
-                    {errors.rules && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.rules?.message}
-                      </p>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="codeOfConduct"
-                      {...register("codeOfConduct")}
-                      className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
-                    />
-                    <label htmlFor="codeOfConduct" className="text-sm text-white ml-1">
-                      I have read{" "}
-                      <Link href="#" className="text-textyellow">
-                        Code of Conduct*
-                      </Link>
-                    </label>
-                    {errors.codeOfConduct && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.codeOfConduct?.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
+              {/* Additional Fields */}
+              {secondheading && (
+                <span className="text-left font-Poppins text-white text-[18px]">
+                  {secondheading}
+                </span>
+              )}
 
-                {/* Submit Button */}
-                <div className="flex w-full justify-center">
-                  <button
-                    type="submit"
-                    className="font-mokoto text-[24px] text-white bg-customgreen border-2 border-bordergreen rounded-md px-3 py-1 mt-5"
-                  >
-                    SUBMIT
-                  </button>
+              {additionalInputGroups?.map((group, groupIndex) => (
+                <div className="flex gap-7 w-full justify-between" key={groupIndex}>
+                  {group.fields.map((field, fieldIndex) => (
+                    <div key={fieldIndex}>
+                      <input
+                        {...register(field.name)}
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-3 placeholder:text-white text-[16px] focus:none ${field.classname}`}
+                      />
+                      {errors[field.name] && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors[field.name]?.message}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              </form>
-            )}
+              ))}
+
+              {/* Discord Section */}
+              <div className="flex justify-between gap-10">
+                <div className="mt-4 w-full">
+                  <label className="text-sm font-medium mb-2 text-white">
+                    Your Discord Referral Link
+                  </label>
+                  <div className="flex gap-7 w-full px-3 py-2 bg-transparent text-white rounded-md border-2 border-black focus:outline-none focus:ring focus:ring-yellow-300 overflow-x-auto whitespace-nowrap">
+                    <input
+                      type="url"
+                      defaultValue={DISCORD_LINK}
+                      readOnly
+                      className="w-full bg-transparent text-white placeholder-white placeholder-opacity-50 focus:outline-none whitespace-nowrap"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => navigator.clipboard.writeText(DISCORD_LINK)}
+                    >
+                      <FaCopy className="text-white" />
+                    </button>
+                  </div>
+                </div>
+                <div className="flex items-center mt-10">
+                  <input
+                    type="checkbox"
+                    id="joinedDiscord"
+                    {...register("joinedDiscord")}
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
+                  />
+                  <label htmlFor="joinedDiscord" className="text-sm text-white ml-1 text-nowrap">
+                    Joined Discord*
+                  </label>
+                  {errors.joinedDiscord && (
+                    <p className="text-red-500 text-xs mt-1">
+                      {errors.joinedDiscord?.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Terms Section */}
+              <div className="flex justify-between gap-10">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="rules"
+                    {...register("rules")}
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
+                  />
+                  <label htmlFor="rules" className="text-sm text-white ml-1">
+                    I have read{" "}
+                    <Link href="#" className="text-textyellow">
+                      Rules and Guidelines*
+                    </Link>
+                  </label>
+                  {errors.rules && (
+                    <p className="text-red-500 text-xs mt-1">
+                      {errors.rules?.message}
+                    </p>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="codeOfConduct"
+                    {...register("codeOfConduct")}
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
+                  />
+                  <label htmlFor="codeOfConduct" className="text-sm text-white ml-1">
+                    I have read{" "}
+                    <Link href="#" className="text-textyellow">
+                      Code of Conduct*
+                    </Link>
+                  </label>
+                  {errors.codeOfConduct && (
+                    <p className="text-red-500 text-xs mt-1">
+                      {errors.codeOfConduct?.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex w-full justify-center">
+                <button
+                  type="submit"
+                  className="font-mokoto text-[24px] text-white bg-customgreen border-2 border-bordergreen rounded-md px-3 py-1 mt-5"
+                >
+                  SUBMIT
+                </button>
+              </div>
+            </form>
           </div>
 
           {/* Divider */}
@@ -379,5 +321,3 @@ const SignupForm: React.FC<LoginFormProps> = ({
     </div>
   );
 };
-
-export default SignupForm;

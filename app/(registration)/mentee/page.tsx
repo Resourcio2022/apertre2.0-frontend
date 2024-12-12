@@ -25,7 +25,7 @@ const page = () => {
         },
         {
             fields: [
-                { name: "Phone Number", type: "number", placeholder: "Phone Number", required: true },
+                { name: "PhoneNumber", type: "number", placeholder: "Phone Number", required: true },
                 { name: "Discord Username", type: "text", placeholder: "Discord Username", required: true },
             ],
         },

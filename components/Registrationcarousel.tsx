@@ -138,7 +138,7 @@ export const Card = ({
         className="rounded-lg border-2 border-textyellow h-80 w-56 md:h-[280px] bg-card md:w-[466px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="relative z-40 p-8 w-full ">
+        <div className="relative z-40 p-8 w-full">
           <motion.p
             layoutId={layout ? `usertype-${card.usertype}` : undefined}
             className="text-textyellow font-mokoto font-normal text-lg md:text-2xl text-left flex flex-col gap-3"

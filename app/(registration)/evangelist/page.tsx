@@ -33,7 +33,6 @@ const Page = () => {
         { name: "discordUsername", type: "text", placeholder: "Discord Username", required: true },
       ],
     },
-
   ];
 
   return (

@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "sonner";
 
 const mokotoVF = localFont({
   src: "./fonts/mokoto.woff",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Toaster position="bottom-right" />
         </body>
       </html>
     </ClerkProvider>

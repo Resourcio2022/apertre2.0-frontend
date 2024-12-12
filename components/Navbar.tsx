@@ -1,8 +1,10 @@
 "use client";
+import { useGitHub } from "@/hooks/useGithubUser";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Preloader from "./Loader";
 
 interface INavLink {
     name: string;
@@ -19,6 +21,7 @@ const NAV_LINKS: INavLink[] = [
 ];
 
 export default function Navbar() {
+    const { loading } = useGitHub();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -44,16 +47,24 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex items-center">
-                        <SignedOut>
-                            <SignInButton>
-                                <button className="px-4 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition">
-                                    Sign In
-                                </button>
-                            </SignInButton>
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
+                        {loading
+                            ? (
+                                <Preloader bgHeight="20%" width="2rem" height="2rem" color="#ffffff" />
+                            ) : (
+                                <>
+                                    <SignedOut>
+                                        <SignInButton>
+                                            <button className="px-4 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition">
+                                                Sign In
+                                            </button>
+                                        </SignInButton>
+                                    </SignedOut>
+                                    <SignedIn>
+                                        <UserButton />
+                                    </SignedIn>
+                                </>
+                            )
+                        }
                     </div>
                 </div>
 
@@ -79,8 +90,6 @@ export default function Navbar() {
                     </Link>
                 ))}
             </div>
-
-            {/* <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div> */}
         </nav>
     );
 }

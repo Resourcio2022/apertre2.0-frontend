@@ -4,22 +4,25 @@ import { useUser } from "@clerk/nextjs";
 
 export const useGitHub = () => {
   const { isLoaded, isSignedIn, user } = useUser();
-  const [githubUsername, setGitHubUsername] = useState<string | null>(null);
-  const [email, setEmail] = useState<string>('');
   const [loading, setLoading] = useState(true);
-  const [clerk_userId, setclerk_userId] = useState<string>('')
+
+  const [githubUsername, setGitHubUsername] = useState<string>();
+  const [email, setEmail] = useState<string>();
+  const [clerk_userId, setClerk_userId] = useState<string>();
+
   useEffect(() => {
     const fetchGitHubUsername = () => {
       if (isLoaded && isSignedIn && user) {
-        const githubAccount = user.username
+        const githubUsername = user.username
         const emailAddress = user.primaryEmailAddress?.emailAddress
         const user_Id = user.id
-        if (!emailAddress) {
+
+        if (!githubUsername || !emailAddress) {
           return
         }
-        setGitHubUsername(githubAccount);
+        setGitHubUsername(githubUsername);
         setEmail(emailAddress);
-        setclerk_userId(user_Id)
+        setClerk_userId(user_Id)
       }
       setLoading(false);
     };

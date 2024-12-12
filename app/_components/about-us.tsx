@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const AboutUs = () => {
+export default function AboutUs() {
     return (
         <div
             className="w-full flex items-center justify-center p-10 md:p-20 text-white font-Poppins"
@@ -46,5 +46,3 @@ const AboutUs = () => {
         </div>
     );
 };
-
-export default AboutUs;

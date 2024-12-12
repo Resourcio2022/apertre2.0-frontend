@@ -8,9 +8,7 @@ export default function Registration() {
 
   return (
     <div className="w-full h-full p-10 md:p-20 bg-custom-gradient"
-      style={{
-        background: "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
-      }}>{/*sorry for using inline css here, but it was necessary to make the gradient work sorry duhhh you can change if you have any other option :)*/}
+      style={{ background: "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)" }}>
       <h2 className=" text-textyellow pl-4 mx-auto font-normal text-2xl md:text-6xl  font-mokoto">
         Registrations
       </h2>
