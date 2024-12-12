@@ -10,7 +10,7 @@ export default function FAQ() {
     };
 
     return (
-        <div className="min-h-screen bg-black bg-cover bg-no-repeat bg-faq text-white flex flex-col justify-center p-10 md:p-32 font-mokoto">
+        <section className="min-h-screen bg-black bg-cover bg-no-repeat bg-faq text-white flex flex-col justify-center p-10 md:p-32 font-mokoto">
             <h2 className="text-nowrap text-lg md:text-6xl font-bold text-yellow-400 mb-8 text-left font-mokoto ">
                 FREQUENTLY ASKED QUESTIONS
             </h2>
@@ -51,6 +51,6 @@ export default function FAQ() {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }

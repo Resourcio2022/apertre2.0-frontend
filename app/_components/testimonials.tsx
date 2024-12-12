@@ -3,9 +3,8 @@ import { InfiniteMovingCards } from '@/components/InfiniteMovingCards'
 import { testimonialsdata } from '@/constants/testimonialsconstant'
 
 export default function Testimonials() {
-
     return (
-        <div className='w-full h-full flex flex-col bg-customblack md:p-20 p-10 '>
+        <section className='w-full h-full flex flex-col bg-customblack md:p-20 p-10'>
             <span className="text-nowrap text-2xl md:text-6xl font-mokoto text-textyellow text-left mb-10">
                 Testimonials
             </span>
@@ -53,6 +52,6 @@ export default function Testimonials() {
                     speed="slow"
                 />
             </div>
-        </div>
+        </section>
     );
 };

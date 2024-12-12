@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutUs() {
     return (
-        <div
+        <section
             className="w-full flex items-center justify-center p-10 md:p-20 text-white font-Poppins scroll-smooth"
             style={{
                 backgroundImage: 'url("/aboutus.svg")',
@@ -44,6 +44,6 @@ export default function AboutUs() {
                     />
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

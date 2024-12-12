@@ -88,9 +88,8 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`lg:hidden ${
-          isMobileMenuOpen ? "block" : "hidden"
-        } bg-black p-6 absolute top-full left-0 w-full`}
+        className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"
+          } bg-black p-6 absolute top-full left-0 w-full`}
       >
         {NAV_LINKS.map((item, index) => (
           <Link

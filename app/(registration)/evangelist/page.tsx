@@ -1,4 +1,4 @@
-import SignupForm from "../_components/signupForm";
+import SignupForm, { InputField } from "../_components/signupForm";
 
 const Page = () => {
   const words = [{ text: "EVANGELIST" }];
@@ -6,32 +6,36 @@ const Page = () => {
   const inputGroups = [
     {
       fields: [
-        { name: "firstName", type: "text", placeholder: "First Name", required: true },
-        { name: "lastName", type: "text", placeholder: "Last Name", required: true },
-      ],
+        { name: "firstName", type: "text", placeholder: "First name", required: true },
+        { name: "lastName", type: "text", placeholder: "Last name", required: true },
+      ] as InputField[],
     },
     {
       fields: [
-        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn Profile", required: true },
-      ],
+        { name: "phoneNumber", type: "tel", placeholder: "Phone number", required: true },
+        { name: "discordUsername", type: "text", placeholder: "Discord username", required: true },
+      ] as InputField[],
     },
     {
       fields: [
-        { name: "collegeName", type: "text", placeholder: "College Name", required: true },
-        { name: "address", type: "text", placeholder: "Address", required: true }
-      ],
+        { name: "address", type: "text", placeholder: "Address", required: true, classname: "w-full" },
+      ] as InputField[]
     },
     {
       fields: [
-        { name: "instagramUsername", type: "text", placeholder: "Instagram Username", required: true },
-        { name: "twitterUsername", type: "text", placeholder: "Twitter Username", required: false },
-      ],
+        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true, classname: "w-full" },
+      ] as InputField[]
     },
     {
       fields: [
-        { name: "phoneNumber", type: "tel", placeholder: "Phone Number", required: true },
-        { name: "discordUsername", type: "text", placeholder: "Discord Username", required: true },
-      ],
+        { name: "collegeName", type: "text", placeholder: "College name", required: true },
+      ] as InputField[]
+    },
+    {
+      fields: [
+        { name: "instagramUsername", type: "text", placeholder: "Instagram username", required: true },
+        { name: "twitterUsername", type: "text", placeholder: "Twitter username", required: false },
+      ] as InputField[]
     },
   ];
 
@@ -39,8 +43,6 @@ const Page = () => {
     <SignupForm
       words={words}
       inputGroups={inputGroups}
-      firstheading="Personal Information"
-      secondheading="Contact Information"
     />
   );
 };

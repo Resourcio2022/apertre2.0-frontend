@@ -5,7 +5,7 @@ export default function Registration() {
   const cards = data.map((card, idx) => <Card key={idx} card={card} />);
 
   return (
-    <div
+    <section
       className="w-full h-full p-10 md:p-20 bg-custom-gradient scroll-smooth"
       id="register"
       style={{
@@ -29,6 +29,6 @@ export default function Registration() {
           </span>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
