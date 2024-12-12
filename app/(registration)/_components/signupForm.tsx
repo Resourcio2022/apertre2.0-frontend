@@ -259,7 +259,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                   />
                   <label htmlFor="rules" className="text-sm text-white ml-1">
                     I have read{" "}
-                    <Link href="#" className="text-textyellow">
+                    <Link href="https://season-argon-ef5.notion.site/Open-Source-Event-Rules-and-Guidelines-12cff86c36f480bcb293faaba5c40a5e" className="text-textyellow">
                       Rules and Guidelines*
                     </Link>
                   </label>
@@ -278,7 +278,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                   />
                   <label htmlFor="codeOfConduct" className="text-sm text-white ml-1">
                     I have read{" "}
-                    <Link href="#" className="text-textyellow">
+                    <Link href="https://season-argon-ef5.notion.site/Code-of-Conduct-12cff86c36f4803c9ed6c7fbb88c89d3" className="text-textyellow">
                       Code of Conduct*
                     </Link>
                   </label>
