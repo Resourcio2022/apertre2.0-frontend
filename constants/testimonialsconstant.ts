@@ -32,5 +32,5 @@ export const testimonialsdata = [
         name: "-Harshavardhan Bajoria",
         title: "",
         pic: "https://utfs.io/f/SC1fS7AGgsX7BdSvoJ18Q2Z9yJ6Kbv5HGOWEMaS7ulNqm4s0"
-    },
+    }, 
 ];
