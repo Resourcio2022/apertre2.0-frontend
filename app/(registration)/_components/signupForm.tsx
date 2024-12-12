@@ -37,18 +37,18 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
 
   const schema = z.object({
     joinedDiscord: z.boolean().refine((val) => val, {
-      message: "You must join Discord."
+      message: "You must join Discord"
     }),
     rules: z.boolean().refine((val) => val, {
-      message: "You must accept the rules."
+      message: "You must accept the rules"
     }),
     codeOfConduct: z.boolean().refine((val) => val, {
-      message: "You must accept the code of conduct."
+      message: "You must accept the code of conduct"
     }),
     ...inputGroups.reduce((acc, group) => {
       group.fields.forEach((field) => {
         acc[field.name] = field.required
-          ? z.string().nonempty(`${field.placeholder || "Field"} is required.`)
+          ? z.string().nonempty(`${field.placeholder || "Field"} is required`)
           : z.string().optional();
       })
       return acc;
@@ -56,7 +56,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
     ...((additionalInputGroups || []).reduce((acc, group) => {
       group.fields.forEach((field) => {
         acc[field.name] = field.required
-          ? z.string().nonempty(`${field.placeholder || "Field"} is required.`)
+          ? z.string().nonempty(`${field.placeholder || "Field"} is required`)
           : z.string().optional();
       });
       return acc;
@@ -64,9 +64,10 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
   });
 
   const {
-    register,
     handleSubmit,
-    formState: { errors },
+    register,
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<Record<string, string>>({
     resolver: zodResolver(schema),
   });
@@ -246,40 +247,42 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
             }
 
             {/* Discord Section */}
-            <div className="flex justify-between gap-10 py-4">
-              <div className="flex items-center mt-10">
+            <div className="flex flex-col mt-10">
+              <div className="flex gap-1.5">
                 <input
                   type="checkbox"
                   id="joinedDiscord"
                   {...register("joinedDiscord")}
-                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
+                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                 />
-                <label htmlFor="joinedDiscord" className="text-sm text-white ml-1 text-nowrap">
+                <label htmlFor="joinedDiscord" className="text-sm text-white text-nowrap">
                   Joined Discord*
                 </label>
-                {errors.joinedDiscord && (
-                  <p className="text-red-500 text-xs mt-1">
-                    {errors.joinedDiscord?.message}
-                  </p>
-                )}
               </div>
+              {errors.joinedDiscord && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.joinedDiscord?.message}
+                </p>
+              )}
             </div>
 
             {/* Terms Section */}
             <div className="flex gap-6">
-              <div className="flex gap-1.5">
-                <input
-                  type="checkbox"
-                  id="rules"
-                  {...register("rules")}
-                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
-                />
-                <label htmlFor="rules" className="text-sm text-white">
-                  I have read{" "}
-                  <Link href="https://season-argon-ef5.notion.site/Open-Source-Event-Rules-and-Guidelines-12cff86c36f480bcb293faaba5c40a5e" className="text-textyellow" target="_blank">
-                    Rules and Guidelines*
-                  </Link>
-                </label>
+              <div className="flex flex-col">
+                <div className="flex gap-1.5">
+                  <input
+                    type="checkbox"
+                    id="rules"
+                    {...register("rules")}
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow"
+                  />
+                  <label htmlFor="rules" className="text-sm text-white">
+                    I have read{" "}
+                    <Link href="https://season-argon-ef5.notion.site/Open-Source-Event-Rules-and-Guidelines-12cff86c36f480bcb293faaba5c40a5e" className="text-textyellow" target="_blank">
+                      Rules and Guidelines*
+                    </Link>
+                  </label>
+                </div>
                 {errors.rules && (
                   <p className="text-red-500 text-xs mt-1">
                     {errors.rules?.message}
@@ -287,19 +290,21 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                 )}
               </div>
 
-              <div className="flex gap-1.5">
-                <input
-                  type="checkbox"
-                  id="codeOfConduct"
-                  {...register("codeOfConduct")}
-                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow checked:border-textyellow"
-                />
-                <label htmlFor="codeOfConduct" className="text-sm text-white">
-                  I have read{" "}
-                  <Link href="https://season-argon-ef5.notion.site/Code-of-Conduct-12cff86c36f4803c9ed6c7fbb88c89d3" className="text-textyellow" target="_blank">
-                    Code of Conduct*
-                  </Link>
-                </label>
+              <div className="flex flex-col">
+                <div className="flex gap-1.5">
+                  <input
+                    type="checkbox"
+                    id="codeOfConduct"
+                    {...register("codeOfConduct")}
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow"
+                  />
+                  <label htmlFor="codeOfConduct" className="text-sm text-white">
+                    I have read{" "}
+                    <Link href="https://season-argon-ef5.notion.site/Code-of-Conduct-12cff86c36f4803c9ed6c7fbb88c89d3" className="text-textyellow" target="_blank">
+                      Code of Conduct*
+                    </Link>
+                  </label>
+                </div>
                 {errors.codeOfConduct && (
                   <p className="text-red-500 text-xs mt-1">
                     {errors.codeOfConduct?.message}
@@ -312,6 +317,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
             <div className="flex w-full justify-center">
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="font-mokoto text-[24px] text-white bg-customgreen border-2 border-bordergreen rounded-md px-3 py-1 mt-5"
               >
                 SUBMIT
