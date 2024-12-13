@@ -38,31 +38,31 @@ export default function Hero() {
               <p className="mt-1">7RD MARCH - 5TH APRIL</p>
             </div>
             <Link
-                  href="#register"
-                  className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:scale-110 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_50px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-5px] w-fit scroll-smooth">
-                REGISTER
+              href="#register"
+              className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit scroll-smooth">
+              REGISTER
             </Link>
           </div>
           <p>Presented by</p>
-          <a href="https://resourcio.in" target="_blank" rel="noopener noreferrer" aria-label="Visit Resourcio Website">
-          <Image
-            src="/Resourcio_Logo.png"
-            alt="Resourcio Logo"
-            width={150}
-            height={150}
-            className="inline-block mr-2.5"
-            style={{ position: "relative", top: "20px" }}
-          />
-          </a>
-          <a href="https://gdg.community.dev/gdg-on-campus-academy-of-technology-hooghly-india/" target="_blank" rel="noopener noreferrer" aria-label="Visit GDG Website">
-          <Image
-            src="/gdglogo.svg"
-            alt="GDG Logo"
-            width={200}
-            height={150}
-            className="inline-block ml-2.5"
-          />
-          </a>
+          <Link href="https://resourcio.in" target="_blank" rel="noopener noreferrer" aria-label="Visit Resourcio Website">
+            <Image
+              src="/Resourcio_Logo.png"
+              alt="Resourcio Logo"
+              width={150}
+              height={150}
+              className="inline-block mr-2.5"
+              style={{ position: "relative", top: "20px" }}
+            />
+          </Link>
+          <Link href="https://gdg.community.dev/gdg-on-campus-academy-of-technology-hooghly-india/" target="_blank" rel="noopener noreferrer" aria-label="Visit GDG Website">
+            <Image
+              src="/gdglogo.svg"
+              alt="GDG Logo"
+              width={200}
+              height={150}
+              className="inline-block ml-2.5"
+            />
+          </Link>
         </div>
 
         <Model />
