@@ -13,7 +13,7 @@ interface CarouselProps {
 type Card = {
   src?: string;
   title?: string;
-  usertype?: string;
+  usertype: string;
   content: React.ReactNode;
   registerlink: string;
 };
@@ -22,7 +22,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -80,7 +80,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         <div
           className="flex w-full overflow-x-scroll py-10 md:py-20 scroll-smooth"
           ref={carouselRef}
-          // onScroll={checkScrollability}
+        // onScroll={checkScrollability}
         >
           <div
             className={cn(
