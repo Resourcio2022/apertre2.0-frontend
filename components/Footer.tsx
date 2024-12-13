@@ -93,9 +93,8 @@ const Footer = () => {
                   onMouseLeave={() => setHovered(false)}
                 >
                   <span
-                    className={`text-[16px] transition-opacity duration-500 ${
-                      hovered ? "opacity-0" : "opacity-100 delay-[900ms]"
-                    }`}
+                    className={`text-[16px] transition-opacity duration-500 ${hovered ? "opacity-0" : "opacity-100 delay-[900ms]"
+                      }`}
                   >
                     Checkout our previous season
                   </span>
@@ -104,16 +103,14 @@ const Footer = () => {
                     width={50}
                     height={50}
                     alt="Rocket"
-                    className={`absolute top-1/2 left-0 transform -translate-y-1/2 transition-transform duration-[2000ms] ease-in ${
-                      hovered
+                    className={`absolute top-1/2 left-0 transform -translate-y-1/2 transition-transform duration-[2000ms] ease-in ${hovered
                         ? "translate-x-[300px] opacity-100"
                         : "-translate-x-full opacity-0"
-                    }`}
+                      }`}
                   />
                   <span
-                    className={`absolute top-0 left-0 w-full h-full text-white flex items-center justify-center font-Poppins font-bold text-lg transition-opacity duration-75 ${
-                      hovered ? "opacity-100" : "opacity-0"
-                    } delay-1000`}
+                    className={`absolute top-0 left-0 w-full h-full text-white flex items-center justify-center font-Poppins font-bold text-lg transition-opacity duration-75 ${hovered ? "opacity-100" : "opacity-0"
+                      } delay-1000`}
                   >
                     <Link href="https://apertre.resourcio.in/" target="_blank">
                       <span className="border-b-[5px] border-yellow-500">

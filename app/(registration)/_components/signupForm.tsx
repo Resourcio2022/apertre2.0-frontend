@@ -7,11 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FaDiscord } from "react-icons/fa";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import { useGitHub } from "@/hooks/useGithubUser";
-import {
-  communityPartnerSignup,
-  evangelistSignup,
-  Role,
-} from "../_utils/apiCalls";
+import { communityPartnerSignup, evangelistSignup, Role } from "../_utils/apiCalls";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -44,8 +40,8 @@ export default function SignupForm({
   firstheading,
   secondheading,
 }: SignupFormProps) {
-  const { clerk_userId, email, githubUsername, isSignedIn } = useGitHub();
   const router = useRouter();
+  const { clerk_userId, email, githubUsername, isSignedIn } = useGitHub();
 
   const schema = z.object({
     joinedDiscord: z.boolean().refine((val) => val, {
@@ -218,9 +214,7 @@ export default function SignupForm({
                       {...register(field.name)}
                       type={field.type}
                       placeholder={field.placeholder}
-                      className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none ${
-                        field.classname ?? ""
-                      } text-textyellow`}
+                      className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""} text-textyellow`}
                     />
                     {errors[field.name] && (
                       <p className="text-red-500 text-xs mt-1">
@@ -254,9 +248,8 @@ export default function SignupForm({
                         {...register(field.name)}
                         type={field.type}
                         placeholder={field.placeholder}
-                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${
-                          field.classname ?? ""
-                        } outline-none text-textyellow`}
+                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""
+                          } outline-none text-textyellow`}
                       />
                       {errors[field.name] && (
                         <p className="text-red-500 text-xs mt-1">

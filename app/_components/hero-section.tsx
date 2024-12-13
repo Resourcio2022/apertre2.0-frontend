@@ -77,7 +77,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-          <Model />
+        <Model />
       </div>
       <div className="hidden md:block md:absolute md:bottom-0 md:right-0 md:mb-0 md:mr-0 h-10 md:h-96">
         <Image src="/astronaut.png" alt="Astronaut" width={200} height={200} />
