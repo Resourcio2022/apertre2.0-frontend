@@ -3,7 +3,7 @@ import { footerLinks, supportLinks } from "@/constants/footer-constant";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaFacebook, FaTwitter, FaDiscord } from "react-icons/fa";
 
 interface socialLink {
     [key: string]: {
@@ -29,7 +29,7 @@ const Footer = () => {
             { icon: <FaTwitter />, href: "https://x.com/apertre25" },
         ],
         resourcio: [
-            { icon: <FaWhatsapp />, href: "https://www.whatsapp.com/channel/0029Va9B4nV2phHFjixIKj0G" },
+            { icon: <FaDiscord />, href: "https://discord.gg/4Jvs7vusND" },
             { icon: <FaInstagram />, href: "https://www.instagram.com/resourcio_/" },
             { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/resourcioc/posts/?feedView=all" },
             { icon: <FaFacebook />, href: "https://www.facebook.com/resourcio/" },
@@ -45,7 +45,7 @@ const Footer = () => {
     } as socialLink;
 
     return (
-        <div className="bg-footer w-full h-fit flex flex-col pt-20 pb-10 px-5 md:px-20 bottom-0">
+        <div className="bg-footer w-full h-fit flex flex-col pt-20 pb-10 px-5 md:px-20 bottom-0 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between gap-7">
 
                 <div className="flex flex-col gap-5 items-center">
@@ -57,7 +57,11 @@ const Footer = () => {
                     />
                     <div className="flex gap-7 text-white">
                         {socialLinks.apertre.map((social, index) => (
-                            <Link href={social.href} key={index}>
+                            <Link
+                                href={social.href}
+                                key={index}
+                                className="transition-all duration-300 hover:scale-110 hover:text-yellow-500 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] hover:animate-bounce hover:rotate-6"
+                            >
                                 {social.icon}
                             </Link>
                         ))}
@@ -99,7 +103,7 @@ const Footer = () => {
                 </div>
 
 
-                <div className="flex gap-7 md:gap-16 justify-center">
+                <div className="flex gap-7 md:gap-16 justify-center font-mokoto">
                     {[footerLinks, supportLinks].map((links, idx) => (
                         <div
                             key={idx}
@@ -109,7 +113,7 @@ const Footer = () => {
                                 <Link
                                     href={link.href}
                                     key={index}
-                                    className="text-white font-Poppins font-normal text-sm md:text-lg"
+                                    className="text-white font-Poppins font-normal text-sm md:text-lg transition-all duration-300 hover:text-yellow-500 hover:underline hover:underline-offset-4 hover:scale-105 hover:translate-x-1"
                                 >
                                     {link.title}
                                 </Link>
@@ -133,7 +137,11 @@ const Footer = () => {
                             />
                             <div className="flex justify-center gap-7 text-white">
                                 {item.socials.map((social, index) => (
-                                    <Link href={social.href} key={index}>
+                                    <Link
+                                        href={social.href}
+                                        key={index}
+                                        className="transition-all duration-300 hover:scale-125 hover:text-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_50px_rgba(255,223,0,0.8)] hover:animate-pulse hover:rotate-[15deg]"
+                                    >
                                         {social.icon}
                                     </Link>
                                 ))}
