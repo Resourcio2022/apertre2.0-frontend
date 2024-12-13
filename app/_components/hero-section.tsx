@@ -19,7 +19,7 @@ export default function Hero() {
     <section className="bg-black text-white min-h-screen flex items-center px-8 md:px-12 font-mokoto relative">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full">
         <div className="lg:w-1/2 space-y-8">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight lg:mt-20">
+          <h1 className="text-3xl md:text-6xl font-bold leading-tight lg:mt-20">
             THE
             <span className="text-textyellow"> OPEN SOURCE</span>
             <br />
@@ -39,35 +39,47 @@ export default function Hero() {
             </div>
             <Link
               href="#register"
-              className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit scroll-smooth">
+              className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit scroll-smooth"
+            >
               REGISTER
             </Link>
           </div>
           <p>Presented by</p>
-          <Link href="https://resourcio.in" target="_blank" rel="noopener noreferrer" aria-label="Visit Resourcio Website">
-            <Image
-              src="/Resourcio_Logo.png"
-              alt="Resourcio Logo"
-              width={150}
-              height={150}
-              className="inline-block mr-2.5"
-              style={{ position: "relative", top: "20px" }}
-            />
-          </Link>
-          <Link href="https://gdg.community.dev/gdg-on-campus-academy-of-technology-hooghly-india/" target="_blank" rel="noopener noreferrer" aria-label="Visit GDG Website">
-            <Image
-              src="/gdglogo.svg"
-              alt="GDG Logo"
-              width={200}
-              height={150}
-              className="inline-block ml-2.5"
-            />
-          </Link>
+          <div className="flex flex-row">
+            <Link
+              href="https://resourcio.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Resourcio Website"
+            >
+              <Image
+                src="/Resourcio_Logo.png"
+                alt="Resourcio Logo"
+                width={150}
+                height={150}
+                className="inline-block mr-2.5"
+                style={{ position: "relative", top: "20px" }}
+              />
+            </Link>
+            <Link
+              href="https://gdg.community.dev/gdg-on-campus-academy-of-technology-hooghly-india/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit GDG Website"
+            >
+              <Image
+                src="/gdglogo.svg"
+                alt="GDG Logo"
+                width={200}
+                height={150}
+                className="inline-block ml-2.5"
+              />
+            </Link>
+          </div>
         </div>
-
         <Model />
       </div>
-      <div className="absolute bottom-0 right-0 mb-0 mr-0">
+      <div className="hidden md:block md:absolute md:bottom-0 md:right-0 md:mb-0 md:mr-0 h-10 md:h-96">
         <Image src="/astronaut.png" alt="Astronaut" width={200} height={200} />
       </div>
       {stars.map((star) => (

@@ -9,13 +9,14 @@ import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import { useGitHub } from "@/hooks/useGithubUser";
 import { communityPartnerSignup, evangelistSignup, Role } from "../_utils/apiCalls";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const DISCORD_LINK = "https://discord.gg/VKKJzgnrzm";
 
 export interface InputField {
   name: string;
   type: string;
-  placeholder: string
+  placeholder: string;
   required: boolean;
   classname?: string;
 }
@@ -32,35 +33,42 @@ interface SignupFormProps {
   secondheading?: string;
 }
 
-export default function SignupForm({ words, inputGroups, additionalInputGroups, firstheading, secondheading }: SignupFormProps) {
+export default function SignupForm({
+  words,
+  inputGroups,
+  additionalInputGroups,
+  firstheading,
+  secondheading,
+}: SignupFormProps) {
+  const router = useRouter();
   const { clerk_userId, email, githubUsername, isSignedIn } = useGitHub();
 
   const schema = z.object({
     joinedDiscord: z.boolean().refine((val) => val, {
-      message: "You must join Discord"
+      message: "You must join Discord",
     }),
     rules: z.boolean().refine((val) => val, {
-      message: "You must accept the rules"
+      message: "You must accept the rules",
     }),
     codeOfConduct: z.boolean().refine((val) => val, {
-      message: "You must accept the code of conduct"
+      message: "You must accept the code of conduct",
     }),
     ...inputGroups.reduce((acc, group) => {
       group.fields.forEach((field) => {
         acc[field.name] = field.required
           ? z.string().nonempty(`${field.placeholder || "Field"} is required`)
           : z.string().optional();
-      })
+      });
       return acc;
     }, {} as Record<string, z.ZodTypeAny>),
-    ...((additionalInputGroups || []).reduce((acc, group) => {
+    ...(additionalInputGroups || []).reduce((acc, group) => {
       group.fields.forEach((field) => {
         acc[field.name] = field.required
           ? z.string().nonempty(`${field.placeholder || "Field"} is required`)
           : z.string().optional();
       });
       return acc;
-    }, {} as Record<string, z.ZodTypeAny>))
+    }, {} as Record<string, z.ZodTypeAny>),
   });
 
   const {
@@ -79,9 +87,9 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
     }
 
     if (!clerk_userId || !email || !githubUsername) {
-      toast.message('Github', {
-        description: 'Github username or primary email does not exist',
-      })
+      toast.message("Github", {
+        description: "Github username or primary email does not exist",
+      });
       return;
     }
 
@@ -104,15 +112,15 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
             data.discordUsername.trim(),
             data.twitterUsername.trim(),
             data.collegeName.trim()
-          )
+          );
 
           toast.success(response);
 
           setTimeout(() => {
             reset();
-          }, 1000)
-        }
-        catch (err: any) {
+            router.push("/");
+          }, 1500);
+        } catch (err: any) {
           toast.error(err.message);
         }
         break;
@@ -134,15 +142,15 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
             data.communityName.trim(),
             data.communityUrl.trim(),
             parseInt(data.communityStrength.trim())
-          )
+          );
 
           toast.success(response);
 
           setTimeout(() => {
             reset();
-          }, 1000)
-        }
-        catch (err: any) {
+            router.push("/");
+          }, 1500);
+        } catch (err: any) {
           toast.error(err.message);
         }
         break;
@@ -176,7 +184,6 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
 
       {/* Main Form Container */}
       <div className="relative flex flex-col md:flex-row gap-12 bg-customtransparent rounded-lg shadow-md px-10 py-7 z-50">
-
         <div className="flex flex-col justify-between gap-10">
           {/* HEADER */}
           <div className="font-mokoto text-3xl flex text-nowrap text-textyellow">
@@ -184,7 +191,10 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
             <TypewriterEffectSmooth words={words} />
           </div>
           {/* Form Section */}
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 font-Poppins">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-3 font-Poppins"
+          >
             {/* Primary Fields */}
 
             {firstheading && (
@@ -199,10 +209,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                 className="flex gap-7 w-full justify-between"
               >
                 {group.fields.map((field, fieldIndex) => (
-                  <div
-                    key={fieldIndex}
-                    className={`${field.classname ?? ""}`}
-                  >
+                  <div key={fieldIndex} className={`${field.classname ?? ""}`}>
                     <input
                       {...register(field.name)}
                       type={field.type}
@@ -241,7 +248,8 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                         {...register(field.name)}
                         type={field.type}
                         placeholder={field.placeholder}
-                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""} outline-none text-textyellow`}
+                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""
+                          } outline-none text-textyellow`}
                       />
                       {errors[field.name] && (
                         <p className="text-red-500 text-xs mt-1">
@@ -251,8 +259,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                     </div>
                   ))}
                 </div>
-              ))
-            }
+              ))}
 
             {/* Discord Section */}
             <div className="flex flex-col mt-10">
@@ -263,7 +270,10 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                   {...register("joinedDiscord")}
                   className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                 />
-                <label htmlFor="joinedDiscord" className="text-sm text-white text-nowrap">
+                <label
+                  htmlFor="joinedDiscord"
+                  className="text-sm text-white text-nowrap"
+                >
                   Joined Discord*
                 </label>
               </div>
@@ -286,7 +296,11 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                   />
                   <label htmlFor="rules" className="text-sm text-white">
                     I have read{" "}
-                    <Link href="https://season-argon-ef5.notion.site/Open-Source-Event-Rules-and-Guidelines-12cff86c36f480bcb293faaba5c40a5e" className="text-textyellow" target="_blank">
+                    <Link
+                      href="https://season-argon-ef5.notion.site/Open-Source-Event-Rules-and-Guidelines-12cff86c36f480bcb293faaba5c40a5e"
+                      className="text-textyellow"
+                      target="_blank"
+                    >
                       Rules and Guidelines*
                     </Link>
                   </label>
@@ -308,7 +322,11 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                   />
                   <label htmlFor="codeOfConduct" className="text-sm text-white">
                     I have read{" "}
-                    <Link href="https://season-argon-ef5.notion.site/Code-of-Conduct-12cff86c36f4803c9ed6c7fbb88c89d3" className="text-textyellow" target="_blank">
+                    <Link
+                      href="https://season-argon-ef5.notion.site/Code-of-Conduct-12cff86c36f4803c9ed6c7fbb88c89d3"
+                      className="text-textyellow"
+                      target="_blank"
+                    >
                       Code of Conduct*
                     </Link>
                   </label>
@@ -335,16 +353,17 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
         </div>
 
         {/* Divider */}
-        <Image src="/line.svg" width={1} height={524} alt="" className="opacity-100" />
+        <Image
+          src="/line.svg"
+          width={1}
+          height={524}
+          alt=""
+          className="opacity-100"
+        />
 
         {/* QR Code Section */}
         <div className="flex flex-col items-center justify-center gap-10">
-          <Image
-            src="/apertrebiglogo.svg"
-            width={218}
-            height={6}
-            alt="logo"
-          />
+          <Image src="/apertrebiglogo.svg" width={218} height={6} alt="logo" />
           <div className="flex flex-col items-center gap-4">
             <Image
               src="/discordQR.png"
@@ -360,7 +379,8 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
             <Link
               href={DISCORD_LINK}
               target="_blank"
-              className="flex items-center bg-customviolet rounded-lg text-white w-fit px-4 py-2 font-bold gap-2">
+              className="flex items-center bg-customviolet rounded-lg text-white w-fit px-4 py-2 font-bold gap-2"
+            >
               Click Me
               <FaDiscord />
             </Link>
@@ -369,4 +389,4 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
       </div>
     </div>
   );
-};
+}
