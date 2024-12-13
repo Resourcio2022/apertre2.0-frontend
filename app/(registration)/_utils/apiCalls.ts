@@ -3,7 +3,7 @@ export type Role = 'mentee' | 'mentor' | 'evangelist' | 'community partner' | 'p
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function evangelistSignup(clerk_userId: string, role: Role, email: string, username: string, fullname: string, address: string, phoneNumber: string, linkedinUrl: string, instagramUsername: string, discordUsername: string, twitterUsername: string | undefined, collegeName: string): Promise<string> {
-    let payload = {
+    const payload = {
         clerk_userId,
         role,
         email,

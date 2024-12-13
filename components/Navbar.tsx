@@ -29,23 +29,21 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 bg-black left-0 w-full text-white z-[999]">
-      <div className="flex items-center justify-between px-6 lg:px-20 py-6">
+    <nav className="sticky top-0 left-0 right-0 h-20 bg-black w-full text-white z-[999]">
+      <div className="flex items-center justify-between px-6 lg:px-20 py-6 max-h-full">
         {/* Logo aligned to the left */}
         <Link href="/" className="flex items-center">
-          <div className="flex items-center">
-            <Image
-              src="/Logo_primary.svg"
-              alt="Logo"
-              width={120}
-              height={120}
-            />
-          </div>
+          <Image
+            src="/Logo_primary.svg"
+            alt="Logo"
+            width={120}
+            height={120}
+          />
         </Link>
 
         {/* Navigation links aligned to the right */}
 
-        <div className="hidden lg:flex items-center justify-end gap-8 flex-grow">
+        <div className="hidden lg:flex items-center justify-end gap-8">
           <div className="flex flex-wrap justify-center gap-4 text-sm md:gap-6 lg:gap-8 md:text-base font-mokoto">
             {NAV_LINKS.map((item, index) => (
               <Link key={index} href={item.url} className="relative group scroll-smooth">
@@ -58,9 +56,9 @@ export default function Navbar() {
           <div className="flex items-center">
             {loading ? (
               <Preloader
-                bgHeight="20%"
-                width="2rem"
-                height="2rem"
+                bgHeight="10%"
+                width="1.4rem"
+                height="1.4rem"
                 color="#ffffff"
               />
             ) : (
@@ -87,10 +85,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div
-        className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"
-          } bg-black p-6 absolute top-full left-0 w-full`}
-      >
+      <div className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"} bg-black p-6 absolute top-full left-0 w-full`}>
         {NAV_LINKS.map((item, index) => (
           <Link
             key={index}
@@ -101,6 +96,30 @@ export default function Navbar() {
             <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
           </Link>
         ))}
+
+        <div className="flex items-center">
+          {loading ? (
+            <Preloader
+              bgHeight="10%"
+              width="2rem"
+              height="2rem"
+              color="#ffffff"
+            />
+          ) : (
+            <>
+              <SignedOut>
+                <SignInButton>
+                  <button className="px-4 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition font-mokoto">
+                    Sign In
+                  </button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );

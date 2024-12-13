@@ -22,7 +22,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -80,7 +80,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
-          // onScroll={checkScrollability}
+        // onScroll={checkScrollability}
         >
           <div
             className={cn(
@@ -88,7 +88,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             )}
           ></div>
 
-          <div className={cn("flex flex-row justify-start gap-4", " mx-auto")}>
+          <div className={cn("flex flex-col md:flex-row justify-start gap-4", " mx-auto")}>
             {items.map((item, index) => (
               <motion.div
                 initial={{
