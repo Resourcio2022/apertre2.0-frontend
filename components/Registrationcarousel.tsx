@@ -78,7 +78,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll py-10 md:py-20 scroll-smooth"
           ref={carouselRef}
         // onScroll={checkScrollability}
         >
@@ -106,7 +106,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
               >
                 {item}
               </motion.div>
@@ -129,28 +128,26 @@ export const Card = ({
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        className="rounded-lg border-2 border-textyellow h-80 w-56 md:h-full bg-card md:w-[466px] overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-lg border-2 border-textyellow h-72 w-[90%] md:w-[450px] bg-card overflow-hidden relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="relative z-40 p-8 px-4 w-full ">
+        <div className="z-40 px-5 py-6 w-full h-full flex flex-col justify-between">
           <motion.p
             layoutId={layout ? `usertype-${card.usertype}` : undefined}
-            className="text-textyellow font-mokoto font-normal text-lg md:text-2xl text-left flex flex-col gap-3"
+            className="text-textyellow font-mokoto font-normal text-lg md:text-2xl flex flex-col items-start gap-3"
           >
             APPLY AS
-            <span className="text-textyellow font-mokoto text-lg md:text-4xl">
-              {card.usertype}
-            </span>
+            <span className="md:text-4xl">{card.usertype}</span>
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-sm md:text-base font-normal text-left w-full font-Poppins mt-2"
+            className="text-white text-sm md:text-base font-normal text-left w-full font-Poppins"
           >
             {card.content}
           </motion.p>
           <Link
             href={card.registerlink}
-            className="text-textyellow font-mokoto text-xl mt-4 flex w-fit justify-start bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4]"
+            className="text-textyellow font-mokoto text-xl w-fit bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4] hover:text-gray-400"
           >
             REGISTER
           </Link>
