@@ -10,8 +10,8 @@ export default function FAQ() {
     };
 
     return (
-        <div className="min-h-screen bg-black bg-cover bg-no-repeat bg-faq text-white flex flex-col justify-center p-10 md:p-32">
-            <h2 className="text-nowrap text-lg md:text-6xl font-bold text-yellow-400 mb-8 text-left font-mokoto ">
+        <section className="min-h-screen bg-black bg-cover bg-no-repeat bg-faq text-white flex flex-col justify-center p-10 md:p-32 font-mokoto">
+            <h2 className="text-lg md:text-6xl font-bold text-yellow-400 mb-8 text-center md:text-left font-mokoto break-words px-4">
                 FREQUENTLY ASKED QUESTIONS
             </h2>
             <div className="w-full space-y-7 md:space-y-4">
@@ -51,6 +51,6 @@ export default function FAQ() {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }

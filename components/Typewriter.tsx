@@ -21,6 +21,7 @@ export const TypewriterEffect = ({ words, className, cursorClassName }: {
 
     const [scope, animate] = useAnimate();
     const isInView = useInView(scope);
+    
     useEffect(() => {
         if (isInView) {
             animate(

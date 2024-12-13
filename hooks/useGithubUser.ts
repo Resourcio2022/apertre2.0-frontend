@@ -3,27 +3,32 @@ import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 
 export const useGitHub = () => {
-    const { isLoaded, isSignedIn, user } = useUser();
-    const [githubUsername, setGitHubUsername] = useState<string | null>(null);
-    const [email, setEmail] = useState<string>('');
-    const [loading, setLoading] = useState(true);
+  const { isLoaded, isSignedIn, user } = useUser();
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchGitHubUsername = () => {
-            if (isLoaded && isSignedIn && user) {
-                const githubAccount = user.username
-                const emailAddress = user.primaryEmailAddress?.emailAddress
-                if (!emailAddress) {
-                    return
-                }
-                setGitHubUsername(githubAccount);
-                setEmail(emailAddress);
-            }
-            setLoading(false);
-        };
+  const [githubUsername, setGitHubUsername] = useState<string>();
+  const [email, setEmail] = useState<string>();
+  const [clerk_userId, setClerk_userId] = useState<string>();
 
-        fetchGitHubUsername();
-    }, [isLoaded, isSignedIn, user]);
+  useEffect(() => {
+    const fetchGitHubUsername = () => {
+      if (isLoaded && isSignedIn && user) {
+        const githubUsername = user.username
+        const emailAddress = user.primaryEmailAddress?.emailAddress
+        const user_Id = user.id
 
-    return { githubUsername, email, loading, isSignedIn };
+        if (!githubUsername || !emailAddress) {
+          return
+        }
+        setGitHubUsername(githubUsername);
+        setEmail(emailAddress);
+        setClerk_userId(user_Id)
+      }
+      setLoading(false);
+    };
+
+    fetchGitHubUsername();
+  }, [isLoaded, isSignedIn, user]);
+
+  return { githubUsername, email, clerk_userId, loading, isSignedIn };
 };
