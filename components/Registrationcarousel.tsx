@@ -22,7 +22,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => { },
+  onCardClose: () => {},
   currentIndex: 0,
 });
 
@@ -80,7 +80,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         <div
           className="flex w-full overflow-x-scroll py-10 md:py-20 scroll-smooth"
           ref={carouselRef}
-        // onScroll={checkScrollability}
+          // onScroll={checkScrollability}
         >
           <div
             className={cn(
@@ -88,7 +88,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             )}
           ></div>
 
-          <div className={cn("flex flex-col md:flex-row justify-start gap-4", " mx-auto")}>
+          <div
+            className={cn(
+              "flex flex-col md:flex-row justify-start gap-4",
+              " mx-auto"
+            )}
+          >
             {items.map((item, index) => (
               <motion.div
                 initial={{
@@ -128,7 +133,7 @@ export const Card = ({
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        className="rounded-lg border-2 border-textyellow h-72 w-[90%] md:w-[450px] bg-card overflow-hidden relative z-10"
+        className="rounded-lg border-2 border-textyellow h-72 w-[100%] md:w-[450px] bg-card overflow-hidden relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="z-40 px-5 py-6 w-full h-full flex flex-col justify-between">
@@ -137,11 +142,15 @@ export const Card = ({
             className="text-textyellow font-mokoto font-normal text-lg md:text-2xl flex flex-col items-start gap-3"
           >
             APPLY AS
-            <span className="md:text-4xl">{card.usertype}</span>
+            <span className="md:text-4xl text-lg flex flex-col md:flex-row items-start">
+              {card.usertype.split(" ").map((word, index) => (
+                <span key={index}>{word}&nbsp;</span>
+              ))}
+            </span>{" "}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-sm md:text-base font-normal text-left w-full font-Poppins"
+            className="text-white text-sm md:text-base font-normal text-left w-full font-Poppins flex-nowrap mb-2"
           >
             {card.content}
           </motion.p>
