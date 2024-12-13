@@ -161,7 +161,7 @@ export default function SignupForm({
   };
 
   return (
-    <div className="relative w-full flex items-center justify-center py-5 px-5">
+    <div className="relative w-full flex items-center justify-center py-5 px-2 sm:px-5">
       {/* Background Video */}
       <video
         autoPlay
@@ -183,10 +183,10 @@ export default function SignupForm({
       />
 
       {/* Main Form Container */}
-      <div className="relative flex flex-col md:flex-row gap-12 bg-customtransparent rounded-lg shadow-md px-10 py-7 z-50">
+      <div className="relative flex flex-col lg:flex-row gap-6 lg:gap-12 bg-customtransparent rounded-lg shadow-md px-4 sm:px-6 lg:px-10 py-5 lg:py-7 z-50 w-full max-w-7xl">
         <div className="flex flex-col justify-between gap-10">
           {/* HEADER */}
-          <div className="font-mokoto text-3xl flex text-nowrap text-textyellow">
+          <div className="font-mokoto text-xl sm:text-2xl lg:text-3xl flex flex-wrap lg:flex-nowrap text-textyellow">
             <span>&gt;_&nbsp;.&nbsp;.&nbsp;LOGIN AS A&nbsp;</span>
             <TypewriterEffectSmooth words={words} />
           </div>
@@ -206,21 +206,49 @@ export default function SignupForm({
             {inputGroups.map((group, groupIndex) => (
               <div
                 key={groupIndex}
-                className="flex gap-7 w-full justify-between"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-7 w-full justify-between"
               >
                 {group.fields.map((field, fieldIndex) => (
                   <div key={fieldIndex} className={`${field.classname ?? ""}`}>
-                    <input
-                      {...register(field.name)}
-                      type={field.type}
-                      placeholder={field.placeholder}
-                      className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""} text-textyellow`}
-                    />
-                    {errors[field.name] && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors[field.name]?.message}
-                      </p>
+                    {field.name === "address" && (
+                      <div className="w-full">
+                        <input
+                          {...register(field.name)}
+                          type={field.type}
+                          placeholder={field.placeholder}
+                          className={`w-full bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none text-textyellow`}
+                        />
+                        {errors[field.name] && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors[field.name]?.message}
+                          </p>
+                        )}
+                      </div>
                     )}
+                    {field.name === "linkedinUrl" && (
+                      <div className="w-full">
+                        <input
+                          {...register(field.name)}
+                          type={field.type}
+                          placeholder={field.placeholder}
+                          className={`w-full bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none text-textyellow`}
+                        />
+                        {errors[field.name] && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors[field.name]?.message}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                    {field.name !== "address" && field.name !== "linkedinUrl" && (
+                      <input
+                        {...register(field.name)}
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        className={`w-full sm:w-auto bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""} text-textyellow`}
+                      />
+                    )}
+                    
                   </div>
                 ))}
               </div>
@@ -237,7 +265,7 @@ export default function SignupForm({
               additionalInputGroups.map((group, groupIndex) => (
                 <div
                   key={groupIndex}
-                  className="flex gap-7 w-full justify-between"
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-7 w-full justify-between"
                 >
                   {group.fields.map((field, fieldIndex) => (
                     <div
@@ -248,7 +276,7 @@ export default function SignupForm({
                         {...register(field.name)}
                         type={field.type}
                         placeholder={field.placeholder}
-                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""
+                        className={`w-full sm:w-auto bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""
                           } outline-none text-textyellow`}
                       />
                       {errors[field.name] && (
@@ -285,7 +313,7 @@ export default function SignupForm({
             </div>
 
             {/* Terms Section */}
-            <div className="flex gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <div className="flex flex-col">
                 <div className="flex gap-1.5">
                   <input
@@ -358,19 +386,19 @@ export default function SignupForm({
           width={1}
           height={524}
           alt=""
-          className="opacity-100"
+          className="opacity-100 hidden lg:block"
         />
 
         {/* QR Code Section */}
-        <div className="flex flex-col items-center justify-center gap-10">
+        <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 mt-6 lg:mt-0">
           <Image src="/apertrebiglogo.svg" width={218} height={6} alt="logo" />
           <div className="flex flex-col items-center gap-4">
             <Image
               src="/discordQR.png"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               alt="apertre"
-              className="rounded-lg"
+              className="rounded-lg w-[150px] h-[150px] sm:w-[200px] sm:h-[200px]"
             />
             <span className="font-Poppins text-white text-center font-bold">
               Scan QR to join the Discord server
@@ -390,3 +418,4 @@ export default function SignupForm({
     </div>
   );
 }
+
