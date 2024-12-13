@@ -13,18 +13,18 @@ export default function Testimonials() {
                     {testimonialsdata.map((item, idx) => (
                         <li
                             key={item.name}
-                            className={`w-[320px] h-full relative rounded-r-[21px] mx-14 border-r-4 border-textyellow bg-testcard bg-cover bg-no-repeat flex-shrink-0  pl-20 pr-3 py-6 ${idx % 2 === 0 ? "ml-auto" : "mr-auto"}`}
+                            className={`w-[320px] h-full relative rounded-r-[21px] mx-14 border-r-4 border-textyellow bg-testcard bg-cover bg-no-repeat flex-shrink-0 pl-20 pr-3 py-6 ${idx % 2 === 0 ? "ml-auto" : "mr-auto"}`}
                         >
                             <div className="relative top-0 right-40 bg-gray-800 border-4 border-yellow-500 rounded-full w-[150px] h-[150px] overflow-hidden">
                                 <Image
                                     src={item.pic}
                                     alt={item.name}
-                                    layout="fill"
-                                    objectFit="cover"
+                                    height={150}
+                                    width={150}
                                     className="rounded-full"
                                 />
                             </div>
-                            <blockquote className="flex flex-col  pl-7 items-center w-full h-full z-50 -mt-36 pr-4">
+                            <blockquote className="flex flex-col pl-7 items-center w-full h-full z-50 -mt-36 pr-4">
                                 <div
                                     aria-hidden="true"
                                     className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
@@ -49,7 +49,7 @@ export default function Testimonials() {
                 <InfiniteMovingCards
                     items={testimonialsdata}
                     direction="right"
-                    speed="slow"
+                    speed="normal"
                 />
             </div>
         </section>

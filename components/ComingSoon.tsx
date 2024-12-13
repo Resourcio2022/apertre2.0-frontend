@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import image1 from "../public/rocket_urchhe.gif"
+
 export default function RocketComingSoon() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black p-4">
@@ -9,7 +10,7 @@ export default function RocketComingSoon() {
           alt="Animated rocket logo"
           fill
           className="object-contain"
-          
+
           unoptimized
         />
       </div>

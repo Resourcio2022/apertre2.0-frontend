@@ -107,6 +107,10 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
           )
 
           toast.success(response);
+
+          setTimeout(() => {
+            reset();
+          }, 1000)
         }
         catch (err: any) {
           toast.error(err.message);
@@ -133,6 +137,10 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
           )
 
           toast.success(response);
+
+          setTimeout(() => {
+            reset();
+          }, 1000)
         }
         catch (err: any) {
           toast.error(err.message);
