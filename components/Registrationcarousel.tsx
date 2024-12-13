@@ -143,7 +143,7 @@ export const Card = ({
           >
             APPLY AS
             <span className="md:text-4xl text-lg flex flex-col md:flex-row items-start">
-              {card.usertype.split(" ").map((word, index) => (
+              {card.usertype?.split(" ").map((word, index) => (
                 <span key={index}>{word}&nbsp;</span>
               ))}
             </span>{" "}
