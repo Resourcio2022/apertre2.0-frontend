@@ -13,7 +13,7 @@ export default function Registration() {
           "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
       }}
     >
-      <h2 className=" text-textyellow pl-4 mx-auto font-normal text-2xl md:text-6xl  font-mokoto">
+      <h2 className="text-textyellow mx-auto font-normal text-2xl md:text-6xl font-mokoto text-center md:text-left">
         Registrations
       </h2>
       <Carousel items={cards} />
