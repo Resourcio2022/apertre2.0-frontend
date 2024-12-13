@@ -77,7 +77,7 @@ function Model() {
                     "--model-viewer-background-color": "transparent",
                 } as CustomCSSProperties
                 }
-                className="w-[250px] sm:w-[350px] md:w-[550px] lg:w-[600px] xl:w-[700px] h-[250px] sm:h-[350px] md:h-[550px] lg:h-[600px] xl:h-[700px]"
+                className="hidden md:block w-[250px] sm:w-[350px] md:w-[550px] lg:w-[600px] xl:w-[700px] h-[250px] sm:h-[350px] md:h-[550px] lg:h-[600px] xl:h-[700px]"
                 shadow-intensity="1"
                 exposure="1.0"
                 lighting="neutral"
