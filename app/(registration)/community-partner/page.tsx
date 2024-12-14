@@ -21,7 +21,7 @@ const page = () => {
     },
     {
       fields: [
-        { name: "address", type: "text", placeholder: "Address", required: true, classname: "w-full" },
+        { name: "address", type: "text", placeholder: "Address", required: true },
       ] as InputField[]
     }
   ]
@@ -35,7 +35,7 @@ const page = () => {
     },
     {
       fields: [
-        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true, classname: "w-full" },
+        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true },
       ] as InputField[],
     },
     {
@@ -46,12 +46,12 @@ const page = () => {
     },
     {
       fields: [
-        { name: "communityUrl", type: "url", placeholder: "Community website url", required: true, classname: "w-full" },
+        { name: "communityUrl", type: "url", placeholder: "Community website url", required: true },
       ] as InputField[],
     },
     {
       fields: [
-        { name: "expectation", type: "text", placeholder: "What are your expectation from this partnership? ", required: false, classname: "w-full" },
+        { name: "expectation", type: "text", placeholder: "What are your expectation from this partnership? ", required: false },
       ] as InputField[],
     },
   ];

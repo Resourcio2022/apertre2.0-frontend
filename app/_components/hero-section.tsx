@@ -82,7 +82,7 @@ export default function Hero() {
           alt={`Star ${star.id}`}
           width={star.size}
           height={star.size}
-          className="absolute transition-transform duration-300 hover:scale-110 hover:filter hover:brightness-200 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hidden md:block -z-0 animate-pulse opacity-80 animate-zoom"
+          className="absolute transition-transform duration-300 hover:scale-110 hover:filter hover:brightness-200 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hidden md:block -z-0 animate-pulse opacity-80"
           style={{ left: star.left, top: star.top, animationDelay: `${star.id * 0.1}s` }}
         />
       ))}
