@@ -18,12 +18,12 @@ const Page = () => {
     },
     {
       fields: [
-        { name: "address", type: "text", placeholder: "Address", required: true, classname: "w-full" },
+        { name: "address", type: "text", placeholder: "Address", required: true },
       ] as InputField[]
     },
     {
       fields: [
-        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true, classname: "w-full" },
+        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true },
       ] as InputField[]
     },
     {

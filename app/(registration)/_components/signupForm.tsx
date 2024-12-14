@@ -18,7 +18,6 @@ export interface InputField {
   type: string;
   placeholder: string;
   required: boolean;
-  classname?: string;
 }
 
 interface InputGroup {
@@ -190,13 +189,11 @@ export default function SignupForm({
             <span>&gt;_&nbsp;.&nbsp;.&nbsp;LOGIN AS A&nbsp;</span>
             <TypewriterEffectSmooth words={words} />
           </div>
-          {/* Form Section */}
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-3 font-Poppins md:min-w-[38rem]"
           >
             {/* Primary Fields */}
-
             {firstheading && (
               <span className="text-left font-Poppins text-xl text-gray-400">
                 {firstheading}
@@ -206,53 +203,29 @@ export default function SignupForm({
             {inputGroups.map((group, groupIndex) => (
               <div
                 key={groupIndex}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-7 lg:justify-between"
+                className="flex flex-col gap-4 md:flex-row md:gap-7 w-full"
               >
                 {group.fields.map((field, fieldIndex) => (
-                  <div key={fieldIndex} className={`${field.classname ?? ""}`}>
-                    {field.name === "address" && (
-                      <div className="w-full">
-                        <input
-                          {...register(field.name)}
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className={`w-full bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none text-textyellow`}
-                        />
-                        {errors[field.name] && (
-                          <p className="text-red-500 text-xs mt-1">
-                            {errors[field.name]?.message}
-                          </p>
-                        )}
-                      </div>
+                  <div
+                    key={fieldIndex}
+                    className={`w-full ${group.fields.length === 1 ? 'md:w-full' : 'md:w-1/2'}`}
+                  >
+                    <input
+                      {...register(field.name)}
+                      type={field.type}
+                      placeholder={field.placeholder}
+                      className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full`}
+                    />
+                    {errors[field.name] && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors[field.name]?.message}
+                      </p>
                     )}
-                    {field.name === "linkedinUrl" && (
-                      <div className="w-full">
-                        <input
-                          {...register(field.name)}
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className={`w-full bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none text-textyellow`}
-                        />
-                        {errors[field.name] && (
-                          <p className="text-red-500 text-xs mt-1">
-                            {errors[field.name]?.message}
-                          </p>
-                        )}
-                      </div>
-                    )}
-                    {field.name !== "address" && field.name !== "linkedinUrl" && (
-                      <input
-                        {...register(field.name)}
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        className={`w-full sm:w-auto bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""} text-textyellow`}
-                      />
-                    )}
-                    
                   </div>
                 ))}
               </div>
             ))}
+
 
             {/* Additional Fields */}
             {secondheading && (
@@ -265,19 +238,18 @@ export default function SignupForm({
               additionalInputGroups.map((group, groupIndex) => (
                 <div
                   key={groupIndex}
-                  className="flex flex-col sm:flex-row gap-4 sm:gap-7 w-full lg:justify-between"
+                  className="flex flex-col gap-4 md:flex-row md:gap-7 w-full"
                 >
                   {group.fields.map((field, fieldIndex) => (
                     <div
                       key={fieldIndex}
-                      className={`${field.classname ?? ""}`}
+                      className={`w-full ${group.fields.length === 1 ? 'md:w-full' : 'md:w-1/2'}`}
                     >
                       <input
                         {...register(field.name)}
                         type={field.type}
                         placeholder={field.placeholder}
-                        className={`w-full sm:w-auto bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow px-4 py-2.5 placeholder:text-white focus:none ${field.classname ?? ""
-                          } outline-none text-textyellow`}
+                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full`}
                       />
                       {errors[field.name] && (
                         <p className="text-red-500 text-xs mt-1">
@@ -390,7 +362,7 @@ export default function SignupForm({
         />
 
         {/* QR Code Section */}
-        <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 mt-6 lg:mt-0">
+        <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 mt-6 lg:mt-0 w-full">
           <Image src="/apertrebiglogo.svg" width={218} height={6} alt="logo" />
           <div className="flex flex-col items-center gap-4">
             <Image
@@ -416,6 +388,5 @@ export default function SignupForm({
         </div>
       </div>
     </div>
-  );
+  )
 }
-

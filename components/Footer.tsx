@@ -12,13 +12,8 @@ interface socialLink {
 
 const socialLinks = {
   apertre: [
-    { icon: <FaWhatsapp />, href: "/" },
     { icon: <FaInstagram />, href: " https://www.instagram.com/apertre25/" },
-    {
-      icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/showcase/apertre25/posts/?feedView=all",
-    },
-    { icon: <FaFacebook />, href: "/" },
+    { icon: <FaLinkedin />, href: "https://www.linkedin.com/showcase/apertre25/posts/?feedView=all", },
     { icon: <FaTwitter />, href: "https://x.com/apertre25" },
   ],
   resourcio: [
@@ -62,6 +57,7 @@ export default function Footer() {
               {socialLinks.apertre.map((social, index) => (
                 <Link
                   href={social.href}
+                  target="_blank"
                   key={index}
                   className="transition-all duration-300 hover:text-yellow-500 hover:animate-bounce"
                 >
@@ -87,6 +83,7 @@ export default function Footer() {
                 {links.map((link, index) => (
                   <Link
                     href={link.href}
+                    target="_blank"
                     key={index}
                     className="text-white font-Poppins font-normal text-sm md:text-lg transition-all duration-300 hover:text-yellow-500 hover:underline hover:underline-offset-4 hover:scale-[1.03]"
                   >
