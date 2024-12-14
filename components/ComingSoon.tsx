@@ -1,16 +1,14 @@
 import Image from 'next/image'
-import image1 from "../public/rocket_urchhe.gif"
 
 export default function RocketComingSoon() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black p-4">
       <div className="relative w-full max-w-[18.75rem] md:max-w-[25rem] aspect-square">
         <Image
-          src={image1}
+          src='/rocket_urchhe.gif'
           alt="Animated rocket logo"
           fill
           className="object-contain"
-
           unoptimized
         />
       </div>
@@ -20,4 +18,3 @@ export default function RocketComingSoon() {
     </div>
   )
 }
-
