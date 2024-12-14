@@ -161,7 +161,7 @@ export default function SignupForm({
   };
 
   return (
-    <div className="relative w-full flex items-center justify-center py-5 px-2 sm:px-5">
+    <div className="relative w-full flex items-center justify-center py-5 px-2 sm:px-5 min-h-[90vh]">
       {/* Background Video */}
       <video
         autoPlay
@@ -193,7 +193,7 @@ export default function SignupForm({
           {/* Form Section */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-3 font-Poppins"
+            className="flex flex-col gap-3 font-Poppins md:min-w-[38rem]"
           >
             {/* Primary Fields */}
 
@@ -206,7 +206,7 @@ export default function SignupForm({
             {inputGroups.map((group, groupIndex) => (
               <div
                 key={groupIndex}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-7 w-full justify-between"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-7 lg:justify-between"
               >
                 {group.fields.map((field, fieldIndex) => (
                   <div key={fieldIndex} className={`${field.classname ?? ""}`}>
@@ -265,7 +265,7 @@ export default function SignupForm({
               additionalInputGroups.map((group, groupIndex) => (
                 <div
                   key={groupIndex}
-                  className="flex flex-col sm:flex-row gap-4 sm:gap-7 w-full justify-between"
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-7 w-full lg:justify-between"
                 >
                   {group.fields.map((field, fieldIndex) => (
                     <div
