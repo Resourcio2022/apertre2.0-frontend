@@ -41,7 +41,7 @@ export default function Hero() {
             </Link>
           </div>
           <p>Presented by</p>
-          <div className="flex gap-16 items-center">
+          <div className="flex gap-16 items-center -ml-2">
             <Link
               href="https://resourcio.in"
               target="_blank"
@@ -49,9 +49,9 @@ export default function Hero() {
               aria-label="Visit Resourcio Website"
             >
               <Image
-                src="/Resourcio_Logo.png"
+                src="/resourciologo.svg"
                 alt="Resourcio Logo"
-                width={150}
+                width={220}
                 height={150}
               />
             </Link>
