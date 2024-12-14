@@ -1,7 +1,7 @@
 export const data = [
     {
         usertype: "COMMUNITY PARTNER",
-        content: "Aplly as a Community Partner! Showcase, grow your community, and enjoy shoutouts and exciting perks!",
+        content: "Apply as a Community Partner! Showcase, grow your community, and enjoy shoutouts and exciting perks!",
         registerlink: "/community-partner",
     },
     {
