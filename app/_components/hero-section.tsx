@@ -18,7 +18,7 @@ const stars = [
 export default function Hero() {
   return (
     <section className="bg-black text-white min-h-screen flex items-center px-8 md:px-12 font-mokoto relative">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full z-10">
         <div className="lg:w-1/2 space-y-8 mt-20">
           <h1 className="text-3xl md:text-6xl font-bold leading-tight">
             THE
@@ -82,8 +82,8 @@ export default function Hero() {
           alt={`Star ${star.id}`}
           width={star.size}
           height={star.size}
-          className="absolute transition-transform duration-300 hover:scale-110 hover:filter hover:brightness-200 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hidden md:block"
-          style={{ left: star.left, top: star.top }}
+          className="absolute transition-transform duration-300 hover:scale-110 hover:filter hover:brightness-200 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hidden md:block -z-0 animate-pulse opacity-80 animate-zoom"
+          style={{ left: star.left, top: star.top, animationDelay: `${star.id * 0.1}s` }}
         />
       ))}
     </section>
