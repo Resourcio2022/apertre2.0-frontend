@@ -97,7 +97,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-10 items-center w-full lg:w-2/6 mt-10 lg:mt-0">
           {[
-            { src: "/main1.svg", socials: socialLinks.resourcio },
+            { src: "/resourciologo.svg", socials: socialLinks.resourcio },
             { src: "/gdglogo.svg", socials: socialLinks.gdg },
           ].map((item, idx) => (
             <div key={idx} className="flex flex-col gap-3">
