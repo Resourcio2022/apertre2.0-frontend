@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 left-0 right-0 h-20 bg-black w-full text-white z-[999]">
+    <nav className="sticky top-0 left-0 right-0 h-20 bg-customblack w-full text-white z-[999]">
       <div className="flex items-center justify-between px-6 lg:px-20 py-6 max-h-full">
         {/* Logo aligned to the left */}
         <Link href="/" className="flex items-center">
