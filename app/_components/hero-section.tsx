@@ -31,7 +31,7 @@ export default function Hero() {
           <div className="text-lg md:text-2xl font-medium flex flex-col gap-6">
             <div className="flex items-center gap-2">
               <CalendarRange className="text-yellow-400" />
-              <p className="mt-1">7RD MARCH - 5TH APRIL</p>
+              <p className="mt-1">7TH MARCH - 5TH APRIL</p>
             </div>
             <Link
               href="#register"

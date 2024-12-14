@@ -12,13 +12,8 @@ interface socialLink {
 
 const socialLinks = {
   apertre: [
-    { icon: <FaWhatsapp />, href: "/" },
     { icon: <FaInstagram />, href: " https://www.instagram.com/apertre25/" },
-    {
-      icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/showcase/apertre25/posts/?feedView=all",
-    },
-    { icon: <FaFacebook />, href: "/" },
+    { icon: <FaLinkedin />, href: "https://www.linkedin.com/showcase/apertre25/posts/?feedView=all", },
     { icon: <FaTwitter />, href: "https://x.com/apertre25" },
   ],
   resourcio: [
