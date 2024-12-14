@@ -14,6 +14,9 @@ export default function Testimonials() {
           direction="right"
           speed="slow"
         />
+        <div className='absolute right-0 h-full w-28 bg-gradient-to-l from-customblack to-transparent top-0 z-20'></div>
+        <div className='absolute left-0 h-full w-28 bg-gradient-to-r from-customblack to-transparent top-0 z-20'></div>
+
         <Mobiletestimonials items={testimonialsdata} />
       </div>
     </div>
