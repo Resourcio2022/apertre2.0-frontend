@@ -20,9 +20,8 @@ export default function MobileTestimonials({ items }: {
             <Image
               src={item.pic}
               alt={item.name}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-full"
+              fill
+              className="rounded-full object-cover"
             />
           </div>
           <blockquote className="flex flex-col pl-0 md:pl-7 items-center w-full h-full z-50 -mt-32 pr-0 md:pr-4 text-xs md:text-sm">

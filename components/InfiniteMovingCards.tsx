@@ -95,9 +95,8 @@ export const InfiniteMovingCards = ({
               <Image
                 src={item.pic}
                 alt={item.name}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-full"
+                fill
+                className="rounded-full object-cover"
               />
             </div>
             <blockquote className="flex flex-col  pl-7 items-center w-full h-full z-50 -mt-36 pr-4">
