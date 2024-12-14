@@ -1,4 +1,5 @@
 import Model from "@/components/Model";
+import { CalendarRange } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,25 +18,20 @@ const stars = [
 export default function Hero() {
   return (
     <section className="bg-black text-white min-h-screen flex items-center px-8 md:px-12 font-mokoto relative">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full">
-        <div className="lg:w-1/2 space-y-8">
-          <h1 className="text-3xl md:text-6xl font-bold leading-tight lg:mt-20">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full z-10">
+        <div className="lg:w-1/2 space-y-8 mt-20">
+          <h1 className="text-3xl md:text-6xl font-bold leading-tight">
             THE
-            <span className="text-textyellow"> OPEN SOURCE</span>
+            <span className="text-textyellow">{" "}OPEN SOURCE</span>
             <br />
             CONTRIBUTION
             <br />
             PROGRAMME IS BACK
           </h1>
           <div className="text-lg md:text-2xl font-medium flex flex-col gap-6">
-            <div className="flex gap-2">
-              <Image
-                src="/calendar-02.png"
-                alt="Calendar Icon"
-                width={30}
-                height={30}
-              />
-              <p className="mt-1">7RD MARCH - 5TH APRIL</p>
+            <div className="flex items-center gap-2">
+              <CalendarRange className="text-yellow-400" />
+              <p className="mt-1">7TH MARCH - 5TH APRIL</p>
             </div>
             <Link
               href="#register"
@@ -45,7 +41,7 @@ export default function Hero() {
             </Link>
           </div>
           <p>Presented by</p>
-          <div className="flex flex-row">
+          <div className="flex gap-16 items-center">
             <Link
               href="https://resourcio.in"
               target="_blank"
@@ -57,8 +53,6 @@ export default function Hero() {
                 alt="Resourcio Logo"
                 width={150}
                 height={150}
-                className="inline-block mr-2.5"
-                style={{ position: "relative", top: "20px" }}
               />
             </Link>
             <Link
@@ -72,14 +66,13 @@ export default function Hero() {
                 alt="GDG Logo"
                 width={200}
                 height={150}
-                className="inline-block ml-2.5"
               />
             </Link>
           </div>
         </div>
         <Model />
       </div>
-      <div className="hidden md:block md:absolute md:bottom-0 md:right-0 md:mb-0 md:mr-0 h-10 md:h-96">
+      <div className="hidden md:block absolute bottom-10 right-0 h-10 md:h-96">
         <Image src="/astronaut.png" alt="Astronaut" width={200} height={200} />
       </div>
       {stars.map((star) => (
@@ -89,8 +82,8 @@ export default function Hero() {
           alt={`Star ${star.id}`}
           width={star.size}
           height={star.size}
-          className="absolute transition-transform duration-300 hover:scale-110 hover:filter hover:brightness-200 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hidden md:block"
-          style={{ left: star.left, top: star.top }}
+          className="absolute transition-transform duration-300 hover:scale-110 hover:filter hover:brightness-200 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hidden md:block -z-0 animate-pulse opacity-80"
+          style={{ left: star.left, top: star.top, animationDelay: `${star.id * 0.1}s` }}
         />
       ))}
     </section>
