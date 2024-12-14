@@ -27,6 +27,6 @@ export const testimonialsdata = [
         quote: "It was great being a part of this amazing event! Kudos to the team for successfully organising it smoothly",
         name: "-Harshavardhan Bajoria",
         title: "",
-        pic: "/testimonials/harshabardhan.jpg"
+        pic: "/testimonials/harshabardhan.webp"
     },
 ];
