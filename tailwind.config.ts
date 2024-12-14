@@ -8,7 +8,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
@@ -28,14 +28,15 @@ export default {
         textyellow: "#FBCE1F",
         customPurple: "#F01DD4",
         customYellow: "#F9CB1A",
-        footer:"#252323",
-        customtransparent:"#3E3B3B80",
-        customgreen:"#215521",
-        bordergreen:"#4ED16D",
-        customviolet:"#5865F2",
-        customgrey:"#383434",
-        'custom-gradient': 'linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)',
-        customblack:"#111010"
+        footer: "#252323",
+        customtransparent: "#3E3B3B80",
+        customgreen: "#215521",
+        bordergreen: "#4ED16D",
+        customviolet: "#5865F2",
+        customgrey: "#383434",
+        "custom-gradient":
+          "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
+        customblack: "#111010",
       },
       screens: {
         md: "767px",
@@ -47,22 +48,28 @@ export default {
         mokoto: "var(--font-mokoto)",
         Poppins: "var(--font-poppins)",
       },
-      backgroundImage:{
-        "card":"url('/card.svg')",
-        "aboutus": "url('/aboutus.svg')",
-        "faq": "url('/faq.svg')",
-        "loginbg":"url('/loginbg.png')",
-        "testcard":"url('/testimonialcard.svg')",
+      backgroundImage: {
+        card: "url('/card.svg')",
+        aboutus: "url('/aboutus.svg')",
+        faq: "url('/faq.svg')",
+        loginbg: "url('/loginbg.png')",
+        testcard: "url('/testimonialcard.svg')",
       },
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        zoom: "zoom 2s infinite",
       },
       keyframes: {
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
+        },
+        zoom: {
+          "0%": { transform: "scale(0.9)" },
+          "50%": { transform: "scale(1.1)" },
+          "100%": { transform: "scale(0.9)" },
         },
       },
     },
