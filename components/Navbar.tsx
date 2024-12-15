@@ -42,11 +42,10 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation links aligned to the right */}
-
         <div className="hidden lg:flex items-center justify-end gap-8">
           <div className="flex flex-wrap justify-center gap-4 text-sm md:gap-6 lg:gap-8 md:text-base font-mokoto">
             {NAV_LINKS.map((item, index) => (
-              <Link key={index} href={item.url} className="relative group scroll-smooth">
+              <Link key={index} href={item.url} className="relative group">
                 <span>{item.name}</span>
                 <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
               </Link>
@@ -78,38 +77,20 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="lg:hidden text-white" onClick={toggleMobileMenu}>
-          <span className="block w-6 h-0.5 bg-white mb-1"></span>
-          <span className="block w-6 h-0.5 bg-white mb-1"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-        </button>
-      </div>
-
-      <div className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"} bg-black p-6 absolute top-full left-0 w-full`}>
-        {NAV_LINKS.map((item, index) => (
-          <Link
-            key={index}
-            href={item.url}
-            className="block text-white font-mokoto py-2 relative group w-fit scroll-smooth"
-          >
-            <span>{item.name}</span>
-            <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-        ))}
-
-        <div className="flex items-center">
+        {/* Mobile sign-in button and hamburger */}
+        <div className="lg:hidden flex items-center gap-4">
           {loading ? (
             <Preloader
               bgHeight="10%"
-              width="2rem"
-              height="2rem"
+              width="1.4rem"
+              height="1.4rem"
               color="#ffffff"
             />
           ) : (
             <>
               <SignedOut>
                 <SignInButton>
-                  <button className="px-4 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition font-mokoto">
+                  <button className="px-3 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition font-mokoto text-sm">
                     Sign In
                   </button>
                 </SignInButton>
@@ -119,8 +100,30 @@ export default function Navbar() {
               </SignedIn>
             </>
           )}
+          <button
+            className="text-white"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+          </button>
         </div>
+      </div>
+
+      <div className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"} bg-black p-6 absolute top-full left-0 w-full`}>
+        {NAV_LINKS.map((item, index) => (
+          <Link
+            key={index}
+            href={item.url}
+            className="block text-white font-mokoto py-2 text-center"
+          >
+            <span>{item.name}</span>
+          </Link>
+        ))}
       </div>
     </nav>
   );
 }
+

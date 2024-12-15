@@ -1,9 +1,9 @@
 "use client";
+import { cn } from "@/lib/utils";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
-import { useEffect, useState, createContext, useRef } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { useEffect, useState, createContext, useRef } from "react";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -33,27 +33,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
-      // checkScrollability();
     }
   }, [initialScroll]);
-
-  // const checkScrollability = () => {
-  //   if (carouselRef.current) {
-  //     const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-  //   }
-  // };
-
-  // const scrollLeft = () => {
-  //   if (carouselRef.current) {
-  //     carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-  //   }
-  // };
-
-  // const scrollRight = () => {
-  //   if (carouselRef.current) {
-  //     carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-  //   }
-  // };
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
@@ -80,7 +61,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         <div
           className="flex w-full overflow-x-scroll py-10 md:py-20 scroll-smooth"
           ref={carouselRef}
-        // onScroll={checkScrollability}
         >
           <div
             className={cn(

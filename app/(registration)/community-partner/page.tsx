@@ -35,18 +35,18 @@ const page = () => {
     },
     {
       fields: [
-        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true },
+        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile URL", required: true },
       ] as InputField[],
     },
     {
       fields: [
-        { name: "instagramUsername", type: "text", placeholder: "Instagram profile", required: true },
-        { name: "twitterUsername", type: "text", placeholder: "Twitter profile", required: false }
+        { name: "instagramUsername", type: "text", placeholder: "Instagram username", required: true },
+        { name: "twitterUsername", type: "text", placeholder: "Twitter username", required: false }
       ] as InputField[],
     },
     {
       fields: [
-        { name: "communityUrl", type: "url", placeholder: "Community website url", required: true },
+        { name: "communityUrl", type: "url", placeholder: "Community website URL", required: true },
       ] as InputField[],
     },
     {
