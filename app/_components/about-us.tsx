@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <section
-      className="w-full flex items-center justify-center p-10 md:p-20 text-white font-Poppins scroll-smooth"
+      className="w-full flex items-center justify-center p-10 md:p-20 text-white font-Poppins"
       style={{
         backgroundImage: 'url("/aboutus.svg")',
         backgroundRepeat: "no-repeat",

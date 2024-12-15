@@ -23,7 +23,7 @@ const Page = () => {
     },
     {
       fields: [
-        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile", required: true },
+        { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile URL", required: true },
       ] as InputField[]
     },
     {

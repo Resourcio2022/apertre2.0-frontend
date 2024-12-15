@@ -6,7 +6,7 @@ export default function Registration() {
 
   return (
     <section
-      className="w-full h-full p-10 md:p-20 bg-custom-gradient scroll-smooth"
+      className="w-full h-full p-10 md:p-20 bg-custom-gradient"
       id="register"
       style={{
         background:

@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center justify-end gap-8">
           <div className="flex flex-wrap justify-center gap-4 text-sm md:gap-6 lg:gap-8 md:text-base font-mokoto">
             {NAV_LINKS.map((item, index) => (
-              <Link key={index} href={item.url} className="relative group scroll-smooth">
+              <Link key={index} href={item.url} className="relative group">
                 <span>{item.name}</span>
                 <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
               </Link>
@@ -117,10 +117,9 @@ export default function Navbar() {
           <Link
             key={index}
             href={item.url}
-            className="block text-white font-mokoto py-2 relative group w-fit scroll-smooth"
+            className="block text-white font-mokoto py-2 text-center"
           >
             <span>{item.name}</span>
-            <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
           </Link>
         ))}
       </div>
