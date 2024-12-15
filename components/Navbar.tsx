@@ -42,7 +42,6 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation links aligned to the right */}
-
         <div className="hidden lg:flex items-center justify-end gap-8">
           <div className="flex flex-wrap justify-center gap-4 text-sm md:gap-6 lg:gap-8 md:text-base font-mokoto">
             {NAV_LINKS.map((item, index) => (
@@ -78,11 +77,39 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="lg:hidden text-white" onClick={toggleMobileMenu}>
-          <span className="block w-6 h-0.5 bg-white mb-1"></span>
-          <span className="block w-6 h-0.5 bg-white mb-1"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-        </button>
+        {/* Mobile sign-in button and hamburger */}
+        <div className="lg:hidden flex items-center gap-4">
+          {loading ? (
+            <Preloader
+              bgHeight="10%"
+              width="1.4rem"
+              height="1.4rem"
+              color="#ffffff"
+            />
+          ) : (
+            <>
+              <SignedOut>
+                <SignInButton>
+                  <button className="px-3 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition font-mokoto text-sm">
+                    Sign In
+                  </button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </>
+          )}
+          <button
+            className="text-white"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+          </button>
+        </div>
       </div>
 
       <div className={`lg:hidden ${isMobileMenuOpen ? "block" : "hidden"} bg-black p-6 absolute top-full left-0 w-full`}>
@@ -96,31 +123,8 @@ export default function Navbar() {
             <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-customYellow transition-all duration-300 group-hover:w-full"></span>
           </Link>
         ))}
-
-        <div className="flex items-center">
-          {loading ? (
-            <Preloader
-              bgHeight="10%"
-              width="2rem"
-              height="2rem"
-              color="#ffffff"
-            />
-          ) : (
-            <>
-              <SignedOut>
-                <SignInButton>
-                  <button className="px-4 py-1 bg-customYellow text-black rounded hover:bg-yellow-600 transition font-mokoto">
-                    Sign In
-                  </button>
-                </SignInButton>
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </>
-          )}
-        </div>
       </div>
     </nav>
   );
 }
+
