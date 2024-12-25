@@ -21,7 +21,7 @@ export async function evangelistSignup(clerk_userId: string, role: Role, email: 
         Object.assign(payload, { twitterUsername })
     }
 
-    const res = await fetch(`${API_URL}/evangelists`, {
+    const res = await fetch(`${API_URL}/evangelist`, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {

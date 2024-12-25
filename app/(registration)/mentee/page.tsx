@@ -1,4 +1,4 @@
-import SignupForm from "../_components/signupForm";
+import SignupForm, { InputField } from "../_components/signupForm";
 
 const page = () => {
     const words = [
@@ -8,27 +8,32 @@ const page = () => {
     const inputGroups = [
         {
             fields: [
-                { name: "firstName", type: "text", placeholder: "First Name", required: true },
-                { name: "lastName", type: "text", placeholder: "Last Name", required: true },
-            ],
+                { name: "firstName", type: "text", placeholder: "First name*", required: true },
+                { name: "lastName", type: "text", placeholder: "Last name*", required: true },
+            ] as InputField[],
         },
         {
             fields: [
-                { name: "linkedinProfile", type: "text", placeholder: "LinkedIn Profile", required: true },
-                { name: "Referral Code", type: "text", placeholder: "Referral Code", required: true },
-            ],
+                { name: "phoneNumber", type: "tel", placeholder: "Phone number*", required: true },
+                { name: "discordUsername", type: "text", placeholder: "Discord username*", required: true },
+            ] as InputField[],
         },
         {
             fields: [
-                { name: "Address", type: "textarea", placeholder: "Address", required: true, classname: "h-[101px] w-full" },
-            ],
+                { name: "address", type: "text", placeholder: "Address*", required: true },
+            ] as InputField[]
         },
         {
             fields: [
-                { name: "PhoneNumber", type: "number", placeholder: "Phone Number", required: true },
-                { name: "Discord Username", type: "text", placeholder: "Discord Username", required: true },
-            ],
+                { name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile URL*", required: true },
+            ] as InputField[]
         },
+        {
+            fields: [
+                { name: "twitterUsername", type: "text", placeholder: "Twitter username", required: false },
+                { name: "referralCode", type: "text", placeholder: "Referral Code", required: false },
+            ] as InputField[],
+        }
     ];
 
     return (
