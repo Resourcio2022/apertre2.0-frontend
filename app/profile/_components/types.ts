@@ -1,9 +1,12 @@
+export type Status = 'VERIFIED' | 'UNVERIFIED' | 'PENDING'
+
 export interface ICommunityPartner {
     email: string,
     username: string,
     fullname: string,
     address: string,
     phoneNumber: string,
+    status: Status,
 }
 
 export interface IEvangelist {
@@ -12,6 +15,7 @@ export interface IEvangelist {
     fullname: string,
     address: string,
     phoneNumber: string,
+    status: Status,
 }
 
 export interface IMentee {
@@ -20,6 +24,7 @@ export interface IMentee {
     fullname: string,
     address: string,
     phoneNumber: string,
+    status: Status,
 }
 
 export interface IMentor {
@@ -28,6 +33,7 @@ export interface IMentor {
     fullname: string,
     address: string,
     phoneNumber: string,
+    status: Status,
 }
 
 export interface IProjectAdmin {
@@ -36,4 +42,5 @@ export interface IProjectAdmin {
     fullname: string,
     address: string,
     phoneNumber: string,
+    status: Status,
 }
