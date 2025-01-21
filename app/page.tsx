@@ -3,6 +3,7 @@ import FAQ from "./_components/faq";
 import Hero from "./_components/hero-section";
 import Registration from "./_components/registration";
 import Testimonials from "./_components/testimonials";
+
 export default function Home() {
   return (
     <>
