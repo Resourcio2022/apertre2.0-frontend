@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/package-lock.json
 /.pnp
 .pnp.*
 .yarn/*
@@ -31,7 +30,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env.*local
+.env
 
 # vercel
 .vercel
@@ -39,6 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-#idea-IDE
-.idea
