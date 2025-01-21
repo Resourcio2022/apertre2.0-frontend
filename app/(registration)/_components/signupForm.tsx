@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FaDiscord } from "react-icons/fa";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import { useGitHub } from "@/hooks/useGithubUser";
-import { communityPartnerSignup, evangelistSignup, Role } from "../_utils/apiCalls";
+import { communityPartnerSignup, evangelistSignup, Role, mentorSignup, menteeSignup } from "../_utils/apiCalls";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -141,6 +141,61 @@ export default function SignupForm({
             data.communityName.trim(),
             data.communityUrl.trim(),
             parseInt(data.communityStrength.trim())
+          );
+
+          toast.success(response);
+
+          setTimeout(() => {
+            reset();
+            router.push("/");
+          }, 1500);
+        } catch (err: any) {
+          toast.error(err.message);
+        }
+        break;
+
+      }
+      case "mentee": {
+        try {
+          const response = await menteeSignup(
+            clerk_userId,
+            role,
+            email,
+            githubUsername,
+            fullname,
+            data.address.trim(),
+            data.phoneNumber.trim(),
+            data.linkedinUrl.trim(),
+            data.discordUsername.trim(),
+            data.twitterUsername.trim(),
+            data.referralCode.trim()
+          );
+
+          toast.success(response.message);
+
+          setTimeout(() => {
+            reset();
+            router.push("/");
+          }, 1500);
+        } catch (err: any) {
+          toast.error(err.message);
+        }
+        break;
+      }
+      case "mentor": {
+        try {
+          const response = await mentorSignup(
+            clerk_userId,
+            role,
+            email,
+            githubUsername,
+            fullname,
+            data.address.trim(),
+            data.phoneNumber.trim(),
+            data.discordUsername.trim(),
+            data.linkedinUrl.trim(),
+            data.twitterUsername.trim(),
+            data.techstack.trim().split(",")
           );
 
           toast.success(response);
