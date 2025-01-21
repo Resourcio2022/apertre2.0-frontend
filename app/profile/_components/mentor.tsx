@@ -20,7 +20,10 @@ export default function Mentor({ username }: MentorProps) {
             }
             setProfile(data);
         }
-        username && getProfile();
+        
+        if (username) {
+            getProfile();
+        }
     }, [username])
 
     return (

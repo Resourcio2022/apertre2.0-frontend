@@ -9,18 +9,21 @@ interface ProjectAdminProps {
 export default function ProjectAdmin({ username }: ProjectAdminProps) {
     const [profile, setProfile] = useState<IProjectAdmin>();
 
-    useEffect(() => { 
+    useEffect(() => {
         async function getProfile() {
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project-admin/${username}`);
             const data = await res.json();
-        
+
             if (!res.ok) {
                 toast.error(data.message);
                 return;
             }
             setProfile(data);
         }
-        username && getProfile();
+
+        if (username) {
+            getProfile();
+        }
     }, [username])
 
     return (

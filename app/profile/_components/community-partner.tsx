@@ -20,7 +20,10 @@ export default function CommunityPartner({ username }: CommunityPartnerProps) {
             }
             setProfile(data);
         }
-        username && getProfile();
+
+        if (username) {
+            getProfile();
+        }
     }, [username])
 
     return (

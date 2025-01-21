@@ -20,7 +20,10 @@ export default function Mentee({ username }: MenteeProps) {
             }
             setProfile(data);
         }
-        username && getProfile();
+        
+        if (username) {
+            getProfile();
+        }
     }, [username])
 
     return (

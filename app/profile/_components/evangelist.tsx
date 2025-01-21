@@ -20,7 +20,10 @@ export default function Evangelist({ username }: EvangelistProps) {
             }
             setProfile(data);
         }
-        username && getProfile();
+        
+        if (username) {
+            getProfile();
+        }
     }, [username])
 
     return (
