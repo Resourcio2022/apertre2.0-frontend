@@ -34,7 +34,7 @@ export async function evangelistSignup(clerk_userId: string, role: Role, email: 
         throw new Error(data.message)
     }
 
-    return data.message;
+    return data.message as string;
 }
 
 export async function communityPartnerSignup(clerk_userId: string, role: Role, email: string, username: string, fullname: string, address: string, phoneNumber: string, linkedinUrl: string, instagramUsername: string, discordUsername: string, twitterUsername: string | undefined, communityName: string, communityUrl: string, communityStrength: number) {
@@ -71,7 +71,7 @@ export async function communityPartnerSignup(clerk_userId: string, role: Role, e
         throw new Error(data.message)
     }
 
-    return data.message;
+    return data.message as string;
 }
 
 export const mentorSignup = async (clerk_userId: string, role: Role, email: string, username: string, fullname: string, address: string, phoneNumber: string, discordUsername: string, linkedinUrl: string, twitterUsername: string, techstack: string[]) => {
@@ -105,7 +105,7 @@ export const mentorSignup = async (clerk_userId: string, role: Role, email: stri
         throw new Error(data.message)
     }
 
-    return data.message;
+    return data.message as string;
 }
 
 export const menteeSignup = async (clerk_userId: string, role: string, email: string, username: string, fullname: string, address: string, phoneNumber: string, linkedinUrl: string, discordUsername: string, twitterUsername: string, referralCode: string) => {
@@ -143,6 +143,16 @@ export const menteeSignup = async (clerk_userId: string, role: string, email: st
         throw new Error(data.message)
     }
 
-    return data.message
+    return data.message as string;
 }
 
+export async function getTechStacks() { 
+    const res = await fetch(`${API_URL}/common/techstack`)
+
+    if (!res.ok) {
+        return {}
+    }
+    const data = await res.json()
+    
+    return data as Record<string, string>
+}
