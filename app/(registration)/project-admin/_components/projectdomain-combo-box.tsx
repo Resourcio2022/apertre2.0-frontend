@@ -6,9 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { useEffect, useState, useTransition } from "react"
-import { getTechStacks } from "../../_utils/apiCalls"
+import { getProjectDomains } from "../../_utils/apiCalls"
 
-type Framework = {
+type Domain = {
     value: string
     label: string
 }
@@ -19,20 +19,22 @@ type ComboBoxProps = {
     onChange: (value: string) => void // accepts comma separated string
 }
 
-export function Combobox({ placeholder, value, onChange }: ComboBoxProps) {
+export function ProjectDomains({ placeholder, value, onChange }: ComboBoxProps) {
     const [open, setOpen] = useState(false);
-    const [frameworks, setFrameworks] = useState<Framework[]>([]);
+    const [domains, setDomains] = useState<Domain[]>([]);
     const [isPending, startTransition] = useTransition();
 
     const selectedValues = value ? value.split(",").filter(Boolean) : [];
 
     useEffect(() => {
         startTransition(async() => {
-            const data = await getTechStacks();
+            const data = await getProjectDomains();
+            const result: Domain[] = [];
             
             Object.entries(data).forEach(([key, value]) => {
-                setFrameworks((prev) => [...prev, { value: key, label: value }]);
+                result.push({ value: key, label: value });
             });
+            setDomains(result);
         })
     }, [])
 
@@ -68,7 +70,7 @@ export function Combobox({ placeholder, value, onChange }: ComboBoxProps) {
                         <ChevronsUpDown className="opacity-50" />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-fit p-0">
+                <PopoverContent className="w-fit p-0 ml-8">
                     <Command className="bg-white">
                         <CommandInput
                             placeholder="Search framework..."
@@ -76,13 +78,13 @@ export function Combobox({ placeholder, value, onChange }: ComboBoxProps) {
                         <CommandList>
                             <CommandEmpty>No framework found.</CommandEmpty>
                             <CommandGroup className="py-0">
-                                {frameworks.map((framework) => (
+                                {domains.map((domain, idx) => (
                                     <CommandItem
-                                        key={framework.value}
-                                        value={framework.value}
-                                        onSelect={() => handleSelect(framework.value)}
+                                        key={idx}
+                                        value={domain.value}
+                                        onSelect={() => handleSelect(domain.value)}
                                     >
-                                        <span className="cursor-pointer hover:text-textyellow">{framework.label}</span>
+                                        <span className="cursor-pointer hover:text-textyellow">{domain.label}</span>
                                     </CommandItem>
                                 ))}
                             </CommandGroup>
@@ -98,7 +100,7 @@ export function Combobox({ placeholder, value, onChange }: ComboBoxProps) {
                         variant="default"
                         className="flex items-center gap-1.5 bg-textyellow rounded-xl h-7"
                     >
-                        {frameworks.find((f) => f.value === selectedValue)?.label}
+                        {domains.find((f) => f.value === selectedValue)?.label}
                         <X
                             className="cursor-pointer w-4 h-4"
                             onClick={() => handleRemove(selectedValue)}

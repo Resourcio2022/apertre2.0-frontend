@@ -156,3 +156,14 @@ export async function getTechStacks() {
     
     return data as Record<string, string>
 }
+
+export async function getProjectDomains() { 
+    const res = await fetch(`${API_URL}/common/project-domain`)
+
+    if (!res.ok) {
+        return {}
+    }
+    const data = await res.json()
+    
+    return data as Record<string, string>
+}
