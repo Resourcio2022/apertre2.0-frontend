@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
     fetches: {
       fullUrl: true
     }
-  }
+  },
+  images: {
+    domains: ['img.clerk.com'],
+            
+    
+  },
 };
 export default nextConfig;

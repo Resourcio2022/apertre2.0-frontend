@@ -21,7 +21,7 @@ export async function evangelistSignup(clerk_userId: string, role: Role, email: 
         Object.assign(payload, { twitterUsername })
     }
 
-    const res = await fetch(`${API_URL}/evangelists`, {
+    const res = await fetch(`${API_URL}/evangelist`, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
@@ -34,7 +34,7 @@ export async function evangelistSignup(clerk_userId: string, role: Role, email: 
         throw new Error(data.message)
     }
 
-    return data.message;
+    return data.message as string;
 }
 
 export async function communityPartnerSignup(clerk_userId: string, role: Role, email: string, username: string, fullname: string, address: string, phoneNumber: string, linkedinUrl: string, instagramUsername: string, discordUsername: string, twitterUsername: string | undefined, communityName: string, communityUrl: string, communityStrength: number) {
@@ -71,5 +71,99 @@ export async function communityPartnerSignup(clerk_userId: string, role: Role, e
         throw new Error(data.message)
     }
 
-    return data.message;
+    return data.message as string;
+}
+
+export const mentorSignup = async (clerk_userId: string, role: Role, email: string, username: string, fullname: string, address: string, phoneNumber: string, discordUsername: string, linkedinUrl: string, twitterUsername: string, techstack: string[]) => {
+    const payload = {
+        clerk_userId,
+        role,
+        email,
+        username,
+        fullname,
+        address,
+        phoneNumber,
+        discordUsername,
+        linkedinUrl,
+        techstack
+    }
+
+    if (twitterUsername !== "") {
+        Object.assign(payload, { twitterUsername })
+    }
+
+    const res = await fetch(`${API_URL}/mentor`, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    const data = await res.json()
+
+    if (!res.ok) {
+        throw new Error(data.message)
+    }
+
+    return data.message as string;
+}
+
+export const menteeSignup = async (clerk_userId: string, role: string, email: string, username: string, fullname: string, address: string, phoneNumber: string, linkedinUrl: string, discordUsername: string, twitterUsername: string, referralCode: string) => {
+    const payload = {
+        clerk_userId,
+        role,
+        email,
+        username,
+        fullname,
+        address,
+        phoneNumber,
+        linkedinUrl,
+        discordUsername,
+        referralCode
+    }
+
+    if (twitterUsername !== "") {
+        Object.assign(payload, { twitterUsername })
+    }
+
+    if (referralCode !== "") {
+        Object.assign(payload, { referralCode })
+    }
+    
+    const res = await fetch(`${API_URL}/participant`, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    const data = await res.json()
+
+    if (!res.ok) {
+        throw new Error(data.message)
+    }
+
+    return data.message as string;
+}
+
+export async function getTechStacks() { 
+    const res = await fetch(`${API_URL}/common/techstack`)
+
+    if (!res.ok) {
+        return {}
+    }
+    const data = await res.json()
+    
+    return data as Record<string, string>
+}
+
+export async function getProjectDomains() { 
+    const res = await fetch(`${API_URL}/common/project-domain`)
+
+    if (!res.ok) {
+        return {}
+    }
+    const data = await res.json()
+    
+    return data as Record<string, string>
 }
