@@ -35,7 +35,7 @@ export default function Hero() {
             </div>
             <Link
               href="#register"
-              className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit scroll-smooth"
+              className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit"
             >
               REGISTER
             </Link>

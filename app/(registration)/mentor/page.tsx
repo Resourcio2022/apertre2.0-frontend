@@ -1,33 +1,44 @@
-import SignupForm from "../_components/signupForm";
+import SignupForm, { InputField } from "../_components/signupForm";
+import { Combobox } from "./_components/combo-box";
 
 const page = () => {
-  const words = [
-    { text: "MENTOR" },
-  ];
+  const words = [{ text: "MENTOR" }];
 
   const inputGroups = [
     {
       fields: [
-        { name: "firstName", type: "text", placeholder: "First Name", required: true },
-        { name: "lastName", type: "text", placeholder: "Last Name", required: true },
-      ],
+        { name: "firstName", type: "text", placeholder: "First Name*", required: true },
+        { name: "lastName", type: "text", placeholder: "Last Name*", required: true },
+      ] as InputField[],
     },
     {
       fields: [
-        { name: "linkedinProfile", type: "text", placeholder: "LinkedIn Profile", required: true },
-        { name: "xProfile", type: "text", placeholder: "X Profile", required: true },
-      ],
+        { name: "phoneNumber", type: "tel", placeholder: "Phone number*", required: true },
+        { name: "discordUsername", type: "text", placeholder: "Discord username*", required: true },
+      ] as InputField[],
     },
     {
       fields: [
-        { name: "TechStacks", type: "textarea", placeholder: "Tech Stacks", required: true, classname: "h-[101px] w-full" },
-      ],
+        { name: "address", type: "text", placeholder: "Address*", required: true },
+      ] as InputField[]
     },
     {
       fields: [
-        { name: "Phone Number", type: "number", placeholder: "Phone Number", required: true },
-        { name: "Discord Username", type: "text", placeholder: "Discord Username", required: true },
-      ],
+        { name: "linkedinUrl", type: "text", placeholder: "LinkedIn profile URL*", required: true },
+      ] as InputField[],
+    },
+    {
+      fields: [
+        { name: "twitterUsername", type: "text", placeholder: "Twitter username", required: false },
+      ] as InputField[],
+    },
+  ];
+
+  const additionalInputGroups = [
+    {
+      fields: [
+        { name: "techstack", type: "combobox", placeholder: "Tech stacks*", required: true, component: Combobox },
+      ] as InputField[],
     },
   ];
 
@@ -35,6 +46,7 @@ const page = () => {
     <SignupForm
       words={words}
       inputGroups={inputGroups}
+      additionalInputGroups={additionalInputGroups}
     />
   );
 };
