@@ -25,20 +25,7 @@ const socialLinks = {
     },
     { icon: <FaFacebook />, href: "https://www.facebook.com/resourcio/" },
     { icon: <FaTwitter />, href: "https://x.com/resourcio_" },
-  ],
-  gdg: [
-    {
-      icon: <FaWhatsapp />,
-      href: "https://chat.whatsapp.com/EQPRJZxqOBL4nHEdMyUcF1",
-    },
-    { icon: <FaInstagram />, href: "https://www.instagram.com/gdgocaot/" },
-    {
-      icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/company/gdsc-aot/",
-    },
-    { icon: <FaFacebook />, href: "https://www.facebook.com/gdgocaot/" },
-    { icon: <FaTwitter />, href: "https://x.com/gdgocaot" },
-  ],
+  ]
 } as socialLink;
 
 export default function Footer() {
@@ -95,10 +82,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-10 items-center w-full lg:w-2/6 mt-10 lg:mt-0">
+        <div className="flex flex-col gap-10 items-center justify-center w-full lg:w-2/6 mt-10 lg:mt-0">
           {[
-            { src: "/resourciologo.svg", socials: socialLinks.resourcio },
-            { src: "/gdglogo.svg", socials: socialLinks.gdg },
+            { src: "/resourciologo.svg", socials: socialLinks.resourcio }
           ].map((item, idx) => (
             <div key={idx} className="flex flex-col gap-3">
               <Image
