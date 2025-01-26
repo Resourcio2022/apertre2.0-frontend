@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,7 +45,7 @@ function SponsorTier({
   return (
     <div className="mb-12">
       <h3
-        className="text-xl font-bold mb-6 text-center"
+        className="text-2xl font-extrabold mb-8 text-center"
         style={{ color }}
       >
         {title}
@@ -136,7 +137,7 @@ export default function Sponsor() {
       id="sponsors"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl font-bold text-yellow-500 text-center py-20">
+        <h2 className="text-5xl font-extrabold text-yellow-500 text-center py-24 tracking-wide">
           Our Partners
         </h2>
         <SponsorTier
