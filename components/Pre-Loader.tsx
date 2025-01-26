@@ -6,7 +6,7 @@ interface LoaderParams {
     color: string;
 }
 
-export default function Preloader({ bgWidth, bgHeight, width, height, color }: LoaderParams) {
+export function Loader({ bgWidth, bgHeight, width, height, color }: LoaderParams) {
     return (
         <div
             className="spinnerContainer"

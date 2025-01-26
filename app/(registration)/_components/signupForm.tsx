@@ -34,19 +34,16 @@ interface SignupFormProps {
   secondheading?: string;
 }
 
-export default function SignupForm({
-  words,
-  inputGroups,
-  additionalInputGroups,
-  firstheading,
-  secondheading,
-}: SignupFormProps) {
+export default function SignupForm({ words, inputGroups, additionalInputGroups, firstheading, secondheading }: SignupFormProps) {
   const router = useRouter();
   const { clerk_userId, email, githubUsername, isSignedIn } = useGitHub();
 
   const schema = z.object({
     joinedDiscord: z.boolean().refine((val) => val, {
       message: "You must join Discord",
+    }),
+    loftlabs: z.boolean().refine((val) => val, {
+      message: "You must fill out this form",
     }),
     rules: z.boolean().refine((val) => val, {
       message: "You must accept the rules",
@@ -342,6 +339,36 @@ export default function SignupForm({
               {errors.joinedDiscord && (
                 <p className="text-red-500 text-xs mt-1">
                   {errors.joinedDiscord?.message}
+                </p>
+              )}
+            </div>
+
+            {/* loft.sh Section */}
+            <div className="flex flex-col">
+              <div className="flex gap-1.5">
+                <input
+                  type="checkbox"
+                  id="loftlabs"
+                  {...register("loftlabs")}
+                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
+                />
+                <label
+                  htmlFor="loftlabs"
+                  className="text-sm text-white text-nowrap"
+                >
+                  <Link
+                    href="https://forms.gle/813SNhCg1biXQmKD8"
+                    className="text-textyellow"
+                    target="_blank"
+                  >
+                    Fill this form
+                  </Link>
+                  {" "}& Join the giveaway to win Headphones worth of 3k*
+                </label>
+              </div>
+              {errors.loftlabs && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.loftlabs?.message}
                 </p>
               )}
             </div>
