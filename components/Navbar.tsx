@@ -4,25 +4,26 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Preloader from "./Loader";
+import { Loader } from "./Pre-Loader";
 
-interface INavLink {
+type INavLink = {
   name: string;
   url: string;
 }
 
-const NAV_LINKS: INavLink[] = [
-  { name: "Home", url: "/" },
-  { name: "About Us", url: "#about" },
-  { name: "Projects", url: "/projects" },
-  { name: "Leaderboard", url: "/leaderboard" },
-  { name: "Crew", url: "/crew" },
-  { name: "Sponsors", url: "/sponsors" },
-];
-
 export default function Navbar() {
-  const { loading } = useGitHub();
+  const { isSignedIn, loading } = useGitHub();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const NAV_LINKS: INavLink[] = [
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/#about-us" },
+    { name: "Sponsors", url: "/#sponsors" },
+    { name: "Crew", url: "/crew" },
+    { name: "Projects", url: "/projects" },
+    { name: "Leaderboard", url: "/leaderboard" },
+    ...(isSignedIn ? [{ name: "Profile", url: "/profile" }] : [])
+  ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -54,7 +55,7 @@ export default function Navbar() {
 
           <div className="flex items-center">
             {loading ? (
-              <Preloader
+              <Loader
                 bgHeight="10%"
                 width="1.4rem"
                 height="1.4rem"
@@ -80,7 +81,7 @@ export default function Navbar() {
         {/* Mobile sign-in button and hamburger */}
         <div className="lg:hidden flex items-center gap-4">
           {loading ? (
-            <Preloader
+            <Loader
               bgHeight="10%"
               width="1.4rem"
               height="1.4rem"

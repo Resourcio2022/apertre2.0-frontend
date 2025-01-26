@@ -61,7 +61,7 @@ function SponsorTier({ title, color, sponsors = [], columns = 1 }: {
 
 const domainSponsors = [
   {
-    imageUrl: "/xyz_logo.webp",
+    imageUrl: "/sponsors/xyz_logo.webp",
     alt: "XYZ Domains",
     width: 400,
     websiteUrl: "https://gen.xyz"
@@ -70,38 +70,38 @@ const domainSponsors = [
 
 const digitalSponsors = [
   {
-    imageUrl: "/interview_buddy.png",
+    imageUrl: "/sponsors/interview_buddy.png",
     alt: "Interview Buddy",
     width: 400,
     websiteUrl: "https://interviewbuddy.in"
   },
   {
-    imageUrl: "/jet-brains.jpg",
+    imageUrl: "/sponsors/jet-brains.jpg",
     alt: "JetBrains",
     width: 350,
     websiteUrl: "https://www.jetbrains.com"
   }
 ];
 
-export default function page() {
+export default function Sponsor() {
   return (
     <section
-      className="w-full min-h-screen flex items-center justify-center p-6 md:p-20 text-white font-sans bg-black"
+      className="w-full flex items-center justify-center p-10 md:p-20 text-white font-sans bg-black"
       style={{
         backgroundImage: 'url("/aboutus.svg")',
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      id="about"
+      id="sponsors"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl font-bold text-yellow-500 mb-16 text-center">
+        <h2 className="text-3xl font-bold text-yellow-500 text-center py-5">
           OUR SPONSORS
         </h2>
         <SponsorTier
           title="DOMAIN SPONSOR"
-          color="#FFD700"
+          color="#CD7F32"
           sponsors={domainSponsors}
         />
         <SponsorTier
