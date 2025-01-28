@@ -90,7 +90,7 @@ const CommunityPartner = memo(function CommunityPartner({ username, image }: Com
               </Link>
             )}
             {profile && profile.twitterUsername && (
-              <Link href={`https://twitter.com/${profile.twitterUsername}`} target="_blank" className="hover:scale-110 transition-transform">
+              <Link href={`https://x.com/${profile.twitterUsername}`} target="_blank" className="hover:scale-110 transition-transform">
                 <FaTwitter className="size-5 md:size-6 hover:text-textyellow transition-colors duration-150" />
               </Link>
             )}
