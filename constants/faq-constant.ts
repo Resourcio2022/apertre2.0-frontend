@@ -7,11 +7,11 @@ export const faqData: FAQItem[] = [
     {
         question: "What is Apertre, and who organizes it?",
         answer:
-            "Apertre 2.0 is a 30-day-long open-source event organized by Resourcio Community and GDG on Campus AOT. It provides a platform for participants to enhance their development skills through collaboration on real-world projects.",
+            "Apertre 2.0 is a 30-day-long open-source event organized by Resourcio Community . It provides a platform for participants to enhance their development skills through collaboration on real-world projects.",
     },
     {
         question: "How can I participate in Apertre?",
-        answer: "To participate in Apertre, you can visit the official event website and follow the registration process. Keep an eye out for announcements from Resourcio Community and GDG on Campus AOT for registration details.",
+        answer: "To participate in Apertre, you can visit the official event website and follow the registration process. Keep an eye out for announcements from Resourcio Community  for registration details.",
     },
     {
         question: "What development areas are covered in Apertre?",
