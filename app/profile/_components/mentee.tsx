@@ -78,7 +78,7 @@ const Mentee = memo(function Mentee({ username, image }: MenteeProps) {
               </Link>
             )}
             {profile && profile.twitterUsername && (
-              <Link href={`https://twitter.com/${profile.twitterUsername}`} target="_blank">
+              <Link href={`https://x.com/${profile.twitterUsername}`} target="_blank">
                 <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
               </Link>
             )}
@@ -102,7 +102,7 @@ const Mentee = memo(function Mentee({ username, image }: MenteeProps) {
                 <FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
               </Link>
               {profile.evangelist.twitterUsername &&
-                <Link href={`https://twitter.com/${profile.evangelist.twitterUsername}`} target="_blank">
+                <Link href={`https://x.com/${profile.evangelist.twitterUsername}`} target="_blank">
                   <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
                 </Link>
               }
@@ -126,7 +126,7 @@ const Mentee = memo(function Mentee({ username, image }: MenteeProps) {
                 <FaGithub className="size-6 hover:text-textyellow" />
               </Link>
               {profile.communityPartner.twitterUsername &&
-                <Link href={`https://twitter.com/${profile.communityPartner.twitterUsername}`} target="_blank">
+                <Link href={`https://x.com/${profile.communityPartner.twitterUsername}`} target="_blank">
                   <FaTwitter className="size-6 hover:text-textyellow" />
                 </Link>
               }
