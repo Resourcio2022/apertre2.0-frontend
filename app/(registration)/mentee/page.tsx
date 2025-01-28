@@ -1,9 +1,7 @@
 import SignupForm, { InputField } from "../_components/signupForm";
 
 const page = () => {
-    const words = [
-        { text: "MENTEE" },
-    ];
+    const words = [{ text: "MENTEE" }];
 
     const inputGroups = [
         {
@@ -31,7 +29,7 @@ const page = () => {
         {
             fields: [
                 { name: "twitterUsername", type: "text", placeholder: "Twitter username", required: false },
-                { name: "referralCode", type: "text", placeholder: "Referral Code", required: false },
+                { name: "referralCode", type: "text", placeholder: "Got any referral code?", required: false },
             ] as InputField[],
         }
     ];

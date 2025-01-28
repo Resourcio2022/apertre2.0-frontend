@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FaDiscord } from "react-icons/fa";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import { useGitHub } from "@/hooks/useGithubUser";
-import { communityPartnerSignup, evangelistSignup, Role } from "../_utils/apiCalls";
+import { communityPartnerSignup, evangelistSignup, Role, mentorSignup, menteeSignup } from "../_utils/apiCalls";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -15,9 +16,10 @@ const DISCORD_LINK = "https://discord.gg/VKKJzgnrzm";
 
 export interface InputField {
   name: string;
-  type: string;
+  type: "text" | "tel" | "url" | "combobox";
   placeholder: string;
   required: boolean;
+  component?: React.ComponentType<any>;
 }
 
 interface InputGroup {
@@ -32,19 +34,16 @@ interface SignupFormProps {
   secondheading?: string;
 }
 
-export default function SignupForm({
-  words,
-  inputGroups,
-  additionalInputGroups,
-  firstheading,
-  secondheading,
-}: SignupFormProps) {
+export default function SignupForm({ words, inputGroups, additionalInputGroups, firstheading, secondheading }: SignupFormProps) {
   const router = useRouter();
   const { clerk_userId, email, githubUsername, isSignedIn } = useGitHub();
 
   const schema = z.object({
     joinedDiscord: z.boolean().refine((val) => val, {
       message: "You must join Discord",
+    }),
+    loftlabs: z.boolean().refine((val) => val, {
+      message: "You must fill out this form",
     }),
     rules: z.boolean().refine((val) => val, {
       message: "You must accept the rules",
@@ -70,14 +69,7 @@ export default function SignupForm({
     }, {} as Record<string, z.ZodTypeAny>),
   });
 
-  const {
-    handleSubmit,
-    register,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<Record<string, string>>({
-    resolver: zodResolver(schema),
-  });
+  const { handleSubmit, register, reset, setValue, watch, formState: { errors, isSubmitting } } = useForm<Record<string, string>>({ resolver: zodResolver(schema) });
 
   const onSubmit: SubmitHandler<Record<string, string>> = async (data) => {
     if (!isSignedIn) {
@@ -119,7 +111,8 @@ export default function SignupForm({
             reset();
             router.push("/");
           }, 1500);
-        } catch (err: any) {
+        }
+        catch (err: any) {
           toast.error(err.message);
         }
         break;
@@ -149,7 +142,65 @@ export default function SignupForm({
             reset();
             router.push("/");
           }, 1500);
-        } catch (err: any) {
+        }
+        catch (err: any) {
+          toast.error(err.message);
+        }
+        break;
+
+      }
+      case "mentor": {
+        try {
+          const response = await mentorSignup(
+            clerk_userId,
+            role,
+            email,
+            githubUsername,
+            fullname,
+            data.address.trim(),
+            data.phoneNumber.trim(),
+            data.discordUsername.trim(),
+            data.linkedinUrl.trim(),
+            data.twitterUsername.trim(),
+            data.techstack.split(",")
+          );
+
+          toast.success(response);
+
+          setTimeout(() => {
+            reset();
+            router.push("/");
+          }, 1500);
+        }
+        catch (err: any) {
+          toast.error(err.message);
+        }
+        break;
+      }
+      case "mentee": {
+        try {
+          const response = await menteeSignup(
+            clerk_userId,
+            role,
+            email,
+            githubUsername,
+            fullname,
+            data.address.trim(),
+            data.phoneNumber.trim(),
+            data.linkedinUrl.trim(),
+            data.discordUsername.trim(),
+            data.twitterUsername.trim(),
+            data.referralCode.trim()
+          );
+
+          toast.success(response);
+
+          setTimeout(() => {
+            reset();
+            router.push("/");
+          }, 1500);
+        }
+        catch (err: any) {
           toast.error(err.message);
         }
         break;
@@ -245,12 +296,20 @@ export default function SignupForm({
                       key={fieldIndex}
                       className={`w-full ${group.fields.length === 1 ? 'md:w-full' : 'md:w-1/2'}`}
                     >
-                      <input
-                        {...register(field.name)}
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full`}
-                      />
+                      {field.type === "combobox" && field.component ? (
+                        <field.component
+                          placeholder={field.placeholder}
+                          value={watch(field.name)}
+                          onChange={(value: string) => setValue(field.name, value)}
+                        />
+                      ) : (
+                        <input
+                          {...register(field.name)}
+                          type={field.type}
+                          placeholder={field.placeholder}
+                          className={`bg-customtransparent bg-opacity-5 rounded-md border-2 border-textyellow outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full`}
+                        />
+                      )}
                       {errors[field.name] && (
                         <p className="text-red-500 text-xs mt-1">
                           {errors[field.name]?.message}
@@ -284,6 +343,36 @@ export default function SignupForm({
               )}
             </div>
 
+            {/* loft.sh Section */}
+            <div className="flex flex-col">
+              <div className="flex gap-1.5">
+                <input
+                  type="checkbox"
+                  id="loftlabs"
+                  {...register("loftlabs")}
+                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
+                />
+                <label
+                  htmlFor="loftlabs"
+                  className="text-sm text-white text-nowrap"
+                >
+                  <Link
+                    href="https://forms.gle/813SNhCg1biXQmKD8"
+                    className="text-textyellow"
+                    target="_blank"
+                  >
+                    Fill this form
+                  </Link>
+                  {" "}& Join the giveaway to win Headphones worth of 3k*
+                </label>
+              </div>
+              {errors.loftlabs && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.loftlabs?.message}
+                </p>
+              )}
+            </div>
+
             {/* Terms Section */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <div className="flex flex-col">
@@ -292,7 +381,7 @@ export default function SignupForm({
                     type="checkbox"
                     id="rules"
                     {...register("rules")}
-                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow"
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                   />
                   <label htmlFor="rules" className="text-sm text-white">
                     I have read{" "}
@@ -318,7 +407,7 @@ export default function SignupForm({
                     type="checkbox"
                     id="codeOfConduct"
                     {...register("codeOfConduct")}
-                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-md border border-textyellow appearance-none checked:bg-textyellow"
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                   />
                   <label htmlFor="codeOfConduct" className="text-sm text-white">
                     I have read{" "}

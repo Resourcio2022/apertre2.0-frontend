@@ -48,16 +48,8 @@ export default {
         mokoto: "var(--font-mokoto)",
         Poppins: "var(--font-poppins)",
       },
-      backgroundImage: {
-        card: "url('/card.svg')",
-        aboutus: "url('/aboutus.svg')",
-        faq: "url('/faq.svg')",
-        loginbg: "url('/loginbg.png')",
-        testcard: "url('/testimonialcard.svg')",
-      },
       animation: {
-        scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         zoom: "zoom 2s infinite",
       },
       keyframes: {

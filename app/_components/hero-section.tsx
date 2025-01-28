@@ -55,19 +55,6 @@ export default function Hero() {
                 height={150}
               />
             </Link>
-            <Link
-              href="https://gdg.community.dev/gdg-on-campus-academy-of-technology-hooghly-india/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit GDG Website"
-            >
-              <Image
-                src="/gdglogo.svg"
-                alt="GDG Logo"
-                width={200}
-                height={150}
-              />
-            </Link>
           </div>
         </div>
         <Model />

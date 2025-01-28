@@ -9,6 +9,7 @@ export const useGitHub = () => {
   const [githubUsername, setGitHubUsername] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [clerk_userId, setClerk_userId] = useState<string>();
+  const [image, setImage] = useState<string>();
 
   useEffect(() => {
     const fetchGitHubUsername = () => {
@@ -16,13 +17,15 @@ export const useGitHub = () => {
         const githubUsername = user.username
         const emailAddress = user.primaryEmailAddress?.emailAddress
         const user_Id = user.id
+        const image = user.imageUrl
 
         if (!githubUsername || !emailAddress) {
           return
         }
         setGitHubUsername(githubUsername);
         setEmail(emailAddress);
-        setClerk_userId(user_Id)
+        setClerk_userId(user_Id);
+        setImage(image);
       }
       setLoading(false);
     };
@@ -30,5 +33,5 @@ export const useGitHub = () => {
     fetchGitHubUsername();
   }, [isLoaded, isSignedIn, user]);
 
-  return { githubUsername, email, clerk_userId, loading, isSignedIn };
+  return { githubUsername, email, clerk_userId, loading, isSignedIn, image };
 };

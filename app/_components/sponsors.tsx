@@ -22,18 +22,31 @@ function SponsorCard({ imageUrl, alt, width = 300, websiteUrl }: {
         className="object-contain h-full max-w-full"
       />
     </Link>
-  )
+  );
 }
 
-function SponsorTier({ title, color, sponsors = [], columns = 1 }: {
+function SponsorTier({
+  title,
+  color,
+  sponsors = [],
+  columns = 1
+}: {
   title: string;
   color: string;
-  sponsors?: { imageUrl: string; alt: string; width?: number; websiteUrl: string; }[];
+  sponsors?: {
+    imageUrl: string;
+    alt: string;
+    width?: number;
+    websiteUrl: string;
+  }[];
   columns?: number;
 }) {
   return (
     <div className="mb-12">
-      <h3 className="text-xl font-bold mb-6 text-center" style={{ color }}>
+      <h3
+        className="text-2xl font-extrabold mb-8 text-center"
+        style={{ color }}
+      >
         {title}
       </h3>
       <div className="flex justify-center">
@@ -56,12 +69,12 @@ function SponsorTier({ title, color, sponsors = [], columns = 1 }: {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 const domainSponsors = [
   {
-    imageUrl: "/xyz_logo.webp",
+    imageUrl: "/sponsors/xyz_logo.webp",
     alt: "XYZ Domains",
     width: 400,
     websiteUrl: "https://gen.xyz"
@@ -70,45 +83,87 @@ const domainSponsors = [
 
 const digitalSponsors = [
   {
-    imageUrl: "/interview_buddy.png",
+    imageUrl: "/sponsors/interview_buddy.png",
     alt: "Interview Buddy",
     width: 400,
     websiteUrl: "https://interviewbuddy.in"
   },
   {
-    imageUrl: "/jet-brains.jpg",
+    imageUrl: "/sponsors/jet-brains.jpg",
     alt: "JetBrains",
     width: 350,
     websiteUrl: "https://www.jetbrains.com"
   }
 ];
 
-export default function page() {
+const platformSponsors = [
+  {
+    imageUrl: "/sponsors/commudle.svg",
+    alt: "Commudle",
+    width: 350,
+    websiteUrl: "https://www.commudle.com/"
+  }
+];
+
+const bronzeSponsors = [
+  {
+    imageUrl: "/sponsors/quill_ai.webp",
+    alt: "Quill AI Network",
+    width: 350,
+    websiteUrl: "https://quillai.network/"
+  }
+];
+
+const inKindSponsors = [
+  {
+    imageUrl: "/sponsors/flutter_kolkata.jpeg",
+    alt: "Flutter Kolkata",
+    width: 350,
+    websiteUrl: "https://www.flutterkolkata.dev/"
+  }
+];
+
+export default function Sponsor() {
   return (
     <section
-      className="w-full min-h-screen flex items-center justify-center p-6 md:p-20 text-white font-sans bg-black"
+      className="w-full flex items-center justify-center p-10 md:p-14 text-white font-sans bg-black"
       style={{
         backgroundImage: 'url("/aboutus.svg")',
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      id="about"
+      id="sponsors"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl font-bold text-yellow-500 mb-16 text-center">
-          OUR SPONSORS
+        <h2 className="text-5xl font-extrabold text-yellow-500 text-center py-24 tracking-wide">
+          Our Partners
         </h2>
         <SponsorTier
-          title="DOMAIN SPONSOR"
-          color="#FFD700"
+          title="Domain Sponsor"
+          color="#CD7F32"
           sponsors={domainSponsors}
         />
         <SponsorTier
-          title="DIGITAL SPONSOR"
+          title="Digital Sponsor"
           color="#CD7F32"
           sponsors={digitalSponsors}
           columns={2}
+        />
+        <SponsorTier
+          title="Platform Sponsor"
+          color="#C0C0C0"
+          sponsors={platformSponsors}
+        />
+        <SponsorTier
+          title="Bronze Sponsor"
+          color="#CD7F32"
+          sponsors={bronzeSponsors}
+        />
+        <SponsorTier
+          title="In-Kind Sponsor"
+          color="#228B22"
+          sponsors={inKindSponsors}
         />
       </div>
     </section>
