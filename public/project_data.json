@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "projectName": "Smart Analytics Dashboard",
+      "username": "Sarah Chen",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["React", "TypeScript", "D3.js", "Node.js", "MongoDB"]
+    },
+    {
+      "projectName": "E-commerce Platform",
+      "username": "Michael Rodriguez",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["JavaScript", "Vue.js", "Express", "PostgreSQL", "Redis"]
+    },
+    {
+      "projectName": "Machine Learning Pipeline",
+      "username": "Emma Thompson",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Python", "TensorFlow", "scikit-learn", "Docker", "AWS"]
+    },
+    {
+      "projectName": "Social Media Manager",
+      "username": "David Kim",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["React Native", "Firebase", "Redux", "Jest", "GraphQL"]
+    },
+    {
+      "projectName": "Task Management System",
+      "username": "Lisa Wang",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Angular", "Java", "Spring Boot", "MySQL", "Docker"]
+    },
+    {
+      "projectName": "Video Streaming Service",
+      "username": "James Wilson",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Python", "Django", "PostgreSQL", "Redis", "AWS"]
+    },
+    {
+      "projectName": "Finance Calculator",
+      "username": "Anna Kowalski",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["JavaScript", "React", "Node.js", "MongoDB", "Jest"]
+    },
+    {
+      "projectName": "Weather App",
+      "username": "Carlos Martinez",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Swift", "CoreData", "MapKit", "REST API", "XCTest"]
+    },
+    {
+      "projectName": "Real Estate Platform",
+      "username": "Rachel Green",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["PHP", "Laravel", "MySQL", "Vue.js", "Docker"]
+    },
+    {
+      "projectName": "Fitness Tracker",
+      "username": "Thomas Anderson",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Kotlin", "Android", "Room", "Retrofit", "JUnit"]
+    },
+    {
+      "projectName": "Recipe Sharing Platform",
+      "username": "Maria Garcia",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Ruby", "Rails", "PostgreSQL", "React", "Redis"]
+    },
+    {
+      "projectName": "Music Streaming App",
+      "username": "Alex Johnson",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["JavaScript", "Node.js", "MongoDB", "React Native", "Jest"]
+    },
+    {
+      "projectName": "Travel Planner",
+      "username": "Sophie Martin",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Python", "Flask", "SQLAlchemy", "Vue.js", "Docker"]
+    },
+    {
+      "projectName": "Chat Application",
+      "username": "Daniel Lee",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Go", "WebSocket", "Redis", "React", "PostgreSQL"]
+    },
+    {
+      "projectName": "Portfolio Website",
+      "username": "Isabella Silva",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["HTML", "CSS", "JavaScript", "SASS", "Gatsby"]
+    },
+    {
+      "projectName": "Bug Tracking System",
+      "username": "William Brown",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["C#", ".NET", "SQL Server", "Angular", "Azure"]
+    },
+    {
+      "projectName": "Event Management",
+      "username": "Nina Patel",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["PHP", "Symfony", "MySQL", "React", "Docker"]
+    },
+    {
+      "projectName": "Document Scanner",
+      "username": "Kevin Zhang",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Python", "OpenCV", "TensorFlow", "Flask", "MongoDB"]
+    },
+    {
+      "projectName": "Code Editor",
+      "username": "Laura Miller",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["TypeScript", "Electron", "Monaco Editor", "Node.js", "Jest"]
+    },
+    {
+      "projectName": "Game Development",
+      "username": "Ryan Taylor",
+      "profilePic": "https://github.com/johndoe.png",
+      "tags": ["Unity", "C#", "Blender", "Git", "Azure DevOps"]
+    }
+  ]
+}
