@@ -1,7 +1,5 @@
-"use client"
-
 import { Card } from "../../components/ui/card"
-import { Instagram, Github } from "lucide-react"
+import { GitHub, Instagram } from "react-feather"
 
 interface MemberCardProps {
   name: string
@@ -54,7 +52,7 @@ export function MemberCard({ name, image, accentColor, instagram, github }: Memb
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github className="w-4 h-4" />
+                  <GitHub className="w-4 h-4" />
                 </a>
               )}
             </div>

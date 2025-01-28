@@ -20,11 +20,11 @@ export interface TeamMember {
       subtitle: "From concept to reality, these are the people who did it!",
       accentColor: "from-blue-400/80 to-blue-600/80",
       members: [
-        { name: "John Doe", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
+        { name: "John Doe", image: "./snake.jpg", instagram: "#", github: "#" },
         { name: "Jane Smith", image: "./snake.jpg", instagram: "#", github: "#" },
-        { name: "Alice Johnson", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Michael Brown", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Emily Davis", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
+        { name: "Alice Johnson", image: "./snake.jpg", instagram: "#", github: "#" },
+        { name: "Michael Brown", image: "./snake.jpg", instagram: "#", github: "#" },
+        { name: "Emily Davis", image: "./snake.jpg", instagram: "#", github: "#" },
       ],
     },
     {
