@@ -22,18 +22,31 @@ function SponsorCard({ imageUrl, alt, width = 300, websiteUrl }: {
         className="object-contain h-full max-w-full"
       />
     </Link>
-  )
+  );
 }
 
-function SponsorTier({ title, color, sponsors = [], columns = 1 }: {
+function SponsorTier({
+  title,
+  color,
+  sponsors = [],
+  columns = 1
+}: {
   title: string;
   color: string;
-  sponsors?: { imageUrl: string; alt: string; width?: number; websiteUrl: string; }[];
+  sponsors?: {
+    imageUrl: string;
+    alt: string;
+    width?: number;
+    websiteUrl: string;
+  }[];
   columns?: number;
 }) {
   return (
     <div className="mb-12">
-      <h3 className="text-xl font-bold mb-6 text-center" style={{ color }}>
+      <h3
+        className="text-2xl font-extrabold mb-8 text-center"
+        style={{ color }}
+      >
         {title}
       </h3>
       <div className="flex justify-center">
@@ -56,7 +69,7 @@ function SponsorTier({ title, color, sponsors = [], columns = 1 }: {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 const domainSponsors = [
@@ -83,10 +96,37 @@ const digitalSponsors = [
   }
 ];
 
+const platformSponsors = [
+  {
+    imageUrl: "/sponsors/commudle.svg",
+    alt: "Commudle",
+    width: 350,
+    websiteUrl: "https://www.commudle.com/"
+  }
+];
+
+const bronzeSponsors = [
+  {
+    imageUrl: "/sponsors/quill_ai.webp",
+    alt: "Quill AI Network",
+    width: 350,
+    websiteUrl: "https://quillai.network/"
+  }
+];
+
+const inKindSponsors = [
+  {
+    imageUrl: "/sponsors/flutter_kolkata.jpeg",
+    alt: "Flutter Kolkata",
+    width: 350,
+    websiteUrl: "https://www.flutterkolkata.dev/"
+  }
+];
+
 export default function Sponsor() {
   return (
     <section
-      className="w-full flex items-center justify-center p-10 md:p-20 text-white font-sans bg-black"
+      className="w-full flex items-center justify-center p-10 md:p-14 text-white font-sans bg-black"
       style={{
         backgroundImage: 'url("/aboutus.svg")',
         backgroundRepeat: "no-repeat",
@@ -96,19 +136,34 @@ export default function Sponsor() {
       id="sponsors"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl font-bold text-yellow-500 text-center py-5">
-          OUR SPONSORS
+        <h2 className="text-5xl font-extrabold text-yellow-500 text-center py-24 tracking-wide">
+          Our Partners
         </h2>
         <SponsorTier
-          title="DOMAIN SPONSOR"
+          title="Domain Sponsor"
           color="#CD7F32"
           sponsors={domainSponsors}
         />
         <SponsorTier
-          title="DIGITAL SPONSOR"
+          title="Digital Sponsor"
           color="#CD7F32"
           sponsors={digitalSponsors}
           columns={2}
+        />
+        <SponsorTier
+          title="Platform Sponsor"
+          color="#C0C0C0"
+          sponsors={platformSponsors}
+        />
+        <SponsorTier
+          title="Bronze Sponsor"
+          color="#CD7F32"
+          sponsors={bronzeSponsors}
+        />
+        <SponsorTier
+          title="In-Kind Sponsor"
+          color="#228B22"
+          sponsors={inKindSponsors}
         />
       </div>
     </section>

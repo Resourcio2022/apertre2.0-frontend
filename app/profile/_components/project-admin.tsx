@@ -1,33 +1,35 @@
 "use client"
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 import { IProjectAdmin } from "./types";
+import { getProfile } from "../_utils/apiCalls";
 
 interface ProjectAdminProps {
     username: string | undefined;
+    image: string | undefined;
 }
 
-export default function ProjectAdmin({ username }: ProjectAdminProps) {
+const ProjectAdmin = memo(function ProjectAdmin({ username, image }: ProjectAdminProps) {
     const [profile, setProfile] = useState<IProjectAdmin>();
+    const [isPending, startTransition] = useTransition();
 
     useEffect(() => {
-        async function getProfile() {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project-admin/${username}`);
-            const data = await res.json();
-
-            if (!res.ok) {
-                toast.error(data.message);
-                return;
-            }
-            setProfile(data);
-        }
-
         if (username) {
-            getProfile();
+            startTransition(async () => {
+                try {
+                    const data = await getProfile('project-admin', username);
+                    setProfile(data);
+                }
+                catch (err: any) {
+                    toast.error(err.message);
+                }
+            })
         }
     }, [username])
 
     return (
         <></>
     )
-}
+})
+
+export default ProjectAdmin;
