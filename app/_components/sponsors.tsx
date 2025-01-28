@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -127,7 +126,7 @@ const inKindSponsors = [
 export default function Sponsor() {
   return (
     <section
-      className="w-full flex items-center justify-center p-10 md:p-20 text-white font-sans bg-black"
+      className="w-full flex items-center justify-center p-10 md:p-14 text-white font-sans bg-black"
       style={{
         backgroundImage: 'url("/aboutus.svg")',
         backgroundRepeat: "no-repeat",

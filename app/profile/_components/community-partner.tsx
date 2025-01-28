@@ -1,90 +1,129 @@
 "use client"
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
-import { ICommunityPartner } from "./types";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { ICommunityPartner, statusColors } from "./types";
+import { FaGithub, FaHome, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { BsPhone } from "react-icons/bs";
+import { MdAlternateEmail } from "react-icons/md";
 import Image from "next/image";
-import  Link  from "next/link";
-import { useGitHub } from "@/hooks/useGithubUser";
+import Link from "next/link";
+import { getProfile } from "../_utils/apiCalls";
+import { TypewriterEffectSmooth } from "@/components/Typewriter";
+import ClipboardCopy from "@/components/Clipboard";
 
 interface CommunityPartnerProps {
     username: string | undefined;
+    image: string | undefined;
 }
 
-export default function CommunityPartner({ username }: CommunityPartnerProps) {
+const CommunityPartner = memo(function CommunityPartner({ username, image }: CommunityPartnerProps) {
     const [profile, setProfile] = useState<ICommunityPartner>();
-    const github=useGitHub();
-        
-        const im=github.image;
-    useEffect(() => {
-        async function getProfile() {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/community-partner/${username}`);
-            const data = await res.json();
+    const [isPending, startTransition] = useTransition();
 
-            if (!res.ok) {
-                toast.error(data.message);
-                return;
-            }
-            setProfile(data);
-            console.log(data);
-        }
-        
+    useEffect(() => {
         if (username) {
-            getProfile();
+            startTransition(async () => {
+                try {
+                    const data = await getProfile('community-partner', username);
+                    setProfile(data);
+                }
+                catch (err: any) {
+                    toast.error(err.message);
+                }
+            })
         }
     }, [username])
 
     return (
-        <>
-        <div className="w-full bg-[#1F1E1E] max-h-screen flex flex-col justify-center pt-7 pl-2 md:pl-10">
-            <div className="flex flex-col md:flex-row w-full items-center gap-7 pb-7 ">
-              
-            {im && (
-                    <Image src={im} alt="" height={160} width={160} className="rounded-full border-textyellow border-2 "/>
+        <div className="flex flex-col justify-center text-textyellow">
+            <div className="flex flex-col md:flex-row w-full items-start gap-8 pb-7 ">
+                {image && (
+                    <Image src={image} alt="" height={160} width={160} className="rounded-full border-textyellow border-2 " />
                 )}
-            <div className="flex flex-col justify-between items-baseline">
-                <span className="font-mokoto font-normal text-[28px] text-textyellow text-nowrap"> {'>'}_.. Hello {username}</span>
-                <div className="w-full flex gap-5 justify-center md:justify-start">
-                {/* {profile && profile.instagramUsername  && (<Link href={`https://www.instagram.com/${profile.instagramUsername}`} className="text-transparent"><FaInstagram className="text-white size-6"/></Link>)} */}
-                {profile && profile.linkedinUrl && (<Link href={profile?.linkedinUrl} className="text-transparent"><FaLinkedin className="text-white size-6"/></Link>)}
-                {profile && profile.username && (
-                <Link href={`https://github.com/${profile.username}`} className="text-transparent">
-                    <FaGithub className="text-white size-6"/>
-                </Link>
-            )}
-            {profile && profile.twitterUsername && (
-                <Link href={`https://twitter.com/${profile.twitterUsername}`} className="text-transparent">
-                    <FaTwitter className="text-white size-6"/>
-                </Link>
-            )}
+                <div className="flex flex-col justify-between items-baseline">
+                    <div className="font-mokoto font-normal text-2xl text-nowrap flex">
+                        <span className="text-white">{'>'}_.. Hello&nbsp;</span>
+                        {profile?.fullname &&
+                            <TypewriterEffectSmooth words={profile?.fullname.split(" ").map(word => ({ text: word }))} />
+                        }
+                    </div>
+                    {profile && (
+                        <span className={`px-2 py-1 my-2 rounded-full text-sm font-medium ${statusColors[profile.status] || "bg-gray-100 text-gray-800"}`}>
+                            {profile?.status}
+                        </span>
+                    )}
+                    <div className="flex flex-col gap-2 py-3 mb-4 text-white">
+                        <div className="flex gap-3 items-center">
+                            <MdAlternateEmail className="size-6 text-textyellow" />
+                            <span className="font-Poppins font-normal">{profile?.email}</span>
+                        </div>
+                        <div className="flex gap-3 items-center">
+                            <BsPhone className="size-6 text-textyellow" />
+                            <span className="font-Poppins font-normal">{profile?.phoneNumber}</span>
+                        </div>
+                        <div className="flex gap-3 items-center">
+                            <FaHome className="size-6 text-textyellow" />
+                            <span className="font-Poppins font-normal">{profile?.address}</span>
+                        </div>
+                    </div>
+                    <div className="w-full flex gap-5 justify-center md:justify-start text-white">
+                        {profile && (
+                            <Link href={profile.linkedinUrl} target="_blank">
+                                <FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />
+                            </Link>
+                        )}
+                        {profile && (
+                            <Link href={`https://github.com/${profile.username}`} target="_blank">
+                                <FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
+                            </Link>
+                        )}
+                        {profile && (
+                            <Link href={`https://instagram.com/${profile.instagramUsername}`} target="_blank">
+                                <FaInstagram className="size-6 hover:text-textyellow transition-colors duration-150" />
+                            </Link>
+                        )}
+                        {profile && profile.twitterUsername && (
+                            <Link href={`https://twitter.com/${profile.twitterUsername}`} target="_blank">
+                                <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
+                            </Link>
+                        )}
+                    </div>
+                    <div className="w-full flex gap-5 justify-center md:justify-start text-white">
+                        {profile && (
+                            <Link href={profile.communityUrl} target="_blank">
+                                {profile.communityName}
+                            </Link>
+                        )}
+                        {profile && (
+                            <span className="font-Poppins font-normal">{profile.communityStrength} Members</span>
+                        )}
+                    </div>
+                    {profile && profile.referralCode && (
+                        <div className="py-5">
+                            <ClipboardCopy text={profile.referralCode} />
+                        </div>
+                    )}
                 </div>
             </div>
+
+            <span className="w-full flex font-Poppins font-normal text-textyellow py-7 justify-center md:justify-start">Joined From Your Referral </span>
+
+            <div className="w-full overflow-x-auto flex justify-between gap-5">
+                {profile && profile.participant.length > 0 && profile.participant.map((participant, index) => (
+                    <div key={index} className="flex flex-col md:flex-row w-full items-center gap-7 pb-7">
+                        <div className="flex flex-col justify-between items-baseline">
+                            <span className="font-mokoto font-normal text-2xl text-textyellow text-nowrap"> {participant.fullname}
+                            </span>
+                            <Link href={participant.linkedinUrl} className="text-transparent">
+                                <FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />
+                            </Link>
+
+                        </div>
+                    </div>
+                ))}
             </div>
-            <span className="w-full flex font-Poppins font-normal text-textyellow py-7 justify-center md:justify-start">Joined from referral of </span>
-            {/* <div className="flex flex-col md:flex-row w-full items-center gap-7 pb-7 ">
-              
-              
-                      <Image src="/" alt="" height={160} width={160} className="rounded-full border-textyellow border-2 bg-white"/>
-                  
-              <div className="flex flex-col justify-between items-baseline">
-                  <span className="font-mokoto font-normal text-[28px] text-textyellow text-nowrap"> {profile?.evangelist?.fullname}</span>
-                  <div className="w-full flex gap-5 justify-center md:justify-start">
-                      {/* <Link href="" className="text-transparent"><FaInstagram className="text-white size-6"/></Link> */}
-                      {/* <Link href="" className="text-transparent"><FaLinkedin className="text-white size-6"/></Link>
-                      {profile && profile.username && (
-                <Link href={`https://github.com/${profile?.evangelist?.username}`} className="text-transparent">
-                    <FaGithub className="text-white size-6"/>
-                </Link>
-            )}
-            {profile && profile.twitterUsername && (
-                <Link href={`https://twitter.com/${profile?.evangelist?.twitterUsername}`} className="text-transparent">
-                    <FaTwitter className="text-white size-6"/>
-                </Link>
-            )}
-                  </div>
-              </div> */}
-              {/*</div> */}
         </div>
-        </>
     )
-}
+})
+
+export default CommunityPartner;
