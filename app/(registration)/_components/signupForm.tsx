@@ -354,7 +354,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                 />
                 <label
                   htmlFor="loftlabs"
-                  className="text-sm text-white text-nowrap"
+                  className="text-sm text-white"
                 >
                   <Link
                     href="https://forms.gle/813SNhCg1biXQmKD8"
