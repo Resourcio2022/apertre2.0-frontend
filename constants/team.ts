@@ -28,81 +28,80 @@ export interface TeamMember {
       ],
     },
     {
-      id: "techies",
-      title: "THE TECHIES",
-      subtitle: "Ensuring success is available at your fingertips!",
-      accentColor: "from-purple-400/80 to-purple-600/80",
-      members: [
-        { name: "Chris Wilson", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Patricia Taylor", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Robert Martinez", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Linda Garcia", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Kevin Moore", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-      ],
+      "id": "techies",
+      "title": "THE TECHIES",
+      "subtitle": "Ensuring success is available at your fingertips!",
+      "accentColor": "from-purple-400/80 to-purple-600/80",
+      "members": [
+        { "name": "Souvik Sural", "image": "./snake.jpg", "instagram": "https://www.instagram.com/souvik__38", "github": "https://github.com/Souvik34" },
+        { "name": "Debarshee Chakraborty", "image": "./snake.jpg", "instagram": "", "github": "https://github.com/debarshee2004" },
+        { "name": "Rounak Sen", "image": "./snake.jpg", "instagram": "https://www.instagram.com/rony000013/", "github": "https://github.com/rony0000013" },
+        { "name": "Anushka Bhowmick", "image": "./snake.jpg", "instagram": "", "github": "https://github.com/Anushka-Bhowmick" },
+        { "name": "Ankan Misra", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_norizzer_april/", "github": "https://github.com/AnkanMisra" },
+        { "name": "Suman Jain", "image": "./snake.jpg", "instagram": "https://www.instagram.com/suman_n_jain/", "github": "https://github.com/SumanJain2005" },
+        { "name": "Rohan Mitra", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_rohan._.mitra_?igsh=eDA5ZmpvMndwZTM2", "github": "https://github.com/Rohan-450" },
+        { "name": "Krishnendu Dey", "image": "./snake.jpg", "instagram": "https://www.instagram.com/safira_bo", "github": "https://github.com/krishTheCoderBoy" },
+        { "name": "Ashish Gupta", "image": "./snake.jpg", "instagram": "https://www.instagram.com/just_ashish__/", "github": "https://github.com/ASHISH26940" },
+        { "name": "Indrani Som", "image": "./snake.jpg", "instagram": "https://www.instagram.com/404_coder_not_found?igsh=OGQ5ZDc2ODk2ZA==", "github": "https://github.com/IndraniSom" },
+        { "name": "Debaditya Som", "image": "./snake.jpg", "instagram": "https://www.instagram.com/the_spectre_knight", "github": "https://github.com/debaditya-som" }
+      ]
     },
     {
-      id: "designers",
-      title: "THE DESIGNERS",
-      subtitle: "Crafting the visuals that captivate and inspire.",
-      accentColor: "from-green-400/80 to-green-600/80",
-      members: [
-        { name: "Sophia Anderson", image: "", instagram: "#", github: "#" },
-        { name: "James Thompson", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Olivia Martin", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "David White", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Emma Harris", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-      ],
+      "id": "designers",
+      "title": "THE DESIGNERS",
+      "subtitle": "Crafting the visuals that captivate and inspire.",
+      "accentColor": "from-green-400/80 to-green-600/80",
+      "members": [
+        { "name": "Sukrit Deb", "image": "./snake.jpg", "instagram": "https://www.instagram.com/krit_xd007?igsh=eGVpMDYxNWFiMms1", "github": "https://github.com/SukritDeb" },
+        { "name": "Sangneel Deb", "image": "./snake.jpg", "instagram": "https://www.instagram.com/lord_cyclone100/", "github": "https://github.com/lord-cyclone100" },
+        { "name": "Rounak Banerjee", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_roun.aaaaak_?igsh=NTR5bGh0enoxNWU0", "github": "https://github.com/RounaknBanerjee" },
+        { "name": "Monojit Pal", "image": "./snake.jpg", "instagram": "https://www.instagram.com/blah58652020/", "github": "https://github.com/Monojit09" },
+        { "name": "Aindrila Koner", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_the_floating_petal_/", "github": "https://github.com/aindrila2004" },
+        { "name": "Ashmit Barik", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_axhmit_/profilecard/?igsh=MW9vdXhidm5iYXZiNw==", "github": "https://github.com/Dev-ashxy" },
+        { "name": "Dhritiman Bhattacharjee", "image": "./snake.jpg", "instagram": "https://www.instagram.com/bat_signon/profilecard/?igsh=MTZxNXMxY2lndDQ4dg==", "github": "https://github.com/Dhriti007" },
+        { "name": "Aditya Ghosh", "image": "./snake.jpg", "instagram": "https://www.instagram.com/.aditya_ghosh.", "github": "https://github.com/aditya-ghosh2992" }
+      ]
     },
     {
-      id: "content",
-      title: "THE CONTENT CREATORS",
-      subtitle: "The voices behind every message that resonates.",
-      accentColor: "from-yellow-400/80 to-yellow-600/80",
-      members: [
-        { name: "Benjamin Clark", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Mia Lewis", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Liam Walker", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Charlotte Robinson", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Noah Young", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-      ],
+      "id": "content",
+      "title": "THE CONTENT CREATORS",
+      "subtitle": "The voices behind every message that resonates.",
+      "accentColor": "from-yellow-400/80 to-yellow-600/80",
+      "members": [
+        { "name": "Saptak Biswas", "image": "./snake.jpg", "instagram": "https://www.instagram.com/itz_not_what_u_think", "github": "saptak2005" },
+        { "name": "Rittika Chakraborty", "image": "./snake.jpg", "instagram": "https://www.instagram.com/rittika_2222", "github": "https://github.com/Rittika1465" },
+        { "name": "Rajashree Ray", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_rajashree_ray?igsh=MWZ0ZG53dmJoc3V4bQ==", "github": "https://github.com/Rajashree185" },
+        { "name": "Dhwani Chauhan", "image": "./snake.jpg", "instagram": "https://www.instagram.com/dhwani._.chauhan?igsh=YnVkb2d4NXBudmVk", "github": "https://github.com/Dhwani107" },
+        { "name": "Debargha Chakraborty", "image": "./snake.jpg", "instagram": "https://www.instagram.com/iamdebargha_18/", "github": "https://github.com/Deb4dev" }
+      ]
     },
     {
-      id: "socialities",
-      title: "THE SOCIALITIES",
-      subtitle: "Driving conversations and building communities.",
-      accentColor: "from-pink-400/80 to-pink-600/80",
-      members: [
-        { name: "Lucas King", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Ella Scott", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Jack Adams", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Harper Wright", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Aiden Baker", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-      ],
+      "id": "socialities",
+      "title": "THE SOCIALITIES",
+      "subtitle": "Driving conversations and building communities.",
+      "accentColor": "from-pink-400/80 to-pink-600/80",
+      "members": [
+        { "name": "Rajdeep Saha", "image": "./snake.jpg", "instagram": "https://www.instagram.com/rapidrager?igsh=NjB0cnIwMjk4bzA2", "github": "https://github.com/C0D3K0NG" },
+        { "name": "Soham Mukherjee", "image": "./snake.jpg", "instagram": "https://www.instagram.com/__sohxmm_", "github": "https://github.com/sohamMKRG" }
+      ]
     },
     {
-      id: "marketters",
-      title: "THE MARKETTERS",
-      subtitle: "Taking the event to every corner of the world.",
-      accentColor: "from-red-400/80 to-red-600/80",
-      members: [
-        { name: "Isabella Perez", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Ethan Rogers", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Ava Reed", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Daniel Foster", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Abigail Ward", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-      ],
-    },
-    {
-      id: "videographers",
-      title: "THE VIDEOGRAPHERS",
-      subtitle: "Capturing every moment, frame by frame.",
-      accentColor: "from-teal-400/80 to-teal-600/80",
-      members: [
-        { name: "Henry Carter", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Grace Phillips", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Samuel Bennett", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Chloe Turner", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-        { name: "Matthew Edwards", image: "/placeholder.svg?height=400&width=400", instagram: "#", github: "#" },
-      ],
-    },
+      "id": "marketters",
+      "title": "THE MARKETTERS",
+      "subtitle": "Taking the event to every corner of the world.",
+      "accentColor": "from-red-400/80 to-red-600/80",
+      "members": [
+        { "name": "Arkadip Ray", "image": "./snake.jpg", "instagram": "https://www.instagram.com/shutterharmonics/", "github": "" },
+        { "name": "Diptanil Sen", "image": "./snake.jpg", "instagram": "https://www.instagram.com/s.diptanil?igsh=OHI3dWY5NWE3NjQw", "github": "" },
+        { "name": "Shubhojyoti Das", "image": "./snake.jpg", "instagram": "https://www.instagram.com/dasshubhojyoti", "github": "https://github.com/ghost-2362003" },
+        { "name": "Mudit Khater", "image": "./snake.jpg", "instagram": "https://www.instagram.com/muditkhater108?igsh=MWNyMGluMG0xbWh0", "github": "https://github.com/mudit108-code" },
+        { "name": "Rohit Chakraborty", "image": "./snake.jpg", "instagram": "https://www.instagram.com/_.rohit.2002?igsh=ajFnZDdkcWg1Mjh4", "github": "https://github.com/rohit32999" },
+        { "name": "Svetlana Mukherjee", "image": "./snake.jpg", "instagram": "https://www.instagram.com/svetttss/", "github": "https://github.com/svetlanamukherjee" },
+        { "name": "Argha Kundu", "image": "./snake.jpg", "instagram": "_argha____", "github": "https://github.com/Meexargha" },
+        { "name": "Ishita Majumdar", "image": "./snake.jpg", "instagram": "https://www.instagram.com/.ishitatata._", "github": "https://github.com/Ishita0807" },
+        { "name": "Nabajit Bhadury", "image": "./snake.jpg", "instagram": "https://www.instagram.com/dh__eu/", "github": "https://github.com/NabajitBhadury" },
+        { "name": "Kunal Das", "image": "./snake.jpg", "instagram": "http://www.instagra.com/weirdkun_/profilecard/?igsh=MTN2dDRlc2M3Y2tldg==", "github": "https://github.com/ZerefKunal" },
+        { "name": "Jyotirupa Saha", "image": "./snake.jpg", "instagram": "https://www.instagram.com/rupss.saha?igsh=dXo0YWV0Mjl3cm9yZA==", "github": "https://github.com/Jyotirupa20" }
+      ]
+    }
   ];
