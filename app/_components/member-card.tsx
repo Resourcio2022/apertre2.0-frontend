@@ -15,20 +15,19 @@ export function MemberCard({ name, image, accentColor, instagram, github }: Memb
       {/* Card */}
       <Card
         className="relative border-[1px] border-white/10 bg-black/40 backdrop-blur-sm
-        overflow-hidden group-hover:border-white/20 transition-all duration-300"
+        overflow-hidden transition-all duration-300 
+        group-hover:border-yellow-400 group-hover:shadow-[0_0_20px_5px_rgba(255,223,88,0.6)]"
       >
         <div className="p-1.5">
           {/* Image Container */}
           <div className="relative rounded-sm overflow-hidden mb-2">
             <div className="aspect-square">
-              <img src={image || "/placeholder.svg?height=400&width=400"} alt={name} className="object-cover w-full h-full" />
+              <img
+                src={image || "/placeholder.svg?height=400&width=400"}
+                alt={name}
+                className="object-cover w-full h-full"
+              />
             </div>
-
-            {/* Gradient Overlay */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-t opacity-0 
-              group-hover:opacity-30 transition-opacity duration-300 ${accentColor}`}
-            />
           </div>
 
           {/* Name and Social Links */}
@@ -62,4 +61,3 @@ export function MemberCard({ name, image, accentColor, instagram, github }: Memb
     </div>
   )
 }
-
