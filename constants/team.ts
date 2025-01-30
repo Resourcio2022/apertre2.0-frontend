@@ -33,7 +33,7 @@ export interface TeamMember {
       "subtitle": "Ensuring success is available at your fingertips!",
       "accentColor": "from-purple-400/80 to-purple-600/80",
       "members": [
-        { "name": "Anjishnu Ganguly", "image": "", "instagram": "", "github": "" },
+        { "name": "Anjishnu Ganguly", "image": "./WhatsApp Image 2025-01-30 at 20.35.21.jpeg", "instagram": "", "github": "" },
         { "name": "Souvik Sural", "image": "./Souvik.png", "instagram": "https://www.instagram.com/souvik__38", "github": "https://github.com/Souvik34" },
         { "name": "Suman Jain", "image": "./WhatsApp Image 2025-01-30 at 17.10.15.jpeg", "instagram": "https://www.instagram.com/suman_n_jain/", "github": "https://github.com/SumanJain2005" },
         { "name": "Rounak Sen", "image": "./Rounak Sen_gate - Rounak Sen.jpg", "instagram": "https://www.instagram.com/rony000013/", "github": "https://github.com/rony0000013" },
