@@ -8,6 +8,7 @@ export const statusColors = {
 
 type Participant = {
     fullname: string,
+    username: string,
     linkedinUrl: string,
 }
 
