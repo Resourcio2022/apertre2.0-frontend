@@ -12,15 +12,28 @@ function SponsorCard({ imageUrl, alt, width = 300, websiteUrl }: {
       href={websiteUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded-xl p-8 h-56 flex items-center justify-center hover:scale-105 transition-transform duration-300"
+      className="relative group transform transition-transform duration-300 hover:scale-105"
     >
-      <Image
-        src={imageUrl}
-        alt={alt || "sponsor logo"}
-        width={width}
-        height={200}
-        className="object-contain h-full max-w-full"
-      />
+      <div className="relative w-[250px] sm:w-[300px] md:w-[350px] h-[150px] sm:h-[180px] md:h-[200px] flex items-center justify-center">
+        <Image
+          src="/sponsorCard.svg"
+          alt="Sponsor Card Background"
+          width={300}
+          height={180}
+          className="absolute"
+        />
+
+        <div className="absolute flex items-center justify-center w-[70%] h-[60%] translate-x-[30px]">
+          <Image
+            src={imageUrl}
+            alt={alt || "sponsor logo"}
+            layout="intrinsic"
+            width={100} 
+            height={100} 
+            className="object-contain"
+          />
+        </div>
+      </div>
     </Link>
   );
 }
@@ -38,19 +51,22 @@ function SponsorTier({
     alt: string;
     width?: number;
     websiteUrl: string;
-  }[];
+  }[]; 
   columns?: number;
 }) {
   return (
-    <div className="mb-12">
-      <h3
-        className="text-2xl font-extrabold mb-8 text-center"
-        style={{ color }}
-      >
-        {title}
-      </h3>
+    <div className="mb-12 text-center">
+      <div className="flex items-center justify-center gap-4 mb-14">
+        <div className="h-[2px] w-20 bg-yellow-500" />
+        <h3 className="text-2xl font-extrabold ">{title}</h3>
+        <div className="h-[2px] w-20 bg-yellow-500" />
+      </div>
       <div className="flex justify-center">
-        <div className={`grid ${columns === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-8 max-w-6xl w-full`}>
+        <div
+          className={`grid place-items-center gap-12 sm:gap-8 max-w-4xl w-full ${
+            columns === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
+          }`}
+        >
           {sponsors.length > 0 ? (
             sponsors.map((sponsor, i) => (
               <SponsorCard
