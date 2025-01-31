@@ -20,11 +20,11 @@ export interface TeamMember {
       subtitle: "From concept to reality, these are the people who did it!",
       accentColor: "from-blue-400/80 to-blue-600/80",
       members: [
-        { name: "Soumyajit Mondal ", image: "./Blue Blazer Pic Copy - Soumyajit Mondal.jpg", instagram: "#", github: "#" },
-        { name: "Sayan Mukherjee", image: "./DSC_0424 (1) - Sayan Mukherjee.jpg", instagram: "#", github: "#" },
+        { name: "Soumyajit Mondal ", image: "./Blue Blazer Pic Copy - Soumyajit Mondal.jpg", instagram: "___", github: "__" },
+        { name: "Sayan Mukherjee", image: "./DSC_0424 (1) - Sayan Mukherjee.jpg", instagram: "___", github: "____" },
         { "name": "Nabajit Bhadury", "image": "./FB_IMG_1706373569386 - Nabajit Bhadury.jpg", "instagram": "https://www.instagram.com/dh__eu/", "github": "https://github.com/NabajitBhadury" },
-        { name: "Abhraneel Karmakar", image: "./_DSC0328 - Abhraneel Karmakar.jpg", instagram: "#", github: "#" },
-        { "name": "Debarshee Chakraborty", "image": "./GDGlead.jpg", "instagram": "", "github": "https://github.com/debarshee2004" }
+        { name: "Abhraneel Karmakar", image: "./_DSC0328 - Abhraneel Karmakar.jpg", instagram: "___", github: "___" },
+        { "name": "Debarshee Chakraborty", "image": "./GDGlead.jpg", "instagram": "__", "github": "https://github.com/debarshee2004" }
       ],
     },
     {
@@ -33,12 +33,12 @@ export interface TeamMember {
       "subtitle": "Ensuring success is available at your fingertips!",
       "accentColor": "from-purple-400/80 to-purple-600/80",
       "members": [
-        { "name": "Anjishnu Ganguly", "image": "./WhatsApp Image 2025-01-30 at 20.35.21.jpeg", "instagram": "", "github": "" },
+        { "name": "Anjishnu Ganguly", "image": "./WhatsApp Image 2025-01-30 at 20.35.21.jpeg", "instagram": "https://www.instagram.com/___", "github": "https://github.com/__" },
         { "name": "Souvik Sural", "image": "./Souvik.png", "instagram": "https://www.instagram.com/souvik__38", "github": "https://github.com/Souvik34" },
         { "name": "Suman Jain", "image": "./WhatsApp Image 2025-01-30 at 17.10.15.jpeg", "instagram": "https://www.instagram.com/suman_n_jain/", "github": "https://github.com/SumanJain2005" },
         { "name": "Rounak Sen", "image": "./Rounak Sen_gate - Rounak Sen.jpg", "instagram": "https://www.instagram.com/rony000013/", "github": "https://github.com/rony0000013" },
-        { "name": "Anushka Bhowmick", "image": "./DSC_7147 - Anushka Bhowmick.jpg", "instagram": "", "github": "https://github.com/Anushka-Bhowmick" },
-        { "name": "Ankan Misra", "image": "./Arka Uniform Small - Ankan Misra.png", "instagram": "https://www.instagram.com/_norizzer_april/", "github": "https://github.com/AnkanMisra" },
+        { "name": "Anushka Bhowmick", "image": "./DSC_7147 - Anushka Bhowmick.jpg", "instagram": "___", "github": "https://github.com/Anushka-Bhowmick" },
+        { "name": "Ankan Misra", "image": "./Ankan.png", "instagram": "https://www.instagram.com/_norizzer_april/", "github": "https://github.com/AnkanMisra" },
         { "name": "Rohan Mitra", "image": "./IMG_20240607_094016 - Rohan Mitra.jpg", "instagram": "https://www.instagram.com/_rohan._.mitra_?igsh=eDA5ZmpvMndwZTM2", "github": "https://github.com/Rohan-450" },
         { "name": "Krishnendu Dey", "image": "./IMG_20240831_184501_243 - Krishnendu Dey.jpg", "instagram": "https://www.instagram.com/safira_bo", "github": "https://github.com/krishTheCoderBoy" },
         { "name": "Ashish Gupta", "image": "./profPhoto - Ashish Gupta.jpeg", "instagram": "https://www.instagram.com/just_ashish__/", "github": "https://github.com/ASHISH26940" },
@@ -90,9 +90,9 @@ export interface TeamMember {
       "subtitle": "Taking the event to every corner of the world.",
       "accentColor": "from-red-400/80 to-red-600/80",
       "members": [
-        {"name": "Ayan Sarkar", "image": "", "instagram": "", "github": "" },
-        { "name": "Arkadip Ray", "image": "./20240830_192830 - Arkadip Ray.jpg", "instagram": "https://www.instagram.com/shutterharmonics/", "github": "" },
-        { "name": "Diptanil Sen", "image": "./IMG-20240927-WA0020 - 22_DIPTANIL SEN.jpg", "instagram": "https://www.instagram.com/s.diptanil?igsh=OHI3dWY5NWE3NjQw", "github": "" },
+        {"name": "Ayan Sarkar", "image": "", "instagram": "___", "github": "__" },
+        { "name": "Arkadip Ray", "image": "./20240830_192830 - Arkadip Ray.jpg", "instagram": "https://www.instagram.com/shutterharmonics/", "github": "___" },
+        { "name": "Diptanil Sen", "image": "./IMG-20240927-WA0020 - 22_DIPTANIL SEN.jpg", "instagram": "https://www.instagram.com/s.diptanil?igsh=OHI3dWY5NWE3NjQw", "github": "___" },
         { "name": "Shubhojyoti Das", "image": "./Screenshot 2025-01-30 at 6.49.06 PM.png", "instagram": "https://www.instagram.com/dasshubhojyoti", "github": "https://github.com/ghost-2362003" },
         { "name": "Mudit Khater", "image": "./Mudit Khater - MUDIT KHATER.jpg", "instagram": "https://www.instagram.com/muditkhater108?igsh=MWNyMGluMG0xbWh0", "github": "https://github.com/mudit108-code" },
         { "name": "Rohit Chakraborty", "image": "./IMG_20240930_154458_986 - Rohit Chakrabarti.jpg", "instagram": "https://www.instagram.com/_.rohit.2002?igsh=ajFnZDdkcWg1Mjh4", "github": "https://github.com/rohit32999" },
