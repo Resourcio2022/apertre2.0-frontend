@@ -16,7 +16,7 @@ function SponsorCard({ imageUrl, alt, width = 300, websiteUrl }: {
     >
       <div className="relative w-[250px] sm:w-[300px] md:w-[350px] h-[150px] sm:h-[180px] md:h-[200px] flex items-center justify-center">
         <Image
-          src="/sponsorcard.svg"
+          src="/sponsorCard.svg"
           alt="Sponsor Card Background"
           width={300}
           height={180}
