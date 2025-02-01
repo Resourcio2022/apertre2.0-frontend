@@ -11,12 +11,13 @@ export function TeamSection({ section }: TeamSectionProps) {
         <p className="text-white text-base mt-2 opacity-90">{section.subtitle}</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {section.members.map((member, index) => (
           <div key={index} className="flex justify-center">
             <MemberCard
               name={member.name}
               image={member.image}
+              role={section.title.replace('THE ', '')} // Remove "THE" from title for cleaner display
               accentColor={section.accentColor}
               instagram={member.instagram}
               github={member.github}
