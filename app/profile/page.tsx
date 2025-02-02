@@ -2,7 +2,7 @@
 "use client"
 
 import { useGitHub } from "@/hooks/useGithubUser"
-import { useUser } from "@clerk/clerk-react"
+import { useUser } from "@clerk/nextjs";
 import CommunityPartner from "./_components/community-partner"
 import Evangelist from "./_components/evangelist"
 import Mentee from "./_components/mentee"

@@ -12,7 +12,7 @@ import { communityPartnerSignup, evangelistSignup, Role, mentorSignup, menteeSig
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-const DISCORD_LINK = "https://discord.gg/VKKJzgnrzm";
+const DISCORD_LINK = "https://discord.gg/EpSAYF4czs";
 
 export interface InputField {
   name: string;
