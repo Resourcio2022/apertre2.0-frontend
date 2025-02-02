@@ -73,31 +73,6 @@ function SponsorCard({
             className="object-contain"
           />
         </div>
-
-        {/* Rocket div - Updated size and positioning */}
-        {/* <div className=" stroke stroke-yellow-400 absolute -top-8 sm:-top-4 -left-4 sm:-left-0  w-22 h-22 rounded-xl">
-          <svg width="90" height="90" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="48" height="48" rx="8" fill="url(#rocket_bg)" />
-
-            <defs>
-              <linearGradient id="rocket_bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#E9BB0B" stopOpacity={0.2} />
-                <stop offset="0.3" stopColor="#1F1E1E"  />
-                <stop offset="1" stopColor="#0E0A0A" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/file1.png"
-              alt="Floating rocket"
-
-              width={100}
-              height={100}
-              className="-rotate-45 object-contain animate-float "
-            />
-          </div>
-        </div> */}
         <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-4 -left-4 sm:-left-0 w-22 h-22 rounded-xl">
           <svg
             width="90"
