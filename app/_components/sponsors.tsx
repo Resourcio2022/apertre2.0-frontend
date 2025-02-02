@@ -75,7 +75,7 @@ function SponsorCard({
         </div>
 
         {/* Rocket div - Updated size and positioning */}
-        <div className=" stroke stroke-yellow-400 absolute -top-8 sm:-top-4 -left-4 sm:-left-0  w-22 h-22 rounded-xl">
+        {/* <div className=" stroke stroke-yellow-400 absolute -top-8 sm:-top-4 -left-4 sm:-left-0  w-22 h-22 rounded-xl">
           <svg width="90" height="90" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="48" height="48" rx="8" fill="url(#rocket_bg)" />
 
@@ -89,12 +89,34 @@ function SponsorCard({
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
-              src="/file.png"
+              src="/file1.png"
               alt="Floating rocket"
 
               width={100}
               height={100}
               className="-rotate-45 object-contain animate-float "
+            />
+          </div>
+        </div> */}
+        <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-4 -left-4 sm:-left-0 w-22 h-22 rounded-xl">
+          <svg
+            width="90"
+            height="90"
+            viewBox="0 0 0 0"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+            {/* Removed the gradient: set fill to transparent */}
+            <rect width="48" height="48" rx="8" fill="transparent" />
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image
+              src="/file1.png"
+              alt="Floating rocket"
+              width={100}
+              height={100}
+              className="group-hover:stroke-yellow-400 rounded-3xl group-hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all duration-300 object-contain animate-float"
             />
           </div>
         </div>
