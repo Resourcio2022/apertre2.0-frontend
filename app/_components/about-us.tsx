@@ -11,7 +11,7 @@ export default function AboutUs() {
         backgroundPosition: "center",
         minHeight: "100vh",
       }}
-      id="about"
+      id="about-us"
     >
       <div className="flex flex-col md:flex-row justify-between items-center gap-10 max-w-7xl mx-auto">
         <div className="flex-1 flex flex-col gap-5 text-center md:text-left">
