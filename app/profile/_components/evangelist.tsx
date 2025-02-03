@@ -111,16 +111,16 @@ const Evangelist = memo(function Evangelist({ username, image }: EvangelistProps
         Joined From Your Referral
       </span>
 
-      <div className="w-full overflow-x-auto">
-        <div className="flex gap-5 pb-4 min-w-max text-white">
-          {profile && profile.participant.length > 0 && profile.participant.map((participant, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-between w-[200px] p-4 bg-[#2A2929] rounded-lg shadow-lg"
-            >
-              <span className="font-mokoto font-normal text-lg md:text-xl text-textyellow text-center mb-3">
-                {participant.fullname}
-              </span>
+      <div className="w-full flex gap-5 text-white">
+        {profile && profile.participant.length > 0 && profile.participant.map((participant, index) => (
+          <div
+            key={index}
+            className="w-56 py-5 flex flex-col gap-5 items-center bg-[#2A2929] rounded-lg"
+          >
+            <span className="font-mokoto font-normal text-lg md:text-xl text-textyellow text-center">
+              {participant.fullname}
+            </span>
+            <div className="flex gap-3">
               <Link
                 href={`https://github.com/${participant.username}`}
                 target="_blank"
@@ -136,8 +136,8 @@ const Evangelist = memo(function Evangelist({ username, image }: EvangelistProps
                 <FaLinkedin className="size-5 md:size-6 hover:text-textyellow transition-colors duration-150" />
               </Link>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   )

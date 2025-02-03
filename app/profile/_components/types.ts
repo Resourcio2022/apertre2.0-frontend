@@ -87,6 +87,9 @@ export interface IMentor { // fix
     address: string,
     phoneNumber: string,
     status: Status,
+    linkedinUrl: string,
+    twitterUsername: string | null,
+    techstack: string[],
 }
 
 export interface IProjectAdmin { // fix
