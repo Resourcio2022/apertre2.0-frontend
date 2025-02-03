@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useState, createContext, useRef } from "react";
+import { useState, createContext } from "react";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -34,7 +34,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       <div className="w-full flex justify-center">
         <div
           className={cn(
-            "grid grid-cols-1 md:grid-cols-2 gap-4 w-full",
+            "grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full",
             "max-w-[1200px] px-4"
           )}
         >
