@@ -1,21 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function SponsorCard({
-  imageUrl,
-  alt,
-  width = 300,
-  websiteUrl,
-}: {
-  imageUrl: string
-  alt?: string
-  width?: number
-  websiteUrl: string
-}) {
-  const floatKeyframes = {
-    "0%, 100%": { transform: "translateY(0)" },
-    "50%": { transform: "translateY(-10px)" },
-  }
+function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: string, websiteUrl: string }) {
 
   const floatAnimation = {
     animation: "float 3s ease-in-out infinite",
@@ -63,17 +49,15 @@ function SponsorCard({
         </svg>
 
         {/* Logo container */}
-        <div className="absolute flex items-center justify-center w-[70%] h-[60%] translate-x-[10px]">
+        <div className="absolute w-3/5 flex justify-center translate-x-10">
           <Image
-            src={imageUrl || "/placeholder.svg"}
+            src={imageUrl}
             alt={alt || "sponsor logo"}
-            layout="intrinsic"
-            width={100}
-            height={100}
-            className="object-contain"
+            width={110}
+            height={110}
           />
         </div>
-        <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-4 -left-4 sm:-left-0 w-22 h-22 rounded-xl">
+        <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-3 -left-4 sm:left-4 w-22 h-22 rounded-xl">
           <svg
             width="90"
             height="90"
@@ -81,13 +65,13 @@ function SponsorCard({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            
+
             {/* Removed the gradient: set fill to transparent */}
             <rect width="48" height="48" rx="8" fill="transparent" />
           </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-1 flex items-center justify-center">
             <Image
-              src="/file1.png"
+              src="/sponsors/file.png"
               alt="Floating rocket"
               width={100}
               height={100}
@@ -110,18 +94,11 @@ function SponsorCard({
   )
 }
 
-function SponsorTier({
-  title,
-  color,
-  sponsors = [],
-  columns = 1
-}: {
+function SponsorTier({ title, sponsors = [], columns = 1 }: {
   title: string;
-  color: string;
   sponsors?: {
     imageUrl: string;
     alt: string;
-    width?: number;
     websiteUrl: string;
   }[];
   columns?: number;
@@ -144,7 +121,6 @@ function SponsorTier({
                 key={i}
                 imageUrl={sponsor.imageUrl}
                 alt={sponsor.alt}
-                width={sponsor.width}
                 websiteUrl={sponsor.websiteUrl}
               />
             ))
@@ -163,7 +139,6 @@ const domainSponsors = [
   {
     imageUrl: "/sponsors/xyz_logo.webp",
     alt: "XYZ Domains",
-    width: 400,
     websiteUrl: "https://gen.xyz"
   }
 ];
@@ -172,13 +147,11 @@ const digitalSponsors = [
   {
     imageUrl: "/sponsors/interview_buddy.png",
     alt: "Interview Buddy",
-    width: 400,
     websiteUrl: "https://interviewbuddy.in"
   },
   {
     imageUrl: "/sponsors/jet-brains.jpg",
     alt: "JetBrains",
-    width: 350,
     websiteUrl: "https://www.jetbrains.com"
   }
 ];
@@ -187,7 +160,6 @@ const platformSponsors = [
   {
     imageUrl: "/sponsors/commudle.svg",
     alt: "Commudle",
-    width: 350,
     websiteUrl: "https://www.commudle.com/"
   }
 ];
@@ -196,7 +168,6 @@ const bronzeSponsors = [
   {
     imageUrl: "/sponsors/quill_ai.webp",
     alt: "Quill AI Network",
-    width: 350,
     websiteUrl: "https://quillai.network/"
   }
 ];
@@ -205,7 +176,6 @@ const inKindSponsors = [
   {
     imageUrl: "/sponsors/flutter_kolkata.jpeg",
     alt: "Flutter Kolkata",
-    width: 350,
     websiteUrl: "https://www.flutterkolkata.dev/"
   }
 ];
@@ -228,28 +198,23 @@ export default function Sponsor() {
         </h2>
         <SponsorTier
           title="Domain Sponsor"
-          color="#CD7F32"
           sponsors={domainSponsors}
         />
         <SponsorTier
           title="Digital Sponsor"
-          color="#CD7F32"
           sponsors={digitalSponsors}
           columns={2}
         />
         <SponsorTier
           title="Platform Sponsor"
-          color="#C0C0C0"
           sponsors={platformSponsors}
         />
         <SponsorTier
           title="Bronze Sponsor"
-          color="#CD7F32"
           sponsors={bronzeSponsors}
         />
         <SponsorTier
           title="In-Kind Sponsor"
-          color="#228B22"
           sponsors={inKindSponsors}
         />
       </div>
