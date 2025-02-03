@@ -145,7 +145,7 @@ const domainSponsors = [
 
 const goldSponsors = [
   {
-    imageUrl: "/sponsors/github_white.jpg",
+    imageUrl: "/sponsors/github.jpg",
     alt: "GitHub",
     websiteUrl: "https://github.com/"
   }
@@ -195,7 +195,7 @@ const inKindSponsors = [
 
 const platinumSponsors = [
   {
-    imageUrl: "/sponsors/Loft_Branding.svg",
+    imageUrl: "/sponsors/loft.svg",
     alt: "Loft Labs",
     websiteUrl: "https://www.loft.sh/"
   }
@@ -214,7 +214,7 @@ export default function Sponsor() {
       id="sponsors"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-5xl font-extrabold text-yellow-500 text-center py-24 tracking-wide">
+        <h2 className="text-textyellow text-2xl md:text-6xl font-mokoto text-center py-12 md:py-24">
           Our Partners
         </h2>
         <SponsorTier
@@ -225,14 +225,14 @@ export default function Sponsor() {
           title="Gold Sponsor"
           sponsors={goldSponsors}
         />
-          <SponsorTier
-            title="Platform Sponsor"
-            sponsors={platformSponsors}
-          />
-          <SponsorTier
-            title="Bronze Sponsor"
-            sponsors={bronzeSponsors}
-          />
+        <SponsorTier
+          title="Platform Sponsor"
+          sponsors={platformSponsors}
+        />
+        <SponsorTier
+          title="Bronze Sponsor"
+          sponsors={bronzeSponsors}
+        />
         <SponsorTier
           title="Domain Sponsor"
           sponsors={domainSponsors}
