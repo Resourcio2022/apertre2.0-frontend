@@ -10,7 +10,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="min-h-screen bg-black bg-cover bg-no-repeat bg-faq text-white flex flex-col justify-center p-10 md:p-32 font-mokoto">
+        <section className="min-h-screen bg-black bg-cover bg-no-repeat bg-faq text-white flex flex-col justify-center p-10 md:p-32 ">
             <h2 className="text-lg md:text-6xl font-bold text-yellow-400 mb-8 text-center md:text-left font-mokoto break-words px-4">
                 FREQUENTLY ASKED QUESTIONS
             </h2>
@@ -21,7 +21,7 @@ export default function FAQ() {
                         className="border border-yellow-400 rounded-md overflow-hidden"
                     >
                         <button
-                            className="w-full flex justify-between items-center px-4 py-3 bg-[#373131] text-left font-normal md:font-semibold text-sm md:text-lg"
+                            className="w-full flex justify-between items-center px-4 py-3 bg-[#373131] text-left font-normal md:font-semibold font-mokoto text-sm md:text-lg"
                             onClick={() => toggleFAQ(index)}
                         >
                             {item.question}
@@ -44,7 +44,7 @@ export default function FAQ() {
                             </span>
                         </button>
                         {activeIndex === index && (
-                            <div className="p-4 bg-[#373131] text-sm text-gray-200">
+                            <div className="p-4 bg-[#373131] text-sm text-gray-200 font-Poppins">
                                 {item.answer}
                             </div>
                         )}

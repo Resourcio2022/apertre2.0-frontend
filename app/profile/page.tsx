@@ -2,13 +2,13 @@
 "use client"
 
 import { useGitHub } from "@/hooks/useGithubUser"
-import { useUser } from "@clerk/clerk-react"
+import { useUser } from "@clerk/nextjs";
 import CommunityPartner from "./_components/community-partner"
 import Evangelist from "./_components/evangelist"
 import Mentee from "./_components/mentee"
 import Mentor from "./_components/mentor"
 import ProjectAdmin from "./_components/project-admin"
-import { Loader } from "@/components/Pre-Loader"
+import { Loader } from "@/components/Loader"
 import { useState, useRef, useEffect } from "react"
 import type { Role } from "../(registration)/_utils/apiCalls"
 import { ChevronDown } from "lucide-react"
