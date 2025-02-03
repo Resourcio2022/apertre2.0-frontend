@@ -1,8 +1,12 @@
 import type { TeamSection as TeamSectionType } from "../../constants/team"
 import { MemberCard } from "./member-card"
+
 interface TeamSectionProps {
-  section: TeamSectionType
+  section: TeamSectionType & {
+    id: 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'
+  }
 }
+
 export function TeamSection({ section }: TeamSectionProps) {
   return (
     <section className="mb-20">
@@ -18,8 +22,9 @@ export function TeamSection({ section }: TeamSectionProps) {
               name={member.name}
               image={member.image}
               accentColor={section.accentColor}
-              instagram={member.instagram}
+              linkedin={member.linkedin}
               github={member.github}
+              role={section.id}
             />
           </div>
         ))}

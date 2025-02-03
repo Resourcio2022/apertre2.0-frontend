@@ -85,7 +85,12 @@ export default function Page() {
           <div key={section.id} className="relative">
             {/* TeamSection should have a higher z-index */}
             <div className="relative z-10">
-              <TeamSection section={section} />
+              <TeamSection
+                section={{
+                  ...section,
+                  id: section.id as 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'
+                }}
+              />
             </div>
 
             {stars.map((star) => (

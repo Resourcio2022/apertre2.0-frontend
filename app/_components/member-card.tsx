@@ -1,14 +1,32 @@
+
 interface MemberCardProps {
   name: string
   image: string
   accentColor: string
-  instagram?: string
+  linkedin?: string    // Changed from instagram
   github?: string
+  role: 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'  // Updated to match team.ts IDs
 }
 
-export function MemberCard({ name, image, instagram, github }: MemberCardProps) {
+export function MemberCard({ name, image, linkedin, github, role }: MemberCardProps) {    // Changed parameter name
+  const getPlanetSrc = () => {
+    const planets = {
+      organisers: '/crew/design.svg',
+      techies: '/crew/tech.svg',
+      designers: '/crew/planet.svg',
+      content: '/crew/content.svg',
+      socialities: '/crew/social.svg',
+      marketters: '/crew/market.svg'
+    }
+    console.log('Current role:', role, 'Planet path:', planets[role])
+    return planets[role] || '/crew/planet.svg'
+  }
+
   return (
-    <div className="relative group">
+    <div className="relative group p-3"> {/* Added p-3 for spacing */}
+      {/* Permanent border */}
+      <div className="absolute inset-0 rounded-2xl border-2 border-yellow-400/50" />
+
       {/* Outer glow effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-all duration-700" />
 
@@ -23,8 +41,24 @@ export function MemberCard({ name, image, instagram, github }: MemberCardProps) 
 
         {/* Main Content */}
         <div className="relative z-10 h-full bg-zinc-900/80 backdrop-blur-sm rounded-2xl overflow-hidden group-hover:bg-zinc-900/70 transition-all duration-700">
+          {/* Planet Cutout */}
+          <div className="absolute -top-2 -left-2 w-16 h-16 rounded-full z-[50] bg-black overflow-hidden">
+            <div className="w-full h-full transition-transform duration-700 group-hover:rotate-180">
+              <img
+                src={getPlanetSrc()}
+                alt={`${role} Planet`}
+                className="w-full h-full object-cover opacity-100 transition-opacity duration-700 group-hover:opacity-0"
+              />
+              <img
+                src={getPlanetSrc()}
+                alt={`${role} Planet Alternate`}
+                className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+              />
+            </div>
+          </div>
+
           {/* Image Container */}
-          <div className="h-full transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+          <div className="h-full transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] relative z-[10]">
             <img
               src={image}
               alt={name}
@@ -44,7 +78,7 @@ export function MemberCard({ name, image, instagram, github }: MemberCardProps) 
           </div>
 
           {/* Content Container with enhanced animations */}
-          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-[15]">
             <div className="relative">
               {/* Name with animated underline */}
               <h3 className="text-white font-bold text-lg sm:text-xl mb-4 tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">
@@ -54,18 +88,20 @@ export function MemberCard({ name, image, instagram, github }: MemberCardProps) 
 
               {/* Enhanced social links with new hover effects */}
               <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 translate-y-4 group-hover:translate-y-0">
-                {instagram && instagram !== "" && instagram !== "#" && (
+                {linkedin && linkedin !== "" && linkedin !== "#" && (
                   <a
-                    href={instagram}
+                    href={linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="relative p-3 rounded-full bg-gradient-to-br from-amber-500/10 to-orange-500/10 hover:from-amber-500/30 hover:to-orange-500/30 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(251,191,36,0.5)] border border-white/10 hover:border-white/30 group/link"
                   >
                     <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/30 blur-md opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
                     <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-200/10 to-orange-300/10 animate-pulse" />
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300 transition-all duration-300 relative z-10 group-hover/link:text-amber-200 group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
+                    <img
+                      src="/crew/linkedin.svg"
+                      alt="LinkedIn"
+                      className="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300 relative z-10 group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+                    />
                   </a>
                 )}
                 {github && github !== "" && github !== "#" && (
@@ -77,9 +113,11 @@ export function MemberCard({ name, image, instagram, github }: MemberCardProps) 
                   >
                     <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/30 blur-md opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
                     <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-200/10 to-orange-300/10 animate-pulse" />
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300 transition-all duration-300 relative z-10 group-hover/link:text-amber-200 group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
+                    <img
+                      src="/crew/github.svg"
+                      alt="GitHub"
+                      className="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300 relative z-10 group-hover/link:text-amber-200 group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+                    />
                   </a>
                 )}
               </div>
