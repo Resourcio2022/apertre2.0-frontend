@@ -14,11 +14,11 @@ export const data = [
   //     content: "Register as a project admin. Showcase your projects to the contributors for enhancement and bug fixture.",
   //     registerlink: "/project-admin",
   // },
-  // {
-  //   usertype: "MENTOR",
-  //   content: "Register as a mentor. Guide enthusiast contributors through your expertise and help them become technically strong.",
-  //   registerlink: "/mentor",
-  // },
+  {
+    usertype: "MENTOR",
+    content: "Register as a mentor. Guide enthusiast contributors through your expertise and help them become technically strong.",
+    registerlink: "/mentor",
+  },
   {
     usertype: "MENTEE",
     content: "Register as a contributor. Contribute you skills, showcase your creativity and strengthen your tech knowledge",
