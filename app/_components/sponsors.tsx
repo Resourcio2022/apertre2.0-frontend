@@ -94,7 +94,7 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
   )
 }
 
-function SponsorTier({ title, sponsors = [], columns = 1 }: {
+function SponsorTier({ title, sponsors = [], columns }: {
   title: string;
   sponsors?: {
     imageUrl: string;
@@ -143,6 +143,14 @@ const domainSponsors = [
   }
 ];
 
+const goldSponsors = [
+  {
+    imageUrl: "/sponsors/github_white.jpg",
+    alt: "GitHub",
+    websiteUrl: "https://github.com/"
+  }
+];
+
 const digitalSponsors = [
   {
     imageUrl: "/sponsors/interview_buddy.png",
@@ -177,6 +185,19 @@ const inKindSponsors = [
     imageUrl: "/sponsors/flutter_kolkata.jpeg",
     alt: "Flutter Kolkata",
     websiteUrl: "https://www.flutterkolkata.dev/"
+  },
+  {
+    imageUrl: "/sponsors/keploy.svg",
+    alt: "Keploy",
+    websiteUrl: "https://keploy.io/"
+  }
+];
+
+const platinumSponsors = [
+  {
+    imageUrl: "/sponsors/Loft_Branding.svg",
+    alt: "Loft Labs",
+    websiteUrl: "https://www.loft.sh/"
   }
 ];
 
@@ -197,6 +218,22 @@ export default function Sponsor() {
           Our Partners
         </h2>
         <SponsorTier
+          title="Platinum Sponsor"
+          sponsors={platinumSponsors}
+        />
+        <SponsorTier
+          title="Gold Sponsor"
+          sponsors={goldSponsors}
+        />
+          <SponsorTier
+            title="Platform Sponsor"
+            sponsors={platformSponsors}
+          />
+          <SponsorTier
+            title="Bronze Sponsor"
+            sponsors={bronzeSponsors}
+          />
+        <SponsorTier
           title="Domain Sponsor"
           sponsors={domainSponsors}
         />
@@ -206,16 +243,9 @@ export default function Sponsor() {
           columns={2}
         />
         <SponsorTier
-          title="Platform Sponsor"
-          sponsors={platformSponsors}
-        />
-        <SponsorTier
-          title="Bronze Sponsor"
-          sponsors={bronzeSponsors}
-        />
-        <SponsorTier
           title="In-Kind Sponsor"
           sponsors={inKindSponsors}
+          columns={2}
         />
       </div>
     </section>

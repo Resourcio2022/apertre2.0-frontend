@@ -13,11 +13,11 @@ export default function Registration() {
           "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
       }}
     >
-      <h2 className="text-textyellow mx-auto font-normal text-2xl md:text-6xl font-mokoto text-center md:text-left">
+      <h2 className="text-textyellow mx-auto font-normal text-2xl md:text-6xl font-mokoto text-center md:text-left mb-4">
         Registrations
       </h2>
       <Carousel items={cards} />
-      <div className="flex w-full justify-center items-center">
+      <div className="flex w-full justify-center items-center mt-8">
         <div className="border-t-2 border-b-2 border-textyellow border-opacity-30 py-7 border-dashed">
           <span className="text-white text-base md:text-lg font-normal font-Poppins text-center flex flex-col italic">
             “In open source, we feel strongly that to really do something well,
