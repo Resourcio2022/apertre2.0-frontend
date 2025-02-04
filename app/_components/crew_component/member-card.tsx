@@ -81,17 +81,17 @@ export function MemberCard({ name, image, linkedin, github, role }: MemberCardPr
           </div>
 
 
-          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-[15]">
+          // In the content container section, modify the classes
+          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 md:translate-y-8 md:group-hover:translate-y-0 translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-[15]">
             <div className="relative">
-
-              {/* Animated underline for names while hover */}
-              <h3 className="text-white font-bold text-lg sm:text-xl mb-4 tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">
+              {/* Name with animated underline */}
+              <h3 className="text-white font-bold text-lg sm:text-xl mb-4 tracking-wide md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-all duration-500 delay-100 md:translate-y-4 md:group-hover:translate-y-0 translate-y-0 drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">
                 {name}
-                <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-amber-200 to-orange-500 transition-all duration-700 mt-1" />
+                <div className="h-0.5 w-0 md:group-hover:w-full w-full bg-gradient-to-r from-amber-200 to-orange-500 transition-all duration-700 mt-1" />
               </h3>
 
-              {/*  Git and Linkedin hover effects */}
-              <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 translate-y-4 group-hover:translate-y-0">
+              {/* Social links */}
+              <div className="flex items-center gap-4 md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-all duration-500 delay-200 md:translate-y-4 md:group-hover:translate-y-0 translate-y-0">
                 {linkedin && linkedin !== "" && linkedin !== "#" && (
                   <a
                     href={linkedin}
