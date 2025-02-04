@@ -1,5 +1,5 @@
 import { InfiniteMovingCards } from '@/components/InfiniteMovingCards'
-import { testimonialsdata } from '@/constants/testimonialsconstant'
+import { testimonialsdata } from '@/constants/testimonials-constant'
 import Mobiletestimonials from '@/app/_components/mobiletestimonials'
 
 export default function Testimonials() {

@@ -51,6 +51,8 @@ export default {
       animation: {
         scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         zoom: "zoom 2s infinite",
+        'gradient-slow': 'gradient 8s linear infinite',
+        'shimmer': 'shimmer 2s linear infinite',
       },
       keyframes: {
         scroll: {
@@ -63,6 +65,25 @@ export default {
           "50%": { transform: "scale(1.1)" },
           "100%": { transform: "scale(0.9)" },
         },
+        gradient: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          }
+        },
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        }
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
