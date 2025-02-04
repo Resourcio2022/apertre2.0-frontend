@@ -11,12 +11,12 @@ interface MemberCardProps {
 export function MemberCard({ name, image, linkedin, github, role }: MemberCardProps) {
   const getPlanetSrc = () => {
     const planets = {
-      organisers: '/crew_planets/design.svg',
-      techies: '/crew_planets/tech.svg',
-      designers: '/crew_planets/planet.svg',
-      content: '/crew_planets/content.svg',
-      socialities: '/crew_planets/social.svg',
-      marketters: '/crew_planets/market.svg'
+      organisers: '/crew/crew_planets/design.svg',
+      techies: '/crew/crew_planets/tech.svg',
+      designers: '/crew/crew_planets/planet.svg',
+      content: '/crew/crew_planets/content.svg',
+      socialities: '/crew/crew_planets/social.svg',
+      marketters: '/crew/crew_planets/market.svg'
     }
     console.log('Current role:', role, 'Planet path:', planets[role])
     return planets[role] || '/crew_planets/planet.svg'

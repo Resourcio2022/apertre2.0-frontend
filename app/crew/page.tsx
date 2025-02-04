@@ -3,7 +3,7 @@ import { MoveUpIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { teamSections } from "../../constants/team";
-import { TeamSection } from "../_components/team-section";
+import { TeamSection } from "../_components/crew_component/team-section";
 const stars = [
   { id: 1, src: "/star.png", left: "5%", top: "15%", size: 35 },
   { id: 2, src: "/star.png", left: "35%", top: "55%", size: 40 },

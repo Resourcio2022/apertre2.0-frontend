@@ -1,4 +1,4 @@
-import type { TeamSection as TeamSectionType } from "../../constants/team"
+import type { TeamSection as TeamSectionType } from "../../../constants/team"
 import { MemberCard } from "./member-card"
 
 interface TeamSectionProps {
