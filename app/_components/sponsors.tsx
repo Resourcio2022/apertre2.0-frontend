@@ -94,7 +94,7 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
   )
 }
 
-function SponsorTier({ title, sponsors = [], columns = 1 }: {
+function SponsorTier({ title, sponsors = [], columns }: {
   title: string;
   sponsors?: {
     imageUrl: string;
@@ -143,6 +143,14 @@ const domainSponsors = [
   }
 ];
 
+const goldSponsors = [
+  {
+    imageUrl: "/sponsors/github.jpg",
+    alt: "GitHub",
+    websiteUrl: "https://github.com/"
+  }
+];
+
 const digitalSponsors = [
   {
     imageUrl: "/sponsors/interview_buddy.png",
@@ -177,6 +185,19 @@ const inKindSponsors = [
     imageUrl: "/sponsors/flutter_kolkata.jpeg",
     alt: "Flutter Kolkata",
     websiteUrl: "https://www.flutterkolkata.dev/"
+  },
+  {
+    imageUrl: "/sponsors/keploy.svg",
+    alt: "Keploy",
+    websiteUrl: "https://keploy.io/"
+  }
+];
+
+const platinumSponsors = [
+  {
+    imageUrl: "/sponsors/loft.svg",
+    alt: "Loft Labs",
+    websiteUrl: "https://www.loft.sh/"
   }
 ];
 
@@ -193,17 +214,16 @@ export default function Sponsor() {
       id="sponsors"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-5xl font-extrabold text-yellow-500 text-center py-24 tracking-wide">
+        <h2 className="text-textyellow text-2xl md:text-6xl font-mokoto text-center py-12 md:py-24">
           Our Partners
         </h2>
         <SponsorTier
-          title="Domain Sponsor"
-          sponsors={domainSponsors}
+          title="Platinum Sponsor"
+          sponsors={platinumSponsors}
         />
         <SponsorTier
-          title="Digital Sponsor"
-          sponsors={digitalSponsors}
-          columns={2}
+          title="Gold Sponsor"
+          sponsors={goldSponsors}
         />
         <SponsorTier
           title="Platform Sponsor"
@@ -214,8 +234,18 @@ export default function Sponsor() {
           sponsors={bronzeSponsors}
         />
         <SponsorTier
+          title="Domain Sponsor"
+          sponsors={domainSponsors}
+        />
+        <SponsorTier
+          title="Digital Sponsor"
+          sponsors={digitalSponsors}
+          columns={2}
+        />
+        <SponsorTier
           title="In-Kind Sponsor"
           sponsors={inKindSponsors}
+          columns={2}
         />
       </div>
     </section>
