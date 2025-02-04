@@ -123,7 +123,7 @@ const CommunityPartner = memo(function CommunityPartner({ username, image }: Com
         Joined From Your Referral
       </span>
 
-      <div className="w-full flex gap-5 text-white">
+      <div className="w-full flex flex-wrap gap-5 text-white">
         {profile && profile.participant.length > 0 && profile.participant.map((participant, index) => (
           <div
             key={index}
