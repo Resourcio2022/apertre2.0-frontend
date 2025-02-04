@@ -1,9 +1,9 @@
-import type { TeamSection as TeamSectionType } from "../../constants/team"
+import type { TeamRole, TeamSection as TeamSectionType } from "@/constants/team-constant"
 import { MemberCard } from "./member-card"
 
 interface TeamSectionProps {
   section: TeamSectionType & {
-    id: 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'
+    id: TeamRole
   }
 }
 
