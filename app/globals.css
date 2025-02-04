@@ -14,6 +14,9 @@
 html {
     scroll-behavior: smooth;
     user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .spinnerContainer {
@@ -24,7 +27,6 @@ html {
     height: 100vh;
 }
 
-
 .loadingSpinner {
     border-top: 2px solid #363636;
     border-radius: 50%;
@@ -32,11 +34,50 @@ html {
 }
 
 @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
     0% {
         transform: rotate(0deg);
+        opacity: 0.5;
     }
-
+    50% {
+        transform: rotate(180deg);
+        opacity: 1;
+    }
     100% {
         transform: rotate(360deg);
+        opacity: 0.5;
     }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.animate-glow {
+    animation: glow 4s linear infinite, pulse 2s ease-in-out infinite;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.3),
+        rgba(255, 183, 0, 0.6),
+        rgba(255, 215, 0, 0.3)
+    );
+    background-size: 200% auto;
+    animation: glow 4s linear infinite, shimmer 3s infinite;
+    filter: blur(1px);
+}
+
+.animate-glow:hover {
+    animation-play-state: running;
+    filter: blur(1.5px);
 }
