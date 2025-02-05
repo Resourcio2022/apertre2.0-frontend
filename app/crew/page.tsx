@@ -2,8 +2,14 @@
 import { MoveUpIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { teamSections } from "../../constants/team";
 import { TeamSection } from "../_components/crew_component/team-section";
+=======
+import { teamSections } from "../../constants/team-constant";
+import { TeamSection } from "./_components/team-section";
+
+>>>>>>> 2c2c33481a9bd0ddbea0a6e0f06d7431fbda615b
 const stars = [
   { id: 1, src: "/star.png", left: "5%", top: "15%", size: 35 },
   { id: 2, src: "/star.png", left: "35%", top: "55%", size: 40 },
@@ -15,9 +21,9 @@ const stars = [
   { id: 8, src: "/star.png", left: "60%", top: "85%", size: 33 },
   { id: 9, src: "/star.png", left: "80%", top: "75%", size: 30 },
 ];
+
 export default function Page() {
   const [showButton, setShowButton] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +94,7 @@ export default function Page() {
               <TeamSection
                 section={{
                   ...section,
-                  id: section.id as 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'
+                  id: section.id
                 }}
               />
             </div>

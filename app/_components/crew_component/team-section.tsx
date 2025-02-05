@@ -1,9 +1,13 @@
+<<<<<<<< HEAD:app/_components/crew_component/team-section.tsx
 import type { TeamSection as TeamSectionType } from "../../../constants/team"
+========
+import type { TeamRole, TeamSection as TeamSectionType } from "@/constants/team-constant"
+>>>>>>>> 2c2c33481a9bd0ddbea0a6e0f06d7431fbda615b:app/crew/_components/team-section.tsx
 import { MemberCard } from "./member-card"
 
 interface TeamSectionProps {
   section: TeamSectionType & {
-    id: 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'
+    id: TeamRole
   }
 }
 
