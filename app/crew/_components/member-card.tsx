@@ -72,6 +72,7 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
               alt={name}
               width={100}
               height={100}
+              unoptimized
               className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:filter group-hover:brightness-110 group-hover:contrast-110 group-hover:saturate-105"
             />
 
