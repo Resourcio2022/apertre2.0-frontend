@@ -22,6 +22,9 @@ interface MemberCardProps {
   role: TeamRole
 }
 
+const iconStyle = "w-6 h-6 transition-all duration-300 relative z-10 text-white group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+const linkStyle="relative p-3 rounded-full bg-gradient-to-br from-amber-500/10 to-orange-500/10 hover:from-amber-500/30 hover:to-orange-500/30 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(251,191,36,0.5)] border border-white/10 hover:border-white/30 group/link"
+
 export function MemberCard({ name, image, github, linkedin, instagram, role }: MemberCardProps) {
 
   const getPlanetSrc = () => planets[role] || '/crew/planets/planet.svg'
@@ -105,13 +108,9 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative p-3 rounded-full bg-gradient-to-br from-amber-500/10 to-orange-500/10 hover:from-amber-500/30 hover:to-orange-500/30 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(251,191,36,0.5)] border border-white/10 hover:border-white/30 group/link"
+                    className={linkStyle}
                   >
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/30 blur-md opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-200/10 to-orange-300/10 animate-pulse" />
-                    <FaGithub
-                      className="w-6 h-6 transition-all duration-300 relative z-10 text-white group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-                    />
+                    <FaGithub className={iconStyle} />
                   </Link>
                 )}
                 {linkedin && (
@@ -119,13 +118,9 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
                     href={linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative p-3 rounded-full bg-gradient-to-br from-amber-500/10 to-orange-500/10 hover:from-amber-500/30 hover:to-orange-500/30 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(251,191,36,0.5)] border border-white/10 hover:border-white/30 group/link"
+                    className={linkStyle}
                   >
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/30 blur-md opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-200/10 to-orange-300/10 animate-pulse" />
-                    <FaLinkedin
-                      className="w-6 h-6 transition-all duration-300 relative z-10 text-white group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-                    />
+                    <FaLinkedin className={iconStyle} />
                   </Link>
                 )}
                 {instagram && (
@@ -133,13 +128,9 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
                     href={instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative p-3 rounded-full bg-gradient-to-br from-amber-500/10 to-orange-500/10 hover:from-amber-500/30 hover:to-orange-500/30 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(251,191,36,0.5)] border border-white/10 hover:border-white/30 group/link"
+                    className={linkStyle}
                   >
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/30 blur-md opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-200/10 to-orange-300/10 animate-pulse" />
-                    <FaInstagram
-                      className="w-6 h-6 transition-all duration-300 relative z-10 text-white group-hover/link:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-                    />
+                    <FaInstagram className={iconStyle} />
                   </Link>
                 )}
               </div>
