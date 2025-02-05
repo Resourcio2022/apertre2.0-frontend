@@ -176,7 +176,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Debargha Chakraborty",
-        image: "/crew/Debargha Chakraborty.jpg",
+        image: "/crew/DEBARGHA CHAKRABORTY.jpg",
         github: "https://github.com/Deb4dev"
       }
     ]
@@ -230,13 +230,13 @@ export const teamSections: TeamSection[] = [
       {
         name: "Rohit Chakraborti",
         image: "/crew/Rohit Chakrabarti.jpg",
-        instagram: "https://www.instagram.com/_.rohit.2002", 
+        instagram: "https://www.instagram.com/_.rohit.2002",
         github: "https://github.com/rohit32999"
       },
       {
         name: "Svetlana Mukherjee",
         image: "/crew/Svetlana Mukherjee.jpeg",
-        instagram: "https://www.instagram.com/svetttss", 
+        instagram: "https://www.instagram.com/svetttss",
         github: "https://github.com/svetlanamukherjee"
       },
       {
@@ -252,7 +252,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Kunal Das",
         image: "/crew/Kunal Das.png",
-        instagram: "http://www.instagra.com/weirdkun_", 
+        instagram: "http://www.instagra.com/weirdkun_",
         github: "https://github.com/ZerefKunal"
       },
       {
