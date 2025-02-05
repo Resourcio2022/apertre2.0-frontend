@@ -24,6 +24,7 @@ export function TeamSection({ section }: TeamSectionProps) {
               accentColor={section.accentColor}
               linkedin={member.linkedin}
               github={member.github}
+              instagram={member.instagram}
               role={section.id}
             />
           </div>

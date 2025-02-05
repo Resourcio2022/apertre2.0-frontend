@@ -2,7 +2,7 @@
 import { MoveUpIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { teamSections } from "../../constants/team-constant";
+import { teamSections } from "@/constants/team-constant";
 import { TeamSection } from "./_components/team-section";
 
 const stars = [
@@ -59,9 +59,7 @@ export default function Page() {
                 }
               }}
             >
-              <span
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500
-                       opacity-20 pointer-events-none"
+              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 opacity-20 pointer-events-none"
               />
               <span className="relative z-10">{section.title}</span>
             </button>
