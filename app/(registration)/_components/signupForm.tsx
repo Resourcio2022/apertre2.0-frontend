@@ -320,8 +320,33 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
                 </div>
               ))}
 
+            {/* loft.sh Section */}
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="loftlabs"
+                  {...register("loftlabs", { required: "You must agree to participate in the giveaway." })}
+                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
+                />
+                <Link
+                  href="https://forms.gle/813SNhCg1biXQmKD8"
+                  className="text-red-700 font-bold underline"
+                  target="_blank"
+                >
+                  Fill this form
+                </Link>
+                <span className="text-white">
+                  to get the acceptance mail
+                </span>
+              </div>
+              <p className="text-gray-300 text-sm italic ml-5">
+                (Mandatory to get acceptance mail)
+              </p>
+            </div>
+
             {/* Discord Section */}
-            <div className="flex flex-col mt-10">
+            <div className="flex flex-col">
               <div className="flex gap-1.5">
                 <input
                   type="checkbox"
@@ -343,30 +368,6 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
               )}
             </div>
 
-            {/* loft.sh Section */}
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="loftlabs"
-                  {...register("loftlabs", { required: "You must agree to participate in the giveaway." })}
-                  className="w-3 h-3 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-red-500 flex-shrink-0"
-                />
-                <Link
-                  href="https://forms.gle/813SNhCg1biXQmKD8"
-                  className="text-red-700 font-bold underline"
-                  target="_blank"
-                >
-                  Fill this form
-                </Link>
-                <span className="text-white">
-                  & Join the giveaway to win Headphones worth of 3k*
-                </span>
-              </div>
-              <p className="text-gray-300 text-sm italic ml-5">
-                (Mandatory to get acceptance mail)
-              </p>
-            </div>
             {/* Terms Section */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <div className="flex flex-col">
