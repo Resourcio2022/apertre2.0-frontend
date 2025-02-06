@@ -21,8 +21,7 @@ export default function AboutUs() {
           <p className="text-white text-lg md:text-xl font-normal">
             We are back with the season 2 of{" "}
             <span className="text-textyellow">Apertre</span> - the open source
-            contribution event. Organized by Resourcio Community and Google
-            Developer Group On Campus Academy Of Technology, it aims on
+            contribution event. Organized by Resourcio Community it aims on
             enhancing your technical skills. Noob or Pro, all are welcomed. Join
             us to skyrocket your experience, portfolio, and career.
           </p>
