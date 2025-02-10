@@ -4,19 +4,12 @@ import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, createContext } from "react";
+import { RegistrationCard } from "@/constants/registration-constant";
 
 interface CarouselProps {
   items: JSX.Element[];
   initialScroll?: number;
 }
-
-type Card = {
-  src?: string;
-  title?: string;
-  usertype: string;
-  content: React.ReactNode;
-  registerlink: string;
-};
 
 export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
@@ -29,7 +22,7 @@ export const CarouselContext = createContext<{
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   return (
     <CarouselContext.Provider
-      value={{ onCardClose: () => {}, currentIndex: 0 }}
+      value={{ onCardClose: () => { }, currentIndex: 0 }}
     >
       <div className="w-full flex justify-center">
         <div
@@ -69,12 +62,12 @@ export const Card = ({
   card,
   layout = false,
 }: {
-  card: Card;
+  card: RegistrationCard;
   layout?: boolean;
 }) => {
   return (
     <motion.button
-      layoutId={layout ? `card-${card.title}` : undefined}
+      layoutId={layout ? 'title' : undefined}
       className="rounded-lg border-2 border-textyellow h-72 w-full bg-card overflow-hidden relative z-10"
     >
       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
@@ -91,17 +84,19 @@ export const Card = ({
           </span>{" "}
         </motion.p>
         <motion.p
-          layoutId={layout ? `title-${card.title}` : undefined}
+          layoutId={layout ? 'title' : undefined}
           className="text-white text-sm md:text-base font-normal text-left w-full font-Poppins flex-nowrap mb-2"
         >
           {card.content}
         </motion.p>
-        <Link
-          href={card.registerlink}
-          className="text-textyellow font-mokoto text-xl w-fit bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4] hover:text-gray-400"
-        >
-          REGISTER
-        </Link>
+        {!card.disabled && (
+          <Link
+            href={card.registerlink}
+            className="text-textyellow font-mokoto text-xl w-fit bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4] hover:text-gray-400"
+          >
+            REGISTER
+          </Link>
+        )}
       </div>
     </motion.button>
   );
