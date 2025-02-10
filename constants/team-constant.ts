@@ -1,8 +1,8 @@
-export type TeamRole = 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters'
+export type TeamRole = 'organisers' | 'techies' | 'designers' | 'content' | 'socialities' | 'marketters' | 'video'
 
 type TeamMember = {
   name: string
-  image: string
+  image?: string
   linkedin?: string
   instagram?: string
   github?: string
@@ -84,11 +84,6 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/AnkanMisra"
       },
       {
-        name: "Rohan Mitra",
-        image: "/crew/Rohan Mitra.jpg",
-        github: "https://github.com/Rohan-450"
-      },
-      {
         name: "Krishnendu Dey",
         image: "/crew/Krishnendu Dey.jpg",
         github: "https://github.com/krishTheCoderBoy"
@@ -102,11 +97,6 @@ export const teamSections: TeamSection[] = [
         name: "Indrani Som",
         image: "/crew/Indrani Som.jpg",
         github: "https://github.com/IndraniSom"
-      },
-      {
-        name: "Debaditya Som",
-        image: "/crew/Debaditya Som.jpg",
-        github: "https://github.com/debaditya-som"
       }
     ]
   },
@@ -116,11 +106,6 @@ export const teamSections: TeamSection[] = [
     subtitle: "Crafting the visuals that captivate and inspire.",
     accentColor: "from-green-400/80 to-green-600/80",
     members: [
-      {
-        name: "Aditya Ghosh",
-        image: "/crew/ADITYA GHOSH.jpg",
-        github: "https://github.com/aditya-ghosh2992"
-      },
       {
         name: "Sukrit Deb",
         image: "/crew/Sukrit Deb.jpg",
@@ -146,6 +131,26 @@ export const teamSections: TeamSection[] = [
         image: "/crew/Dhritiman Bhattacharjee.jpg",
         github: "https://github.com/Dhriti007"
       },
+      {
+        name: "Abhinandan Sankar Sadhukhan",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Sangneel Deb",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Sayan Dere",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Tanushree Das",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Rhritwika",
+        image: "/crew/default.jpg",
+      }
     ]
   },
   {
@@ -156,7 +161,7 @@ export const teamSections: TeamSection[] = [
     members: [
       {
         name: "Saptak Biswas",
-        image: "/crew/Saptak Biswas.jpg",
+        image: "/crew/ Saptak2.png",
         github: "https://github.com/saptak2005"
       },
       {
@@ -175,10 +180,13 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/Dhwani107"
       },
       {
-        name: "Debargha Chakraborty",
-        image: "/crew/DEBARGHA CHAKRABORTY.jpg",
-        github: "https://github.com/Deb4dev"
-      }
+        name: "Abhiraj Bose",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Soumili Ghosh",
+        image: "/crew/default.jpg",
+      },
     ]
   },
   {
@@ -196,6 +204,34 @@ export const teamSections: TeamSection[] = [
         name: "Soham Mukherjee",
         image: "/crew/Soham Mukherjee.jpeg",
         github: "https://github.com/sohamMKRG"
+      },
+      {
+        name: "⁠Aniket De",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Koustav Chatterjee",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Ankur Mukherjee",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Anik Mukherjee",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Ishita Majumdar",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Triparna Roy",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "⁠Shrinwanti Basu",
+        image: "/crew/default.jpg",
       }
     ]
   },
@@ -209,18 +245,18 @@ export const teamSections: TeamSection[] = [
         name: "Ayan Sarkar",
         image: "/crew/Ayan Sarkar.jpeg",
       },
+
       {
-        name: "Arkadip Ray",
-        image: "/crew/Arkadip Ray.jpg",
+        name: "Suman Chakraborty",
+
       },
       {
-        name: "Diptanil Sen",
-        image: "/crew/DIPTANIL SEN.jpg",
+        name: "Kanaya Karmakar",
+
       },
       {
-        name: "Shubhojyoti Das",
-        image: "/crew/Shubhojyoti Das.png",
-        github: "https://github.com/ghost-2362003"
+        name: "Srija Ray",
+
       },
       {
         name: "Mudit Khater",
@@ -228,35 +264,39 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/mudit108-code"
       },
       {
-        name: "Rohit Chakraborti",
-        image: "/crew/Rohit Chakrabarti.jpg",
-        instagram: "https://www.instagram.com/_.rohit.2002",
-        github: "https://github.com/rohit32999"
-      },
-      {
-        name: "Svetlana Mukherjee",
-        image: "/crew/Svetlana Mukherjee.jpeg",
-        instagram: "https://www.instagram.com/svetttss",
-        github: "https://github.com/svetlanamukherjee"
-      },
-      {
-        name: "Argha Kundu",
-        image: "/crew/Argha Kundu.png",
-        github: "https://github.com/Meexargha"
-      },
-      {
-        name: "Ishita Majumdar",
-        image: "/crew/Ishita Majumdar.jpg",
-        github: "https://github.com/Ishita0807"
-      },
-      {
-        name: "Kunal Das",
-        image: "/crew/Kunal Das.png",
-        instagram: "http://www.instagra.com/weirdkun_",
-        github: "https://github.com/ZerefKunal"
-      },
-      {
         name: "Jyotirupa Saha",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Rajdeep Paul",
+        image: "/crew/default.jpg",
+      }
+    ]
+  },
+  {
+    id: "video",
+    title: "THE VIDEO TEAM",
+    subtitle: "Capturing moments and creating visual stories.",
+    accentColor: "from-teal-400/80 to-teal-600/80", 
+    members: [
+      {
+        name: "Debmalya Sadhukhan",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Debojyoti De",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Ritam Dey",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Debadrita Mondal",
+        image: "/crew/default.jpg",
+      },
+      {
+        name: "Aritra Hui",
         image: "/crew/default.jpg",
       }
     ]

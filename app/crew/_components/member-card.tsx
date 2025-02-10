@@ -1,5 +1,6 @@
+"use"
 import { TeamRole } from "@/constants/team-constant"
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin  } from "react-icons/fa";
 import Image from "next/image"
 import Link from "next/link"
 
@@ -9,7 +10,8 @@ const planets = {
   designers: '/crew/planets/planet.svg',
   content: '/crew/planets/content.svg',
   socialities: '/crew/planets/social.svg',
-  marketters: '/crew/planets/market.svg'
+  marketters: '/crew/planets/market.svg',
+  video: ''
 }
 
 interface MemberCardProps {
@@ -54,15 +56,15 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
               <Image
                 src={getPlanetSrc()}
                 alt={`${role} Planet`}
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 className="w-full h-full object-cover opacity-100 transition-opacity duration-700 group-hover:opacity-0"
               />
               <Image
                 src={getPlanetSrc()}
                 alt={`${role} Planet Alternate`}
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
               />
             </div>
@@ -96,14 +98,14 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
             <div className="relative">
 
               {/* Animated underline for names while hover */}
-              <h3 className="text-white font-bold text-lg sm:text-xl mb-4 tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">
+              <h3 className="text-white font-bold text-lg sm:text-xl mb-4 tracking-wide opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0 drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">
                 {name}
                 <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-amber-200 to-orange-500 transition-all duration-700 mt-1" />
               </h3>
 
               {/*  Git and Linkedin hover effects */}
               <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 translate-y-4 group-hover:translate-y-0">
-                {github && (
+                {github ? (
                   <Link
                     href={github}
                     target="_blank"
@@ -111,8 +113,15 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
                     className={linkStyle}
                   >
                     <FaGithub className={iconStyle} />
-                  </Link>
-                )}
+                  </Link> 
+                ) : <Link
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkStyle}
+              >
+                <FaGithub className={iconStyle} />
+              </Link> }
                 {linkedin && (
                   <Link
                     href={linkedin}
