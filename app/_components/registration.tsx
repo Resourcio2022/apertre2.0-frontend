@@ -1,8 +1,8 @@
 import { Card, Carousel } from "@/components/Registrationcarousel";
-import { data } from "@/constants/registration-constant";
+import { registrationData } from "@/constants/registration-constant";
 
 export default function Registration() {
-  const cards = data.map((card, idx) => <Card key={idx} card={card} />);
+  const cards = registrationData.map((card, idx) => <Card key={idx} card={card} />);
 
   return (
     <section

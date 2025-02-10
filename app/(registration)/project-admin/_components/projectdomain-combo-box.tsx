@@ -19,7 +19,7 @@ type ComboBoxProps = {
     onChange: (value: string) => void // accepts comma separated string
 }
 
-export function ProjectDomains({ placeholder, value, onChange }: ComboBoxProps) {
+export function ProjectDomain({ placeholder, value, onChange }: ComboBoxProps) {
     const [open, setOpen] = useState(false);
     const [domains, setDomains] = useState<Domain[]>([]);
     const [isPending, startTransition] = useTransition();

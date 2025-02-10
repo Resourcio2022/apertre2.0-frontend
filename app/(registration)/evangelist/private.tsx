@@ -1,14 +1,13 @@
 import SignupForm, { InputField } from "../_components/signupForm";
-import { Combobox } from "./_components/combo-box";
 
-const page = () => {
-	const words = [{ text: "MENTOR" }];
+const Page = () => {
+	const words = [{ text: "EVANGELIST" }];
 
 	const inputGroups = [
 		{
 			fields: [
-				{ name: "firstName", type: "text", placeholder: "First Name*", required: true },
-				{ name: "lastName", type: "text", placeholder: "Last Name*", required: true },
+				{ name: "firstName", type: "text", placeholder: "First name*", required: true },
+				{ name: "lastName", type: "text", placeholder: "Last name*", required: true },
 			] as InputField[],
 		},
 		{
@@ -25,20 +24,18 @@ const page = () => {
 		{
 			fields: [
 				{ name: "linkedinUrl", type: "url", placeholder: "LinkedIn profile URL*", required: true },
-			] as InputField[],
+			] as InputField[]
 		},
 		{
 			fields: [
+				{ name: "collegeName", type: "text", placeholder: "College name*", required: true },
+			] as InputField[]
+		},
+		{
+			fields: [
+				{ name: "instagramUsername", type: "text", placeholder: "Instagram username*", required: true },
 				{ name: "twitterUsername", type: "text", placeholder: "Twitter username", required: false },
-			] as InputField[],
-		},
-	];
-
-	const additionalInputGroups = [
-		{
-			fields: [
-				{ name: "techstack", type: "combobox", placeholder: "Tech stacks*", required: true, component: Combobox },
-			] as InputField[],
+			] as InputField[]
 		},
 	];
 
@@ -46,9 +43,8 @@ const page = () => {
 		<SignupForm
 			words={words}
 			inputGroups={inputGroups}
-			additionalInputGroups={additionalInputGroups}
 		/>
 	);
 };
 
-export default page;
+export default Page;

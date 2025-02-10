@@ -36,7 +36,7 @@ export default function Page() {
 }
 
 const RoleTabs = ({ roles, githubUsername, image }: { roles: Role[]; githubUsername: string | undefined; image: string | undefined }) => {
-    const [activeRole, setActiveRole] = useState<Role>(roles[0] || "")
+    const [activeRole, setActiveRole] = useState<Role>(roles[0])
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const dropdownRef = useRef<HTMLDivElement>(null)
 
