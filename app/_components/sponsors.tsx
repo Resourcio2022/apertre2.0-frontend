@@ -75,7 +75,7 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
               alt="Floating rocket"
               width={100}
               height={100}
-              className="group-hover:stroke-yellow-400 rounded-3xl group-hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] transition-all duration-300 object-contain animate-float"
+              className="rounded-3xl group-hover:shadow-[0_0_25px_rgba(255,215,0,0.5)] group-hover:border-2 group-hover:border-textyellow transition-all duration-300 animate-float"
             />
           </div>
         </div>
