@@ -30,10 +30,10 @@ export const registrationData = [
     registerlink: "/mentor",
     disabled: false
   },
-  {
-    usertype: "PROJECT ADMIN",
-    content: "Register as a project admin. Showcase your projects to the contributors for enhancement and bug fixture.",
-    registerlink: "/project-admin",
-    disabled: false
-  },
+  // {
+  //   usertype: "PROJECT ADMIN",
+  //   content: "Register as a project admin. Showcase your projects to the contributors for enhancement and bug fixture.",
+  //   registerlink: "/project-admin",
+  //   disabled: false
+  // },
 ] as RegistrationCard[];
