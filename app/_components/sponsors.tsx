@@ -174,6 +174,16 @@ const platformSponsors = [
 
 const bronzeSponsors = [
   {
+    imageUrl: "/sponsors/logo-white.svg",
+    alt: "DotStark Technologies Pvt. Ltd",
+    websiteUrl: "https://dotstark.com/"
+  },
+  {
+    imageUrl: "/sponsors/SKB.png",
+    alt: "SKB Community",
+    websiteUrl: "https://www.instagram.com/skb_community"
+  },
+  {
     imageUrl: "/sponsors/quill_ai.webp",
     alt: "Quill AI Network",
     websiteUrl: "https://quillai.network/"
@@ -198,6 +208,14 @@ const platinumSponsors = [
     imageUrl: "/sponsors/loft.svg",
     alt: "Loft Labs",
     websiteUrl: "https://www.loft.sh/"
+  }
+];
+
+const educationSponsors = [
+  {
+    imageUrl: "/sponsors/Let's Code.jpeg",
+    alt: "Let's Code",
+    websiteUrl: "https://www.lets-code.co.in/"
   }
 ];
 
@@ -232,6 +250,11 @@ export default function Sponsor() {
         <SponsorTier
           title="Bronze Sponsor"
           sponsors={bronzeSponsors}
+          columns={2}
+        />
+        <SponsorTier
+          title="Education Partner"
+          sponsors={educationSponsors}
         />
         <SponsorTier
           title="Domain Sponsor"
