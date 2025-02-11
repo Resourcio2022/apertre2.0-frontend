@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./_components/ProjectCard";
 import { Search } from "lucide-react";
-import { getGithubRepo } from "./_utils/apiCall";
+import { getGithubRepo, getProjectsByTechStack } from "./_utils/apiCall";
 import RocketComingSoon from "@/components/ComingSoon";
 
 // for local testing
@@ -12,19 +12,24 @@ const comingSoon = true;
 
 const ProjectsPage = () => {
   const [search, setSearch] = useState("");
-  const [projects, setProjects] = useState(localProjects.projects);
+  const [projects, setProjects] = useState(localProjects.data);
+  const page = 1;
+  const pageSize = 10;
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
-      getGithubRepo()
-        .then((data) => setProjects(data.projects))
+      getGithubRepo(page, pageSize)
+        .then((data) => setProjects(data.data))
         .catch((error) => console.error("Error fetching projects:", error));
     }
   }, []);
 
-  const filteredProjects = projects.filter((project: { tags: any[] }) =>
-    project.tags.some((tag) => tag.toLowerCase().includes(search.toLowerCase()))
-  );
+  const handleSearch = () => {
+    const techstacks = search.split(",").map((stack) => stack.trim());
+    getProjectsByTechStack(techstacks)
+      .then((data) => setProjects(data))
+      .catch((error) => console.error("Error fetching projects:", error));
+  };
 
   return comingSoon ? (
     <>
@@ -55,7 +60,7 @@ const ProjectsPage = () => {
               className="bg-[#1d1c1c] focus:outline-none"
             />
             <button
-              onClick={() => setSearch(search)}
+              onClick={handleSearch}
               className="ml-2 px-4 py-2 rounded-full text-gray-400"
             >
               <Search />
@@ -64,8 +69,14 @@ const ProjectsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-items-center">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              projectName={project.repoName}
+              username={project.projectAdmin.username}
+              profilePic={project.repoURL}
+              tags={project.techstack}
+            />
           ))}
         </div>
       </div>
