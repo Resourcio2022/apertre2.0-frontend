@@ -1,124 +1,181 @@
 {
-  "projects": [
+  "data": [
     {
-      "projectName": "Smart Analytics Dashboard",
-      "username": "Sarah Chen",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["React", "TypeScript", "D3.js", "Node.js", "MongoDB"]
+      "repoName": "Smart Analytics Dashboard",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A dashboard for smart analytics",
+      "projectDomain": "WEB_DEVELOPMENT",
+      "techstack": [
+        "REACT",
+        "TYPESCRIPT",
+        "D3.JS",
+        "NODE.JS",
+        "MONGODB"
+      ],
+      "projectAdmin": {
+        "fullname": "Sarah Chen",
+        "username": "sarahchen"
+      }
     },
     {
-      "projectName": "E-commerce Platform",
-      "username": "Michael Rodriguez",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["JavaScript", "Vue.js", "Express", "PostgreSQL", "Redis"]
+      "repoName": "E-commerce Platform",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A platform for e-commerce",
+      "projectDomain": "WEB_DEVELOPMENT",
+      "techstack": [
+        "JAVASCRIPT",
+        "VUE.JS",
+        "EXPRESS",
+        "POSTGRESQL",
+        "REDIS"
+      ],
+      "projectAdmin": {
+        "fullname": "Michael Rodriguez",
+        "username": "michaelrodriguez"
+      }
     },
     {
-      "projectName": "Machine Learning Pipeline",
-      "username": "Emma Thompson",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Python", "TensorFlow", "scikit-learn", "Docker", "AWS"]
+      "repoName": "Machine Learning Pipeline",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A pipeline for machine learning",
+      "projectDomain": "DATA_SCIENCE",
+      "techstack": [
+        "PYTHON",
+        "TENSORFLOW",
+        "SCIKIT-LEARN",
+        "DOCKER",
+        "AWS"
+      ],
+      "projectAdmin": {
+        "fullname": "Emma Thompson",
+        "username": "emmathompson"
+      }
     },
     {
-      "projectName": "Social Media Manager",
-      "username": "David Kim",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["React Native", "Firebase", "Redux", "Jest", "GraphQL"]
+      "repoName": "Social Media Manager",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A manager for social media",
+      "projectDomain": "MOBILE_DEVELOPMENT",
+      "techstack": [
+        "REACT_NATIVE",
+        "FIREBASE",
+        "REDUX",
+        "JEST",
+        "GRAPHQL"
+      ],
+      "projectAdmin": {
+        "fullname": "David Kim",
+        "username": "davidkim"
+      }
     },
     {
-      "projectName": "Task Management System",
-      "username": "Lisa Wang",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Angular", "Java", "Spring Boot", "MySQL", "Docker"]
+      "repoName": "Task Management System",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A system for task management",
+      "projectDomain": "WEB_DEVELOPMENT",
+      "techstack": [
+        "ANGULAR",
+        "JAVA",
+        "SPRING_BOOT",
+        "MYSQL",
+        "DOCKER"
+      ],
+      "projectAdmin": {
+        "fullname": "Lisa Wang",
+        "username": "lisawang"
+      }
     },
     {
-      "projectName": "Video Streaming Service",
-      "username": "James Wilson",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Python", "Django", "PostgreSQL", "Redis", "AWS"]
+      "repoName": "Video Streaming Service",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A service for video streaming",
+      "projectDomain": "WEB_DEVELOPMENT",
+      "techstack": [
+        "PYTHON",
+        "DJANGO",
+        "POSTGRESQL",
+        "REDIS",
+        "AWS"
+      ],
+      "projectAdmin": {
+        "fullname": "James Wilson",
+        "username": "jameswilson"
+      }
     },
     {
-      "projectName": "Finance Calculator",
-      "username": "Anna Kowalski",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["JavaScript", "React", "Node.js", "MongoDB", "Jest"]
+      "repoName": "Finance Calculator",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A calculator for finance",
+      "projectDomain": "WEB_DEVELOPMENT",
+      "techstack": [
+        "JAVASCRIPT",
+        "REACT",
+        "NODE.JS",
+        "MONGODB",
+        "JEST"
+      ],
+      "projectAdmin": {
+        "fullname": "Anna Kowalski",
+        "username": "annakowalski"
+      }
     },
     {
-      "projectName": "Weather App",
-      "username": "Carlos Martinez",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Swift", "CoreData", "MapKit", "REST API", "XCTest"]
+      "repoName": "Weather App",
+      "repoURL": "https://github.com/johndoe",
+      "description": "An app for weather",
+      "projectDomain": "MOBILE_DEVELOPMENT",
+      "techstack": [
+        "SWIFT",
+        "COREDATA",
+        "MAPKIT",
+        "REST_API",
+        "XCTEST"
+      ],
+      "projectAdmin": {
+        "fullname": "Carlos Martinez",
+        "username": "carlosmartinez"
+      }
     },
     {
-      "projectName": "Real Estate Platform",
-      "username": "Rachel Green",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["PHP", "Laravel", "MySQL", "Vue.js", "Docker"]
+      "repoName": "Real Estate Platform",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A platform for real estate",
+      "projectDomain": "WEB_DEVELOPMENT",
+      "techstack": [
+        "PHP",
+        "LARAVEL",
+        "MYSQL",
+        "VUE.JS",
+        "DOCKER"
+      ],
+      "projectAdmin": {
+        "fullname": "Rachel Green",
+        "username": "rachelgreen"
+      }
     },
     {
-      "projectName": "Fitness Tracker",
-      "username": "Thomas Anderson",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Kotlin", "Android", "Room", "Retrofit", "JUnit"]
-    },
-    {
-      "projectName": "Recipe Sharing Platform",
-      "username": "Maria Garcia",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Ruby", "Rails", "PostgreSQL", "React", "Redis"]
-    },
-    {
-      "projectName": "Music Streaming App",
-      "username": "Alex Johnson",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["JavaScript", "Node.js", "MongoDB", "React Native", "Jest"]
-    },
-    {
-      "projectName": "Travel Planner",
-      "username": "Sophie Martin",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Python", "Flask", "SQLAlchemy", "Vue.js", "Docker"]
-    },
-    {
-      "projectName": "Chat Application",
-      "username": "Daniel Lee",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Go", "WebSocket", "Redis", "React", "PostgreSQL"]
-    },
-    {
-      "projectName": "Portfolio Website",
-      "username": "Isabella Silva",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["HTML", "CSS", "JavaScript", "SASS", "Gatsby"]
-    },
-    {
-      "projectName": "Bug Tracking System",
-      "username": "William Brown",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["C#", ".NET", "SQL Server", "Angular", "Azure"]
-    },
-    {
-      "projectName": "Event Management",
-      "username": "Nina Patel",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["PHP", "Symfony", "MySQL", "React", "Docker"]
-    },
-    {
-      "projectName": "Document Scanner",
-      "username": "Kevin Zhang",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Python", "OpenCV", "TensorFlow", "Flask", "MongoDB"]
-    },
-    {
-      "projectName": "Code Editor",
-      "username": "Laura Miller",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["TypeScript", "Electron", "Monaco Editor", "Node.js", "Jest"]
-    },
-    {
-      "projectName": "Game Development",
-      "username": "Ryan Taylor",
-      "profilePic": "https://github.com/johndoe.png",
-      "tags": ["Unity", "C#", "Blender", "Git", "Azure DevOps"]
+      "repoName": "Fitness Tracker",
+      "repoURL": "https://github.com/johndoe",
+      "description": "A tracker for fitness",
+      "projectDomain": "MOBILE_DEVELOPMENT",
+      "techstack": [
+        "KOTLIN",
+        "ANDROID",
+        "ROOM",
+        "RETROFIT",
+        "JUNIT"
+      ],
+      "projectAdmin": {
+        "fullname": "Thomas Anderson",
+        "username": "thomasanderson"
+      }
     }
-  ]
+  ],
+  "meta": {
+    "page": 1,
+    "pagesize": 10,
+    "totalPages": 2,
+    "hasNextPage": true,
+    "hasPreviousPage": false
+  }
 }
