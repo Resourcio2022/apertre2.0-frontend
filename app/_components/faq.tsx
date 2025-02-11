@@ -26,7 +26,7 @@ export default function FAQ() {
                         >
                             {item.question}
                             <span
-                                className={`transform transition-transform ${activeIndex === index ? "rotate-180" : "rotate-0"
+                                className={`transform transition-transform duration-300 ${activeIndex === index ? "rotate-180" : "rotate-0"
                                     }`}
                             >
                                 <svg
@@ -44,7 +44,10 @@ export default function FAQ() {
                             </span>
                         </button>
                         {activeIndex === index && (
-                            <div className="p-4 bg-[#373131] text-sm text-gray-200 font-Poppins">
+                            <div
+                                className="p-4 bg-[#373131] text-sm text-gray-200 font-Poppins overflow-hidden transition-height duration-300 ease-in-out"
+                                style={{ maxHeight: activeIndex === index ? '500px' : '0px' }}
+                            >
                                 {item.answer}
                             </div>
                         )}
