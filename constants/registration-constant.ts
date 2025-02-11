@@ -28,7 +28,7 @@ export const registrationData = [
     usertype: "COMMUNITY PARTNER",
     content: "Apply as a Community Partner! Showcase, grow your community, and enjoy shoutouts and exciting perks!",
     registerlink: "/community-partner",
-    disabled: false
+    disabled: true
   },
   {
     usertype: "EVANGELIST",
