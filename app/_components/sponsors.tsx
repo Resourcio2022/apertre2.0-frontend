@@ -106,9 +106,9 @@ function SponsorTier({ title, sponsors = [], columns }: {
   return (
     <div className="mb-12 text-center">
       <div className="flex items-center justify-center gap-4 mb-14">
-        <div className="h-[2px] w-20 bg-yellow-500" />
+        <div className="h-0.5 w-20 bg-yellow-500" />
         <h3 className="text-2xl font-extrabold ">{title}</h3>
-        <div className="h-[2px] w-20 bg-yellow-500" />
+        <div className="h-0.5 w-20 bg-yellow-500" />
       </div>
       <div className="flex justify-center">
         <div
