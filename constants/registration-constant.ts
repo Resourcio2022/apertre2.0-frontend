@@ -7,18 +7,6 @@ export type RegistrationCard = {
 
 export const registrationData = [
   {
-    usertype: "COMMUNITY PARTNER",
-    content: "Apply as a Community Partner! Showcase, grow your community, and enjoy shoutouts and exciting perks!",
-    registerlink: "/community-partner",
-    disabled: true
-  },
-  {
-    usertype: "EVANGELIST",
-    content: "Sign up as an evangelist! Share your expertise, showcase your creativity, and enhance your tech skills while making an impact",
-    registerlink: "/evangelist",
-    disabled: true
-  },
-  {
     usertype: "MENTEE",
     content: "Register as a contributor. Contribute you skills, showcase your creativity and strengthen your tech knowledge",
     registerlink: "/mentee",
@@ -36,4 +24,16 @@ export const registrationData = [
   //   registerlink: "/project-admin",
   //   disabled: false
   // },
+  {
+    usertype: "COMMUNITY PARTNER",
+    content: "Apply as a Community Partner! Showcase, grow your community, and enjoy shoutouts and exciting perks!",
+    registerlink: "/community-partner",
+    disabled: false
+  },
+  {
+    usertype: "EVANGELIST",
+    content: "Sign up as an evangelist! Share your expertise, showcase your creativity, and enhance your tech skills while making an impact",
+    registerlink: "/evangelist",
+    disabled: true
+  },
 ] as RegistrationCard[];

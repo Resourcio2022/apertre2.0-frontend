@@ -89,7 +89,12 @@ export const Card = ({
         >
           {card.content}
         </motion.p>
-        {!card.disabled && (
+        {card.disabled ? (
+          <p className="text-textyellow/50 font-mokoto text-xl w-fit bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4]/50 cursor-not-allowed">
+            APPLICATION CLOSED
+          </p>
+        ) : (
+
           <Link
             href={card.registerlink}
             className="text-textyellow font-mokoto text-xl w-fit bg-[#F01DD41A] px-5 py-1 rounded-md border-2 border-[#F01DD4] hover:text-gray-400"
@@ -98,7 +103,7 @@ export const Card = ({
           </Link>
         )}
       </div>
-    </motion.button>
+    </motion.button >
   );
 };
 

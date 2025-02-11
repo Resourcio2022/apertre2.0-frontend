@@ -59,6 +59,11 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/skythrill256"
       },
       {
+        name: "Ankan Misra",
+        image: "/crew/Ankan Misra.png",
+        github: "https://github.com/AnkanMisra"
+      },
+      {
         name: "Souvik Sural",
         image: "/crew/Souvik Sural.png",
         github: "https://github.com/Souvik34"
@@ -79,18 +84,13 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/Anushka-Bhowmick"
       },
       {
-        name: "Ankan Misra",
-        image: "/crew/Ankan Misra.png",
-        github: "https://github.com/AnkanMisra"
-      },
-      {
         name: "Krishnendu Dey",
         image: "/crew/Krishnendu Dey.jpg",
         github: "https://github.com/krishTheCoderBoy"
       },
       {
         name: "Ashish Gupta",
-        image: "/crew/Ashish Gupta.jpeg",
+        image: "/crew/Ashish.png",
         github: "https://github.com/ASHISH26940"
       },
       {
@@ -248,15 +248,18 @@ export const teamSections: TeamSection[] = [
 
       {
         name: "Suman Chakraborty",
-
+        image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Kanaya Karmakar",
-
+        image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Srija Ray",
-
+        image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Mudit Khater",
@@ -266,10 +269,12 @@ export const teamSections: TeamSection[] = [
       {
         name: "Jyotirupa Saha",
         image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Rajdeep Paul",
         image: "/crew/default.jpg",
+        github: ""
       }
     ]
   },
@@ -282,22 +287,27 @@ export const teamSections: TeamSection[] = [
       {
         name: "Debmalya Sadhukhan",
         image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Debojyoti De",
         image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Ritam Dey",
         image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/default.jpg",
+        github: ""
       },
       {
         name: "Aritra Hui",
         image: "/crew/default.jpg",
+        github: ""
       }
     ]
   }
