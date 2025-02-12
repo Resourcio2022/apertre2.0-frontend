@@ -161,11 +161,18 @@ const digitalSponsors = [
     imageUrl: "/sponsors/jet-brains.jpg",
     alt: "JetBrains",
     websiteUrl: "https://www.jetbrains.com"
+<<<<<<< HEAD
   },
   {
     imageUrl: "/sponsors/black.svg",
     alt: "Appwrite",
     websiteUrl: "https://www.appwrite.io"
+=======
+  },{
+    imageUrl: "/sponsors/black.svg",
+    alt: "Appwrite",
+    websiteUrl: "https://appwrite.io/"
+>>>>>>> 9b7b89410a0ce4d2b55d22344db090626541d03c
   }
 ];
 

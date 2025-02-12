@@ -39,6 +39,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Abhraneel Karmakar",
         image: "/crew/Abhraneel Karmakar.jpg",
+        github : "https://github.com/abhraneel2004"
       },
       {
         name: "Debarshee Chakraborty",
@@ -69,24 +70,19 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/Souvik34"
       },
       {
+        name:"Sayan Das",
+        image: "/crew/default.jpg",
+        github:"",
+      },
+      {
         name: "Suman Jain",
         image: "/crew/Suman Jain.jpeg",
         github: "https://github.com/SumanJain2005"
       },
       {
-        name: "Rounak Sen",
-        image: "/crew/Rounak Sen.jpg",
-        github: "https://github.com/rony0000013"
-      },
-      {
         name: "Anushka Bhowmick",
         image: "/crew/Anushka Bhowmick.jpg",
         github: "https://github.com/Anushka-Bhowmick"
-      },
-      {
-        name: "Krishnendu Dey",
-        image: "/crew/Krishnendu Dey.jpg",
-        github: "https://github.com/krishTheCoderBoy"
       },
       {
         name: "Ashish Gupta",
@@ -97,6 +93,11 @@ export const teamSections: TeamSection[] = [
         name: "Indrani Som",
         image: "/crew/Indrani Som.jpg",
         github: "https://github.com/IndraniSom"
+      },
+      {
+        name:"Abhirup Saha",
+        image: "/crew/default.jpg",
+        github:""
       }
     ]
   },
@@ -122,33 +123,24 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/Monojit09"
       },
       {
-        name: "Ashmit Barik",
-        image: "/crew/Ashmit Barik.jpeg",
-        github: "https://github.com/Dev-ashxy"
-      },
-      {
         name: "Dhritiman Bhattacharjee",
         image: "/crew/Dhritiman Bhattacharjee.jpg",
         github: "https://github.com/Dhriti007"
       },
       {
         name: "Abhinandan Sankar Sadhukhan",
-        image: "/crew/default.jpg",
-      },
-      {
-        name: "Sangneel Deb",
-        image: "/crew/default.jpg",
+        image: "/crew/abhinandan.jpg",
       },
       {
         name: "Sayan Dere",
-        image: "/crew/default.jpg",
+        image: "/crew/sayan_dere.png",
       },
       {
         name: "Tanushree Das",
         image: "/crew/default.jpg",
       },
       {
-        name: "⁠Rhritwika",
+        name: "⁠Rhritwika Das",
         image: "/crew/default.jpg",
       }
     ]
@@ -163,11 +155,6 @@ export const teamSections: TeamSection[] = [
         name: "Saptak Biswas",
         image: "/crew/ Saptak2.png",
         github: "https://github.com/saptak2005"
-      },
-      {
-        name: "Rittika Chakraborty",
-        image: "/crew/Rittika Chakraborty.jpg",
-        github: "https://github.com/Rittika1465"
       },
       {
         name: "Rajashree Ray",
@@ -185,7 +172,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Soumili Ghosh",
-        image: "/crew/default.jpg",
+        image: "/crew/soumili.jpg",
       },
     ]
   },
@@ -199,11 +186,6 @@ export const teamSections: TeamSection[] = [
         name: "Rajdeep Saha",
         image: "/crew/Rajdeep Saha.jpg",
         github: "https://github.com/C0D3K0NG"
-      },
-      {
-        name: "Soham Mukherjee",
-        image: "/crew/Soham Mukherjee.jpeg",
-        github: "https://github.com/sohamMKRG"
       },
       {
         name: "⁠Aniket De",
@@ -275,6 +257,11 @@ export const teamSections: TeamSection[] = [
         name: "Rajdeep Paul",
         image: "/crew/default.jpg",
         github: ""
+      },
+      {
+        name:"Rohan Mitra",
+        image:"/crew/default.jpg",
+        github:""
       }
     ]
   },
