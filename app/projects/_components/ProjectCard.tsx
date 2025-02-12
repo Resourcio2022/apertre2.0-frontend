@@ -39,11 +39,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         ))}
       </div>
 
-      <button className="w-full text-yellow-400 py-2 rounded-lg font-semibold font-mokoto border-2 border-yellow-500"
+      <button
+        className="w-full text-yellow-400 py-2 rounded-lg font-semibold font-mokoto border-2 border-yellow-500"
         style={{
-            background:
-              "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
-          }}
+          background:
+            "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
+        }}
       >
         DETAILS
       </button>
