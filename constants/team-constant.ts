@@ -29,6 +29,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Sayan Mukherjee",
         image: "/crew/Sayan Mukherjee.jpg",
+        github: "https://github.com/++"
       },
       {
         name: "Abhraneel Karmakar",
