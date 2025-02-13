@@ -38,15 +38,15 @@ export function MemberCard({ name, image, github, role }: MemberCardProps) {
         {/* Card Content Container */}
         <div className="aspect-square relative overflow-hidden">
           {/* Planet Icon */}
-          <div className="absolute -top-2 -left-2 w-12 h-12 rounded-full z-20 bg-black/90 p-0.5
-                        shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]
-                        transition-all duration-700">
+          <div className="absolute -top-1 -left-1 w-14 h-14 rounded-full z-20 bg-black/90 p-0.5
+                              shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]
+                              transition-all duration-700">
             <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-yellow-400/20 to-amber-600/20">
               <Image
                 src={getPlanetSrc()}
                 alt={`${role} Planet`}
-                width={48}
-                height={48}
+                width={56}
+                height={56}
                 className="w-full h-full object-cover transition-transform duration-1000 ease-out
                          group-hover:rotate-[360deg] group-hover:scale-110"
               />

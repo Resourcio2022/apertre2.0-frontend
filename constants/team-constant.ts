@@ -122,7 +122,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Tanushree Das",
-        image: "/crew/20250125_233000 - Tanushree Das.jpg",
+        image: "/crew/Tanushree Das.png",
         github: "https://github.com/___"
       },
       {
@@ -169,7 +169,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Abhiraj Bose",
-        image: "/crew/abhiraj new - Abhiraj Bose.JPG",
+        image: "/crew/Abhiraj Bose.jpg",
       },
       {
         name: "Soumili Ghosh",
@@ -190,7 +190,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "⁠Aniket De",
-        image: "/crew/_DSC0350 - Aniket De.jpg",
+        image: "/crew/Aniket De.png",
       },
       {
         name: "⁠Koustav Chatterjee",
@@ -198,7 +198,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "⁠Ankur Mukherjee",
-        image: "/crew/IMG_20241129_184234 - Ankur Mukherjee.jpg",
+        image: "/crew/Ankur Mukherjee.jpg",
       },
       {
         name: "⁠Anik Mukherjee",
@@ -247,7 +247,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Jyotirupa Saha",
-        image: "/crew/IMG_20250211_232447 - Jyotirupa Saha.jpg",
+        image: "/crew/Jyotirupa Saha.jpg",
       },
       {
         name: "Rajdeep Paul",
