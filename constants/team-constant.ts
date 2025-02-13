@@ -3,8 +3,6 @@ export type TeamRole = 'organisers' | 'techies' | 'designers' | 'content' | 'soc
 type TeamMember = {
   name: string
   image?: string
-  linkedin?: string
-  instagram?: string
   github?: string
 }
 

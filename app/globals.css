@@ -26,6 +26,20 @@ html {
     width: 100%;
     height: 100vh;
 }
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
 
 .loadingSpinner {
     border-top: 2px solid #363636;
