@@ -368,12 +368,6 @@ export default function RegistrationForm() {
               </button>
             )}
 
-            {/* <select {...register("techStacks")} className="input-field">
-              <option value="">Select Tech Stack</option>
-              <option value="React">React</option>
-              <option value="Next.js">Next.js</option>
-            </select> */}
-
             <div className="flex flex-col gap-4 text-white">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2">
