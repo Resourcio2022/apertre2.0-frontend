@@ -1,8 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
-import animationData from "../../public/tree_grow.json" assert { type: "json" };
+import animationData from "@/public/tree_grow.json" assert { type: "json" };
 
-// Lazy load Lottie component
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 export default function TreeAnimation() {
@@ -15,5 +14,5 @@ export default function TreeAnimation() {
     },
   };
 
-  return <Lottie options={defaultOptions} style={{transform:"scale(0.8)"}} />;
+  return <Lottie options={defaultOptions} style={{ transform: "scale(0.8)" }} />;
 }

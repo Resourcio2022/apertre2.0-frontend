@@ -1,4 +1,3 @@
-import axios, { AxiosError } from "axios";
 export type Role =
   | "mentee"
   | "mentor"
@@ -242,21 +241,22 @@ export async function projectAdminSignup(
   if (twitterUsername !== "") {
     Object.assign(payload, { twitterUsername });
   }
-  try {
-    const res = await axios.post(`${API_URL}/project-admin`, payload, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = {
-      data: res.data,
-      status: res.status,
-      message: res.statusText,
-    };
-    return data;
-  } catch (error: any) {
-    throw new Error(error.response.data.message);
+
+  const res = await fetch(`${API_URL}/project-admin`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message);
   }
+
+  return data.message as string;
 }
 
 export async function getTechStacks() {

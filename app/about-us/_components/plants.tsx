@@ -1,7 +1,7 @@
-import React from 'react';
 import { ArrowRight, GitPullRequest, Leaf, TreePine } from 'lucide-react';
 import PlayAnimation from './plantAnimation';
-const ContributeNature = () => {
+
+export default function ContributeNature() {
   return (
     <div className="min-h-screen bg-black text-white p-4 sm:p-6 md:p-8 lg:p-12">
       <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12 lg:space-y-16">
@@ -76,5 +76,3 @@ const ContributeNature = () => {
     </div>
   );
 };
-
-export default ContributeNature;

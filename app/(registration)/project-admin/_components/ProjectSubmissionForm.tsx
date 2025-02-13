@@ -1,9 +1,7 @@
 "use client";
-
-import { useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { string, z } from "zod";
+import { z } from "zod";
 import { TypewriterEffectSmooth } from "@/components/Typewriter";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +10,7 @@ import { TechStacks } from "./techstack-combo-box";
 import { useGitHub } from "@/hooks/useGithubUser";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { projectAdminSignup, Repo, Role } from "../../_utils/apiCalls";
+import { projectAdminSignup, Role } from "../../_utils/apiCalls";
 import { ProjectDomain } from "./projectdomain-combo-box";
 
 const projectSchema = z.object({
@@ -71,7 +69,6 @@ export default function RegistrationForm() {
   });
 
   const onSubmit = async (data: FormData) => {
-    // console.log("Form Data", data);
     const role = words.map((item) => item.text.toLowerCase()).join(" ") as Role;
     if (
       clerk_userId &&
@@ -105,15 +102,15 @@ export default function RegistrationForm() {
           data.twitterUsername?.trim(),
           data.projects
         );
-        console.log(response.data);
-        toast.success(response.message);
+
+        toast.success(response);
 
         setTimeout(() => {
           reset();
           router.push("/");
         }, 1500);
-      } catch (err: any) {
-        console.log(err);
+      }
+      catch (err: any) {
         toast.error(err.message);
       }
     }
@@ -169,9 +166,8 @@ export default function RegistrationForm() {
                     placeholder={
                       errors.firstName ? errors.firstName.message : "First Name"
                     }
-                    className={`input-field bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.firstName ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
-                    }`}
+                    className={`input-field bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.firstName ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
+                      }`}
                   />
                 </div>
                 <div className="relative">
@@ -180,9 +176,8 @@ export default function RegistrationForm() {
                     placeholder={
                       errors.lastName ? errors.lastName.message : "Last Name"
                     }
-                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.lastName ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
-                    }`}
+                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.lastName ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
+                      }`}
                   />
                 </div>
                 <div className="relative">
@@ -193,11 +188,10 @@ export default function RegistrationForm() {
                         ? errors.phoneNumber.message
                         : "Phone Number"
                     }
-                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.phoneNumber
+                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.phoneNumber
                         ? "border-red-500 placeholder:text-red-500"
                         : "border-textyellow"
-                    }`}
+                      }`}
                   />
                 </div>
                 <div className="relative">
@@ -208,11 +202,10 @@ export default function RegistrationForm() {
                         ? errors.discordUsername.message
                         : "Discord Username"
                     }
-                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.discordUsername
+                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.discordUsername
                         ? "border-red-500 placeholder:text-red-500"
                         : "border-textyellow"
-                    }`}
+                      }`}
                   />
                 </div>
                 <div className="relative">
@@ -223,11 +216,10 @@ export default function RegistrationForm() {
                         ? errors.linkedinUrl.message
                         : "LinkedIn Profile URL"
                     }
-                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.linkedinUrl
+                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.linkedinUrl
                         ? "border-red-500 placeholder:text-red-500"
                         : "border-textyellow"
-                    }`}
+                      }`}
                   />
                 </div>
                 <div className="relative">
@@ -238,11 +230,10 @@ export default function RegistrationForm() {
                         ? errors.twitterUsername.message
                         : "Twitter Username"
                     }
-                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.twitterUsername
+                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.twitterUsername
                         ? "border-red-500 placeholder:text-red-500"
                         : "border-textyellow"
-                    }`}
+                      }`}
                   />
                 </div>
                 <div className="relative sm:col-span-2">
@@ -251,9 +242,8 @@ export default function RegistrationForm() {
                     placeholder={
                       errors.address ? errors.address.message : "Address"
                     }
-                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                      errors.address ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
-                    }`}
+                    className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.address ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
+                      }`}
                   />
                 </div>
               </div>
@@ -276,11 +266,10 @@ export default function RegistrationForm() {
                           ? errors.projects[index].repoName.message
                           : "Repository Name"
                       }
-                      className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                        errors.projects?.[index]?.repoName
+                      className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.repoName
                           ? "border-red-500 placeholder:text-red-500"
                           : "border-textyellow"
-                      }`}
+                        }`}
                     />
                   </div>
                   <div className="relative">
@@ -306,11 +295,10 @@ export default function RegistrationForm() {
                           ? errors.projects[index].repoURL.message
                           : "Repository URL"
                       }
-                      className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                        errors.projects?.[index]?.repoURL
+                      className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.repoURL
                           ? "border-red-500 placeholder:text-red-500"
                           : "border-textyellow"
-                      }`}
+                        }`}
                     />
                   </div>
                   <div className="relative">
@@ -321,11 +309,10 @@ export default function RegistrationForm() {
                           ? errors.projects[index].description.message
                           : "Project Description"
                       }
-                      className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${
-                        errors.projects?.[index]?.description
+                      className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.description
                           ? "border-red-500 placeholder:text-red-500"
                           : "border-textyellow"
-                      }`}
+                        }`}
                     />
                   </div>
                   <div className="relative">
@@ -372,20 +359,20 @@ export default function RegistrationForm() {
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2">
                   <input
-                  type="checkbox"
-                  id="loftlabs"
-                  {...register("loftlabs", {
-                    required:
-                    "You must agree to participate in the giveaway.",
-                  })}
-                  className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
+                    type="checkbox"
+                    id="loftlabs"
+                    {...register("loftlabs", {
+                      required:
+                        "You must agree to participate in the giveaway.",
+                    })}
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
                   />
                   <a
-                  href="https://forms.gle/813SNhCg1biXQmKD8"
-                  className="text-red-700 font-bold underline"
-                  target="_blank"
+                    href="https://forms.gle/813SNhCg1biXQmKD8"
+                    className="text-red-700 font-bold underline"
+                    target="_blank"
                   >
-                  Fill this form
+                    Fill this form
                   </a>
                   <span className="text-white">to get the acceptance mail</span>
                 </div>
