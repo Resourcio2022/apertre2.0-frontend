@@ -26,6 +26,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Soumyajit Mondal",
         image: "/crew/Soumyajit Mondal.jpg",
+        github:"https://github.com/Soumyajit2825"
       },
       {
         name: "Sayan Mukherjee",
@@ -39,7 +40,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Abhraneel Karmakar",
         image: "/crew/Abhraneel Karmakar.jpg",
-        github : "https://github.com/abhraneel2004"
+        github: "https://github.com/abhraneel2004"
       },
       {
         name: "Debarshee Chakraborty",
@@ -70,9 +71,8 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/Souvik34"
       },
       {
-        name:"Sayan Das",
+        name: "Sayan Das",
         image: "/crew/default.jpg",
-        github:"",
       },
       {
         name: "Suman Jain",
@@ -95,9 +95,8 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/IndraniSom"
       },
       {
-        name:"Abhirup Saha",
+        name: "Abhirup Saha",
         image: "/crew/default.jpg",
-        github:""
       }
     ]
   },
@@ -137,7 +136,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Tanushree Das",
-        image: "/crew/default.jpg",
+        image: "/crew/20250125_233000 - Tanushree Das.jpg",
       },
       {
         name: "⁠Rhritwika Das",
@@ -168,7 +167,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Abhiraj Bose",
-        image: "/crew/default.jpg",
+        image: "/crew/abhiraj new - Abhiraj Bose.JPG",
       },
       {
         name: "Soumili Ghosh",
@@ -189,31 +188,31 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "⁠Aniket De",
-        image: "/crew/default.jpg",
+        image: "/crew/_DSC0350 - Aniket De.jpg",
       },
       {
         name: "⁠Koustav Chatterjee",
-        image: "/crew/default.jpg",
+        image: "/crew/IMG-20231219-WA0043 - Koustav Chatterjee.jpg",
       },
       {
         name: "⁠Ankur Mukherjee",
-        image: "/crew/default.jpg",
+        image: "/crew/IMG_20241129_184234 - Ankur Mukherjee.jpg",
       },
       {
         name: "⁠Anik Mukherjee",
-        image: "/crew/default.jpg",
+        image: "/crew/AnikMukherjee.png",
       },
       {
         name: "⁠Ishita Majumdar",
-        image: "/crew/default.jpg",
+        image: "/crew/IMG-20250203-WA0057(1) - Ishita Majumdar.jpg",
       },
       {
         name: "⁠Triparna Roy",
-        image: "/crew/default.jpg",
+        image: "/crew/20241215_140910 - 152_Triparna Roy.jpg",
       },
       {
         name: "⁠Shrinwanti Basu",
-        image: "/crew/default.jpg",
+        image: "/crew/WhatsApp Image 2025-02-12 at 10.26.39 PM - 91_SHRINWANTI BASU.jpeg",
       }
     ]
   },
@@ -227,21 +226,17 @@ export const teamSections: TeamSection[] = [
         name: "Ayan Sarkar",
         image: "/crew/Ayan Sarkar.jpeg",
       },
-
       {
         name: "Suman Chakraborty",
-        image: "/crew/default.jpg",
-        github: ""
+        image: "/crew/IMG-20250211-WA0020 - Suman Chakraborty.jpg",
       },
       {
         name: "Kanaya Karmakar",
-        image: "/crew/default.jpg",
-        github: ""
+        image: "/crew/Photo from Kanaya - Kanaya Karmakar.jpg",
       },
       {
         name: "Srija Ray",
         image: "/crew/default.jpg",
-        github: ""
       },
       {
         name: "Mudit Khater",
@@ -250,18 +245,15 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Jyotirupa Saha",
-        image: "/crew/default.jpg",
-        github: ""
+        image: "/crew/IMG_20250211_232447 - Jyotirupa Saha.jpg",
       },
       {
         name: "Rajdeep Paul",
-        image: "/crew/default.jpg",
-        github: ""
+        image: "/crew/myself_profilepic - Rajdeep Paul.jpg",
       },
       {
-        name:"Rohan Mitra",
-        image:"/crew/default.jpg",
-        github:""
+        name: "Rohan Mitra",
+        image: "/crew/default.jpg",
       }
     ]
   },
@@ -269,32 +261,27 @@ export const teamSections: TeamSection[] = [
     id: "video",
     title: "THE VIDEO TEAM",
     subtitle: "Capturing moments and creating visual stories.",
-    accentColor: "from-teal-400/80 to-teal-600/80", 
+    accentColor: "from-teal-400/80 to-teal-600/80",
     members: [
       {
         name: "Debmalya Sadhukhan",
-        image: "/crew/default.jpg",
-        github: ""
+        image: "/crew/IMG_9719 - Debmalya _S.JPG",
       },
       {
         name: "Debojyoti De",
-        image: "/crew/default.jpg",
-        github: ""
+        image: "/crew/IMG_2645 - Debojyoti De.jpg",
       },
       {
         name: "Ritam Dey",
         image: "/crew/default.jpg",
-        github: ""
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/default.jpg",
-        github: ""
       },
       {
         name: "Aritra Hui",
         image: "/crew/default.jpg",
-        github: ""
       }
     ]
   }
