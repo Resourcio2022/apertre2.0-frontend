@@ -31,11 +31,6 @@ export const teamSections: TeamSection[] = [
         image: "/crew/Sayan Mukherjee.jpg",
       },
       {
-        name: "Nabajit Bhadury",
-        image: "/crew/Nabajit Bhadury.jpg",
-        github: "https://github.com/NabajitBhadury"
-      },
-      {
         name: "Abhraneel Karmakar",
         image: "/crew/Abhraneel Karmakar.jpg",
         github: "https://github.com/abhraneel2004"
@@ -44,7 +39,12 @@ export const teamSections: TeamSection[] = [
         name: "Debarshee Chakraborty",
         image: "/crew/Debarshee Chakraborty.jpg",
         github: "https://github.com/debarshee2004"
-      }
+      },
+      {
+        name: "Nabajit Bhadury",
+        image: "/crew/Nabajit Bhadury.jpg",
+        github: "https://github.com/NabajitBhadury"
+      },  
     ],
   },
   {
@@ -59,23 +59,9 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/skythrill256"
       },
       {
-        name: "Ankan Misra",
-        image: "/crew/Ankan Misra.png",
-        github: "https://github.com/AnkanMisra"
-      },
-      {
-        name: "Souvik Sural",
-        image: "/crew/Souvik Sural.png",
-        github: "https://github.com/Souvik34"
-      },
-      {
-        name: "Sayan Das",
-        image: "/crew/default.jpg",
-      },
-      {
-        name: "Suman Jain",
-        image: "/crew/Suman Jain.jpeg",
-        github: "https://github.com/SumanJain2005"
+        name: "Indrani Som",
+        image: "/crew/Indrani Som.jpg",
+        github: "https://github.com/IndraniSom"
       },
       {
         name: "Anushka Bhowmick",
@@ -88,13 +74,28 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/ASHISH26940"
       },
       {
-        name: "Indrani Som",
-        image: "/crew/Indrani Som.jpg",
-        github: "https://github.com/IndraniSom"
+        name: "Suman Jain",
+        image: "/crew/Suman Jain.jpeg",
+        github: "https://github.com/SumanJain2005"
       },
       {
-        name: "Abhirup Saha",
-        image: "/crew/default.jpg",
+        name: "Ankan Misra",
+        image: "/crew/Ankan Misra.png",
+        github: "https://github.com/AnkanMisra"
+      },
+      {
+        name: "Rounak Sen",
+        image: "/crew/Rounak Sen.jpg",
+        github: "https://github.com/__"
+      },
+      {
+        name: "Souvik Sural",
+        image: "/crew/Souvik Sural.png",
+        github: "https://github.com/Souvik34"
+      },
+      {
+        name: "Krishnendu Dey",
+        image: "/crew/Krishnendu Dey.jpg",
       }
     ]
   },
@@ -105,9 +106,8 @@ export const teamSections: TeamSection[] = [
     accentColor: "from-green-400/80 to-green-600/80",
     members: [
       {
-        name: "Sukrit Deb",
-        image: "/crew/Sukrit Deb.jpg",
-        github: "https://github.com/SukritDeb"
+        name: "Abhinandan Sankar Sadhukhan",
+        image: "/crew/abhinandan.jpg",
       },
       {
         name: "Sangneel Deb",
@@ -115,9 +115,14 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/lord-cyclone100"
       },
       {
-        name: "Monojit Pal",
-        image: "/crew/Monojit Pal.jpg",
-        github: "https://github.com/Monojit09"
+        name: "Sayan Dere",
+        image: "/crew/sayan_dere.png",
+        github: "https://github.com/___"
+      },
+      {
+        name: "Tanushree Das",
+        image: "/crew/20250125_233000 - Tanushree Das.jpg",
+        github: "https://github.com/___"
       },
       {
         name: "Dhritiman Bhattacharjee",
@@ -125,19 +130,17 @@ export const teamSections: TeamSection[] = [
         github: "https://github.com/Dhriti007"
       },
       {
-        name: "Abhinandan Sankar Sadhukhan",
-        image: "/crew/abhinandan.jpg",
+        name: "Monojit Pal",
+        image: "/crew/Monojit Pal.jpg",
+        github: "https://github.com/Monojit09"
       },
       {
-        name: "Sayan Dere",
-        image: "/crew/sayan_dere.png",
+        name: "Sukrit Deb",
+        image: "/crew/Sukrit Deb.jpg",
+        github: "https://github.com/SukritDeb"
       },
       {
-        name: "Tanushree Das",
-        image: "/crew/20250125_233000 - Tanushree Das.jpg",
-      },
-      {
-        name: "⁠Rhritwika Das",
+        name: "⁠Ashmit",
         image: "/crew/default.jpg",
       }
     ]
