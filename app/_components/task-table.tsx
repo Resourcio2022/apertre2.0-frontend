@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 interface Task {
   id: number;
@@ -11,7 +10,7 @@ interface Task {
   proof: File | null;
 }
 
-const TaskTable: React.FC = () => {
+export default function TaskTable() {
   const [tasks, setTasks] = useState<Task[]>([
     { id: 1, name: "Star the Loftlabs Repo", link: "h", points: 15, proof: null },
     { id: 2, name: "Star and fork LLMware.ai Repo", link: "", points: 10, proof: null },
@@ -82,5 +81,3 @@ const TaskTable: React.FC = () => {
     </div>
   );
 };
-
-export default TaskTable;
