@@ -26,31 +26,31 @@ export const teamSections: TeamSection[] = [
         name: "Soumyajit Mondal",
         image: "/crew/Soumyajit Mondal.jpg",
         github: "https://github.com/Soumyajit2825",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/soumyajit-mondal2825/"
       },
       {
         name: "Sayan Mukherjee",
         image: "/crew/Sayan Mukherjee.jpg",
-        github: "https://github.com/++",
-        linkedin: "https://www.linkedin.com/in/random/"
+        github: "https://github.com/",
+        linkedin: "https://www.linkedin.com/in/sayan-mukherjee-975175229/"
       },
       {
         name: "Abhraneel Karmakar",
         image: "/crew/Abhraneel - Abhraneel Python.png",
-        github: "https://github.com/abhraneel2004",
+        github: "https://github.com/abhraneel2004/",
         linkedin: "https://www.linkedin.com/in/abhraneel-karmakar/"
       },
       {
         name: "Debarshee Chakraborty",
         image: "/crew/Debarshee Chakraborty.jpg",
         github: "https://github.com/debarshee2004",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/debarshee-chakraborty-dc2004/"
       },
       {
         name: "Nabajit Bhadury",
         image: "/crew/Nabajit Bhadury.jpg",
         github: "https://github.com/NabajitBhadury",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/nabajit-bhadury-5a123b24a/"
       },
     ],
   },
@@ -70,13 +70,13 @@ export const teamSections: TeamSection[] = [
         name: "Indrani Som",
         image: "/crew/Indrani Som.jpg",
         github: "https://github.com/IndraniSom",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: " https://www.linkedin.com/in/indrani-som-258498248/"
       },
       {
         name: "Anushka Bhowmick",
         image: "/crew/Anushka Bhowmick.jpg",
         github: "https://github.com/Anushka-Bhowmick",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/anushkabhowmick/"
       },
       {
         name: "Ashish Gupta",
@@ -100,7 +100,7 @@ export const teamSections: TeamSection[] = [
         name: "Souvik Sural",
         image: "/crew/Souvik Sural.png",
         github: "https://github.com/Souvik34",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/souvik-sural/"
       }
     ]
   },
@@ -120,18 +120,18 @@ export const teamSections: TeamSection[] = [
         name: "Sangneel Deb",
         image: "/crew/Sangneel Deb.png",
         github: "https://github.com/lord-cyclone100",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/sangneel-deb/"
       },
       {
         name: "Sayan Dere",
         image: "/crew/sayan_dere.png",
-        github: "https://github.com/___",
+        github: "https://github.com/Sayandere12",
         linkedin: "https://www.linkedin.com/in/sayan-dere-a56951326"
       },
       {
         name: "Tanushree Das",
         image: "/crew/Tanushree Das.png",
-        github: "https://github.com/___",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/tanushreedas04"
       },
       {
@@ -142,7 +142,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Rhritwika Das",
-        image: "/crew/default.jpg",
+        image: "/crew/Rhritwika Das.png",
         github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/rhritwika-das-b1b74b262"
       },
@@ -150,7 +150,7 @@ export const teamSections: TeamSection[] = [
         name: "Monojit Pal",
         image: "/crew/Monojit Pal.jpg",
         github: "https://github.com/Monojit09",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/monojit-pal/"
       },
       {
         name: "Sukrit Deb",
@@ -169,19 +169,19 @@ export const teamSections: TeamSection[] = [
       {
         name: "Abhiraj Bose",
         image: "/crew/Abhiraj Bose.jpg",
-        github: "https://github.com/Abhiraj-Bose",
+        github: "https://github.com/AbhirajBose",
         linkedin: "https://www.linkedin.com/in/abhiraj-bose-a128a6247/"
       },
       {
         name: "Saptak Biswas",
         image: "/crew/ Saptak2.png",
-        github: "https://github.com/saptak2005",
+        github: "https://github.com/swapitbiswas",
         linkedin: "https://www.linkedin.com/in/saptak-biswas-50a834323"
       },
       {
         name: "Soumili Ghosh",
         image: "/crew/soumili.jpg",
-        github: "https://github.com/Soumili-Ghosh",
+        github: "https://github.com/Soumili-2004",
         linkedin: "https://www.linkedin.com/in/soumili-ghosh-b38264294"
       },
       {
@@ -194,7 +194,7 @@ export const teamSections: TeamSection[] = [
         name: "Rittika Chakraborty",
         image: "/crew/Rittika Chakraborty.jpg",
         github: "https://github.com",
-        linkedin: "https://www.linkedin.com/in/rittika-cb/"
+        linkedin: " https://www.linkedin.com/in/rittika-cb/"
       },
       {
         name: "Dhwani Chauhan",
@@ -213,7 +213,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "⁠Aniket De",
         image: "/crew/Aniket De.png",
-        github: "https://github.com/Aniketde",
+        github: "https://github.com/aniketde1112",
         linkedin: "https://www.linkedin.com/in/aniketde2004/"
       },
       {
@@ -231,7 +231,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "⁠Anik Mukherjee",
         image: "/crew/AnikMukherjee.png",
-        github: "https://github.com/Anik-Mukherjee",
+        github: "https://github.com/Anik000007",
         linkedin: "https://www.linkedin.com/in/anik-mukherjee-19a839285"
       },
       {
@@ -269,13 +269,13 @@ export const teamSections: TeamSection[] = [
       {
         name: "Ayan Sarkar",
         image: "/crew/Ayan Sarkar.jpeg",
-        github: "https://github.com/Ayan-Sarkar",
-        linkedin: "https://www.linkedin.com/in/random/"
+        github: "https://github.com/Ayansarkarcse",
+        linkedin: " https://www.linkedin.com/in/ayan-sarkar-78993b289/"
       },
       {
         name: "Suman Chakraborty",
         image: "/crew/IMG-20250211-WA0020 - Suman Chakraborty.jpg",
-        github: "https://github.com/suman-chakraborty",
+        github: "http://github.com/suman599",
         linkedin: "https://www.linkedin.com/in/suman-chakraborty-8a1535254"
       },
       {
@@ -293,13 +293,13 @@ export const teamSections: TeamSection[] = [
       {
         name: "Rajdeep Paul",
         image: "/crew/myself_profilepic - Rajdeep Paul.jpg",
-        github: "https://github.com/rajdeep-paul",
+        github: "https://github.com/rajdeep13-coder",
         linkedin: "https://www.linkedin.com/in/rajdeep-paul-013z/"
       },
       {
         name: "Jyotirupa Saha",
         image: "/crew/Jyotirupa Saha.jpg",
-        github: "https://github.com/jyotirupa-saha",
+        github: "https://github.com/Jyotirupa2005",
         linkedin: "https://www.linkedin.com/in/jyotirupa-saha-3293222b8"
       }
     ]
@@ -319,26 +319,26 @@ export const teamSections: TeamSection[] = [
       {
         name: "Debojyoti De",
         image: "/crew/IMG_2645 - Debojyoti De.jpg",
-        github: "https://github.com/debojyoti-de",
+        github: "https://github.com/DebojyotiDe03",
         linkedin: "https://www.linkedin.com/in/debojyotide007/"
       },
       {
         name: "Ritam Dey",
         image: "/crew/ritam.jpeg",
         github: "https://github.com/ritam-dey",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/ritam-dey-9494a2326"
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/default.jpg",
         github: "https://github.com/debadrita-mondal",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
       },
       {
         name: "Aritra Hui",
-        image: "/crew/default.jpg",
+        image: "/crew/Arita Hui.png",
         github: "https://github.com/aritra-hui",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/aritra-hui-37430a264/"
       }
     ]
   }
