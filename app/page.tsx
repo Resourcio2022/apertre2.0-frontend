@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TaskTable/>
+      {/* <TaskTable/> */}
       <Plants />
       <Timeline />
       <Registration />
