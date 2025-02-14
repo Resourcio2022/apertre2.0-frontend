@@ -70,8 +70,7 @@ const ProjectAdmin = memo(function ProjectAdmin({ username, image }: ProjectAdmi
 						{profile && (
 							<Link href={`https://github.com/${profile.username}`} target="_blank">
 								<FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
-							</Link>
-						)}
+							</Link>)}
 						{profile && (
 							<Link href={profile.linkedinUrl} target="_blank">
 								<FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />

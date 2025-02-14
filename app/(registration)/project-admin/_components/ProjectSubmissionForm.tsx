@@ -368,7 +368,7 @@ export default function RegistrationForm() {
                     className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
                   />
                   <Link
-                    href="https://forms.gle/813SNhCg1biXQmKD8"
+                  href="https://forms.gle/813SNhCg1biXQmKD8"
                     className="text-red-700 font-bold underline"
                     target="_blank"
                   >
