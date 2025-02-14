@@ -32,6 +32,7 @@ export function TeamSection({ section }: TeamSectionProps) {
               image={member.image || '/crew/default.jpg'}
               accentColor={section.accentColor}
               github={member.github}
+              linkedin={member.linkedin}
               role={section.id}
             />
           </div>
