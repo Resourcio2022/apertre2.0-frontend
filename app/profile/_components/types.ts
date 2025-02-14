@@ -91,6 +91,12 @@ export interface IMentor { // fix
     twitterUsername: string | null,
     techstack: string[],
 }
+type Repo = {
+    repoName: string,
+    repoURL: string,
+    projectStatus: string,
+    mentors: { mentor: IMentor }[]
+}
 
 export interface IProjectAdmin { // fix
     email: string,
@@ -99,4 +105,9 @@ export interface IProjectAdmin { // fix
     address: string,
     phoneNumber: string,
     status: Status,
+    linkedinUrl: string,
+    discordUsername: string,
+    twitterUsername: string | null,
+    githubRepo: Repo[],
+    
 }

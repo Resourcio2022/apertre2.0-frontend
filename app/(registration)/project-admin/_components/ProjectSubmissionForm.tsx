@@ -150,10 +150,10 @@ export default function RegistrationForm() {
           {/* FORM */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="max-w-2xl mx-auto space-y-6 p-6 shadow-md rounded-lg flex flex-col gap-3 font-Poppins md:min-w-[38rem]"
+            className="max-w-2xl mx-auto space-y-2 p-6 shadow-md rounded-lg flex flex-col gap-3 font-Poppins md:min-w-[38rem]"
           >
             <div>
-              <h1 className="text-white text-lg font-semibold">
+              <h1 className="text-white text-lg font-semibold mb-5">
                 Personal Details
               </h1>
               <div
@@ -249,13 +249,13 @@ export default function RegistrationForm() {
               </div>
             </div>
             <div>
-              <h1 className="text-white text-lg font-semibold">
+              <h1 className="text-white text-lg font-semibold my-5">
                 Project Details
               </h1>
               {fields.map((item, index) => (
                 <div
                   key={item.id}
-                  className="border border-textyellow/50 p-4 rounded-lg space-y-2 relative"
+                  className="border border-textyellow/50 p-4 rounded-lg space-y-2 relative my-5"
                 >
                   <h1 className="text-white">Project {index + 1}</h1>
                   <div className="relative">
@@ -367,13 +367,13 @@ export default function RegistrationForm() {
                     })}
                     className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
                   />
-                  <a
+                  <Link
                     href="https://forms.gle/813SNhCg1biXQmKD8"
                     className="text-red-700 font-bold underline"
                     target="_blank"
                   >
                     Fill this form
-                  </a>
+                  </Link>
                   <span className="text-white">to get the acceptance mail</span>
                 </div>
                 {errors.loftlabs && (

@@ -57,7 +57,7 @@ const TaskTable: React.FC = () => {
                 <td className="py-2 px-3 text-center">{task.id}</td>
                 <td className="py-2 px-3">{task.name}</td>
                 <td className="py-2 px-3">
-                  <a href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow">Visit</a>
+                  <Link href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow">Visit</Link>
                 </td>
                 <td className="py-2 px-3">
                   <input
