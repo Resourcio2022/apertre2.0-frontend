@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const NAV_LINKS: INavLink[] = [
     { name: "Home", url: "/" },
-    { name: "About Us", url: "/#about-us" },
+    { name: "About Us", url: "/about-us" },
     { name: "Sponsors", url: "/#sponsors" },
     { name: "Crew", url: "/crew" },
     { name: "Projects", url: "/projects" },
