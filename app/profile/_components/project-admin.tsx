@@ -81,6 +81,11 @@ const ProjectAdmin = memo(function ProjectAdmin({ username, image }: ProjectAdmi
 								<FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
 							</Link>
 						)}
+						{profile && profile.twitterUsername && (
+							<Link href={`https://x.com/${profile.discordUsername}`} target="_blank">
+								<FaDiscord className="size-6 hover:text-textyellow transition-colors duration-150" />
+							</Link>
+						)}
 					</div>
 				</div>
 			</div>

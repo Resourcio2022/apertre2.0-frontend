@@ -105,7 +105,8 @@ export interface IProjectAdmin { // fix
     address: string,
     phoneNumber: string,
     status: Status,
-    twitterUsername: string | null,
+    twitterUsername: string,
     linkedinUrl: string,
+    discordUsername: string,
     githubRepo: IProject[]
 }
