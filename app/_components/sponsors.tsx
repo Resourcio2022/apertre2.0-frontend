@@ -53,8 +53,8 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
           <Image
             src={imageUrl}
             alt={alt || "sponsor logo"}
-            width={110}
-            height={110}
+            width={alt === "DotStark" ? 150 : 100}  
+            height={alt === "DotStark" ? 150 : 100} 
           />
         </div>
         <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-3 -left-4 sm:left-4 w-22 h-22 rounded-xl">
@@ -138,7 +138,7 @@ function SponsorTier({ title, sponsors = [], columns }: {
 const domainSponsors = [
   {
     imageUrl: "/sponsors/xyz_logo.webp",
-    alt: "XYZ Domains",
+    alt: "sponsor logo",
     websiteUrl: "https://gen.xyz"
   }
 ];
@@ -146,8 +146,13 @@ const domainSponsors = [
 const goldSponsors = [
   {
     imageUrl: "/sponsors/github.jpg",
-    alt: "GitHub",
+    alt: "sponsor logo",
     websiteUrl: "https://github.com/"
+  },
+  {
+    imageUrl: "/sponsors/llmware.jpg",
+    alt: "LLMware",
+    websiteUrl:"https://llmware.ai/"
   }
 ];
 
@@ -180,7 +185,7 @@ const platformSponsors = [
 const bronzeSponsors = [
   {
     imageUrl: "/sponsors/logo-white.svg",
-    alt: "DotStark Technologies Pvt. Ltd",
+    alt: "DotStark",
     websiteUrl: "https://dotstark.com/"
   },
   {
@@ -213,6 +218,11 @@ const platinumSponsors = [
     imageUrl: "/sponsors/loft.svg",
     alt: "Loft Labs",
     websiteUrl: "https://www.loft.sh/"
+  },
+  {
+    imageUrl: "/sponsors/FlutterFlow1.svg",
+    alt : "FlutterFlow",
+    websiteUrl: "https://flutterflow.io/"
   }
 ];
 
@@ -241,19 +251,21 @@ export default function Sponsor() {
           Our Partners
         </h2>
         <SponsorTier
-          title="Platinum Sponsor"
+          title="Platinum Sponsors"
           sponsors={platinumSponsors}
+          columns={2}
         />
         <SponsorTier
-          title="Gold Sponsor"
+          title="Gold Sponsors"
           sponsors={goldSponsors}
+          columns={2}
         />
         <SponsorTier
           title="Platform Sponsor"
           sponsors={platformSponsors}
         />
         <SponsorTier
-          title="Bronze Sponsor"
+          title="Bronze Sponsors"
           sponsors={bronzeSponsors}
           columns={2}
         />
@@ -266,12 +278,12 @@ export default function Sponsor() {
           sponsors={domainSponsors}
         />
         <SponsorTier
-          title="Digital Sponsor"
+          title="Digital Sponsors"
           sponsors={digitalSponsors}
           columns={2}
         />
         <SponsorTier
-          title="In-Kind Sponsor"
+          title="In-Kind Sponsors"
           sponsors={inKindSponsors}
           columns={2}
         />
