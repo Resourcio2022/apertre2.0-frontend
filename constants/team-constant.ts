@@ -36,9 +36,9 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Abhraneel Karmakar",
-        image: "/crew/Abhraneel Karmakar.jpg",
+        image: "/crew/Abhraneel - Abhraneel Python.png",
         github: "https://github.com/abhraneel2004",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/abhraneel-karmakar/"
       },
       {
         name: "Debarshee Chakraborty",
@@ -51,7 +51,7 @@ export const teamSections: TeamSection[] = [
         image: "/crew/Nabajit Bhadury.jpg",
         github: "https://github.com/NabajitBhadury",
         linkedin: "https://www.linkedin.com/in/random/"
-      },  
+      },
     ],
   },
   {
@@ -82,36 +82,24 @@ export const teamSections: TeamSection[] = [
         name: "Ashish Gupta",
         image: "/crew/Ashish.png",
         github: "https://github.com/ASHISH26940",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/ashish-gupta2694/"
       },
       {
         name: "Suman Jain",
         image: "/crew/Suman Jain.jpeg",
         github: "https://github.com/SumanJain2005",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/suman-naresh-jain/"
       },
       {
         name: "Ankan Misra",
         image: "/crew/Ankan Misra.png",
         github: "https://github.com/AnkanMisra",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
-        name: "Rounak Sen",
-        image: "/crew/Rounak Sen.jpg",
-        github: "https://github.com/__",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
+        linkedin: "https://www.linkedin.com/in/AnkanMisra"
+      },  
       {
         name: "Souvik Sural",
         image: "/crew/Souvik Sural.png",
         github: "https://github.com/Souvik34",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
-        name: "Krishnendu Dey",
-        image: "/crew/Krishnendu Dey.jpg",
-        github: "https://github.com/krishnendu-dey",
         linkedin: "https://www.linkedin.com/in/random/"
       }
     ]
@@ -126,7 +114,7 @@ export const teamSections: TeamSection[] = [
         name: "Abhinandan Sankar Sadhukhan",
         image: "/crew/abhinandan.jpg",
         github: "https://github.com/abhina",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/abhinandan-sadhukhan-5b011a269/"
       },
       {
         name: "Sangneel Deb",
@@ -138,19 +126,25 @@ export const teamSections: TeamSection[] = [
         name: "Sayan Dere",
         image: "/crew/sayan_dere.png",
         github: "https://github.com/___",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/sayan-dere-a56951326"
       },
       {
         name: "Tanushree Das",
         image: "/crew/Tanushree Das.png",
         github: "https://github.com/___",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/tanushreedas04"
       },
       {
         name: "Dhritiman Bhattacharjee",
         image: "/crew/Dhritiman Bhattacharjee.jpg",
         github: "https://github.com/Dhriti007",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/dhritiman-bhattacharjee-b399a5292"
+      },
+      {
+        name: "Rhritwika Das",
+        image: "/crew/default.jpg",
+        github: "https://github.com/",
+        linkedin: "https://www.linkedin.com/in/rhritwika-das-b1b74b262"
       },
       {
         name: "Monojit Pal",
@@ -162,7 +156,7 @@ export const teamSections: TeamSection[] = [
         name: "Sukrit Deb",
         image: "/crew/Sukrit Deb.jpg",
         github: "https://github.com/SukritDeb",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/sukritdeb"
       },
     ]
   },
@@ -173,34 +167,40 @@ export const teamSections: TeamSection[] = [
     accentColor: "from-yellow-400/80 to-yellow-600/80",
     members: [
       {
-        name: "Saptak Biswas",
-        image: "/crew/ Saptak2.png",
-        github: "https://github.com/saptak2005",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
-        name: "Rajashree Ray",
-        image: "/crew/Rajashree Ray.jpg",
-        github: "https://github.com/Rajashree185",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
-        name: "Dhwani Chauhan",
-        image: "/crew/Dhwani Chauhan.jpg",
-        github: "https://github.com/Dhwani107",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
         name: "Abhiraj Bose",
         image: "/crew/Abhiraj Bose.jpg",
         github: "https://github.com/Abhiraj-Bose",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/abhiraj-bose-a128a6247/"
+      },
+      {
+        name: "Saptak Biswas",
+        image: "/crew/ Saptak2.png",
+        github: "https://github.com/saptak2005",
+        linkedin: "https://www.linkedin.com/in/saptak-biswas-50a834323"
       },
       {
         name: "Soumili Ghosh",
         image: "/crew/soumili.jpg",
         github: "https://github.com/Soumili-Ghosh",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/soumili-ghosh-b38264294"
+      },
+      {
+        name: "Rajashree Ray",
+        image: "/crew/Rajashree Ray.jpg",
+        github: "https://github.com/Rajashree185",
+        linkedin: "https://www.linkedin.com/in/rajashree-ray-b712512b8"
+      },
+      {
+        name: "Rittika Chakraborty",
+        image: "/crew/Rittika Chakraborty.jpg",
+        github: "https://github.com",
+        linkedin: "https://www.linkedin.com/in/rittika-cb/"
+      },
+      {
+        name: "Dhwani Chauhan",
+        image: "/crew/Dhwani Chauhan.jpg",
+        github: "https://github.com/Dhwani107",
+        linkedin: "https://www.linkedin.com/in/dhwani-chauhan-aaa5ab280"
       },
     ]
   },
@@ -211,52 +211,52 @@ export const teamSections: TeamSection[] = [
     accentColor: "from-pink-400/80 to-pink-600/80",
     members: [
       {
-        name: "Rajdeep Saha",
-        image: "/crew/Rajdeep Saha.jpg",
-        github: "https://github.com/C0D3K0NG",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
         name: "⁠Aniket De",
         image: "/crew/Aniket De.png",
         github: "https://github.com/Aniketde",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/aniketde2004/"
       },
       {
         name: "⁠Koustav Chatterjee",
         image: "/crew/IMG-20231219-WA0043 - Koustav Chatterjee.jpg",
         github: "https://github.com/KoustavChatterjee",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/koustav-chatterjee-9b060b226"
       },
       {
         name: "⁠Ankur Mukherjee",
         image: "/crew/Ankur Mukherjee.jpg",
         github: "https://github.com/Ankur-Mukherjee",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/ankur-mukherjee01"
       },
       {
         name: "⁠Anik Mukherjee",
         image: "/crew/AnikMukherjee.png",
         github: "https://github.com/Anik-Mukherjee",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/anik-mukherjee-19a839285"
       },
       {
         name: "⁠Ishita Majumdar",
         image: "/crew/IMG-20250203-WA0057(1) - Ishita Majumdar.jpg",
         github: "https://github.com/Ishita-Majumdar",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/ishita-majumdar-0059671b3"
+      },
+      {
+        name: "Rajdeep Saha",
+        image: "/crew/Rajdeep Saha.jpg",
+        github: "https://github.com/C0D3K0NG",
+        linkedin: "https://www.linkedin.com/in/rajdeep-saha-b92452292/"
       },
       {
         name: "⁠Triparna Roy",
         image: "/crew/20241215_140910 - 152_Triparna Roy.jpg",
         github: "https://github.com/triparna-roy",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/triparna-roy-a9a2b929b"
       },
       {
         name: "⁠Shrinwanti Basu",
         image: "/crew/WhatsApp Image 2025-02-12 at 10.26.39 PM - 91_SHRINWANTI BASU.jpeg",
         github: "https://github.com/Shrinwanti-Basu",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/shrinwanti-basu-2b3669278"
       }
     ]
   },
@@ -276,13 +276,13 @@ export const teamSections: TeamSection[] = [
         name: "Suman Chakraborty",
         image: "/crew/IMG-20250211-WA0020 - Suman Chakraborty.jpg",
         github: "https://github.com/suman-chakraborty",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/suman-chakraborty-8a1535254"
       },
       {
         name: "Kanaya Karmakar",
         image: "/crew/Photo from Kanaya - Kanaya Karmakar.jpg",
         github: "https://github.com/kanaya-karmakar",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/kanaya-karmakar-5a5a202b7"
       },
       {
         name: "Srija Ray",
@@ -291,28 +291,16 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/random/"
       },
       {
-        name: "Mudit Khater",
-        image: "/crew/MUDIT KHATER.jpg",
-        github: "https://github.com/mudit108-code",
-        linkedin: "https://www.linkedin.com/in/random/"
+        name: "Rajdeep Paul",
+        image: "/crew/myself_profilepic - Rajdeep Paul.jpg",
+        github: "https://github.com/rajdeep-paul",
+        linkedin: "https://www.linkedin.com/in/rajdeep-paul-013z/"
       },
       {
         name: "Jyotirupa Saha",
         image: "/crew/Jyotirupa Saha.jpg",
         github: "https://github.com/jyotirupa-saha",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
-        name: "Rajdeep Paul",
-        image: "/crew/myself_profilepic - Rajdeep Paul.jpg",
-        github: "https://github.com/rajdeep-paul",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
-        name: "Rohan Mitra",
-        image: "/crew/default.jpg",
-        github: "https://github.com/rohan-mitra",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/jyotirupa-saha-3293222b8"
       }
     ]
   },
@@ -326,17 +314,17 @@ export const teamSections: TeamSection[] = [
         name: "Debmalya Sadhukhan",
         image: "/crew/IMG_9719 - Debmalya _S.JPG",
         github: "https://github.com/debmalya-sadhukhan",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/debmalooo"
       },
       {
         name: "Debojyoti De",
         image: "/crew/IMG_2645 - Debojyoti De.jpg",
         github: "https://github.com/debojyoti-de",
-        linkedin: "https://www.linkedin.com/in/random/"
+        linkedin: "https://www.linkedin.com/in/debojyotide007/"
       },
       {
         name: "Ritam Dey",
-        image: "/crew/default.jpg",
+        image: "/crew/ritam.jpeg",
         github: "https://github.com/ritam-dey",
         linkedin: "https://www.linkedin.com/in/random/"
       },
