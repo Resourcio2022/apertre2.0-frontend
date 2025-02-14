@@ -367,13 +367,13 @@ export default function RegistrationForm() {
                     })}
                     className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
                   />
-                  <a
+                  <Link
                     href="https://forms.gle/813SNhCg1biXQmKD8"
                     className="text-red-700 font-bold underline"
                     target="_blank"
                   >
                     Fill this form
-                  </a>
+                  </Link>
                   <span className="text-white">to get the acceptance mail</span>
                 </div>
                 {errors.loftlabs && (
