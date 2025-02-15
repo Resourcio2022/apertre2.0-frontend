@@ -17,14 +17,8 @@ const stars = [
   { id: 8, src: "/star.png", left: "60%", top: "75%", size: 33 },
   { id: 9, src: "/star.png", left: "82%", top: "88%", size: 28 },
   { id: 10, src: "/star.png", left: "95%", top: "68%", size: 31 },
-  { id: 11, src: "/star.png", left: "55%", top: "50%", size: 36 },
-  { id: 12, src: "/star.png", left: "8%", top: "92%", size: 29 },
-  { id: 13, src: "/star.png", left: "68%", top: "5%", size: 34 },
-  { id: 14, src: "/star.png", left: "88%", top: "15%", size: 27 },
-  { id: 15, src: "/star.png", left: "40%", top: "95%", size: 30 }
 ];
-
-// In the stars mapping
+// Star Mapping below
 {
   stars.map((star) => (
     <Image

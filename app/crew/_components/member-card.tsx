@@ -29,7 +29,7 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
 
   return (
     <div className="relative group w-full transform transition-all duration-500 hover:-translate-y-2">
-      {/* Enhanced golden border effect - more visible on mobile */}
+      {/*Golden Bordar*/}
       <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 rounded-2xl blur-md 
                     opacity-40 md:opacity-0 
                     md:group-hover:opacity-50 transition-all duration-700 animate-gradient-xy" />
@@ -57,7 +57,7 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
             </div>
           </div>
 
-          {/* Member Image */}
+          {/* Member Images */}
           <div className="w-full h-full transform transition-all duration-700">
             <Image
               src={image}

@@ -5,7 +5,6 @@ type TeamMember = {
   image?: string
   github?: string
   linkedin?: string 
-  instagram?: string
 }
 
 export type TeamSection = {
@@ -314,31 +313,30 @@ export const teamSections: TeamSection[] = [
       {
         name: "Debmalya Sadhukhan",
         image: "/crew/IMG_9719 - Debmalya _S.JPG",
-        github: "https://www.instagram.com/sir_debmalooo/",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/debmalooo"
       },
       {
         name: "Debojyoti De",
         image: "/crew/IMG_2645 - Debojyoti De.jpg",
-        github: "https://www.instagram.com/debmalya.sadhukhan",
+        github: "https://github.com/DebojyotiDe03",
         linkedin: "https://www.linkedin.com/in/debojyotide007/"
       },
       {
         name: "Ritam Dey",
         image: "/crew/ritam.jpeg",
-        github: "https://www.instagram.com/ritamdey68/",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/ritam-dey-9494a2326"
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/Debadrita Mondal.png",
-        github: "https://www.instagram.com/mondaldebadrita_/",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
       },
       {
         name: "Aritra Hui",
         image: "/crew/Arita Hui.png",
-        github: "https://www.instagram.com/void_0342/",
         linkedin: "https://www.linkedin.com/in/aritra-hui-37430a264/"
       }
     ]

@@ -10,7 +10,6 @@ interface TeamSectionProps {
 export function TeamSection({ section }: TeamSectionProps) {
   return (
     <section className="mb-32 relative">
-      {/* Add decorative elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent opacity-50" />
 
       <div className="relative">
