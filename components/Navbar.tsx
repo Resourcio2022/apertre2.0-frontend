@@ -120,7 +120,7 @@ export default function Navbar() {
             href={item.url}
             className="block text-white font-mokoto py-2 text-center"
           >
-            <span>{item.name}</span>
+            <span onClick={toggleMobileMenu}>{item.name}</span>
           </Link>
         ))}
       </div>
