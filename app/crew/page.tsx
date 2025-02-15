@@ -5,15 +5,23 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { TeamSection } from "./_components/team-section";
 
-// Reduce stars and optimize their rendering
+// Starsssssssssssssss
 const stars = [
-  { id: 1, src: "/star.png", left: "10%", top: "20%", size: 35 },
-  { id: 2, src: "/star.png", left: "35%", top: "40%", size: 25 },
-  { id: 3, src: "/star.png", left: "65%", top: "25%", size: 30 },
-  { id: 4, src: "/star.png", left: "90%", top: "35%", size: 28 },
-  { id: 5, src: "/star.png", left: "20%", top: "70%", size: 32 },
-  { id: 6, src: "/star.png", left: "50%", top: "85%", size: 25 },
-  { id: 7, src: "/star.png", left: "80%", top: "60%", size: 30 }
+  { id: 1, src: "/star.png", left: "5%", top: "15%", size: 38 },
+  { id: 2, src: "/star.png", left: "25%", top: "35%", size: 25 },
+  { id: 3, src: "/star.png", left: "45%", top: "12%", size: 32 },
+  { id: 4, src: "/star.png", left: "75%", top: "28%", size: 28 },
+  { id: 5, src: "/star.png", left: "92%", top: "45%", size: 35 },
+  { id: 6, src: "/star.png", left: "15%", top: "65%", size: 30 },
+  { id: 7, src: "/star.png", left: "35%", top: "82%", size: 26 },
+  { id: 8, src: "/star.png", left: "60%", top: "75%", size: 33 },
+  { id: 9, src: "/star.png", left: "82%", top: "88%", size: 28 },
+  { id: 10, src: "/star.png", left: "95%", top: "68%", size: 31 },
+  { id: 11, src: "/star.png", left: "55%", top: "50%", size: 36 },
+  { id: 12, src: "/star.png", left: "8%", top: "92%", size: 29 },
+  { id: 13, src: "/star.png", left: "68%", top: "5%", size: 34 },
+  { id: 14, src: "/star.png", left: "88%", top: "15%", size: 27 },
+  { id: 15, src: "/star.png", left: "40%", top: "95%", size: 30 }
 ];
 
 // In the stars mapping

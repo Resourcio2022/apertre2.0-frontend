@@ -12,7 +12,7 @@ export function TeamSection({ section }: TeamSectionProps) {
     <section className="mb-32 relative">
       {/* Add decorative elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent opacity-50" />
-      
+
       <div className="relative">
         {/* Section Header */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
@@ -35,13 +35,14 @@ export function TeamSection({ section }: TeamSectionProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10">
           {section.members.map((member, index) => (
             <div key={index} className="flex justify-center"
-                 style={{ animationDelay: `${index * 100}ms` }}>
+              style={{ animationDelay: `${index * 100}ms` }}>
               <MemberCard
                 name={member.name}
                 image={member.image || '/crew/default.jpg'}
                 accentColor={section.accentColor}
                 github={member.github}
                 linkedin={member.linkedin}
+                instagram={member.instagram}
                 role={section.id}
               />
             </div>

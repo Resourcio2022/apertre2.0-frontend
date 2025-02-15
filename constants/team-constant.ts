@@ -5,6 +5,7 @@ type TeamMember = {
   image?: string
   github?: string
   linkedin?: string 
+  instagram?: string
 }
 
 export type TeamSection = {
@@ -238,7 +239,7 @@ export const teamSections: TeamSection[] = [
         name: "⁠Ishita Majumdar",
         image: "/crew/IMG-20250203-WA0057(1) - Ishita Majumdar.jpg",
         github: "https://github.com/Ishita-Majumdar",
-        linkedin: "https://www.linkedin.com/in/ishita-majumdar-0059671b3"
+        linkedin: "https://www.linkedin.com/in/ishita-majumdar-0059671b3",
       },
       {
         name: "Rajdeep Saha",
@@ -286,7 +287,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Srija Ray",
-        image: "/crew/default.jpg",
+        image: "/crew/Srija Ray.jpeg",
         github: "https://github.com/srijaray",
         linkedin: "https://www.linkedin.com/in/random/"
       },
@@ -313,31 +314,31 @@ export const teamSections: TeamSection[] = [
       {
         name: "Debmalya Sadhukhan",
         image: "/crew/IMG_9719 - Debmalya _S.JPG",
-        github: "https://github.com/debmalya-sadhukhan",
+        instagram: "https://www.instagram.com/sir_debmalooo/",
         linkedin: "https://www.linkedin.com/in/debmalooo"
       },
       {
         name: "Debojyoti De",
         image: "/crew/IMG_2645 - Debojyoti De.jpg",
-        github: "https://github.com/DebojyotiDe03",
+        instagram: "https://www.instagram.com/debmalya.sadhukhan",
         linkedin: "https://www.linkedin.com/in/debojyotide007/"
       },
       {
         name: "Ritam Dey",
         image: "/crew/ritam.jpeg",
-        github: "https://github.com/ritam-dey",
+        instagram: "https://www.instagram.com/ritamdey68/",
         linkedin: "https://www.linkedin.com/in/ritam-dey-9494a2326"
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/Debadrita Mondal.png",
-        github: "https://github.com/debadrita-mondal",
+        instagram: "https://www.instagram.com/mondaldebadrita_/",
         linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
       },
       {
         name: "Aritra Hui",
         image: "/crew/Arita Hui.png",
-        github: "https://github.com/aritra-hui",
+        instagram: "https://www.instagram.com/void_0342/",
         linkedin: "https://www.linkedin.com/in/aritra-hui-37430a264/"
       }
     ]

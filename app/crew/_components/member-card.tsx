@@ -2,7 +2,7 @@
 import { TeamRole } from "@/constants/team-constant";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const planets = {
   organisers: '/crew/planets/design.svg',
@@ -21,10 +21,11 @@ interface MemberCardProps {
   accentColor: string
   github?: string
   linkedin?: string
+  instagram?: string
   role: TeamRole
 }
 
-export function MemberCard({ name, image, github, linkedin, role }: MemberCardProps) {
+export function MemberCard({ name, image, github, linkedin, instagram, role }: MemberCardProps) {
   const getPlanetSrc = () => planets[role] || '/crew/planets/planet.svg'
 
   return (
@@ -77,25 +78,40 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
                            transition-all duration-700 mt-1.5" />
             </h3>
 
-            {/* Social Links - Modified for mobile */}
-            <div className="flex gap-2 md:transform md:translate-y-8 md:opacity-0 
+            {/* Social Links - Icons Only */}
+            <div className="flex gap-4 md:transform md:translate-y-8 md:opacity-0 
                           md:group-hover:translate-y-0 md:group-hover:opacity-100 
                           transition-all duration-500 ease-out">
-              {github && github !== "__" && (
+              {role === 'video' ? (
                 <Link
-                  href={github}
+                  href={instagram || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full 
-                           bg-gradient-to-br from-yellow-500/10 to-amber-500/10
-                           hover:from-yellow-500/20 hover:to-amber-500/20
-                           border border-yellow-500/20 hover:border-yellow-500/40
-                           transition-all duration-300 active:scale-95 md:hover:scale-105 md:hover:-translate-y-1
-                           hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
+                  className="p-2.5 rounded-full 
+                           bg-gradient-to-br from-fuchsia-500/20 to-purple-600/20
+                           hover:from-fuchsia-500/30 hover:to-purple-600/30
+                           border border-fuchsia-500/30 hover:border-fuchsia-500/50
+                           transition-all duration-300 active:scale-95 md:hover:scale-110
+                           hover:shadow-[0_0_25px_rgba(217,70,239,0.4)]"
                 >
-                  <FaGithub className="w-4 h-4 md:w-5 md:h-5 text-white/90" />
-                  <span className="text-white/90 text-xs md:text-sm font-medium">GitHub</span>
+                  <FaInstagram className="w-6 h-6 text-gradient from-pink-500 via-purple-500 to-indigo-500" />
                 </Link>
+              ) : (
+                github && github !== "__" && (
+                  <Link
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-full 
+                             bg-gradient-to-br from-orange-500/20 to-amber-600/20
+                             hover:from-orange-500/30 hover:to-amber-600/30
+                             border border-orange-500/30 hover:border-orange-500/50
+                             transition-all duration-300 active:scale-95 md:hover:scale-110
+                             hover:shadow-[0_0_25px_rgba(245,158,11,0.4)]"
+                  >
+                    <FaGithub className="w-6 h-6 text-amber-400 hover:text-amber-300" />
+                  </Link>
+                )
               )}
 
               {linkedin && linkedin !== "__" && (
@@ -103,15 +119,14 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
                   href={linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full 
-                           bg-gradient-to-br from-blue-500/10 to-blue-600/10
-                           hover:from-blue-500/20 hover:to-blue-600/20
-                           border border-blue-500/20 hover:border-blue-500/40
-                           transition-all duration-300 active:scale-95 md:hover:scale-105 md:hover:-translate-y-1
-                           hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                  className="p-2.5 rounded-full 
+                           bg-gradient-to-br from-sky-500/20 to-blue-600/20
+                           hover:from-sky-500/30 hover:to-blue-600/30
+                           border border-sky-500/30 hover:border-sky-500/50
+                           transition-all duration-300 active:scale-95 md:hover:scale-110
+                           hover:shadow-[0_0_25px_rgba(14,165,233,0.4)]"
                 >
-                  <FaLinkedin className="w-4 h-4 md:w-5 md:h-5 text-white/90" />
-                  <span className="text-white/90 text-xs md:text-sm font-medium">LinkedIn</span>
+                  <FaLinkedin className="w-6 h-6 text-sky-400 hover:text-sky-300" />
                 </Link>
               )}
             </div>
