@@ -238,7 +238,7 @@ export const teamSections: TeamSection[] = [
         name: "⁠Ishita Majumdar",
         image: "/crew/IMG-20250203-WA0057(1) - Ishita Majumdar.jpg",
         github: "https://github.com/Ishita-Majumdar",
-        linkedin: "https://www.linkedin.com/in/ishita-majumdar-0059671b3"
+        linkedin: "https://www.linkedin.com/in/ishita-majumdar-0059671b3",
       },
       {
         name: "Rajdeep Saha",
@@ -286,7 +286,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Srija Ray",
-        image: "/crew/default.jpg",
+        image: "/crew/Srija Ray.jpeg",
         github: "https://github.com/srijaray",
         linkedin: "https://www.linkedin.com/in/random/"
       },
@@ -313,7 +313,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Debmalya Sadhukhan",
         image: "/crew/IMG_9719 - Debmalya _S.JPG",
-        github: "https://github.com/debmalya-sadhukhan",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/debmalooo"
       },
       {
@@ -325,19 +325,18 @@ export const teamSections: TeamSection[] = [
       {
         name: "Ritam Dey",
         image: "/crew/ritam.jpeg",
-        github: "https://github.com/ritam-dey",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/ritam-dey-9494a2326"
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/Debadrita Mondal.png",
-        github: "https://github.com/debadrita-mondal",
+        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
       },
       {
         name: "Aritra Hui",
         image: "/crew/Arita Hui.png",
-        github: "https://github.com/aritra-hui",
         linkedin: "https://www.linkedin.com/in/aritra-hui-37430a264/"
       }
     ]
