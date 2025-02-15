@@ -1,19 +1,22 @@
-import React from "react";
-import Image from "next/image";
-
-type ProjectCardProps = {
+interface ProjectCardProps {
   projectName: string;
-  username: string;
-  profilePic: string;
+  projectURL: string;
+  projectDescription: string;
+  projectDomain: string;
   tags: string[];
+  maintainerUsername: string;
+  maintainerfFullname: string;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+export default function ProjectCard({
   projectName,
-  username,
-  profilePic,
+  projectURL,
+  projectDescription,
+  projectDomain,
   tags,
-}) => {
+  maintainerUsername,
+  maintainerfFullname,
+}: ProjectCardProps) {
   return (
     <div
       className="bg-gray-900 text-white p-6 rounded-xl border-2 border-yellow-500 relative max-w-md"
@@ -26,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {projectName}
       </h2>
       <p className="text-center text-gray-300">by</p>
-      <h3 className="text-center text-lg font-semibold">{username}</h3>
+      <h3 className="text-center text-lg font-semibold">{maintainerUsername}</h3>
 
       <div className="flex flex-wrap justify-center gap-2 my-4">
         {tags.map((tag, index) => (
@@ -61,5 +64,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     </div>
   );
 };
-
-export default ProjectCard;

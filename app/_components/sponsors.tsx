@@ -228,7 +228,7 @@ const platinumSponsors = [
 
 const educationSponsors = [
   {
-    imageUrl: "/sponsors/Let's Code.jpeg",
+    imageUrl: "/sponsors/lets code.jpeg",
     alt: "Let's Code",
     websiteUrl: "https://www.lets-code.co.in/"
   }

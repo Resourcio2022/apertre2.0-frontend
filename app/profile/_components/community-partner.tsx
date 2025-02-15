@@ -1,6 +1,5 @@
 "use client"
-
-import { memo, useEffect, useState, useTransition } from "react";
+import { memo, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { ICommunityPartner, statusColors } from "./types";
 import { FaGithub, FaHome, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -19,11 +18,12 @@ interface CommunityPartnerProps {
 
 const CommunityPartner = memo(function CommunityPartner({ username, image }: CommunityPartnerProps) {
 	const [profile, setProfile] = useState<ICommunityPartner>();
-	const [isPending, startTransition] = useTransition();
+	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		if (username) {
-			startTransition(async () => {
+		const fetchProfile = async () => {
+			if (username) {
+				setLoading(true);
 				try {
 					const data = await getProfile('community-partner', username);
 					setProfile(data);
@@ -31,9 +31,25 @@ const CommunityPartner = memo(function CommunityPartner({ username, image }: Com
 				catch (err: any) {
 					toast.error(err.message);
 				}
-			})
-		}
-	}, [username])
+				finally {
+					setLoading(false);
+				}
+			} else {
+				setLoading(false);
+			}
+		};
+
+		fetchProfile();
+	}, [username]);
+
+	if (isLoading) {
+		return (
+			<div className="">
+				<div className="animate-spin rounded-full h-10 w-10 border-b-2 border-white" />
+			</div>
+		)
+	}
+	else if(!profile) return null;
 
 	return (
 		<div className="flex flex-col justify-center text-textyellow">

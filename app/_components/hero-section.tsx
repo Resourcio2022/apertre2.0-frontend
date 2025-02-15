@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className="bg-black text-white min-h-screen flex items-center px-8 md:px-12 font-mokoto relative">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full z-10">
-        <div className="lg:w-1/2 space-y-8 mt-20">
+        <div className="lg:w-1/2 space-y-8 mt-0 md:mt-20">
           <h1 className="text-3xl md:text-6xl font-bold leading-tight">
             THE
             <span className="text-textyellow">{" "}OPEN SOURCE</span>

@@ -221,7 +221,7 @@ export async function projectAdminSignup(
   phoneNumber: string,
   discordUsername: string,
   linkedinUrl: string,
-  twitterUsername: string,
+  twitterUsername: string | undefined,
   repos: Repo[]
 ) {
   const payload = {
@@ -234,11 +234,10 @@ export async function projectAdminSignup(
     phoneNumber,
     discordUsername,
     linkedinUrl,
-    twitterUsername,
     repos,
   };
 
-  if (twitterUsername !== "") {
+  if (twitterUsername !== undefined || twitterUsername !== "") {
     Object.assign(payload, { twitterUsername });
   }
 
