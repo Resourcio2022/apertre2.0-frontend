@@ -170,7 +170,7 @@ const digitalSponsors = [
   {
     imageUrl: "/sponsors/black.svg",
     alt: "Appwrite",
-    websiteUrl: "https://www.appwrite.io"
+    websiteUrl: "https://appwrite.io/"
   }
 ];
 
