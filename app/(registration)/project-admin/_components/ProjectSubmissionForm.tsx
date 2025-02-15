@@ -153,7 +153,7 @@ export default function RegistrationForm() {
             className="max-w-2xl mx-auto space-y-6 p-6 shadow-md rounded-lg flex flex-col gap-3 font-Poppins md:min-w-[38rem]"
           >
             <div>
-              <h1 className="text-white text-lg font-semibold">
+              <h1 className="text-gray-400 text-xl font-semibold mb-4">
                 Personal Details
               </h1>
               <div
@@ -164,7 +164,7 @@ export default function RegistrationForm() {
                   <input
                     {...register("firstName")}
                     placeholder={
-                      errors.firstName ? errors.firstName.message : "First Name"
+                      errors.firstName ? errors.firstName.message : "First Name*"
                     }
                     className={`input-field bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.firstName ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
                       }`}
@@ -174,7 +174,7 @@ export default function RegistrationForm() {
                   <input
                     {...register("lastName")}
                     placeholder={
-                      errors.lastName ? errors.lastName.message : "Last Name"
+                      errors.lastName ? errors.lastName.message : "Last Name*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.lastName ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
                       }`}
@@ -186,7 +186,7 @@ export default function RegistrationForm() {
                     placeholder={
                       errors.phoneNumber
                         ? errors.phoneNumber.message
-                        : "Phone Number"
+                        : "Phone Number*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.phoneNumber
                         ? "border-red-500 placeholder:text-red-500"
@@ -200,7 +200,7 @@ export default function RegistrationForm() {
                     placeholder={
                       errors.discordUsername
                         ? errors.discordUsername.message
-                        : "Discord Username"
+                        : "Discord Username*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.discordUsername
                         ? "border-red-500 placeholder:text-red-500"
@@ -214,7 +214,7 @@ export default function RegistrationForm() {
                     placeholder={
                       errors.linkedinUrl
                         ? errors.linkedinUrl.message
-                        : "LinkedIn Profile URL"
+                        : "LinkedIn Profile URL*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.linkedinUrl
                         ? "border-red-500 placeholder:text-red-500"
@@ -240,7 +240,7 @@ export default function RegistrationForm() {
                   <input
                     {...register("address")}
                     placeholder={
-                      errors.address ? errors.address.message : "Address"
+                      errors.address ? errors.address.message : "Address*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.address ? "border-red-500 placeholder:text-red-500" : "border-textyellow"
                       }`}
@@ -249,22 +249,22 @@ export default function RegistrationForm() {
               </div>
             </div>
             <div>
-              <h1 className="text-white text-lg font-semibold">
+              <h1 className="text-gray-400 text-xl font-semibold mb-4">
                 Project Details
               </h1>
               {fields.map((item, index) => (
                 <div
                   key={item.id}
-                  className="border border-textyellow/50 p-4 rounded-lg space-y-2 relative"
+                  className="border border-textyellow/50 p-4 rounded-lg space-y-2 relative mb-4"
                 >
-                  <h1 className="text-white">Project {index + 1}</h1>
+                  <h1 className="text-textyellow">Project {index + 1}</h1>
                   <div className="relative">
                     <input
                       {...register(`projects.${index}.repoName`)}
                       placeholder={
                         errors.projects?.[index]?.repoName
                           ? errors.projects[index].repoName.message
-                          : "Repository Name"
+                          : "Repository Name*"
                       }
                       className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.repoName
                           ? "border-red-500 placeholder:text-red-500"
@@ -282,7 +282,7 @@ export default function RegistrationForm() {
                       placeholder={
                         errors.projects?.[index]?.projectDomain?.message
                           ? errors.projects[index].projectDomain.message
-                          : "Select Project Domain"
+                          : "Select Project Domain*"
                       }
                       value={watch("projects")[index]?.projectDomain}
                     />
@@ -293,7 +293,7 @@ export default function RegistrationForm() {
                       placeholder={
                         errors.projects?.[index]?.repoURL
                           ? errors.projects[index].repoURL.message
-                          : "Repository URL"
+                          : "Repository URL*"
                       }
                       className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.repoURL
                           ? "border-red-500 placeholder:text-red-500"
@@ -307,7 +307,7 @@ export default function RegistrationForm() {
                       placeholder={
                         errors.projects?.[index]?.description
                           ? errors.projects[index].description.message
-                          : "Project Description"
+                          : "Project Description*"
                       }
                       className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.description
                           ? "border-red-500 placeholder:text-red-500"
@@ -320,7 +320,7 @@ export default function RegistrationForm() {
                       placeholder={
                         errors.projects?.[index]?.techstack?.message
                           ? errors.projects[index].techstack.message
-                          : "Select Techstacks"
+                          : "Select Techstacks*"
                       }
                       value={watch("projects")[index]?.techstack?.join(" ")}
                       onChange={(value: string) => {
@@ -367,13 +367,13 @@ export default function RegistrationForm() {
                     })}
                     className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
                   />
-                  <a
-                    href="https://forms.gle/813SNhCg1biXQmKD8"
+                  <Link
+                  href="https://forms.gle/813SNhCg1biXQmKD8"
                     className="text-red-700 font-bold underline"
                     target="_blank"
                   >
                     Fill this form
-                  </a>
+                  </Link>
                   <span className="text-white">to get the acceptance mail</span>
                 </div>
                 {errors.loftlabs && (
@@ -388,7 +388,7 @@ export default function RegistrationForm() {
                   <input
                     type="checkbox"
                     {...register("joinedDiscord", { required: "You must join Discord" })}
-                    className="w-4 h-4"
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                   />{" "}
                   Joined Discord*
                 </label>
@@ -399,9 +399,9 @@ export default function RegistrationForm() {
                   <input
                     type="checkbox"
                     {...register("rulesAccepted", { required: "You must accept the rules" })}
-                    className="w-4 h-4"
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                   />{" "}
-                  Read Rules
+                  I have read <Link href="https://season-argon-ef5.notion.site/Open-Source-Event-Rules-and-Guidelines-12cff86c36f480bcb293faaba5c40a5e" className="text-textyellow" target="_blank">Rules and Guidelines*</Link>
                 </label>
                 {errors.rulesAccepted && (
                   <p className="text-red-500">{errors.rulesAccepted.message}</p>
@@ -410,9 +410,9 @@ export default function RegistrationForm() {
                   <input
                     type="checkbox"
                     {...register("codeAccepted", { required: "You must accept the code of conduct" })}
-                    className="w-4 h-4"
+                    className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-textyellow appearance-none checked:bg-textyellow"
                   />{" "}
-                  Read Code of Conduct
+                  I have read <Link href="https://season-argon-ef5.notion.site/Code-of-Conduct-12cff86c36f4803c9ed6c7fbb88c89d3" className="text-textyellow" target="_blank">Code of Conduct*</Link>
                 </label>
                 {errors.codeAccepted && (
                   <p className="text-red-500">{errors.codeAccepted.message}</p>
@@ -420,12 +420,14 @@ export default function RegistrationForm() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
-            >
-              SUBMIT
-            </button>
+            <div className="flex w-full justify-center">
+              <button
+                type="submit"
+                className="font-mokoto text-[24px] text-white bg-customgreen border-2 border-bordergreen rounded-md px-3 py-1 mt-5"
+              >
+                SUBMIT
+              </button>
+            </div>
           </form>
         </div>
         <Image

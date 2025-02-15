@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
 interface Task {
   id: number;
   name: string;
@@ -56,7 +56,7 @@ export default function TaskTable() {
                 <td className="py-2 px-3 text-center">{task.id}</td>
                 <td className="py-2 px-3">{task.name}</td>
                 <td className="py-2 px-3">
-                  <a href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow">Visit</a>
+                  <Link href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow">Visit</Link>
                 </td>
                 <td className="py-2 px-3">
                   <input
