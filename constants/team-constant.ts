@@ -2,9 +2,10 @@ export type TeamRole = 'organisers' | 'techies' | 'designers' | 'content' | 'soc
 
 type TeamMember = {
   name: string
-  image?: string
+  image: string
   github?: string
-  linkedin?: string 
+  linkedin?: string
+  instagram?: string
 }
 
 export type TeamSection = {
@@ -31,14 +32,14 @@ export const teamSections: TeamSection[] = [
       {
         name: "Sayan Mukherjee",
         image: "/crew/Sayan Mukherjee.jpg",
-        github: "https://github.com/",
+        github: "https://github.com/Sayan044",
         linkedin: "https://www.linkedin.com/in/sayan-mukherjee-975175229/"
       },
       {
         name: "Abhraneel Karmakar",
-        image: "/crew/Abhraneel - Abhraneel Python.png",
-        github: "https://github.com/abhraneel2004/",
-        linkedin: "https://www.linkedin.com/in/abhraneel-karmakar/"
+        image: "/crew/Abhraneel Karmakar.png",
+        github: "https://github.com/abhraneel2004",
+        linkedin: "https://www.linkedin.com/in/abhraneel-karmakar/",
       },
       {
         name: "Debarshee Chakraborty",
@@ -80,7 +81,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Ashish Gupta",
-        image: "/crew/Ashish.png",
+        image: "/crew/Ashish Gupta.png",
         github: "https://github.com/ASHISH26940",
         linkedin: "https://www.linkedin.com/in/ashish-gupta2694/"
       },
@@ -95,7 +96,7 @@ export const teamSections: TeamSection[] = [
         image: "/crew/Ankan Misra.png",
         github: "https://github.com/AnkanMisra",
         linkedin: "https://www.linkedin.com/in/AnkanMisra"
-      },  
+      },
       {
         name: "Souvik Sural",
         image: "/crew/Souvik Sural.png",
@@ -112,7 +113,7 @@ export const teamSections: TeamSection[] = [
     members: [
       {
         name: "Abhinandan Sankar Sadhukhan",
-        image: "/crew/abhinandan.jpg",
+        image: "/crew/Abhinandan Sankar Sadhukhan.jpg",
         github: "https://github.com/abhina",
         linkedin: "https://www.linkedin.com/in/abhinandan-sadhukhan-5b011a269/"
       },
@@ -124,7 +125,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Sayan Dere",
-        image: "/crew/sayan_dere.png",
+        image: "/crew/Sayan Dere.png",
         github: "https://github.com/Sayandere12",
         linkedin: "https://www.linkedin.com/in/sayan-dere-a56951326"
       },
@@ -143,7 +144,6 @@ export const teamSections: TeamSection[] = [
       {
         name: "Rhritwika Das",
         image: "/crew/Rhritwika Das.png",
-        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/rhritwika-das-b1b74b262"
       },
       {
@@ -174,13 +174,13 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Saptak Biswas",
-        image: "/crew/ Saptak2.png",
+        image: "/crew/Saptak Biswas.png",
         github: "https://github.com/swapitbiswas",
         linkedin: "https://www.linkedin.com/in/saptak-biswas-50a834323"
       },
       {
         name: "Soumili Ghosh",
-        image: "/crew/soumili.jpg",
+        image: "/crew/Soumili Ghosh.jpg",
         github: "https://github.com/Soumili-2004",
         linkedin: "https://www.linkedin.com/in/soumili-ghosh-b38264294"
       },
@@ -193,7 +193,6 @@ export const teamSections: TeamSection[] = [
       {
         name: "Rittika Chakraborty",
         image: "/crew/Rittika Chakraborty.jpg",
-        github: "https://github.com",
         linkedin: " https://www.linkedin.com/in/rittika-cb/"
       },
       {
@@ -211,32 +210,32 @@ export const teamSections: TeamSection[] = [
     accentColor: "from-pink-400/80 to-pink-600/80",
     members: [
       {
-        name: "⁠Aniket De",
+        name: "Aniket De",
         image: "/crew/Aniket De.png",
         github: "https://github.com/aniketde1112",
         linkedin: "https://www.linkedin.com/in/aniketde2004/"
       },
       {
-        name: "⁠Koustav Chatterjee",
-        image: "/crew/IMG-20231219-WA0043 - Koustav Chatterjee.jpg",
-        github: "https://github.com/KoustavChatterjee",
+        name: "Koustav Chatterjee",
+        image: "/crew/Koustav Chatterjee.jpg",
+        github: "https://github.com/Koustavjr",
         linkedin: "https://www.linkedin.com/in/koustav-chatterjee-9b060b226"
       },
       {
-        name: "⁠Ankur Mukherjee",
+        name: "Ankur Mukherjee",
         image: "/crew/Ankur Mukherjee.jpg",
         github: "https://github.com/Ankur-Mukherjee",
         linkedin: "https://www.linkedin.com/in/ankur-mukherjee01"
       },
       {
-        name: "⁠Anik Mukherjee",
-        image: "/crew/AnikMukherjee.png",
+        name: "Anik Mukherjee",
+        image: "/crew/Anik Mukherjee.png",
         github: "https://github.com/Anik000007",
         linkedin: "https://www.linkedin.com/in/anik-mukherjee-19a839285"
       },
       {
-        name: "⁠Ishita Majumdar",
-        image: "/crew/IMG-20250203-WA0057(1) - Ishita Majumdar.jpg",
+        name: "Ishita Majumdar",
+        image: "/crew/Ishita Majumdar.jpg",
         github: "https://github.com/Ishita-Majumdar",
         linkedin: "https://www.linkedin.com/in/ishita-majumdar-0059671b3",
       },
@@ -247,15 +246,13 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/rajdeep-saha-b92452292/"
       },
       {
-        name: "⁠Triparna Roy",
-        image: "/crew/20241215_140910 - 152_Triparna Roy.jpg",
-        github: "https://github.com/triparna-roy",
+        name: "Triparna Roy",
+        image: "/crew/Triparna Roy.jpg",
         linkedin: "https://www.linkedin.com/in/triparna-roy-a9a2b929b"
       },
       {
-        name: "⁠Shrinwanti Basu",
-        image: "/crew/WhatsApp Image 2025-02-12 at 10.26.39 PM - 91_SHRINWANTI BASU.jpeg",
-        github: "https://github.com/Shrinwanti-Basu",
+        name: "Shrinwanti Basu",
+        image: "/crew/Shrinwanti Basu.jpeg",
         linkedin: "https://www.linkedin.com/in/shrinwanti-basu-2b3669278"
       }
     ]
@@ -274,13 +271,13 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Suman Chakraborty",
-        image: "/crew/IMG-20250211-WA0020 - Suman Chakraborty.jpg",
+        image: "/crew/Suman Chakraborty.jpg",
         github: "http://github.com/suman599",
         linkedin: "https://www.linkedin.com/in/suman-chakraborty-8a1535254"
       },
       {
         name: "Kanaya Karmakar",
-        image: "/crew/Photo from Kanaya - Kanaya Karmakar.jpg",
+        image: "/crew/Kanaya Karmakar.jpg",
         github: "https://github.com/kanayakarmakar",
         linkedin: "https://www.linkedin.com/in/kanaya-karmakar-5a5a202b7/"
       },
@@ -292,7 +289,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Rajdeep Paul",
-        image: "/crew/myself_profilepic - Rajdeep Paul.jpg",
+        image: "/crew/Rajdeep Paul.jpg",
         github: "https://github.com/rajdeep13-coder",
         linkedin: "https://www.linkedin.com/in/rajdeep-paul-013z/"
       },
@@ -312,26 +309,23 @@ export const teamSections: TeamSection[] = [
     members: [
       {
         name: "Debmalya Sadhukhan",
-        image: "/crew/IMG_9719 - Debmalya _S.JPG",
-        github: "https://github.com/",
+        image: "/crew/Debmalya Sadhukhan.JPG",
         linkedin: "https://www.linkedin.com/in/debmalooo"
       },
       {
         name: "Debojyoti De",
-        image: "/crew/IMG_2645 - Debojyoti De.jpg",
+        image: "/crew/Debojyoti De.jpg",
         github: "https://github.com/DebojyotiDe03",
         linkedin: "https://www.linkedin.com/in/debojyotide007/"
       },
       {
         name: "Ritam Dey",
-        image: "/crew/ritam.jpeg",
-        github: "https://github.com/",
+        image: "/crew/Ritam Dey.jpeg",
         linkedin: "https://www.linkedin.com/in/ritam-dey-9494a2326"
       },
       {
         name: "Debadrita Mondal",
         image: "/crew/Debadrita Mondal.png",
-        github: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
       },
       {

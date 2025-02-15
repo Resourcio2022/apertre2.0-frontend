@@ -1,6 +1,4 @@
-
 "use client"
-
 import { useGitHub } from "@/hooks/useGithubUser"
 import { useUser } from "@clerk/nextjs";
 import CommunityPartner from "./_components/community-partner"
@@ -66,7 +64,11 @@ const RoleTabs = ({ roles, githubUsername, image }: { roles: Role[]; githubUsern
             case "project admin":
                 return <ProjectAdmin username={githubUsername} image={image} key="project admin" />
             default:
-                return <span>Select a role to view content</span>
+                return (
+                    <span className="text-white text-xl">
+                        GM
+                    </span >
+                )
         }
     }
 

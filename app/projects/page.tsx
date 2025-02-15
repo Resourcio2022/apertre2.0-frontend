@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "./_components/ProjectCard";
 import { Search } from "lucide-react";
 import { getGithubRepo, getProjectsByTechStack } from "./_utils/apiCall";
 import RocketComingSoon from "@/components/ComingSoon";
 
-// for local testing
 import localProjects from "../../public/project_data.json";
 
 const comingSoon = true;
@@ -73,9 +72,12 @@ const ProjectsPage = () => {
             <ProjectCard
               key={index}
               projectName={project.repoName}
-              username={project.projectAdmin.username}
-              profilePic={project.repoURL}
+              projectURL={project.repoURL}
+              projectDescription={project.description}
+              projectDomain={project.projectDomain}
               tags={project.techstack}
+              maintainerUsername={project.projectAdmin.username}
+              maintainerfFullname={project.projectAdmin.fullname}
             />
           ))}
         </div>

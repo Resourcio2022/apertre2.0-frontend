@@ -1,5 +1,5 @@
 "use client"
-import { memo, useEffect, useState, useTransition } from "react";
+import { memo, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { IEvangelist, statusColors } from "./types";
 import Image from 'next/image'
@@ -18,11 +18,12 @@ interface EvangelistProps {
 
 const Evangelist = memo(function Evangelist({ username, image }: EvangelistProps) {
 	const [profile, setProfile] = useState<IEvangelist>();
-	const [isPending, startTransition] = useTransition();
+	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		if (username) {
-			startTransition(async () => {
+		const fetchProfile = async () => {
+			if (username) {
+				setLoading(true);
 				try {
 					const data = await getProfile('evangelist', username);
 					setProfile(data);
@@ -30,9 +31,25 @@ const Evangelist = memo(function Evangelist({ username, image }: EvangelistProps
 				catch (err: any) {
 					toast.error(err.message);
 				}
-			})
-		}
-	}, [username])
+				finally {
+					setLoading(false);
+				}
+			} else {
+				setLoading(false);
+			}
+		};
+
+		fetchProfile();
+	}, [username]);
+
+	if (isLoading) {
+		return (
+			<div className="">
+				<div className="animate-spin rounded-full h-10 w-10 border-b-2 border-white" />
+			</div>
+		)
+	}
+	else if (!profile) return null;
 
 	return (
 		<div className="flex flex-col justify-center text-textyellow">

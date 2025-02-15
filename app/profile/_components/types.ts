@@ -1,10 +1,17 @@
 export type Status = 'VERIFIED' | 'UNVERIFIED' | 'PENDING'
+export type ProjectStatus = 'SELECTED' | 'REJECTED' | 'PENDING'
 
 export const statusColors = {
     VERIFIED: "bg-green-100 text-green-800",
     UNVERIFIED: "bg-gray-100 text-gray-800",
     PENDING: "bg-yellow-100 text-yellow-800",
 };
+
+export const projectStatusColors = {
+    SELECTED: "bg-green-100 text-green-800",
+    REJECTED: "bg-gray-100 text-gray-800",
+    PENDING: "bg-yellow-100 text-yellow-800",
+}
 
 type Participant = {
     fullname: string,
@@ -80,33 +87,55 @@ export interface IMentee {
     communityPartner: CommunityPartner | null,
 }
 
-export interface IMentor { // fix 
+type AssignedRepo = {
+    repoName: string,
+    repoURL: string,
+    description: string,
+    projectDomain: string,
+    techstack: string[],
+    projectAdmin: {
+        fullname: string,
+        username: string,
+        discordUsername: string,
+    }
+}
+
+export interface IMentor {
     email: string,
     username: string,
     fullname: string,
     address: string,
     phoneNumber: string,
-    status: Status,
     linkedinUrl: string,
+    discordUsername: string,
     twitterUsername: string | null,
+    techstack: string[],
+    status: Status,
+    githubRepos: { githubRepo: AssignedRepo }[]
+}
+
+type AssignedMentor = {
+    username: string,
+    fullname: string,
     techstack: string[],
 }
 
-export interface IProject {
+type Project = {
     repoName: string,
     repoURL: string,
     projectStatus: string,
-    mentors: { mentor: IMentor }[],
+    mentors: { mentor: AssignedMentor }[],
 }
-export interface IProjectAdmin { // fix
+
+export interface IProjectAdmin {
     email: string,
     username: string,
     fullname: string,
     address: string,
     phoneNumber: string,
-    status: Status,
-    twitterUsername: string,
     linkedinUrl: string,
     discordUsername: string,
-    githubRepo: IProject[]
+    twitterUsername: string | null,
+    status: Status,
+    githubRepos: Project[]
 }

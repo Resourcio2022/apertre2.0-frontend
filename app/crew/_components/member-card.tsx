@@ -2,7 +2,7 @@
 import { TeamRole } from "@/constants/team-constant";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const planets = {
   organisers: '/crew/planets/design.svg',
@@ -21,10 +21,11 @@ interface MemberCardProps {
   accentColor: string
   github?: string
   linkedin?: string
+  instagram?: string
   role: TeamRole
 }
 
-export function MemberCard({ name, image, github, linkedin, role }: MemberCardProps) {
+export function MemberCard({ name, image, github, linkedin, instagram, role }: MemberCardProps) {
   const getPlanetSrc = () => planets[role] || '/crew/planets/planet.svg'
 
   return (
@@ -65,6 +66,7 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
               width={300}
               height={300}
               loading="lazy"
+              unoptimized
               className="w-full h-full object-cover md:transition-transform md:duration-500 
                        md:group-hover:scale-105 md:group-hover:filter md:group-hover:brightness-105"
             />
@@ -79,7 +81,7 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
           <div className="absolute inset-x-0 bottom-0 p-5">
             <h3 className="text-white font-bold text-lg tracking-wide mb-3 drop-shadow-lg">
               {name}
-              <div className="h-0.5 w-0 md:group-hover:w-full w-full md:w-0 bg-gradient-to-r from-yellow-200 to-amber-500 
+              <div className="h-0.5 md:group-hover:w-full w-full md:w-0 bg-gradient-to-r from-yellow-200 to-amber-500 
                            transition-all duration-700 mt-1.5" />
             </h3>
 
@@ -87,7 +89,7 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
             <div className="flex gap-4 md:transform md:translate-y-8 md:opacity-0 
                           md:group-hover:translate-y-0 md:group-hover:opacity-100 
                           transition-all duration-500 ease-out">
-              {github && github !== "__" && (
+              {github && (
                 <Link
                   href={github}
                   target="_blank"
@@ -102,8 +104,7 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
                   <FaGithub className="w-6 h-6 text-amber-400 hover:text-amber-300" />
                 </Link>
               )}
-
-              {linkedin && linkedin !== "__" && (
+              {linkedin && (
                 <Link
                   href={linkedin}
                   target="_blank"
@@ -116,6 +117,21 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
                            hover:shadow-[0_0_25px_rgba(14,165,233,0.4)]"
                 >
                   <FaLinkedin className="w-6 h-6 text-sky-400 hover:text-sky-300" />
+                </Link>
+              )}
+              {instagram && (
+                <Link
+                  href={instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full 
+                           bg-gradient-to-br from-blue-500/10 to-blue-600/10
+                           hover:from-blue-500/20 hover:to-blue-600/20
+                           border border-blue-500/20 hover:border-blue-500/40
+                           transition-all duration-300 active:scale-95 md:hover:scale-105 md:hover:-translate-y-1
+                           hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                >
+                  <FaInstagram className="w-4 h-4 md:w-5 md:h-5 text-white/90" />
                 </Link>
               )}
             </div>
