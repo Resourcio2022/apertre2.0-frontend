@@ -24,7 +24,7 @@ export function TechStacks({ placeholder, value, onChange }: ComboBoxProps) {
     const [frameworks, setFrameworks] = useState<Framework[]>([]);
     const [isPending, startTransition] = useTransition();
 
-    const selectedValues = value ? value.split(",").filter(Boolean) : [];
+    const selectedValues = value ? value.split(" ").filter(Boolean) : [];
 
     useEffect(() => {
         startTransition(async() => {
@@ -46,13 +46,13 @@ export function TechStacks({ placeholder, value, onChange }: ComboBoxProps) {
         else {
             updatedValues = [...selectedValues, selectedValue];
         }
-        onChange(updatedValues.join(","));
+        onChange(updatedValues.join(" "));
         setOpen(false);
     }
 
     const handleRemove = (removedValue: string) => {
         const updatedValues = selectedValues.filter((v) => v !== removedValue);
-        onChange(updatedValues.join(","));
+        onChange(updatedValues.join(" "));
     }
 
     return (
