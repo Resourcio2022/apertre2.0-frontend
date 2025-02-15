@@ -131,7 +131,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Tanushree Das",
         image: "/crew/Tanushree Das.png",
-        github: "https://github.com/",
+        github: "https://github.com/tanushreedas04",
         linkedin: "https://www.linkedin.com/in/tanushreedas04"
       },
       {
@@ -242,7 +242,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Rajdeep Saha",
-        image: "/crew/Rajdeep Saha.jpg",
+        image: "/crew/Rajdeep Saha.png",
         github: "https://github.com/C0D3K0NG",
         linkedin: "https://www.linkedin.com/in/rajdeep-saha-b92452292/"
       },
@@ -281,8 +281,8 @@ export const teamSections: TeamSection[] = [
       {
         name: "Kanaya Karmakar",
         image: "/crew/Photo from Kanaya - Kanaya Karmakar.jpg",
-        github: "https://github.com/kanaya-karmakar",
-        linkedin: "https://www.linkedin.com/in/kanaya-karmakar-5a5a202b7"
+        github: "https://github.com/kanayakarmakar",
+        linkedin: "https://www.linkedin.com/in/kanaya-karmakar-5a5a202b7/"
       },
       {
         name: "Srija Ray",
@@ -330,7 +330,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Debadrita Mondal",
-        image: "/crew/default.jpg",
+        image: "/crew/Debadrita Mondal.png",
         github: "https://github.com/debadrita-mondal",
         linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
       },

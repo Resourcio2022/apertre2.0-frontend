@@ -28,17 +28,17 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
   const getPlanetSrc = () => planets[role] || '/crew/planets/planet.svg'
 
   return (
-    <div className="relative group w-full">
+    <div className="relative group w-full transform transition-all duration-500 hover:-translate-y-2">
       <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl blur opacity-0 
-                    group-hover:opacity-30 transition duration-700" />
+                    group-hover:opacity-30 md:transition md:duration-700" />
 
-      <div className="relative rounded-2xl overflow-hidden bg-zinc-900/90 backdrop-blur-sm">
-        {/* Card Content Container */}
+      <div className="relative rounded-2xl overflow-hidden bg-zinc-900/90 backdrop-blur-sm 
+                    shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-amber-500/20 transition-all duration-500">
         <div className="aspect-square relative overflow-hidden">
           {/* Planet Icon */}
           <div className="absolute -top-1 -left-1 w-14 h-14 rounded-full z-20 bg-black/90 p-0.5
-                              shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]
-                              transition-all duration-700">
+                       shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]
+                       transition-all duration-700">
             <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-yellow-400/20 to-amber-600/20">
               <Image
                 src={getPlanetSrc()}
@@ -59,41 +59,42 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
               width={300}
               height={300}
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 
-                       group-hover:scale-105 group-hover:filter group-hover:brightness-105"
+              className="w-full h-full object-cover md:transition-transform md:duration-500 
+                       md:group-hover:scale-105 md:group-hover:filter md:group-hover:brightness-105"
             />
 
             {/* Overlay Gradients */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-75" />
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 to-amber-500/20 opacity-0 
-                          group-hover:opacity-40 transition-opacity duration-700 mix-blend-overlay" />
+                          md:group-hover:opacity-40 transition-opacity duration-700 mix-blend-overlay" />
           </div>
 
           {/* Content */}
-          <div className="absolute inset-x-0 bottom-0 p-5 transform transition-all duration-500">
+          <div className="absolute inset-x-0 bottom-0 p-5">
             <h3 className="text-white font-bold text-lg tracking-wide mb-3 drop-shadow-lg">
               {name}
-              <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-yellow-200 to-amber-500 
+              <div className="h-0.5 w-0 md:group-hover:w-full w-full md:w-0 bg-gradient-to-r from-yellow-200 to-amber-500 
                            transition-all duration-700 mt-1.5" />
             </h3>
 
-            {/* Social Links */}
-            <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 
-                         transition-all duration-500 ease-out flex gap-2">
+            {/* Social Links - Modified for mobile */}
+            <div className="flex gap-2 md:transform md:translate-y-8 md:opacity-0 
+                          md:group-hover:translate-y-0 md:group-hover:opacity-100 
+                          transition-all duration-500 ease-out">
               {github && github !== "__" && (
                 <Link
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-4 py-2 rounded-full 
+                  className="inline-flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full 
                            bg-gradient-to-br from-yellow-500/10 to-amber-500/10
                            hover:from-yellow-500/20 hover:to-amber-500/20
                            border border-yellow-500/20 hover:border-yellow-500/40
-                           transition-all duration-300 hover:scale-105 hover:-translate-y-1
+                           transition-all duration-300 active:scale-95 md:hover:scale-105 md:hover:-translate-y-1
                            hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
                 >
-                  <FaGithub className="w-5 h-5 text-white/90" />
-                  <span className="text-white/90 text-sm font-medium">GitHub</span>
+                  <FaGithub className="w-4 h-4 md:w-5 md:h-5 text-white/90" />
+                  <span className="text-white/90 text-xs md:text-sm font-medium">GitHub</span>
                 </Link>
               )}
 
@@ -102,15 +103,15 @@ export function MemberCard({ name, image, github, linkedin, role }: MemberCardPr
                   href={linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-4 py-2 rounded-full 
+                  className="inline-flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full 
                            bg-gradient-to-br from-blue-500/10 to-blue-600/10
                            hover:from-blue-500/20 hover:to-blue-600/20
                            border border-blue-500/20 hover:border-blue-500/40
-                           transition-all duration-300 hover:scale-105 hover:-translate-y-1
+                           transition-all duration-300 active:scale-95 md:hover:scale-105 md:hover:-translate-y-1
                            hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                 >
-                  <FaLinkedin className="w-5 h-5 text-white/90" />
-                  <span className="text-white/90 text-sm font-medium">LinkedIn</span>
+                  <FaLinkedin className="w-4 h-4 md:w-5 md:h-5 text-white/90" />
+                  <span className="text-white/90 text-xs md:text-sm font-medium">LinkedIn</span>
                 </Link>
               )}
             </div>
