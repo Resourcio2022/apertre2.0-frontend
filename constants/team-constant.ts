@@ -42,6 +42,12 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/abhraneel-karmakar/",
       },
       {
+        name: "Aratrik Bandyopadhyay",
+        image: "AEe6qhE96NSmJG2chCN5MjzlQHvxwdCVkuips5cLSU19yg6F",
+        github: "https://github.com/Aratrik123",
+        linkedin: "http://linkedin.com/in/aratrik-bandyopadhyay-14755a222/"
+      },
+      {
         name: "Debarshee Chakraborty",
         image: "AEe6qhE96NSmRHJVvw3Lor4U1l6xpbiu0j9ynekfPvQsH8cG",
         github: "https://github.com/debarshee2004",
@@ -265,6 +271,12 @@ export const teamSections: TeamSection[] = [
         name: "Shrinwanti Basu",
         image: "AEe6qhE96NSmTtzMjxH2Q8HGw3NRnvsyV9Zj4zMaxEfu6Leg",
         linkedin: "https://www.linkedin.com/in/shrinwanti-basu-2b3669278"
+      },
+      {
+        name: "Vivaswan Ghosh",
+        image: "AEe6qhE96NSmtnfWxGyc69G5inDfsHdIyFRWC4rxK3wOZYXE",
+        github:"https://github.com/vivaswanghosh",
+        linkedin: "https://www.linkedin.com/in/vivaswan-ghosh-2749a5294/"
       }
     ]
   },
