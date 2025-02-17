@@ -298,7 +298,7 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/random/"
       },
       {
-        name: "Arkadeep Ray",
+        name: "Arkadip Ray",
         image: "AEe6qhE96NSm8m64Bkg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
         github: "https://github.com/Arkadipttv",
         linkedin: "https://www.linkedin.com/in/arkadip-ray-41a1a427b/"
