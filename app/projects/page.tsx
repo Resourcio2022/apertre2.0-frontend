@@ -4,8 +4,9 @@ import ProjectCard from "./_components/ProjectCard";
 import { Search } from "lucide-react";
 import { getGithubRepo, getProjectsByTechStack } from "./_utils/apiCall";
 import RocketComingSoon from "@/components/ComingSoon";
-
+import Projects from "../_components/Projects"
 import localProjects from "../../public/project_data.json";
+
 
 const comingSoon = true;
 
@@ -30,11 +31,7 @@ const ProjectsPage = () => {
       .catch((error) => console.error("Error fetching projects:", error));
   };
 
-  return comingSoon ? (
-    <>
-      <RocketComingSoon />
-    </>
-  ) : (
+  return (
     <>
       <div
         className="bg-gray-900 min-h-screen text-white p-8"
@@ -68,7 +65,7 @@ const ProjectsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-items-center">
-          {projects.map((project, index) => (
+          {/* {projects.map((project, index) => (
             <ProjectCard
               key={index}
               projectName={project.repoName}
@@ -79,11 +76,15 @@ const ProjectsPage = () => {
               maintainerUsername={project.projectAdmin.username}
               maintainerfFullname={project.projectAdmin.fullname}
             />
+          ))} */}
+          {projects.map((project, index) => (
+            <Projects key={index} technologies={project.techstack} {...project} />
           ))}
         </div>
       </div>
     </>
   );
 };
+
 
 export default ProjectsPage;
