@@ -61,14 +61,14 @@ export function MemberCard({ name, image, github, linkedin, instagram, role }: M
           {/* Member Images */}
           <div className="w-full h-full transform transition-all duration-700">
             <Image
-              src={image}
+              src={`https://utfs.io/f/${image}`}
               alt={name}
               width={300}
               height={300}
               loading="lazy"
               unoptimized
               className="w-full h-full object-cover md:transition-transform md:duration-500 
-                       md:group-hover:scale-105 md:group-hover:filter md:group-hover:brightness-105"
+             md:group-hover:scale-105 md:group-hover:filter md:group-hover:brightness-105"
             />
 
             {/* Overlay Gradients */}
