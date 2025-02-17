@@ -62,6 +62,18 @@ export const teamSections: TeamSection[] = [
     accentColor: "from-purple-400/80 to-purple-600/80",
     members: [
       {
+        name: "Abhirup Saha",
+        image: "/crew/AbhirupDas.jpeg",
+        github: "https://github.com/zeitgeistxx",
+        linkedin: "https://www.linkedin.com/in/zeitgeistx"
+      },
+      {
+        name: "Sayan Das",
+        image: "/crew/SayanDas.jpeg",
+        github: "https://www.github.com/Sayan67",
+        linkedin: "https://www.linkedin.com/in/sayan-daas/"
+      },
+      {
         name: "Anjishnu Ganguly",
         image: "/crew/Anjishnu Ganguly.jpeg",
         github: "https://github.com/skythrill256",
@@ -286,6 +298,12 @@ export const teamSections: TeamSection[] = [
         image: "/crew/Srija Ray.jpeg",
         github: "https://github.com/srijaray",
         linkedin: "https://www.linkedin.com/in/random/"
+      },
+      {
+        name: "Arkadeep Ray",
+        image: "/crew/Arkadeep.jpg",
+        github: "https://github.com/Arkadipttv",
+        linkedin: "https://www.linkedin.com/in/arkadip-ray-41a1a427b/"
       },
       {
         name: "Rajdeep Paul",
