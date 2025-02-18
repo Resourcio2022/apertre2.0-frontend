@@ -269,7 +269,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Vivaswan Ghosh",
         image: "AEe6qhE96NSmtnfWxGyc69G5inDfsHdIyFRWC4rxK3wOZYXE",
-        github:"https://github.com/vivaswanghosh",
+        github: "https://github.com/vivaswanghosh",
         linkedin: "https://www.linkedin.com/in/vivaswan-ghosh-2749a5294/"
       }
     ]
