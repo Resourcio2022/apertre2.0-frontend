@@ -1,6 +1,6 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-interface Repo {
+export interface Repo {
   repoName: string;
   repoURL: string;
   description: string;
