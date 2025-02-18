@@ -132,25 +132,29 @@ export default function Page() {
         <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:32px_32px] opacity-5" />
       </div>
 
+
       {/* Scroll to Top Button */}
       {showButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-50 p-4 rounded-full 
-                   bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400
-                   shadow-lg shadow-amber-500/30 
-                   transition-all duration-500 
-                   hover:shadow-amber-500/50 hover:shadow-xl
-                   hover:scale-110 hover:-translate-y-1 
-                   hover:from-yellow-400 hover:via-amber-500 hover:to-orange-500
-                   group"
+          className="fixed bottom-8 right-8 z-[9999] p-4 rounded-full 
+                 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400
+                 shadow-lg shadow-amber-500/30 
+                 transition-all duration-500 
+                 hover:shadow-amber-500/50 hover:shadow-xl
+                 hover:scale-110 hover:-translate-y-1 
+                 hover:from-yellow-400 hover:via-amber-500 hover:to-orange-500
+                 group"
+          style={{ pointerEvents: "auto" }}
           aria-label="Scroll to top"
         >
           <span className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 
-                        blur-xl opacity-40 group-hover:opacity-70 transition-all duration-500" />
-          <MoveUpIcon className="w-6 h-6 relative z-10 text-white group-hover:text-yellow-100 
-                              transition-colors duration-300 group-hover:animate-bounce"
-            strokeWidth={2.5} />
+                      blur-xl opacity-40 group-hover:opacity-70 transition-all duration-500" />
+          <MoveUpIcon
+            className="w-6 h-6 relative z-10 text-white group-hover:text-yellow-100 
+                 transition-colors duration-300 group-hover:animate-bounce"
+            strokeWidth={2.5}
+          />
         </button>
       )}
     </div>
