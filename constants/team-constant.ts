@@ -37,7 +37,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Abhraneel Karmakar",
-        image: "AEe6qhE96NSmKUgSsLlrt670mqwRaHXhOd3pjVAs8SZNIbJK",
+        image: "AEe6qhE96NSmq5LkZDbVhoR4ftaE5Pu1SBreNZGXTCks8vng",
         github: "https://github.com/abhraneel2004",
         linkedin: "https://www.linkedin.com/in/abhraneel-karmakar/",
       },
@@ -337,7 +337,7 @@ export const teamSections: TeamSection[] = [
     members: [
       {
         name: "Debmalya Sadhukhan",
-        image: "AEe6qhE96NSmK5drBtlrt670mqwRaHXhOd3pjVAs8SZNIbJK",
+        image: "AEe6qhE96NSmsxoNuEbZKGra1o2JfUSY849exmAZvM3sgCiI",
         linkedin: "https://www.linkedin.com/in/debmalooo"
       },
       {
