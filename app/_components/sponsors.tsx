@@ -158,15 +158,21 @@ const goldSponsors = [
 
 const digitalSponsors = [
   {
-    imageUrl: "/sponsors/interview_buddy.png",
-    alt: "Interview Buddy",
-    websiteUrl: "https://interviewbuddy.in"
+    imageUrl: "/sponsors/Lockup-white.png",
+    alt: "Holopin",
+    websiteUrl: "http://holopin.io/"
   },
   {
     imageUrl: "/sponsors/jet-brains.jpg",
     alt: "JetBrains",
     websiteUrl: "https://www.jetbrains.com"
   },
+  {
+    imageUrl: "/sponsors/interview_buddy.png",
+    alt: "Interview Buddy",
+    websiteUrl: "https://interviewbuddy.in"
+  },
+ 
   {
     imageUrl: "/sponsors/black.svg",
     alt: "Appwrite",
