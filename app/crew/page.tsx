@@ -18,7 +18,7 @@ const stars = [
   { id: 9, src: "/star.png", left: "82%", top: "88%", size: 28 },
   { id: 10, src: "/star.png", left: "95%", top: "68%", size: 31 },
 ];
-// Star Mapping below
+// Star Mapping below dewa ache
 {
   stars.map((star) => (
     <Image
@@ -69,7 +69,7 @@ export default function Page() {
         </header>
 
         {/* Navigation Buttons */}
-        <nav className="hidden md:flex items-center justify-center mb-12 px-4">
+        <nav className="hidden lg:flex items-center justify-center mb-12 px-4">
           <div className="inline-flex flex-nowrap gap-3 p-2 rounded-full bg-zinc-900/50 backdrop-blur-sm border border-yellow-400/20">
             {teamSections.map((section) => (
               <button
@@ -82,21 +82,20 @@ export default function Page() {
                   }
                 }}
                 className="group relative px-4 py-2 text-white font-bold text-sm font-mokoto uppercase rounded-full 
-                         bg-gradient-to-br from-yellow-400/10 to-amber-500/10
-                         border border-yellow-400/20 hover:border-yellow-400/50
-                         transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
-                         hover:shadow-[0_0_15px_rgba(251,191,36,0.3)] whitespace-nowrap"
+                 bg-gradient-to-br from-yellow-400/10 to-amber-500/10
+                 border border-yellow-400/20 hover:border-yellow-400/50
+                 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
+                 hover:shadow-[0_0_15px_rgba(251,191,36,0.3)] whitespace-nowrap"
               >
                 <span className="relative z-10 bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
                   {section.title}
                 </span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/10 to-amber-500/10 opacity-0 
-                             group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                         group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               </button>
             ))}
           </div>
         </nav>
-
         {/* Main Content */}
         <div className="relative">
           <div className="max-w-7xl mx-auto font-mokoto relative z-10">
