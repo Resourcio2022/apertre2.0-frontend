@@ -18,7 +18,7 @@ const stars = [
   { id: 9, src: "/star.png", left: "82%", top: "88%", size: 28 },
   { id: 10, src: "/star.png", left: "95%", top: "68%", size: 31 },
 ];
-// Star Mapping below
+// Star Mapping below dewa ache
 {
   stars.map((star) => (
     <Image
