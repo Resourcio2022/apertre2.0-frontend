@@ -106,7 +106,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Suman Jain",
         image: "AEe6qhE96NSm8fMIYNg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
-        github: "https://github.com/SumanJain2005",
+        github: "https://github.com/L0rD-Op",
         linkedin: "https://www.linkedin.com/in/suman-naresh-jain/"
       },
       {
