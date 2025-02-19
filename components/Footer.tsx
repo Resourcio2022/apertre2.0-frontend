@@ -1,7 +1,7 @@
 import { footerLinks, supportLinks } from "@/constants/footer-constant";
 import Image from "next/image";
 import Link from "next/link";
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaFacebook, FaTwitter, FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 interface socialLink {
   [key: string]: {
@@ -30,7 +30,8 @@ const socialLinks = {
 
 export default function Footer() {
   return (
-    <div className="bg-footer w-[100vw] flex flex-col py-10 px-5 md:px-20 bottom-0">
+    <div className="bg-footer w-[100vw] flex flex-col py-10 px-5 md:px-20 bottom-0 relative z-50
+                    bg-[#1a1a1a] shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
       <div className="flex lg:flex-row flex-col md:flex-col md:gap-10">
         <div className="flex flex-col lg:flex-row justify-around xl:gap-60 w-full lg:w-4/6">
           <div className="flex flex-col gap-5 items-center">

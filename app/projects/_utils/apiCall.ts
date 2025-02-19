@@ -1,6 +1,6 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
-interface Repo {
+export interface Repo {
   repoName: string;
   repoURL: string;
   description: string;
@@ -36,12 +36,11 @@ export async function getGithubRepo(
   return { data: data.data, meta: data.meta };
 }
 
-export async function getProjectsByTechStack(
-  techstacks: string[]
-): Promise<Repo[]> {
+export async function getProjectsByTechStack(techstacks: string[]): Promise<Repo[]> {
   const query = techstacks
     .map((stack) => `techstack=${encodeURIComponent(stack)}`)
     .join("&");
+
   const res = await fetch(`${API_URL}/github-repo/apertre/search?${query}`);
   const data = await res.json();
 
