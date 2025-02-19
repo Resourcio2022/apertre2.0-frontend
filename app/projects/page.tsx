@@ -77,7 +77,7 @@ const ProjectsPage = () => {
         </div>
 
         <div className=" gap-6 flex justify-center flex-wrap items-center py-8 px-4">
-          {projects ? (
+          {projects && projects.length > 0 ? (
             projects.map((project, index) => (
               <ProjectCard
                 key={index}
@@ -90,6 +90,13 @@ const ProjectsPage = () => {
                 maintainerfFullname={project.projectAdmin.fullname}
               />
             ))
+          ) : projects && projects.length === 0 ? (
+            <div className="flex flex-col justify-center items-center gap-4">
+              <h1 className="text-yellow-400 text-4xl font-bold font-mokoto">
+                No projects found
+              </h1>
+              <p className="text-gray-300">Please try again</p>
+            </div>
           ) : (
             <div className="w-10 h-10 border-t-2 border-yellow-500 rounded-full animate-spin"></div>
           )}
