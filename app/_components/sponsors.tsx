@@ -226,7 +226,7 @@ const platinumSponsors = [
     websiteUrl: "https://www.loft.sh/"
   },
   {
-    imageUrl: "/sponsors/flutterflow.svg",
+    imageUrl: "/sponsors/FlutterFlow.png",
     alt : "FlutterFlow",
     websiteUrl: "https://flutterflow.io/"
   }
