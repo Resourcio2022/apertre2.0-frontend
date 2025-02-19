@@ -6,6 +6,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
+import ModalManager from "@/components/ui/Modals/ModalManager";
+import { Provider } from "jotai";
 
 const mokotoVF = localFont({
   src: "./fonts/mokoto.woff",
@@ -22,7 +24,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Apertre2.0",
   description: "",
-}
+};
 
 export default function RootLayout({
   children,
@@ -32,11 +34,16 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${mokotoVF.variable} ${poppins.className} antialiased`}>
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster position="bottom-right" />
+        <body
+          className={`${mokotoVF.variable} ${poppins.className} antialiased`}
+        >
+          <Provider>
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster position="bottom-right" />
+            <ModalManager />
+          </Provider>
         </body>
       </html>
     </ClerkProvider>
