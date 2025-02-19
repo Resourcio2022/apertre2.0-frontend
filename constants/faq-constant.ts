@@ -46,7 +46,7 @@ export const faqData: FAQItem[] = [
     {
         question: "Is there a fee to participate in Apertre?",
         answer:
-            "Apertre use popular collaboration tools like GitHub for version control, Discord for communication, and other online platforms to organize and manage projects. Details about tools will be shared with participants during the event.",
+            "No, there is no fee to participate in Apertre. It is a completely free and open-source event, designed to promote inclusivity and accessibility for everyone. Apertre emphasizes the importance of knowledge-sharing and collaboration without any financial barriers. By being open-source, it ensures that all resources, tools, and materials developed or shared during the event are publicly accessible to anyone, fostering a global community of learners, developers, and contributors. Whether you’re a beginner looking to explore or an expert aiming to contribute, Apertre welcomes everyone with open arms.",
     },
     {
         question: "Are there any deadlines or important dates I should be aware of?",
