@@ -158,7 +158,7 @@ const goldSponsors = [
 
 const digitalSponsors = [
   {
-    imageUrl: "/sponsors/Lockup-white.png",
+    imageUrl: "/sponsors/holopin.png",
     alt: "Holopin",
     websiteUrl: "http://holopin.io/"
   },
@@ -174,7 +174,7 @@ const digitalSponsors = [
   },
  
   {
-    imageUrl: "/sponsors/black.svg",
+    imageUrl: "/sponsors/appwrite.svg",
     alt: "Appwrite",
     websiteUrl: "https://appwrite.io/"
   }
@@ -190,7 +190,7 @@ const platformSponsors = [
 
 const bronzeSponsors = [
   {
-    imageUrl: "/sponsors/logo-white.svg",
+    imageUrl: "/sponsors/dotstark.svg",
     alt: "DotStark",
     websiteUrl: "https://dotstark.com/"
   },
@@ -226,7 +226,7 @@ const platinumSponsors = [
     websiteUrl: "https://www.loft.sh/"
   },
   {
-    imageUrl: "/sponsors/FlutterFlow1.svg",
+    imageUrl: "/sponsors/flutterflow.svg",
     alt : "FlutterFlow",
     websiteUrl: "https://flutterflow.io/"
   }
@@ -234,7 +234,7 @@ const platinumSponsors = [
 
 const educationSponsors = [
   {
-    imageUrl: "/sponsors/lets code.jpeg",
+    imageUrl: "/sponsors/lets-code.jpeg",
     alt: "Let's Code",
     websiteUrl: "https://www.lets-code.co.in/"
   }
