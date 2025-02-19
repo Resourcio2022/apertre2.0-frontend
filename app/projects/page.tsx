@@ -2,29 +2,43 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./_components/ProjectCard";
 import { Search } from "lucide-react";
-import { getGithubRepo, getProjectsByTechStack } from "./_utils/apiCall";
+import { getGithubRepo, getProjectsByTechStack, Repo } from "./_utils/apiCall";
 import RocketComingSoon from "@/components/ComingSoon";
+import { TechStacks } from "../(registration)/project-admin/_components/techstack-combo-box";
+import ProjectPagination from "./_components/Pagination";
 
-import localProjects from "../../public/project_data.json";
-
-const comingSoon = true;
+const comingSoon = false;
 
 const ProjectsPage = () => {
   const [search, setSearch] = useState("");
-  const [projects, setProjects] = useState(localProjects.data);
-  const page = 1;
-  const pageSize = 10;
+  const [projects, setProjects] = useState<Repo[] | undefined>();
+  const [totalPages, setTotalPages] = useState(0);
+  const [page, setPage] = useState(1);
+  const pageSize = 9;
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      getGithubRepo(page, pageSize)
-        .then((data) => setProjects(data.data))
-        .catch((error) => console.error("Error fetching projects:", error));
-    }
-  }, []);
+    // if (process.env.NODE_ENV === "production") {
+    getGithubRepo(page, pageSize)
+      .then((data) => {
+        console.log(data);
+        setProjects(data.data);
+        setTotalPages(data.meta.totalPages);
+      })
+      .catch((error) => console.error("Error fetching projects:", error));
+    // }
+  }, [page]);
 
-  const handleSearch = () => {
-    const techstacks = search.split(",").map((stack) => stack.trim());
+  const handleSearch = (val: string) => {
+    if (val === "") {
+      getGithubRepo(page, pageSize)
+        .then((data) => {
+          console.log(data);
+          setProjects(data.data);
+        })
+        .catch((error) => console.error("Error fetching projects:", error));
+      return;
+    }
+    const techstacks = val.split(" ").map((stack) => stack.trim());
     getProjectsByTechStack(techstacks)
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
@@ -37,50 +51,61 @@ const ProjectsPage = () => {
   ) : (
     <>
       <div
-        className="bg-gray-900 min-h-screen text-white p-8"
+        className="min-h-[85vh] text-white w-full pb-8 flex flex-col justify-between"
         style={{
           background:
             "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
         }}
       >
-        <div className="flex justify-between items-center mb-6 pl-4 pr-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center sticky top-8 sm:top-20 z-20 backdrop-blur bg-black/50 py-2 w-full px-6">
           <div>
             <h1 className="text-yellow-400 text-4xl font-bold font-mokoto">
               PROJECTS
             </h1>
             <p className="text-gray-300">Pick your choice and contribute</p>
           </div>
-          <div className="flex justify-between pl-8 pr-8 pt-2 pb-2 rounded-full bg-[#1d1c1c] border border-yellow-500 text-white text-center focus:outline-none">
-            <input
-              type="text"
-              placeholder="Search by tech stack"
+          <div className="flex justify-between pl-8 pr-8 pt-2 pb-2 bg-[#1d1c1c] text-white text-center focus:outline-none ">
+            <TechStacks
+              placeholder={"Select Techstacks*"}
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="bg-[#1d1c1c] focus:outline-none"
+              onChange={(value: string) => {
+                handleSearch(value);
+                setSearch(value);
+              }}
             />
-            <button
-              onClick={handleSearch}
-              className="ml-2 px-4 py-2 rounded-full text-gray-400"
-            >
-              <Search />
-            </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-items-center">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              projectName={project.repoName}
-              projectURL={project.repoURL}
-              projectDescription={project.description}
-              projectDomain={project.projectDomain}
-              tags={project.techstack}
-              maintainerUsername={project.projectAdmin.username}
-              maintainerfFullname={project.projectAdmin.fullname}
-            />
-          ))}
+        <div className=" gap-6 flex justify-center flex-wrap items-center py-8 px-4">
+          {projects && projects.length > 0 ? (
+            projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                projectName={project.repoName}
+                projectURL={project.repoURL}
+                projectDescription={project.description}
+                projectDomain={project.projectDomain}
+                tags={project.techstack}
+                maintainerUsername={project.projectAdmin.username}
+                maintainerfFullname={project.projectAdmin.fullname}
+              />
+            ))
+          ) : projects && projects.length === 0 ? (
+            <div className="flex flex-col justify-center items-center gap-4">
+              <h1 className="text-yellow-400 text-4xl font-bold font-mokoto">
+                No projects found
+              </h1>
+              <p className="text-gray-300">Please try again</p>
+            </div>
+          ) : (
+            <div className="w-10 h-10 border-t-2 border-yellow-500 rounded-full animate-spin"></div>
+          )}
         </div>
+        <ProjectPagination
+          totalPages={totalPages}
+          currentPage={page}
+          setPage={setPage}
+        />
       </div>
     </>
   );
