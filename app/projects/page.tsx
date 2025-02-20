@@ -44,23 +44,21 @@ export default function ProjectsPage() {
           "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
       }}
     >
-      <div className="flex flex-col sm:flex-row justify-between items-center sticky top-8 sm:top-20 z-20 backdrop-blur bg-black/50 py-2 w-full px-6">
+      <div className="flex flex-col sm:flex-row justify-between items-center sticky top-8 sm:top-20 z-20 backdrop-blur bg-black/50 px-8 py-6 w-full">
         <div>
           <h1 className="text-yellow-400 text-4xl font-bold font-mokoto">
             PROJECTS
           </h1>
           <p className="text-gray-300">Pick your choice and contribute</p>
         </div>
-        <div className="flex justify-between pl-8 pr-8 pt-2 pb-2 bg-[#1d1c1c] text-white text-center focus:outline-none ">
-          <TechStacks
-            placeholder={"Select Techstacks*"}
-            value={search}
-            onChange={(value: string) => {
-              handleSearch(value);
-              setSearch(value);
-            }}
-          />
-        </div>
+        <TechStacks
+          placeholder={"Select Techstacks*"}
+          value={search}
+          onChange={(value: string) => {
+            handleSearch(value);
+            setSearch(value);
+          }}
+        />
       </div>
 
       <div className=" gap-6 flex justify-center flex-wrap items-center py-8 px-4">
@@ -82,7 +80,6 @@ export default function ProjectsPage() {
             <h1 className="text-yellow-400 text-4xl font-bold font-mokoto">
               No projects found
             </h1>
-            <p className="text-gray-300">Please try again</p>
           </div>
         ) : (
           <div className="w-10 h-10 border-t-2 border-yellow-500 rounded-full animate-spin"></div>

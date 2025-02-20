@@ -65,7 +65,7 @@ const Icons4 = [
   }
 ];
 
-export default function communitypartner() {
+export default function CommunityPartner() {
   return (
     <section
       className="h-[200vh] md:h-[260vh] flex items-center justify-center p-10 md:p-14 text-white font-sans bg-black relative"
