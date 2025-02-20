@@ -68,7 +68,7 @@ const Icons4 = [
 export default function communitypartner() {
   return (
     <section
-      className="h-[180vh] md:h-[180vh] flex items-center justify-center p-10 md:p-14 text-white font-sans bg-black relative"
+      className="h-[200vh] md:h-[260vh] flex items-center justify-center p-10 md:p-14 text-white font-sans bg-black relative"
       id="communitypartners"
     >
       <div className="absolute inset-0 -z-10">
@@ -79,10 +79,11 @@ export default function communitypartner() {
         <h2 className="absolute top-0 right-20 text-textyellow text-2xl md:text-6xl font-mokoto py-12 md:py-24">
           Community Partners
         </h2>
-        <p className="absolute top-[152vh] md:top-52 mr-4 md:right-20 text-center md:text-right text-lg md:text-xl text-white font-poppins">
+        <p className="absolute top-[182vh] md:top-52 mr-4 md:right-20 text-center md:text-right text-lg md:text-xl text-white font-poppins">
           Together, our community partners empower more <br /> developers to join Apertre.
         </p>
-        <div className="relative flex left-0 h-[800px] md:h-[1200px] w-full flex-col items-center justify-center overflow-hidden">
+        </div>
+        <div className="relative flex md:right-96 h-[1200px] md:min-w-full md:h-[1200px] md:top-44 w-full flex-col items-center justify-center overflow-hidden">
           <OrbitingCircles iconSize={70} radius={100} speed={1.5}>
             {Icons.map((communitypartner, i) => (
               <Image
@@ -136,7 +137,7 @@ export default function communitypartner() {
             style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
           />
         </div>
-      </div>
+    
 
       {stars.map((star) => (
         <Image
