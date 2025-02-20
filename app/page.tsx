@@ -6,6 +6,7 @@ import Testimonials from "./_components/testimonials";
 import Plants from "./about-us/_components/plants";
 import Timeline from "./_components/timeline";
 import TaskTable from "./_components/task-table";
+import Communitypartner from "./_components/community_partners";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       {/* <Timeline /> */}
       <Registration />
       <Sponsor />
+      <Communitypartner />
       <Testimonials />
       <FAQ />
     </>
