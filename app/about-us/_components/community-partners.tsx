@@ -69,11 +69,9 @@ const Icons4 = [
 
 export default function CommunityPartner() {
   const { isMobile, isTablet } = useDetectDevice();
+
   return (
-    <section
-      className="h-[90vh] sm:h-[calc(max(70vh,960px))] lg:h-[100vh] flex py-14 sm:py-20 justify-end px-10  lg:px-20 text-white font-sans bg-gradient-to-tl from-[#272323] to-black relative"
-      id=""
-    >
+    <section className="h-[90vh] sm:h-[calc(max(70vh,960px))] lg:h-[100vh] flex py-14 sm:py-20 justify-end px-10  lg:px-20 text-white font-sans bg-gradient-to-tl from-[#272323] to-black relative">
       <div className="absolute flex h-full w-full flex-col items-center justify-center overflow-hidden z-10 left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-1/3 top-1/2 -translate-y-1/2">
         <OrbitingCircles
           iconSize={isMobile ? 35 : isTablet ? 50 : 80}
@@ -128,7 +126,7 @@ export default function CommunityPartner() {
           width={70}
           height={60}
           alt="Apertre capybara"
-          className="absolute w-[10%] sm:w-auto"
+          className="absolute w-[10%] sm:w-[5%]"
           style={{
             top: "50%",
             left: "50%",
