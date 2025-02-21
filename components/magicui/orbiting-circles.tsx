@@ -19,15 +19,12 @@ export function OrbitingCircles({
   children,
   reverse,
   duration = 20,
-  radius = 800, // Increased radius
+  radius = 160,
   path = true,
-  iconSize = 50,
+  iconSize = 30,
   speed = 1,
   ...props
 }: OrbitingCirclesProps) {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const responsiveRadius = isMobile ? radius * 0.5 : radius;
-  const responsiveIconSize = isMobile ? iconSize * 0.8 : iconSize;
   const calculatedDuration = duration / speed;
   return (
     <>
@@ -35,12 +32,12 @@ export function OrbitingCircles({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          className="pointer-events-none absolute inset-0 w-full h-full"
+          className="pointer-events-none absolute inset-0 size-full"
         >
           <circle
-            className="stroke-white/20 stroke-2 dark:stroke-white/10"
-            cx="50%" // Adjusted horizontal position
-            cy="50%" // Custom vertical position
+            className="stroke-[4px] stroke-white/30"
+            cx="50%"
+            cy="50%"
             r={radius}
             fill="none"
           />
@@ -56,30 +53,16 @@ export function OrbitingCircles({
                 "--radius": radius,
                 "--angle": angle,
                 "--icon-size": `${iconSize}px`,
-                "--cx": "5%", // Adjusted horizontal position
-                "--cy": "60%", // Custom vertical position
               } as React.CSSProperties
             }
             className={cn(
-              `absolute flex size-[var(--icon-size)] transform-gpu animate-orbit items-center justify-center rounded-full border-3 border-white`,
+              `absolute flex size-[var(--icon-size)] transform-gpu animate-orbit items-center justify-center rounded-full`,
               { "[animation-direction:reverse]": reverse },
               className,
             )}
             {...props}
           >
-            <div
-              className="absolute"
-              style={{
-                left: isMobile 
-                  ? "calc(var(--cx) * 1% + var(--radius) * cos(var(--angle) * 1deg) - var(--icon-size) / 2 - 60px)"
-                  : "calc(var(--cx) * 1% + var(--radius) * cos(var(--angle) * 1deg) - var(--icon-size) / 2 - 120px)",
-                top: "calc(var(--cy) * 1% + var(--radius) * sin(var(--angle) * 1deg) - var(--icon-size) / 2)",
-              }}
-            >
-              <div className="rounded-full overflow-hidden w-full h-full">
-                {child}
-              </div>
-            </div>
+            {child}
           </div>
         );
       })}
