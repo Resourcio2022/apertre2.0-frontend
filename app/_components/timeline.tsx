@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -39,12 +39,68 @@ const events: TimelineEvent[] = [
   },
 ];
 
+const TimelineDot = ({ active, isFirst, isLast, index }: { active: boolean; isFirst: boolean; isLast: boolean; index: number }) => {
+  const getRotation = () => {
+    if (index === 1) {
+      return '0deg'; // Middle item points right (horizontal)
+    } else {
+      return '180deg'; // First and last items point left (horizontal)
+    }
+  };
+
+  return (
+    <div className="absolute left-1/2 -translate-x-1/2 transform">
+      <svg
+        width="60"
+        height="60"
+        viewBox="0 0 346 346"
+        fill="none"
+        className={`transform transition-all duration-500 hover:scale-125 ${active ? "scale-110" : "scale-100"}`}
+        style={{
+          transform: `rotate(${getRotation()})`,
+          transition: 'transform 0.5s ease-in-out'
+        }}
+      >
+        <rect
+          x="345.652"
+          y="0"
+          width="345.652"
+          height="345.652"
+          rx="172.826"
+          transform="rotate(90 345.652 0)"
+          fill="#221F1F"
+          className="transition-all duration-500"
+        />
+        <path
+          d="M117.55 105.115C105.38 100.277 93.2 112.14 97.43 124.727L103.43 142.629L106.65 141.512C113.01 139.3 120.09 138.329 125.46 143.933L132.9 151.687C153.6 148.797 173.78 155.604 183.74 165.985L190.44 172.982L183.74 179.98C173.78 190.362 153.6 197.169 132.9 194.279L125.46 202.033C120.09 207.636 113.01 206.666 106.65 204.454L103.43 203.337L97.43 221.238C93.2 233.826 105.38 245.688 117.55 240.85L242.58 191.184C258.87 184.711 258.87 161.255 242.58 154.782L117.55 105.115Z"
+          fill={active || isLast ? "#FBCE1F" : "#333333"}
+          className="transition-all duration-500"
+        />
+        <path
+          d="M111.46 165.717H106.82C100.11 165.717 90.57 172.979 90.57 172.979C90.57 172.979 99.37 180.241 106.82 180.241H111.46V165.717Z"
+          fill={active || isLast ? "#FBCE1F" : "#333333"}
+          className="transition-all duration-500"
+        />
+        <path
+          d="M139.53 172.938C139.53 179.413 144.69 184.662 151.06 184.662C157.42 184.662 162.58 179.413 162.58 172.938C162.58 166.464 157.42 161.215 151.06 161.215C144.69 161.215 139.53 166.464 139.53 172.938Z"
+          fill={active || isLast ? "#FBCE1F" : "#333333"}
+          className="transition-all duration-500"
+        />
+      </svg>
+    </div>
+  );
+};
+
 const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
   let xPos;
   if (event.size === "1040") xPos = 1040;
   else if (event.size === "1016") xPos = 1020;
   else if (event.size === "1000") xPos = 1000;
   else xPos = 1000;
+
+  // Determine border and text color based on status
+  const borderColor = event.status === "done" ? "#4CAF50" : event.status === "upcoming" ? "#828F9B" : "#FBCE1F";
+  const textColor = event.status === "done" ? "#4CAF50" : event.status === "upcoming" ? "#828F9B" : "#FBCE1F";
 
   return (
     <div
@@ -77,8 +133,8 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
           x="90"
           y="140"
           fill="white"
-          className="text-2xl md:text-4xl font-bold"
-          fontFamily="Arial"
+          className="text-5xl md:text-6xl font-bold"
+          fontFamily="Mokoto"
         >
           {event.title}
         </text>
@@ -93,7 +149,7 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
           x={885.5}
           y={385.5}
           fill="url(#d)"
-          stroke="url(#e)"
+          stroke={borderColor} // Border color based on status
           strokeWidth={13}
           rx={48.5}
         />
@@ -101,45 +157,20 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
           x="100"
           y="540"
           fill="#FBCE1F"
-          fontStyle="var(--font-mokoto)"
-          className="text-xl md:text-4xl font-bold"
+          className="text-10xl md:text-5xl font-bold font-mokoto"
           fontFamily="Arial"
         >
           {event.date}
         </text>
-        <path
-          fill="#E0A800"
-          fillOpacity={0.41}
-          d="M1139.62 578h-80.33c-15.62 0-28.29 12.667-28.29 28.292 0 15.625 12.67 28.291 28.29 28.291h80.33c15.63 0 28.3-12.666 28.3-28.291S1155.25 578 1139.62 578Z"
-        />
-        <path
-          fill="#E0A800"
-          fillOpacity={0.41}
-          d="M1139.62 618.417c6.7 0 12.13-5.429 12.13-12.125 0-6.697-5.43-12.125-12.13-12.125-6.69 0-12.12 5.428-12.12 12.125 0 6.696 5.43 12.125 12.12 12.125Z"
-        />
         <text
           x={xPos}
           y="500"
-          fill="#FBCE1F"
-          className="text-2xl md:text-5xl font-bold"
+          fill={textColor} // Text color based on status
+          className="text-3xl md:text-6xl text-white font-bold"
           fontFamily="Arial"
         >
           {event.status}
         </text>
-        <path
-          stroke="#FBCE1F"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={8.083}
-          d="M1139.62 578h-80.33c-15.62 0-28.29 12.667-28.29 28.292 0 15.625 12.67 28.291 28.29 28.291h80.33c15.63 0 28.3-12.666 28.3-28.291S1155.25 578 1139.62 578Z"
-        />
-        <path
-          stroke="#FBCE1F"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={8.083}
-          d="M1139.62 618.417c6.7 0 12.13-5.429 12.13-12.125 0-6.697-5.43-12.125-12.13-12.125-6.69 0-12.12 5.428-12.12 12.125 0 6.696 5.43 12.125 12.12 12.125Z"
-        />
         <defs>
           <linearGradient
             id="a"
@@ -175,33 +206,13 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
             <stop offset={0.123} stopColor="#0B0A0A" />
             <stop offset={1} stopColor="#272323" />
           </linearGradient>
-          <linearGradient
-            id="e"
-            x1={899.714}
-            x2={1227.02}
-            y1={379}
-            y2={603.127}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset={0.17} stopColor="#C29F18" />
-            <stop offset={0.305} stopColor="#957A12" />
-            <stop offset={1} stopColor="#0B0B0A" />
-          </linearGradient>
         </defs>
       </svg>
     </div>
   );
 };
 
-const TimelineDot = ({ active }: { active: boolean }) => (
-  <div
-    className={`absolute left-1/2 -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full border-2 
-      ${active ? "bg-yellow-500 border-yellow-600" : "bg-gray-700 border-gray-600"}
-      transform transition-all duration-500 ${active ? "scale-125" : "scale-100"}`}
-  />
-);
-
-const AnimatedTimeline = () => {
+export default function AnimatedTimeline() {
   const timelineRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
 
@@ -268,7 +279,12 @@ const AnimatedTimeline = () => {
         <div className="relative space-y-12 md:space-y-24">
           {events.map((event, index) => (
             <div key={event.title} className="relative">
-              <TimelineDot active={index === 0} />
+              <TimelineDot
+                active={event.status === "done" || event.status === "ongoing"}
+                isFirst={index === 0}
+                isLast={index === events.length - 1}
+                index={index}
+              />
               <SvgTimelineCard event={event} />
             </div>
           ))}
@@ -277,5 +293,3 @@ const AnimatedTimeline = () => {
     </div>
   );
 };
-
-export default AnimatedTimeline;
