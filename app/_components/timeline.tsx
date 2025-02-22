@@ -20,7 +20,7 @@ const events: TimelineEvent[] = [
   {
     title: "Mentee Registration",
     date: "28TH JAN 2025",
-    status: "Ongoing",
+    status: "Done",
     size: "1016",
     position: "left",
   },
@@ -39,7 +39,21 @@ const events: TimelineEvent[] = [
     position: "left",
   },
   {
-    title: "Pre Apertre 2.0 Session #1",
+    title: "Offline Event Announcement",
+    date: "24TH FEB 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Offline Event Venue Rveal & Registration",
+    date: "27TH FEB 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  },
+  {
+    title: "Apertre 2.0 Session #1",
     date: "25TH FEB 2025",
     status: "Upcoming",
     size: "1000",
@@ -53,7 +67,7 @@ const events: TimelineEvent[] = [
     position: "left",
   },
   {
-    title: "Pre Apertre 2.0 Session #2",
+    title: "Apertre 2.0 Session #2",
     date: "2ND MARCH 2025",
     status: "Upcoming",
     size: "1000",
@@ -81,12 +95,61 @@ const events: TimelineEvent[] = [
     position: "left",
   },
   {
-    title: "Mini Games #1",
-    date: "10TH - 11TH MARCH 2025",
+    title: "Apertre 2.0 Session #3",
+    date: "9TH MARCH 2025",
     status: "Upcoming",
     size: "1000",
     position: "right",
   },
+  {
+    title: "Fun Event #1",
+    date: "11TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  },
+  {
+    title: "Fun Event #2",
+    date: "13TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Leaderboard Publication",
+    date: "14TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  },
+  {
+    title: "Apertre 2.0 Session #4",
+    date: "16TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Fun Event #3",
+    date: "23RD MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  },
+  {
+    title: "Apertre 2.0 Session #5",
+    date: "26TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Apertre 2.0 Session #6",
+    date: "30TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  }
 ];
 
 const TimelineDot = ({ active, isFirst, isLast, index, position }: { active: boolean; isFirst: boolean; isLast: boolean; index: number; position: "left" | "right"; }) => {
