@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import useDetectDevice from "../_utils/device-detect";
+import Link from "next/link";
 
 const stars = [
   { id: 1, src: "/star.png", left: "5%", top: "15%", size: 35 },
@@ -17,12 +18,14 @@ const stars = [
 
 const Icons = [
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community_partners/lets code.png",
     alt: "CommunityPartner-1",
+    href: "https://www.lets-code.co.in/",
   },
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community_partners/IIT PATNA.jpeg",
     alt: "CommunityPartner-2",
+    href: "https://cet.iitp.ac.in/index.php/announcements/technology-club-internship-placement-cell",
   },
 ];
 
@@ -30,18 +33,22 @@ const Icons2 = [
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-3",
+    href: "https://www.capybara.tech/",
   },
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-4",
+    href: "https://www.capybara.tech/",
   },
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-5",
+    href: "https://www.capybara.tech/",
   },
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-6",
+    href: "https://www.capybara.tech/",
   },
 ];
 
@@ -49,6 +56,7 @@ const Icons3 = [
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-7",
+    href: "https://www.capybara.tech/",
   },
 ];
 
@@ -56,14 +64,17 @@ const Icons4 = [
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-8",
+    href: "https://www.capybara.tech/",
   },
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-9",
+    href: "https://www.capybara.tech/",
   },
   {
     imageUrl: "/community_partners/capybara.png",
     alt: "CommunityPartner-10",
+    href: "https://www.capybara.tech/",
   },
 ];
 
@@ -79,6 +90,12 @@ export default function CommunityPartner() {
           speed={0.8}
         >
           {Icons.map((communitypartner, i) => (
+            <Link
+              href={communitypartner.href}
+              key={i}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
             <Image
               key={i}
               src={communitypartner.imageUrl}
@@ -87,6 +104,7 @@ export default function CommunityPartner() {
               height={70}
               className="z-10 rounded-full"
             />
+            </Link>
           ))}
         </OrbitingCircles>
         <OrbitingCircles
@@ -95,14 +113,21 @@ export default function CommunityPartner() {
           speed={1}
         >
           {Icons3.map((communitypartner, i) => (
-            <Image
+            <Link
+              href={communitypartner.href}
               key={i}
-              src={communitypartner.imageUrl}
-              alt={communitypartner.alt}
-              width={70}
-              height={70}
-              className="z-10 rounded-full"
-            />
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                key={i}
+                src={communitypartner.imageUrl}
+                alt={communitypartner.alt}
+                width={70}
+                height={70}
+                className="z-10 rounded-full"
+              />
+            </Link>
           ))}
         </OrbitingCircles>
         <OrbitingCircles
@@ -111,14 +136,21 @@ export default function CommunityPartner() {
           speed={1.5}
         >
           {Icons2.map((communitypartner, i) => (
-            <Image
+            <Link
+              href={communitypartner.href}
               key={i}
-              src={communitypartner.imageUrl}
-              alt={communitypartner.alt}
-              width={70}
-              height={70}
-              className="z-10 rounded-full"
-            />
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                key={i}
+                src={communitypartner.imageUrl}
+                alt={communitypartner.alt}
+                width={70}
+                height={70}
+                className="z-10 rounded-full"
+              />
+            </Link>
           ))}
         </OrbitingCircles>
         <Image
