@@ -34,11 +34,6 @@ export default function AboutUs() {
           </div>
         </div>
         <div className="flex-1 flex justify-center md:justify-end md:flex-row flex-col">
-          {/* <div className="absolute lg:right-80 md:top-1/2 md:-translate-y-1/2 top-[-2rem]"> */}
-          {/* <p className="md:-rotate-90 text-textyellow text-lg whitespace-nowrap tracking-wider p-2 items-center flex justify-center">
-            Here is our last year stats
-          </p> */}
-          {/* </div> */}
           <div>
             <Image
               src="/about.svg"

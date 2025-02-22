@@ -329,19 +329,19 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
   );
 };
 const StatusToggle = ({ status }: { status: "Done" | "Ongoing" | "Upcoming" }) => {
-  const bgColor = status === "Done" ? "#4CAF50" : 
-                 status === "Ongoing" ? "#FBCE1F" : 
-                 "#828F9B";
-  
+  const bgColor = status === "Done" ? "#4CAF50" :
+    status === "Ongoing" ? "#FBCE1F" :
+      "#828F9B";
+
   const dotPosition = status === "Upcoming" ? "left-2" : "right-2";
-  
+
   return (
     <div className="relative inline-block">
-      <div 
-        className="w-28 h-14 left-4 rounded-full transition-colors duration-300" 
+      <div
+        className="w-28 h-14 left-4 rounded-full transition-colors duration-300"
         style={{ backgroundColor: bgColor }}
       >
-        <div 
+        <div
           className={`absolute ${dotPosition} top-2 w-8 h-8 rounded-full bg-black border-${bgColor} transition-all duration-300`}
         />
       </div>
@@ -407,8 +407,8 @@ export default function AnimatedTimeline() {
   return (
     <div className="min-h-screen bg-black py-10 md:py-20 px-4">
       <h1 className="text-2xl sm:text-3xl md:text-6xl font-bold font-mokoto tracking-wider text-yellow-500 text-center mb-20">
-            Apertre 2.0 Timeline
-          </h1>
+        Apertre 2.0 Timeline
+      </h1>
       <div ref={timelineRef} className="max-w-5xl mx-auto relative">
         <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-800">
           <div
@@ -420,7 +420,7 @@ export default function AnimatedTimeline() {
           {events.map((event, index) => (
             <div key={event.title} className="relative">
               <TimelineDot
-                active={event.status === "done" || event.status === "ongoing"}
+                active={event.status === "Done" || event.status === "Ongoing"}
                 isFirst={index === 0}
                 isLast={index === events.length - 1}
                 index={index}

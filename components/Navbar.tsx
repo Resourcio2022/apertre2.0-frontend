@@ -17,7 +17,6 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const NAV_LINKS: INavLink[] = [
-    // { name: "Home", url: "/" },
     { name: "About Us", url: "/about-us" },
     { name: "Timeline", url: "/timeline" },
     { name: "Sponsors", url: "/#sponsors" },

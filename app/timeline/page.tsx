@@ -1,5 +1,4 @@
-"use client";
-import { AnimatedTimeline } from "@/app/_components/timeline";
+import { AnimatedTimeline } from "./_components/timeline";
 
 export default function TimelinePage() {
   return (
