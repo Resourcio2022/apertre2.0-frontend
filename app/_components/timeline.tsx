@@ -1,4 +1,5 @@
 "use client";
+export { AnimatedTimeline };
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -11,40 +12,90 @@ interface TimelineEvent {
   title: string;
   date: string;
   size: string;
-  status: "done" | "ongoing" | "upcoming";
+  status: "Done" | "Ongoing" | "Upcoming";
   position: "left" | "right";
 }
 
 const events: TimelineEvent[] = [
   {
-    title: "Mentor Registration",
-    date: "26TH FEB 2025",
-    status: "done",
-    size: "1040",
+    title: "Mentee Registration",
+    date: "28TH JAN 2025",
+    status: "Ongoing",
+    size: "1016",
     position: "left",
   },
   {
-    title: "APERTRE 2.0 OPENING CEREMONY",
-    date: "7TH MARCH 2025",
-    status: "ongoing",
+    title: "Mentor Registration",
+    date: "4th FEB 2025",
+    status: "Ongoing",
     size: "1016",
     position: "right",
   },
   {
-    title: "Mini Games #1",
-    date: "10TH - 11TH MARCH 2025",
-    status: "upcoming",
+    title: "Project Admin Registration",
+    date: "15TH FEB 2025",
+    status: "Ongoing",
+    size: "1016",
+    position: "left",
+  },
+  {
+    title: "Pre Apertre 2.0 Session #1",
+    date: "25TH FEB 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Project Announcement",
+    date: "1ST MARCH 2025",
+    status: "Upcoming",
     size: "1000",
     position: "left",
   },
+  {
+    title: "Pre Apertre 2.0 Session #2",
+    date: "2ND MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Mentor Announcement",
+    date: "3RD MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  },
+  {
+    title: "Doubts Clearing Session",
+    date: "5TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
+  {
+    title: "Apertre 2.0 Kickoff",
+    date: "7TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "left",
+  },
+  {
+    title: "Mini Games #1",
+    date: "10TH - 11TH MARCH 2025",
+    status: "Upcoming",
+    size: "1000",
+    position: "right",
+  },
 ];
 
-const TimelineDot = ({ active, isFirst, isLast, index }: { active: boolean; isFirst: boolean; isLast: boolean; index: number }) => {
+const TimelineDot = ({ active, isFirst, isLast, index, position }: { active: boolean; isFirst: boolean; isLast: boolean; index: number; position: "left" | "right"; }) => {
   const getRotation = () => {
-    if (index === 1) {
-      return '0deg'; // Middle item points right (horizontal)
+    // Keep index for animation but combine with position
+    if (position === "left") {
+      return index == 1 ? '180deg' : '0deg';
     } else {
-      return '180deg'; // First and last items point left (horizontal)
+      return index == 1 ? '0deg' : '180deg';
     }
   };
 
@@ -73,17 +124,17 @@ const TimelineDot = ({ active, isFirst, isLast, index }: { active: boolean; isFi
         />
         <path
           d="M117.55 105.115C105.38 100.277 93.2 112.14 97.43 124.727L103.43 142.629L106.65 141.512C113.01 139.3 120.09 138.329 125.46 143.933L132.9 151.687C153.6 148.797 173.78 155.604 183.74 165.985L190.44 172.982L183.74 179.98C173.78 190.362 153.6 197.169 132.9 194.279L125.46 202.033C120.09 207.636 113.01 206.666 106.65 204.454L103.43 203.337L97.43 221.238C93.2 233.826 105.38 245.688 117.55 240.85L242.58 191.184C258.87 184.711 258.87 161.255 242.58 154.782L117.55 105.115Z"
-          fill={active || isLast ? "#FBCE1F" : "#333333"}
+          fill="#FBCE1F"  // Remove conditional and always use yellow
           className="transition-all duration-500"
         />
         <path
           d="M111.46 165.717H106.82C100.11 165.717 90.57 172.979 90.57 172.979C90.57 172.979 99.37 180.241 106.82 180.241H111.46V165.717Z"
-          fill={active || isLast ? "#FBCE1F" : "#333333"}
+          fill="#FBCE1F"  // Remove conditional and always use yellow
           className="transition-all duration-500"
         />
         <path
           d="M139.53 172.938C139.53 179.413 144.69 184.662 151.06 184.662C157.42 184.662 162.58 179.413 162.58 172.938C162.58 166.464 157.42 161.215 151.06 161.215C144.69 161.215 139.53 166.464 139.53 172.938Z"
-          fill={active || isLast ? "#FBCE1F" : "#333333"}
+          fill="#FBCE1F"  // Remove conditional and always use yellow
           className="transition-all duration-500"
         />
       </svg>
@@ -93,14 +144,14 @@ const TimelineDot = ({ active, isFirst, isLast, index }: { active: boolean; isFi
 
 const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
   let xPos;
-  if (event.size === "1040") xPos = 1040;
-  else if (event.size === "1016") xPos = 1020;
-  else if (event.size === "1000") xPos = 1000;
+  if (event.size === "1040") xPos = 1020;
+  else if (event.size === "1016") xPos = 980;
+  else if (event.size === "1000") xPos = 950;
   else xPos = 1000;
 
   // Determine border and text color based on status
-  const borderColor = event.status === "done" ? "#4CAF50" : event.status === "upcoming" ? "#828F9B" : "#FBCE1F";
-  const textColor = event.status === "done" ? "#4CAF50" : event.status === "upcoming" ? "#828F9B" : "#FBCE1F";
+  const borderColor = event.status === "Done" ? "#4CAF50" : event.status === "Upcoming" ? "#828F9B" : "#FBCE1F";
+  const textColor = event.status === "Done" ? "#4CAF50" : event.status === "Upcoming" ? "#828F9B" : "#FBCE1F";
 
   return (
     <div
@@ -134,7 +185,7 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
           y="140"
           fill="white"
           className="text-5xl md:text-6xl font-bold"
-          fontFamily="Mokoto"
+          fontFamily="Poppins"
         >
           {event.title}
         </text>
@@ -157,7 +208,7 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
           x="100"
           y="540"
           fill="#FBCE1F"
-          className="text-10xl md:text-5xl font-bold font-mokoto"
+          className="text-5xl md:text-6xl font-bold font-mokoto"
           fontFamily="Arial"
         >
           {event.date}
@@ -165,12 +216,15 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
         <text
           x={xPos}
           y="500"
-          fill={textColor} // Text color based on status
-          className="text-3xl md:text-6xl text-white font-bold"
-          fontFamily="Arial"
+          fill={textColor}
+          className="text-3xl md:text-6xl"
+          fontFamily="Poppins"
         >
           {event.status}
         </text>
+        <foreignObject x="1060" y="600" width="140" height="80">
+          <StatusToggle status={event.status} />
+        </foreignObject>
         <defs>
           <linearGradient
             id="a"
@@ -208,6 +262,26 @@ const SvgTimelineCard = ({ event }: { event: TimelineEvent }) => {
           </linearGradient>
         </defs>
       </svg>
+    </div>
+  );
+};
+const StatusToggle = ({ status }: { status: "Done" | "Ongoing" | "Upcoming" }) => {
+  const bgColor = status === "Done" ? "#4CAF50" : 
+                 status === "Ongoing" ? "#FBCE1F" : 
+                 "#828F9B";
+  
+  const dotPosition = status === "Upcoming" ? "left-2" : "right-2";
+  
+  return (
+    <div className="relative inline-block">
+      <div 
+        className="w-28 h-14 left-4 rounded-full transition-colors duration-300" 
+        style={{ backgroundColor: bgColor }}
+      >
+        <div 
+          className={`absolute ${dotPosition} top-2 w-8 h-8 rounded-full bg-black border-${bgColor} transition-all duration-300`}
+        />
+      </div>
     </div>
   );
 };
@@ -269,6 +343,9 @@ export default function AnimatedTimeline() {
 
   return (
     <div className="min-h-screen bg-black py-10 md:py-20 px-4">
+      <h1 className="text-2xl sm:text-3xl md:text-6xl font-bold font-mokoto tracking-wider text-yellow-500 text-center mb-20">
+            Apertre 2.0 Timeline
+          </h1>
       <div ref={timelineRef} className="max-w-5xl mx-auto relative">
         <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gray-800">
           <div
@@ -284,6 +361,7 @@ export default function AnimatedTimeline() {
                 isFirst={index === 0}
                 isLast={index === events.length - 1}
                 index={index}
+                position={event.position}
               />
               <SvgTimelineCard event={event} />
             </div>
