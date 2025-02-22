@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Loader } from "./Loader";
+import ScrollProgress from "../components/ui/ScrollProgress";
 
 type INavLink = {
   name: string;
@@ -16,8 +17,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const NAV_LINKS: INavLink[] = [
-    { name: "Home", url: "/" },
     { name: "About Us", url: "/about-us" },
+    { name: "Timeline", url: "/timeline" },
     { name: "Sponsors", url: "/#sponsors" },
     { name: "Crew", url: "/crew" },
     { name: "Projects", url: "/projects" },
@@ -30,6 +31,7 @@ export default function Navbar() {
   };
 
   return (
+    <>
     <nav className="sticky top-0 left-0 right-0 h-20 bg-customblack w-full text-white z-[999]">
       <div className="flex items-center justify-between px-6 lg:px-20 py-6 max-h-full">
         {/* Logo aligned to the left */}
@@ -125,6 +127,8 @@ export default function Navbar() {
         ))}
       </div>
     </nav>
+    <ScrollProgress />
+    </>
   );
 }
 

@@ -91,3 +91,12 @@ html {
 .animate-glow:hover {
     filter: blur(1.5px);
 }
+
+
+
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    }
+}

@@ -164,6 +164,12 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/rhritwika-das-b1b74b262"
       },
       {
+        name: "Aditya Ghosh",
+        image: "AEe6qhE96NSmJnHp8U5MjzlQHvxwdCVkuips5cLSU19yg6F0",
+        github:"https://github.com/aditya-ghosh2992",
+        linkedin: "https://www.linkedin.com/in/adityaghosh2992/"
+      },
+      {
         name: "Monojit Pal",
         image: "AEe6qhE96NSmfbbNQs9NEs0hDV8IlbOFQA15w6txgkLc2ZHX",
         github: "https://github.com/Monojit09",
@@ -283,7 +289,7 @@ export const teamSections: TeamSection[] = [
   },
   {
     id: "marketters",
-    title: "THE MARKETTERS",
+    title: "THE MARKETERS",
     subtitle: "Taking the event to every corner of the world.",
     accentColor: "from-red-400/80 to-red-600/80",
     members: [
@@ -321,6 +327,12 @@ export const teamSections: TeamSection[] = [
         image: "AEe6qhE96NSm8m64Bkg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
         github: "https://github.com/Arkadipttv",
         linkedin: "https://www.linkedin.com/in/arkadip-ray-41a1a427b/"
+      },
+      {
+        name: "Ayishik Das",
+        image: "AEe6qhE96NSmrmBeEJj38uQH4RfJGSLoBFE61hZnVatTlbYr",
+        github: "https://github.com/AyishikD",
+        linkedin: "https://www.linkedin.com/in/ayishik-das/"
       },
       {
         name: "Rajdeep Paul",
@@ -367,6 +379,12 @@ export const teamSections: TeamSection[] = [
         name: "Debadrita Mondal",
         image: "AEe6qhE96NSmKgBUWyGlrt670mqwRaHXhOd3pjVAs8SZNIbJ",
         linkedin: "https://www.linkedin.com/in/debadrita-mondal-b373b6257"
+      },
+      {
+        name: "Aritra Adak",
+        image: "AEe6qhE96NSmBi6FqHdSpBvJEqjYZmQo6K31LOHIVfg8TCFM",
+        github: "https://github.com/ari20045",
+        linkedin:"https://www.linkedin.com/in/aritra-adak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       },
       {
         name: "Aritra Hui",
