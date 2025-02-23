@@ -2,7 +2,6 @@ import { modalStateAtom } from "@/states/appModalState";
 import { projectsStateAtom } from "@/states/projectsState";
 import { useAtom, useSetAtom } from "jotai";
 import Image from "next/image";
-import { useEffect } from "react";
 
 interface ProjectCardProps {
   projectName: string;
@@ -25,8 +24,8 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const [projectModal, setProjectModal] = useAtom(projectsStateAtom);
   const setAppModal = useSetAtom(modalStateAtom);
+
   function handleSelect() {
-    console.log("clicked");
     setAppModal("projectCard");
     setProjectModal({
       repoName: projectName,
@@ -40,9 +39,6 @@ export default function ProjectCard({
       },
     });
   }
-  useEffect(() => {
-    console.log(projectModal);
-  }, [projectModal]);
 
   return (
     <div className=" text-white relative w-[394px] h-[269px] max-w-md px-6 py-8">
