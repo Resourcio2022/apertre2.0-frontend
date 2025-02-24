@@ -30,8 +30,8 @@ const socialLinks = {
 
 export default function Footer() {
   return (
-    <div className="bg-footer w-[100vw] flex flex-col py-10 px-5 md:px-20 bottom-0 relative z-40
-                    bg-[#1a1a1a] shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
+    <div className="w-[100vw] flex flex-col py-10 px-5 md:px-20 bottom-0 relative z-40
+    bg-[#1a1a1a] shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
       <div className="flex lg:flex-row flex-col md:flex-col md:gap-10">
         <div className="flex flex-col lg:flex-row justify-around xl:gap-60 w-full lg:w-4/6">
           <div className="flex flex-col gap-5 items-center">
@@ -112,7 +112,7 @@ export default function Footer() {
 
       <div className="flex w-full justify-center">
         <span className="text-white font-Poppins font-normal text-xs md:text-lg text-nowrap mt-7 md:mt-10">
-          © All Rights Reserved Apretre2.0
+          © All Rights Reserved Apertre2.0
         </span>
       </div>
     </div>
