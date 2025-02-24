@@ -3,36 +3,33 @@ import FAQ from "./_components/faq";
 import Hero from "./_components/hero-section";
 import Registration from "./_components/registration";
 import Sponsor from "./_components/sponsors";
-import Testimonials from "./_components/testimonials";
 import Plants from "./about-us/_components/plants";
-import Timeline from "./_components/timeline";
-import TaskTable from "./_components/task-table";
-import { MoveUpIcon } from "lucide-react";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { MoveUpIcon } from "lucide-react";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector('#hero') as HTMLElement || null;
+      const heroSection = document.querySelector("#hero") as HTMLElement || null;
       const heroHeight = heroSection?.offsetHeight || 0;
       const scrollPosition = window.scrollY;
       setShowScrollButton(scrollPosition > heroHeight);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scrollToHero = () => {
-    const heroSection = document.querySelector('#hero');
+    const heroSection = document.querySelector("#hero");
     if (heroSection) {
-      heroSection.scrollIntoView({ behavior: 'smooth' });
+      heroSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -41,14 +38,10 @@ export default function Home() {
       <div id="hero">
         <Hero />
       </div>
-      {/* <TaskTable /> */}
       <Plants />
-      {/* <Timeline /> */}
       <Registration />
       <Sponsor />
-      <Testimonials />
       <FAQ />
-      {/* opore jawar button */}
       {showScrollButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -62,11 +55,15 @@ export default function Home() {
                    group"
           aria-label="Scroll to top"
         >
-          <span className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 
-                        blur-xl opacity-40 group-hover:opacity-70 transition-all duration-500" />
-          <MoveUpIcon className="w-6 h-6 relative z-10 text-white group-hover:text-yellow-100 
+          <span
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 
+                        blur-xl opacity-40 group-hover:opacity-70 transition-all duration-500"
+          />
+          <MoveUpIcon
+            className="w-6 h-6 relative z-10 text-white group-hover:text-yellow-100 
                               transition-colors duration-300 group-hover:animate-bounce"
-            strokeWidth={2.5} />
+            strokeWidth={2.5}
+          />
         </button>
       )}
     </>
