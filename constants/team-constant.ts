@@ -317,16 +317,16 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/kanaya-karmakar-5a5a202b7/"
       },
       {
-        name: "Srija Ray",
-        image: "AEe6qhE96NSmewvXGz60Cf6sGEjlKqy5Wk831dBmVi4ATNOY",
-        github: "https://github.com/srijaray",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
         name: "Arkadip Ray",
         image: "AEe6qhE96NSm8m64Bkg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
         github: "https://github.com/Arkadipttv",
         linkedin: "https://www.linkedin.com/in/arkadip-ray-41a1a427b/"
+      },
+      {
+        name: "Diptanil Sen",
+        image: "AEe6qhE96NSm9i6LB8uh0VOYeyzFqPCRuwNp6XZstnIEkKBl",
+        github: "https://github.com/Diptanil-Sen",
+        linkedin: "https://www.linkedin.com/in/diptanil-sen"
       },
       {
         name: "Ayishik Das",
