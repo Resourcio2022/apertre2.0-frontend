@@ -1,7 +1,6 @@
 "use client";
 import { modalStateAtom } from "@/states/appModalState";
 import { useAtom } from "jotai";
-import React from "react";
 import ProjectModal from "./ProjectModal";
 
 function ModalManager() {
