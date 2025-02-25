@@ -41,8 +41,8 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="flex gap-16 items-start -ml-2">
-            <div className="flex flex-col items-start">
+          <div className="flex gap-16 items-start">
+            <div className="flex flex-col gap-2">
               <p className="mb-2">Presented by</p>
               <Link
                 href="https://resourcio.in"
@@ -56,11 +56,11 @@ export default function Hero() {
                   alt="Resourcio Logo"
                   width={180}
                   height={120}
-                  className="object-contain"
+                  className="object-contain -ml-3"
                 />
               </Link>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
               <p className="text-sm text-gray-300 mb-4">Powered by</p>
               <Link
                 href="https://olake.io"
