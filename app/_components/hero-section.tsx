@@ -61,7 +61,7 @@ export default function Hero() {
               </Link>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-sm text-gray-300 mb-4">Powered by</p>
+              <p className="mb-2">Powered by</p>
               <Link
                 href="https://olake.io"
                 target="_blank"
