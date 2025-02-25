@@ -40,21 +40,44 @@ export default function Hero() {
               REGISTER
             </Link>
           </div>
-          <p>Presented by</p>
-          <div className="flex gap-16 items-center -ml-2">
-            <Link
-              href="https://resourcio.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Resourcio Website"
-            >
-              <Image
-                src="/resourciologo.svg"
-                alt="Resourcio Logo"
-                width={220}
-                height={150}
-              />
-            </Link>
+
+          <div className="flex gap-16 items-start">
+            <div className="flex flex-col gap-2">
+              <p className="mb-2">Presented by</p>
+              <Link
+                href="https://resourcio.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Resourcio Website"
+                className="transform hover:scale-105 transition-transform duration-200"
+              >
+                <Image
+                  src="/resourciologo.svg"
+                  alt="Resourcio Logo"
+                  width={180}
+                  height={120}
+                  className="object-contain -ml-3"
+                />
+              </Link>
+            </div>
+            <div className="flex flex-col gap-2">
+              <p className="text-sm text-gray-300 mb-4">Powered by</p>
+              <Link
+                href="https://olake.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Olake Website"
+                className="transform hover:scale-105 transition-transform duration-200"
+              >
+                <Image
+                  src="/sponsors/olake.svg"
+                  alt="Olake Logo"
+                  width={180}
+                  height={120}
+                  className="object-contain"
+                />
+              </Link>
+            </div>
           </div>
         </div>
         <Model />
