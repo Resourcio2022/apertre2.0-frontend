@@ -329,6 +329,12 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/arkadip-ray-41a1a427b/"
       },
       {
+        name: "Diptanil Sen",
+        image: "pxFwTDnj2unBaL3EZ3rKUjhsES6CiDtyRTekw1V7O9cAMY0G",
+        github: "https://github.com/Diptanil-Sen",
+        linkedin: "https://www.linkedin.com/in/diptanil-sen"
+      },
+      {
         name: "Ayishik Das",
         image: "AEe6qhE96NSmrmBeEJj38uQH4RfJGSLoBFE61hZnVatTlbYr",
         github: "https://github.com/AyishikD",
