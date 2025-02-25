@@ -166,7 +166,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Aditya Ghosh",
         image: "AEe6qhE96NSmJnHp8U5MjzlQHvxwdCVkuips5cLSU19yg6F0",
-        github:"https://github.com/aditya-ghosh2992",
+        github: "https://github.com/aditya-ghosh2992",
         linkedin: "https://www.linkedin.com/in/adityaghosh2992/"
       },
       {
@@ -232,7 +232,7 @@ export const teamSections: TeamSection[] = [
     subtitle: "Driving conversations and building communities.",
     accentColor: "from-pink-400/80 to-pink-600/80",
     members: [
-      
+
       {
         name: "Koustav Chatterjee",
         image: "AEe6qhE96NSmpXapqMD5jiAoC97V3EQPqSIuxU6bXsntZafH",
@@ -345,11 +345,12 @@ export const teamSections: TeamSection[] = [
         image: "AEe6qhE96NSmr8wX1Gj38uQH4RfJGSLoBFE61hZnVatTlbYr",
         github: "https://github.com/Jyotirupa2005",
         linkedin: "https://www.linkedin.com/in/jyotirupa-saha-3293222b8"
-      },{
-        name:"Swapit Biswas",
+      },
+      {
+        name: "Swapit Biswas",
         image: "AEe6qhE96NSmy9F5Nf4QPZUqFW8tGjSVcClvrDsXTJBb7O46",
         github: "https://github.com/swapitbiswas",
-        linkedin: "https://www.linkedin.com/in/swapit-biswas-46b3a629b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/swapit-biswas-46b3a629b"
       }
     ]
   },
@@ -384,7 +385,7 @@ export const teamSections: TeamSection[] = [
         name: "Aritra Adak",
         image: "AEe6qhE96NSmBi6FqHdSpBvJEqjYZmQo6K31LOHIVfg8TCFM",
         github: "https://github.com/ari20045",
-        linkedin:"https://www.linkedin.com/in/aritra-adak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/aritra-adak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       },
       {
         name: "Aritra Hui",
