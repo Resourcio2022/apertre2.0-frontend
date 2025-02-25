@@ -317,12 +317,6 @@ export const teamSections: TeamSection[] = [
         linkedin: "https://www.linkedin.com/in/kanaya-karmakar-5a5a202b7/"
       },
       {
-        name: "Srija Ray",
-        image: "AEe6qhE96NSmewvXGz60Cf6sGEjlKqy5Wk831dBmVi4ATNOY",
-        github: "https://github.com/srijaray",
-        linkedin: "https://www.linkedin.com/in/random/"
-      },
-      {
         name: "Arkadip Ray",
         image: "AEe6qhE96NSm8m64Bkg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
         github: "https://github.com/Arkadipttv",
