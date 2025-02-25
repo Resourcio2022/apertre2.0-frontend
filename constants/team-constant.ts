@@ -330,7 +330,7 @@ export const teamSections: TeamSection[] = [
       },
       {
         name: "Diptanil Sen",
-        image: "pxFwTDnj2unBaL3EZ3rKUjhsES6CiDtyRTekw1V7O9cAMY0G",
+        image: "AEe6qhE96NSm9i6LB8uh0VOYeyzFqPCRuwNp6XZstnIEkKBl",
         github: "https://github.com/Diptanil-Sen",
         linkedin: "https://www.linkedin.com/in/diptanil-sen"
       },
