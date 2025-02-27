@@ -1,3 +1,4 @@
+import TaskTable from "@/components/TaskTable";
 import FAQ from "./_components/faq";
 import Hero from "./_components/hero-section";
 import Registration from "./_components/registration";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <TaskTable/>
       <Plants />
       <Timeline />
       <Registration />
