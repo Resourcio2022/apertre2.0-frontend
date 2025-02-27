@@ -12,7 +12,7 @@ interface Task {
 
 export default function TaskTable() {
   const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, name: "Star the Loftlabs Repo", link: "h", points: 15, proof: null },
+    { id: 1, name: "Star the Loftlabs Repo", link: "", points: 15, proof: null },
     { id: 2, name: "Star and fork LLMware.ai Repo", link: "", points: 10, proof: null },
     { id: 3, name: "Follow DotStrak LinkedIn", link: "", points: 5, proof: null },
     { id: 4, name: "Star Keploy Repo", link: "", points: 5, proof: null },
@@ -45,7 +45,7 @@ export default function TaskTable() {
         <table className="min-w-full border-t-2 text-white border-gray-300">
           <thead>
             <tr className="text-white bg-gray-800">
-              {['Sl No', 'Task Name', 'Link', 'Proof', 'Complete Task', 'Points'].map(header => (
+              {['Sl No', 'Task Name', 'Link', 'Upload Screenshot', 'Submit for Review', 'Points'].map(header => (
                 <th key={header} className="py-2 px-3 border">{header}</th>
               ))}
             </tr>
@@ -63,14 +63,14 @@ export default function TaskTable() {
                     type="file"
                     accept="image/*"
                     onChange={(e) => handleFileChange(index, e.target.files?.[0] ?? null)}
-                    className="p-1"
+                    className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit p-1"
                   />
                 </td>
                 <td className="py-2 px-3 text-center">
                   <Button
                     onClick={() => handleComplete(index)}
                     className="bg-yellow-400 text-black px-3 py-1 hover:bg-yellow-500"
-                  >Complete Task</Button>
+                  >Submit</Button>
                 </td>
                 <td className="py-2 px-3 text-center">{task.points}</td>
               </tr>
