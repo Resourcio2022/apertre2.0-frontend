@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { UploadButton } from "@/lib/uploadThing";
 
 interface Task {
   id: number;
@@ -26,14 +26,6 @@ const TaskTable: React.FC = () => {
     const updatedTasks = [...tasks];
     updatedTasks[index].proof = file;
     setTasks(updatedTasks);
-  };
-
-  const handleComplete = (index: number) => {
-    if (!tasks[index].proof) {
-      alert("Please upload proof before completing the task.");
-      return;
-    }
-    alert(`Task ${tasks[index].name} completed!`);
   };
 
   return (
@@ -68,10 +60,34 @@ const TaskTable: React.FC = () => {
                   />
                 </td>
                 <td className="py-2 px-3 text-center">
-                  <Button
-                    onClick={() => handleComplete(index)}
-                    className="bg-yellow-400 text-black px-3 py-1 hover:bg-yellow-500"
-                  >Complete Task</Button>
+                  {/* Using UploadButton with proper configuration for each row */}
+                  <div key={`upload-${index}`}>
+                    <UploadButton
+                      endpoint="userImage"
+                      onClientUploadComplete={() => {
+                        alert(`Task ${task.name} completed!`);
+                        const updatedTasks = [...tasks];
+                        updatedTasks[index].proof = {} as File;
+                        setTasks(updatedTasks);
+                      }}
+                      onUploadError={(error: Error) => {
+                        alert(`Error: ${error.message}`);
+                      }}
+                      appearance={{
+                        button: {
+                          backgroundColor: "#FACC15",
+                          color: "black",
+                          padding: "4px 12px",
+                          borderRadius: "4px"
+                        }
+                      }}
+                      content={{
+                        button() {
+                          return "Complete Task";
+                        }
+                      }}
+                    />
+                  </div>
                 </td>
                 <td className="py-2 px-3 text-center">{task.points}</td>
               </tr>
