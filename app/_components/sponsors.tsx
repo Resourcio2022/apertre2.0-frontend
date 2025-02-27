@@ -193,6 +193,11 @@ const platformSponsors = [
 
 const bronzeSponsors = [
   {
+    imageUrl: "/sponsors/devrel.png",
+    alt: "DevRel Squad",
+    websiteUrl: "https://devrelsquad.com/"
+  },
+  {
     imageUrl: "/sponsors/dotstark.svg",
     alt: "DotStark",
     websiteUrl: "https://dotstark.com/"
@@ -232,6 +237,11 @@ const platinumSponsors = [
     imageUrl: "/sponsors/FlutterFlow.png",
     alt : "FlutterFlow",
     websiteUrl: "https://flutterflow.io/"
+  },
+  {
+    imageUrl: "/sponsors/langdb.svg",
+    alt: "LangDB",
+    websiteUrl: "https://langdb.ai/"
   }
 ];
 
