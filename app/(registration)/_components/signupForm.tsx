@@ -330,7 +330,7 @@ export default function SignupForm({ words, inputGroups, additionalInputGroups, 
 									className="w-4 h-4 text-textyellow bg-customtransparent opacity-90 rounded-full border border-red-500 appearance-none checked:bg-green-500 flex-shrink-0"
 								/>
 								<Link
-									href="https://forms.gle/813SNhCg1biXQmKD8"
+									href="https://forms.gle/t35uZ4rCTVXyktog6"
 									className="text-red-700 font-bold underline"
 									target="_blank"
 								>

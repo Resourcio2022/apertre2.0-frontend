@@ -53,8 +53,9 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
           <Image
             src={imageUrl}
             alt={alt || "sponsor logo"}
-            width={alt === "DotStark" ? 150 : 100}  
-            height={alt === "DotStark" ? 150 : 100} 
+            width={alt === "O lake" ? 160 : alt === "DotStark" ? 150 : 100}
+            height={alt === "O lake" ? 160 : alt === "DotStark" ? 150 : 100}
+            className={`${alt === "O lake" ? "w-[90px] h-[90px] md:w-[160px] md:h-[160px]" : ""}`}
           />
         </div>
         <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-3 -left-4 sm:left-4 w-22 h-22 rounded-xl">
@@ -94,17 +95,19 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
   )
 }
 
-function SponsorTier({ title, sponsors = [], columns }: {
+// First, update the SponsorTier component to use the style prop
+function SponsorTier({ title, sponsors = [], columns } : {
   title: string;
   sponsors?: {
     imageUrl: string;
     alt: string;
     websiteUrl: string;
   }[];
+  style?: React.CSSProperties;
   columns?: number;
 }) {
   return (
-    <div className="mb-12 text-center">
+    <div className="mb-12 text-center" >
       <div className="flex items-center justify-center gap-4 mb-14">
         <div className="h-0.5 w-20 bg-yellow-500" />
         <h3 className="text-2xl font-extrabold ">{title}</h3>
@@ -190,6 +193,11 @@ const platformSponsors = [
 
 const bronzeSponsors = [
   {
+    imageUrl: "/sponsors/devrel.png",
+    alt: "DevRel Squad",
+    websiteUrl: "https://devrelsquad.com/"
+  },
+  {
     imageUrl: "/sponsors/dotstark.svg",
     alt: "DotStark",
     websiteUrl: "https://dotstark.com/"
@@ -229,6 +237,11 @@ const platinumSponsors = [
     imageUrl: "/sponsors/FlutterFlow.png",
     alt : "FlutterFlow",
     websiteUrl: "https://flutterflow.io/"
+  },
+  {
+    imageUrl: "/sponsors/langdb.svg",
+    alt: "LangDB",
+    websiteUrl: "https://langdb.ai/"
   }
 ];
 
@@ -238,7 +251,15 @@ const educationSponsors = [
     alt: "Let's Code",
     websiteUrl: "https://www.lets-code.co.in/"
   }
+
 ];
+const titleSponsors = [
+  {
+    imageUrl: "/sponsors/olake.svg",
+    alt: "O lake",
+    websiteUrl: "https://olake.io"
+  }
+]
 
 export default function Sponsor() {
   return (
@@ -252,10 +273,15 @@ export default function Sponsor() {
       }}
       id="sponsors"
     >
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-6xl" >
         <h2 className="text-textyellow text-2xl md:text-6xl font-mokoto text-center py-12 md:py-24">
           Our Partners
         </h2>
+        <SponsorTier
+          title="Title Sponsor"
+          sponsors={titleSponsors}
+          columns={1}
+        />
         <SponsorTier
           title="Platinum Sponsors"
           sponsors={platinumSponsors}
@@ -288,6 +314,7 @@ export default function Sponsor() {
           sponsors={digitalSponsors}
           columns={2}
         />
+        
         <SponsorTier
           title="In-Kind Sponsors"
           sponsors={inKindSponsors}
