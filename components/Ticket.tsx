@@ -21,7 +21,7 @@ export default function Ticket({ name, github }: TicketProps) {
 
     useEffect(() => {
         function handleTicketGenerate() {
-            const ticketUrl = `/api/ticket?name=${encodeURIComponent(name)}&github=${encodeURIComponent(github)}}`;
+            const ticketUrl = `/api/ticket?name=${encodeURIComponent(name)}&github=${encodeURIComponent(github)}&role=${encodeURIComponent("mentee")}`;
             setImg(ticketUrl);
         }
 
