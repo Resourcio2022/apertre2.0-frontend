@@ -66,7 +66,13 @@ const RoleTabs = ({
   const renderComponent = () => {
     switch (activeRole) {
       case "mentee":
-        return <Mentee username={githubUsername} image={image} key="mentee" />;
+        return (
+          <Mentee
+            username={githubUsername}
+            image={image}
+            key="mentee"
+          />
+        );
       case "community partner":
         return (
           <CommunityPartner
@@ -96,8 +102,7 @@ const RoleTabs = ({
       default:
         return (
           <>
-            <span className="text-white text-xl">GM</span>
-            <Ticket name={"Sayan Das"} github={githubUsername || ""} />
+            <Ticket name={"Sayan Das"} github={githubUsername || ""} role="mentee" />
           </>
         );
     }
@@ -114,9 +119,8 @@ const RoleTabs = ({
           >
             <span>{activeRole.toUpperCase()}</span>
             <ChevronDown
-              className={`transition-transform duration-300 ${
-                isDropdownOpen ? "rotate-180" : ""
-              }`}
+              className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""
+                }`}
             />
           </button>
           {isDropdownOpen && (
@@ -144,11 +148,10 @@ const RoleTabs = ({
               <button
                 key={role}
                 onClick={() => setActiveRole(role)}
-                className={`px-3 md:px-4 py-1.5 text-lg md:text-2xl font-mokoto transition-colors duration-500 hover:text-textyellow ${
-                  activeRole === role
-                    ? "text-textyellow border-b-2 border-textyellow"
-                    : "text-white"
-                }`}
+                className={`px-3 md:px-4 py-1.5 text-lg md:text-2xl font-mokoto transition-colors duration-500 hover:text-textyellow ${activeRole === role
+                  ? "text-textyellow border-b-2 border-textyellow"
+                  : "text-white"
+                  }`}
               >
                 {role.toUpperCase()}
               </button>

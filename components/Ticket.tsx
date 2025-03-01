@@ -1,4 +1,5 @@
 'use client'
+import { Role } from "@/app/(registration)/_utils/apiCalls";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,9 +8,10 @@ import { useEffect, useState } from "react";
 interface TicketProps {
     name: string;
     github: string;
+    role: Role;
 }
 
-export default function Ticket({ name, github }: TicketProps) {
+export default function Ticket({ name, github, role }: TicketProps) {
     const [img, setImg] = useState("");
     const [socials, setSocials] = useState({
         twitter: "",
@@ -21,12 +23,11 @@ export default function Ticket({ name, github }: TicketProps) {
 
     useEffect(() => {
         function handleTicketGenerate() {
-            const ticketUrl = `/api/ticket?name=${encodeURIComponent(name)}&github=${encodeURIComponent(github)}&role=${encodeURIComponent("mentee")}`;
+            const ticketUrl = `/api/ticket?name=${encodeURIComponent(name)}&github=${encodeURIComponent(github)}&role=${encodeURIComponent(role)}`;
             setImg(ticketUrl);
         }
-
         handleTicketGenerate();
-    }, []);
+    }, [name, github, role]);
 
     useEffect(() => {
         if (window) {
@@ -52,7 +53,7 @@ export default function Ticket({ name, github }: TicketProps) {
     }, [img]);
 
     return (
-        <>
+        <div className="flex">
             <Head>
                 <meta
                     property="og:url"
@@ -102,6 +103,6 @@ export default function Ticket({ name, github }: TicketProps) {
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import { AvatarCircles } from "@/components/magicui/avatar-circles";
 
 const avatars = [
@@ -25,18 +24,14 @@ const avatars = [
 
 ];
 
-export function AvatarCirclesDemo() {
-  return <AvatarCircles avatarUrls={avatars} />;
-}
-
-const evangelist = () => {
+export default function Evangelist() {
   return (
-    
+
     <div className="flex flex-col gap-40 items-center py-14 sm:py-20 px-10  lg:px-20 text-white font-sans bg-gradient-to-tl from-[#272323] to-black relative">
       <h1 className="text-textyellow text-4xl sm:text-3xl lg:text-6xl font-mokoto text-nowrap">Evangelists</h1>
-      <AvatarCirclesDemo />
+      <AvatarCircles
+        avatarUrls={avatars}
+      />
     </div>
   )
 }
-
-export default evangelist
