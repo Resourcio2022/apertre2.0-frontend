@@ -34,6 +34,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <meta
+            name="google-site-verification"
+            content="jsWbkgp1dqX24QkUfwg6NTv4eVk4mMX0sqe-p4m19Yk"
+          />
+        </head>
         <body
           className={`${mokotoVF.variable} ${poppins.className} antialiased`}
         >
