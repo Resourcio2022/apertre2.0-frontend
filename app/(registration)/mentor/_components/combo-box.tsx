@@ -47,7 +47,6 @@ export function Combobox({ placeholder, value, onChange }: ComboBoxProps) {
             updatedValues = [...selectedValues, selectedValue];
         }
         onChange(updatedValues.join(","));
-        setOpen(false);
     }
 
     const handleRemove = (removedValue: string) => {

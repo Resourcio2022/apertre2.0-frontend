@@ -2,6 +2,7 @@ import FAQ from "./_components/faq";
 import Hero from "./_components/hero-section";
 import Registration from "./_components/registration";
 import Sponsor from "./_components/sponsors";
+import TaskTable from "./_components/task-table";
 import Plants from "./about-us/_components/plants";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <>
       <Hero />
       <Plants />
+      <TaskTable />
       <Registration />
       <Sponsor />
       <FAQ />

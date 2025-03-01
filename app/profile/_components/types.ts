@@ -83,6 +83,7 @@ export interface IMentee {
     linkedinUrl: string,
     discordUsername: string,
     twitterUsername: string | null,
+    bonusPoints: number,
     evangelist: Evangelist | null,
     communityPartner: CommunityPartner | null,
 }

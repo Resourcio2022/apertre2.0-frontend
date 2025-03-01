@@ -1,0 +1,28 @@
+name: Workflow Dispatch
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  fetch:
+    name: Fetch LeaderBoard
+    runs-on: ubuntu-latest
+    steps:
+        - name: Echo message
+          run: echo "Frontend workflow triggered"
+    #   - uses: actions/checkout@v4.2.2
+    #   - name: Setup Node.js environment
+    #     uses: actions/setup-node@v4.2.0
+    #     with:
+    #       node-version: 20
+    #   - run: yarn install
+    #   - run: yarn fetch:leaderboard
+    #     env:
+    #       REDIS_HOST: ${{ secrets.REDIS_HOST }}
+    #       REDIS_PORT: ${{ secrets.REDIS_PORT }}
+    #       REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+
+    #   - uses: stefanzweifel/git-auto-commit-action@v5.0.1
+    #     with:
+    #       commit_message: "feat: updated leaderboard using GitHub workflow"

@@ -1,76 +1,68 @@
 "use client";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useGitHub } from "@/hooks/useGithubUser";
+import SimpleImageUploader from "@/components/ImageUploader";
+
 interface Task {
-  id: number;
   name: string;
   link: string;
+  required: boolean;
   points: number;
-  proof: File | null;
+  proof?: File | null;
 }
 
+const tasks: Task[] = [
+  { name: "Star OLake Repo", link: "https://github.com/datazip-inc/olake", required: false, points: 10 },
+  { name: "Star LangDB Repo", link: "https://github.com/langdb/ai-gateway", required: false, points: 10 },
+  { name: "Star Keploy Repo", link: "https://github.com/keploy/keploy", required: false, points: 10 },
+  { name: "Star LLMware.ai Repo", link: "https://github.com/llmware-ai/llmware", required: false, points: 10 },
+  { name: "Fork LLMware.ai Repo", link: "https://github.com/llmware-ai/llmware", required: true, points: 10, proof: null },
+  { name: "Join LLmware Discord", link: "https://discord.gg/ycbZDbvZDK", required: true, points: 10, proof: null },
+  { name: "Follow Resourcio YouTube", link: "https://www.youtube.com/@resourciocommunity", required: true, points: 5, proof: null },
+  { name: "Follow Resourcio Twitter", link: "https://x.com/resourcio_", required: true, points: 5, proof: null },
+  { name: "Follow Apertre2.0 LinkedIn", link: "https://www.linkedin.com/showcase/apertre", required: true, points: 5, proof: null },
+  { name: "Follow Apertre2.0 Twitter", link: "https://x.com/apertre25", required: true, points: 5, proof: null }
+];
+
 export default function TaskTable() {
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, name: "Star the Loftlabs Repo", link: "", points: 15, proof: null },
-    { id: 2, name: "Star and fork LLMware.ai Repo", link: "", points: 10, proof: null },
-    { id: 3, name: "Follow DotStrak LinkedIn", link: "", points: 5, proof: null },
-    { id: 4, name: "Star Keploy Repo", link: "", points: 5, proof: null },
-    { id: 5, name: "Submit on Quill AI", link: "", points: 5, proof: null },
-    { id: 6, name: "Follow Resourcio YouTube", link: "", points: 3, proof: null },
-    { id: 7, name: "Follow Resourcio Twitter", link: "", points: 2, proof: null }
-  ]);
-
-  const handleFileChange = (index: number, file: File | null) => {
-    const updatedTasks = [...tasks];
-    updatedTasks[index].proof = file;
-    setTasks(updatedTasks);
-  };
-
-  const handleComplete = (index: number) => {
-    if (!tasks[index].proof) {
-      alert("Please upload proof before completing the task.");
-      return;
-    }
-    alert(`Task ${tasks[index].name} completed!`);
-  };
+  const { githubUsername, isSignedIn } = useGitHub();
 
   return (
-    <div className="bg-black w-full px-4 py-5 md:px-32">
-      <div className="flex flex-col items-center text-center mb-6">
-        <h1 className="text-4xl md:text-7xl font-bold text-textyellow font-mokoto">WELCOME TO APERTRE 2.0</h1>
-        <span className="text-lg md:text-2xl text-white font-Poppins my-4">Complete the following tasks to earn extra points</span>
+    <div className="bg-black w-full p-4 sm:p-6 md:p-8 lg:px-12 lg:py-20">
+      <div className="flex flex-col items-center pb-10">
+        <h1 className="text-4xl md:text-7xl font-bold text-textyellow font-mokoto">BONUS POINTS</h1>
+        <span className="text-lg md:text-2xl text-gray-400 font-Poppins my-4">Complete the following tasks to earn extra points</span>
       </div>
-      <div className="overflow-x-auto">
-        <table className="min-w-full border-t-2 text-white border-gray-300">
+      <div className="overflow-x-auto px-24">
+        <table className="w-full border-t-2 text-white border-gray-300">
           <thead>
-            <tr className="text-white bg-gray-800">
-              {['Sl No', 'Task Name', 'Link', 'Upload Screenshot', 'Submit for Review', 'Points'].map(header => (
-                <th key={header} className="py-2 px-3 border">{header}</th>
+            <tr className="text-white bg-gray-800 w-full">
+              {['Task Name', 'Link', 'Upload Screenshot', 'Points'].map(header => (
+                <th key={header} className="py-2 px-3 border uppercase">{header}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {tasks.map((task, index) => (
-              <tr key={task.id} className="border-t">
-                <td className="py-2 px-3 text-center">{task.id}</td>
+              <tr key={index} className="border-t text-center w-full">
                 <td className="py-2 px-3">{task.name}</td>
                 <td className="py-2 px-3">
-                  <Link href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow">Visit</Link>
+                  <Link href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow hover:border-b-2">Visit</Link>
                 </td>
-                <td className="py-2 px-3">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => handleFileChange(index, e.target.files?.[0] ?? null)}
-                    className="bg-[rgba(128,0,128,0.2)] text-textyellow font-medium px-4 py-3 rounded-xl border border-customYellow transition-all duration-300 hover:border-yellow-500 hover:shadow-[0_0_25px_rgba(255,215,0,1),0_0_25px_rgba(255,223,0,0.9)] hover:animate-pulse hover:translate-y-[-2px] w-fit p-1"
-                  />
-                </td>
-                <td className="py-2 px-3 text-center">
-                  <Button
-                    onClick={() => handleComplete(index)}
-                    className="bg-yellow-400 text-black px-3 py-1 hover:bg-yellow-500"
-                  >Submit</Button>
+                <td className="py-6 px-3 flex justify-center">
+                  {task.required ? (
+                    <SimpleImageUploader
+                      folderPath={githubUsername}
+                      taskName={task.name}
+                      isSignedIn={isSignedIn}
+                    />
+                  ) : (
+                    <span
+                      className="bg-gray-500 text-white font-medium px-4 py-1.5 rounded-md border border-customYellow"
+                    >
+                      No screenshot needed
+                    </span>
+                  )}
                 </td>
                 <td className="py-2 px-3 text-center">{task.points}</td>
               </tr>

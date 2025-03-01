@@ -18,12 +18,12 @@ const stars = [
 
 const Icons = [
   {
-    imageUrl: "/community_partners/lets code.png",
+    imageUrl: "/community-partners/lets code.png",
     alt: "CommunityPartner-1",
     href: "https://www.lets-code.co.in/",
   },
   {
-    imageUrl: "/community_partners/IIT PATNA.jpeg",
+    imageUrl: "/community-partners/IIT PATNA.jpeg",
     alt: "CommunityPartner-2",
     href: "https://cet.iitp.ac.in/index.php/announcements/technology-club-internship-placement-cell",
   },
@@ -31,22 +31,22 @@ const Icons = [
 
 const Icons2 = [
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-3",
     href: "https://www.capybara.tech/",
   },
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-4",
     href: "https://www.capybara.tech/",
   },
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-5",
     href: "https://www.capybara.tech/",
   },
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-6",
     href: "https://www.capybara.tech/",
   },
@@ -54,7 +54,7 @@ const Icons2 = [
 
 const Icons3 = [
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-7",
     href: "https://www.capybara.tech/",
   },
@@ -62,17 +62,17 @@ const Icons3 = [
 
 const Icons4 = [
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-8",
     href: "https://www.capybara.tech/",
   },
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-9",
     href: "https://www.capybara.tech/",
   },
   {
-    imageUrl: "/community_partners/capybara.png",
+    imageUrl: "/community-partners/capybara.png",
     alt: "CommunityPartner-10",
     href: "https://www.capybara.tech/",
   },
@@ -154,7 +154,7 @@ export default function CommunityPartner() {
           ))}
         </OrbitingCircles>
         <Image
-          src="/community_partners/logo.png"
+          src="/community-partners/logo.png"
           width={70}
           height={60}
           alt="Apertre capybara"
