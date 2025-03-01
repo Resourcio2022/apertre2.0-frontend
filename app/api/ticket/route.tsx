@@ -1,93 +1,68 @@
-import { ImageResponse } from "next/og";
-import { NextResponse } from "next/server";
+import { Role } from "@/app/(registration)/_utils/apiCalls";
+import { ImageResponse } from "@vercel/og";
+import type { NextRequest } from "next/server";
 
-export async function GET(req: Request) {
+export const dynamic = "force-dynamic";
+
+export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
-    const hasTitle = searchParams.has('name');
-    const hasGithub = searchParams.has('github');
+    const name = searchParams.get("name") || "Contributor";
+    const github = searchParams.get("github") || "github_user";
+    const role = searchParams.get("role") as Role;
 
-    if (!hasTitle || !hasGithub) {
-      return new NextResponse("Missing required parameters", {
-        status: 400
-      });
+    let imageUrl = "";
+    switch (role) {
+      case "mentee":
+        imageUrl =
+          "https://hvqi4x3ywy.ufs.sh/f/zGAx50bBlDAfM9ZA3hXLa8AR5N4J0UF7dmZkXPspI16bixEf";
+        break;
+      case "project admin":
+        imageUrl =
+          "https://hvqi4x3ywy.ufs.sh/f/zGAx50bBlDAfgrrOaNgGh68fS5kJCqtuyDjn7Ne4KEW9QzPM";
+        break;
+      case "mentor":
+        imageUrl =
+          "https://hvqi4x3ywy.ufs.sh/f/zGAx50bBlDAfWXxpzo6emUV4zvRdMxST6BohCrXZJktDGON2";
+        break;
+      default:
+        return new Response("Invalid role", { status: 400 });
     }
-
-    const name = searchParams.get('name');
-    const username = searchParams.get('github');
-
-    const title = name === '' ? 'Guest' : name;
-    const github = username === '' ? '@github' : username;
-
     return new ImageResponse(
       (
         <div
           style={{
-            height: "100%",
-            width: "100%",
             display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
             alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "black",
+            borderRadius: "24px",
+            fontFamily: "Arial, sans-serif",
             position: "relative",
+            width: "100%",
+            height: "100%",
           }}
         >
-          {/* Image container */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              height: "100%",
-              position: "relative",
-            }}
+          <img
+            src={imageUrl}
+            width={1200}
+            height={600}
+            alt=""
+            style={{ position:"relative", width: "100%", height: "100%" }}
+          />
+          <p
+            style={{ fontSize: "30px", display: "flex", alignItems: "center",position: "absolute", left: "4rem", bottom: "8rem", zIndex: "10", color: "white" }}
           >
-            {/* Semi-transparent overlay for better text visibility */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.4)",
-              }}
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1701772165288-39c9ef3775c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                position: "absolute",
-              }}
-            />
-
-            <div tw="flex flex-col items-center justify-center relative">
-              <span tw="text-5xl font-bold py-12">
-                {title}
-              </span>
-              <span tw="text-3xl font-medium">
-                {github}
-              </span>
-            </div>
-          </div>
+            {name.split(" ")[0]}
+          </p>
+          <div style={{ fontSize: "30px", display: "flex", alignItems: "center",position: "absolute", left: "10rem", bottom: "4rem", zIndex: "10", color: "yellow" }}>{github}</div>
         </div>
       ),
-      {
-        width: 1200,
-        height: 630,
-      }
+      { width: 1200, height: 600 }
     );
-  }
-  catch (error: any) {
-    console.error(error.message);
-
-    return new NextResponse("Failed to generate the image", {
-      status: 500
-    });
+  } catch (error) {
+    console.error("Error generating ticket:", error);
+    return new Response("Failed to generate ticket", { status: 500 });
   }
 }
