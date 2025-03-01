@@ -55,7 +55,7 @@ export function TechStacks({ placeholder, value, onChange }: ComboBoxProps) {
     }
 
     return (
-        <div className="flex items-center gap-4 flex-col sm:flex-row">
+        <div className="flex items-center gap-4 flex-col sm:flex-row ">
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                     <Button
@@ -92,7 +92,7 @@ export function TechStacks({ placeholder, value, onChange }: ComboBoxProps) {
                 </PopoverContent>
             </Popover>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 max-w-[200px]">
                 {selectedValues.map((selectedValue) => (
                     <Badge
                         key={selectedValue}
