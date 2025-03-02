@@ -16,7 +16,30 @@ import { ProjectDomain } from "./projectdomain-combo-box";
 const projectSchema = z.object({
   repoName: z.string().min(1, "Repository name is required"),
   projectDomain: z.string().min(1, "Project domain is required"),
-  repoURL: z.string().url("Invalid URL"),
+  repoURL: z.string()
+    .min(1, "Repository URL is required")
+    .trim()
+    .refine(
+      (url) => {
+        try {
+          new URL(url);
+          return true;
+        } catch {
+          try {
+            if (!url.startsWith('http')) {
+              new URL(`https://${url}`);
+              return true;
+            }
+            return false;
+          } catch {
+            return false;
+          }
+        }
+      },
+      {
+        message: "Please enter a valid URL (e.g., https://github.com/username/repo)",
+      }
+    ),
   description: z.string().min(1, "Project description is required"),
   techstack: z.array(z.string()).min(1, "Tech stack is required"),
 });
@@ -189,8 +212,8 @@ export default function RegistrationForm() {
                         : "Phone Number*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.phoneNumber
-                        ? "border-red-500 placeholder:text-red-500"
-                        : "border-textyellow"
+                      ? "border-red-500 placeholder:text-red-500"
+                      : "border-textyellow"
                       }`}
                   />
                 </div>
@@ -203,8 +226,8 @@ export default function RegistrationForm() {
                         : "Discord Username*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.discordUsername
-                        ? "border-red-500 placeholder:text-red-500"
-                        : "border-textyellow"
+                      ? "border-red-500 placeholder:text-red-500"
+                      : "border-textyellow"
                       }`}
                   />
                 </div>
@@ -217,8 +240,8 @@ export default function RegistrationForm() {
                         : "LinkedIn Profile URL*"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.linkedinUrl
-                        ? "border-red-500 placeholder:text-red-500"
-                        : "border-textyellow"
+                      ? "border-red-500 placeholder:text-red-500"
+                      : "border-textyellow"
                       }`}
                   />
                 </div>
@@ -231,8 +254,8 @@ export default function RegistrationForm() {
                         : "Twitter Username"
                     }
                     className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.twitterUsername
-                        ? "border-red-500 placeholder:text-red-500"
-                        : "border-textyellow"
+                      ? "border-red-500 placeholder:text-red-500"
+                      : "border-textyellow"
                       }`}
                   />
                 </div>
@@ -267,8 +290,8 @@ export default function RegistrationForm() {
                           : "Repository Name*"
                       }
                       className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.repoName
-                          ? "border-red-500 placeholder:text-red-500"
-                          : "border-textyellow"
+                        ? "border-red-500 placeholder:text-red-500"
+                        : "border-textyellow"
                         }`}
                     />
                   </div>
@@ -296,8 +319,8 @@ export default function RegistrationForm() {
                           : "Repository URL*"
                       }
                       className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.repoURL
-                          ? "border-red-500 placeholder:text-red-500"
-                          : "border-textyellow"
+                        ? "border-red-500 placeholder:text-red-500"
+                        : "border-textyellow"
                         }`}
                     />
                   </div>
@@ -310,8 +333,8 @@ export default function RegistrationForm() {
                           : "Project Description*"
                       }
                       className={`input- bg-customtransparent bg-opacity-5 rounded-md border-2 outline-none px-4 py-2.5 placeholder:text-white text-textyellow w-full ${errors.projects?.[index]?.description
-                          ? "border-red-500 placeholder:text-red-500"
-                          : "border-textyellow"
+                        ? "border-red-500 placeholder:text-red-500"
+                        : "border-textyellow"
                         }`}
                     />
                   </div>
