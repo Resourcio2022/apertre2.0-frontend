@@ -92,12 +92,6 @@ export const teamSections: TeamSection[] = [
         linkedin: " https://www.linkedin.com/in/indrani-som-258498248/"
       },
       {
-        name: "Anushka Bhowmick",
-        image: "AEe6qhE96NSm26i1xQk4iCEdYejz8VGvyOJptIQU95ZHxcFo",
-        github: "https://github.com/Anushka-Bhowmick",
-        linkedin: "https://www.linkedin.com/in/anushkabhowmick/"
-      },
-      {
         name: "Ashish Gupta",
         image: "AEe6qhE96NSm2VSXhHk4iCEdYejz8VGvyOJptIQU95ZHxcFo",
         github: "https://github.com/ASHISH26940",
@@ -168,12 +162,6 @@ export const teamSections: TeamSection[] = [
         image: "AEe6qhE96NSmJnHp8U5MjzlQHvxwdCVkuips5cLSU19yg6F0",
         github: "https://github.com/aditya-ghosh2992",
         linkedin: "https://www.linkedin.com/in/adityaghosh2992/"
-      },
-      {
-        name: "Monojit Pal",
-        image: "AEe6qhE96NSmfbbNQs9NEs0hDV8IlbOFQA15w6txgkLc2ZHX",
-        github: "https://github.com/Monojit09",
-        linkedin: "https://www.linkedin.com/in/monojit-pal/"
       },
       {
         name: "Sukrit Deb",
@@ -321,12 +309,6 @@ export const teamSections: TeamSection[] = [
         image: "AEe6qhE96NSm8m64Bkg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
         github: "https://github.com/Arkadipttv",
         linkedin: "https://www.linkedin.com/in/arkadip-ray-41a1a427b/"
-      },
-      {
-        name: "Diptanil Sen",
-        image: "AEe6qhE96NSm9i6LB8uh0VOYeyzFqPCRuwNp6XZstnIEkKBl",
-        github: "https://github.com/Diptanil-Sen",
-        linkedin: "https://www.linkedin.com/in/diptanil-sen"
       },
       {
         name: "Ayishik Das",
