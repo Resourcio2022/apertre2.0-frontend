@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import ProjectCard from "./_components/ProjectCard";
-import { getGithubRepo, getProjectsByTechStack, Repo } from "./_utils/apiCall";
 import { TechStacks } from "../(registration)/project-admin/_components/techstack-combo-box";
 import ProjectPagination from "./_components/Pagination";
+import ProjectCard from "./_components/ProjectCard";
+import { getGithubRepo, getProjectsByTechStack, Repo } from "./_utils/apiCall";
 
 export default function ProjectsPage() {
   const [search, setSearch] = useState("");
@@ -73,6 +73,7 @@ export default function ProjectsPage() {
               tags={project.techstack}
               maintainerUsername={project.projectAdmin.username}
               maintainerfFullname={project.projectAdmin.fullname}
+              ribbonText={index === 1 ? "WIN SWAGS" : undefined}
             />
           ))
         ) : projects && projects.length === 0 ? (
@@ -92,4 +93,4 @@ export default function ProjectsPage() {
       />
     </div>
   );
-};
+}
