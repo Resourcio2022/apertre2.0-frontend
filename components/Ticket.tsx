@@ -10,7 +10,7 @@ import { BsLinkedin } from "react-icons/bs";
 interface TicketProps {
   name: string;
   github: string;
-  role: Role;
+  role: Extract<Role, "mentee" | "project admin" | "mentor">;
 }
 
 export default function Ticket({ name, github, role }: TicketProps) {
@@ -79,9 +79,11 @@ export default function Ticket({ name, github, role }: TicketProps) {
           <Image
             src={img}
             alt="Generated Ticket"
-            width={400}
-            height={200}
-            className="my-4 rounded-lg border"
+            width={1920}
+            height={1080}
+            className="my-4 rounded-xl w-[500px]"
+            loading="lazy"
+            blurDataURL=""
           />
         )}
 
