@@ -21,6 +21,12 @@ export default function ProjectsPage() {
       .catch((error) => console.error("Error fetching projects:", error));
   }, [page]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [page]);
+
   const handleSearch = (val: string) => {
     if (val === "") {
       getGithubRepo(page, pageSize)
