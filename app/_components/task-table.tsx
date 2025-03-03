@@ -6,22 +6,23 @@ import SimpleImageUploader from "@/components/ImageUploader";
 interface Task {
   name: string;
   link: string;
-  required: boolean;
+  screenShotrequired: boolean;
   points: number;
-  proof?: File | null;
 }
 
 const tasks: Task[] = [
-  { name: "Star OLake Repo", link: "https://github.com/datazip-inc/olake", required: false, points: 10 },
-  { name: "Star LangDB Repo", link: "https://github.com/langdb/ai-gateway", required: false, points: 10 },
-  { name: "Star Keploy Repo", link: "https://github.com/keploy/keploy", required: false, points: 10 },
-  { name: "Star LLMware.ai Repo", link: "https://github.com/llmware-ai/llmware", required: false, points: 10 },
-  { name: "Fork LLMware.ai Repo", link: "https://github.com/llmware-ai/llmware", required: true, points: 10, proof: null },
-  { name: "Join LLmware Discord", link: "https://discord.gg/ycbZDbvZDK", required: true, points: 10, proof: null },
-  { name: "Follow Resourcio YouTube", link: "https://www.youtube.com/@resourciocommunity", required: true, points: 5, proof: null },
-  { name: "Follow Resourcio Twitter", link: "https://x.com/resourcio_", required: true, points: 5, proof: null },
-  { name: "Follow Apertre2.0 LinkedIn", link: "https://www.linkedin.com/showcase/apertre", required: true, points: 5, proof: null },
-  { name: "Follow Apertre2.0 Twitter", link: "https://x.com/apertre25", required: true, points: 5, proof: null }
+  { name: "Star OLake Repo", link: "https://github.com/datazip-inc/olake", screenShotrequired: false, points: 10 },
+  { name: "Star LangDB Repo", link: "https://github.com/langdb/ai-gateway", screenShotrequired: false, points: 10 },
+  { name: "Star Keploy Repo", link: "https://github.com/keploy/keploy", screenShotrequired: false, points: 10 },
+  { name: "Star LLMware.ai Repo", link: "https://github.com/llmware-ai/llmware", screenShotrequired: false, points: 10 },
+  { name: "Fork LLMware.ai Repo", link: "https://github.com/llmware-ai/llmware", screenShotrequired: true, points: 10 },
+  { name: "Join LLmware Discord", link: "https://discord.gg/ycbZDbvZDK", screenShotrequired: true, points: 10 },
+  { name: "Join Endless Domain Discord Server", link: "https://discord.gg/AzEKaA4pBA ", screenShotrequired: true, points: 5 },
+  { name: "Follow DevRelSquad LinkedIn", link: "https://www.linkedin.com/company/devrelsquad/", screenShotrequired: true, points: 5 },
+  { name: "Follow Resourcio YouTube", link: "https://www.youtube.com/@resourciocommunity", screenShotrequired: true, points: 5 },
+  { name: "Follow Resourcio Twitter", link: "https://x.com/resourcio_", screenShotrequired: true, points: 5 },
+  { name: "Follow Apertre2.0 LinkedIn", link: "https://www.linkedin.com/showcase/apertre", screenShotrequired: true, points: 5 },
+  { name: "Follow Apertre2.0 Twitter", link: "https://x.com/apertre25", screenShotrequired: true, points: 5 }
 ];
 
 export default function TaskTable() {
@@ -50,7 +51,7 @@ export default function TaskTable() {
                   <Link href={task.link} target="_blank" rel="noopener noreferrer" className="text-textyellow hover:border-b-2">Visit</Link>
                 </td>
                 <td className="py-6 px-3 flex justify-center">
-                  {task.required ? (
+                  {task.screenShotrequired ? (
                     <SimpleImageUploader
                       folderPath={githubUsername}
                       taskName={task.name}
