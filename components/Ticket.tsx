@@ -1,6 +1,6 @@
 "use client";
 import { Role } from "@/app/(registration)/_utils/apiCalls";
-import { Download, DownloadIcon } from "lucide-react";
+import { DownloadIcon } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
