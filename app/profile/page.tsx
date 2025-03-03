@@ -90,7 +90,11 @@ const RoleTabs = ({
           />
         );
       case "mentor":
-        return <Mentor username={githubUsername} image={image} key="mentor" />;
+        return <Mentor
+          username={githubUsername}
+          image={image}
+          key="mentor"
+        />;
       case "project admin":
         return (
           <ProjectAdmin
@@ -101,9 +105,7 @@ const RoleTabs = ({
         );
       default:
         return (
-          <>
-            <Ticket name={"Sayan Das"} github={githubUsername || ""} role="mentee" />
-          </>
+          <span>GM</span>
         );
     }
   };

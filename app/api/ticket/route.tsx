@@ -1,5 +1,5 @@
 import { Role } from "@/app/(registration)/_utils/apiCalls";
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -33,11 +33,12 @@ export async function GET(req: NextRequest) {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
-            borderRadius: "24px",
+            borderRadius: "32px",
             fontFamily: "Arial, sans-serif",
             position: "relative",
             width: "100%",
             height: "100%",
+            overflow: "hidden",
           }}
         >
           <img
@@ -48,11 +49,11 @@ export async function GET(req: NextRequest) {
             style={{ position: "relative", width: "100%", height: "100%" }}
           />
           <p
-            style={{ fontSize: "30px", display: "flex", alignItems: "center", position: "absolute", left: "4rem", bottom: "8rem", zIndex: 10, color: "white" }}
+            style={{ fontSize: "30px", display: "flex", alignItems: "center", position: "absolute", left: "4rem", bottom: "8rem", zIndex: "10", color: "white" }}
           >
             {name.split(" ")[0]}
           </p>
-          <div style={{ fontSize: "30px", display: "flex", alignItems: "center", position: "absolute", left: "10rem", bottom: "4rem", zIndex: 10, color: "yellow" }}>{github}</div>
+          <div style={{ fontSize: "30px", display: "flex", alignItems: "center", position: "absolute", left: "10rem", bottom: "4rem", zIndex: "10", color: "yellow" }}>{github}</div>
         </div>
       ),
       { width: 1200, height: 600 }
