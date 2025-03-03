@@ -73,7 +73,7 @@ export default function ProjectsPage() {
               tags={project.techstack}
               maintainerUsername={project.projectAdmin.username}
               maintainerfFullname={project.projectAdmin.fullname}
-              ribbonText={index === 1 ? "WIN SWAGS" : undefined} // Add this line
+              ribbonText={index === 1 ? "WIN SWAGS" : undefined}
             />
           ))
         ) : projects && projects.length === 0 ? (

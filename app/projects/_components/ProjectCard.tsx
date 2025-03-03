@@ -11,7 +11,7 @@ interface ProjectCardProps {
   tags: string[];
   maintainerUsername: string;
   maintainerfFullname: string;
-  ribbonText?: string; // Add this line
+  ribbonText?: string;
 }
 
 export default function ProjectCard({
@@ -22,7 +22,7 @@ export default function ProjectCard({
   tags,
   maintainerUsername,
   maintainerfFullname,
-  ribbonText, // Add this line
+  ribbonText,
 }: ProjectCardProps) {
   const [projectModal, setProjectModal] = useAtom(projectsStateAtom);
   const setAppModal = useSetAtom(modalStateAtom);
