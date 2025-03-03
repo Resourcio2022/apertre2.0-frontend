@@ -96,7 +96,7 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
 }
 
 // First, update the SponsorTier component to use the style prop
-function SponsorTier({ title, sponsors = [], columns } : {
+function SponsorTier({ title, sponsors = [], columns }: {
   title: string;
   sponsors?: {
     imageUrl: string;
@@ -155,7 +155,7 @@ const goldSponsors = [
   {
     imageUrl: "/sponsors/llmware.jpg",
     alt: "LLMware",
-    websiteUrl:"https://llmware.ai/"
+    websiteUrl: "https://llmware.ai/"
   }
 ];
 
@@ -175,7 +175,7 @@ const digitalSponsors = [
     alt: "Interview Buddy",
     websiteUrl: "https://interviewbuddy.in"
   },
- 
+
   {
     imageUrl: "/sponsors/appwrite.svg",
     alt: "Appwrite",
@@ -190,6 +190,14 @@ const platformSponsors = [
     websiteUrl: "https://www.commudle.com/"
   }
 ];
+
+const silverSPonsors = [
+  {
+    imageUrl: "/sponsors/endless-domains.jpg",
+    alt: "Endless Domains",
+    websiteUrl: "https://endlessdomains.io/"
+  }
+]
 
 const bronzeSponsors = [
   {
@@ -235,13 +243,18 @@ const platinumSponsors = [
   },
   {
     imageUrl: "/sponsors/FlutterFlow.png",
-    alt : "FlutterFlow",
+    alt: "FlutterFlow",
     websiteUrl: "https://flutterflow.io/"
   },
   {
     imageUrl: "/sponsors/langdb.svg",
     alt: "LangDB",
     websiteUrl: "https://langdb.ai/"
+  },
+  {
+    imageUrl: "/sponsors/Deskree.png",
+    alt: "Deskree",
+    websiteUrl: "https://www.deskree.com/"
   }
 ];
 
@@ -251,15 +264,23 @@ const educationSponsors = [
     alt: "Let's Code",
     websiteUrl: "https://www.lets-code.co.in/"
   }
-
 ];
+
 const titleSponsors = [
   {
     imageUrl: "/sponsors/olake.svg",
     alt: "O lake",
     websiteUrl: "https://olake.io"
   }
-]
+];
+
+const certificateSponsors = [
+  {
+    imageUrl: "/sponsors/givemycertificate.jpg",
+    alt: "Give My Certificate",
+    websiteUrl: "https://givemycertificate.com/"
+  }
+];
 
 export default function Sponsor() {
   return (
@@ -293,6 +314,10 @@ export default function Sponsor() {
           columns={2}
         />
         <SponsorTier
+          title="Silver Sponsors"
+          sponsors={silverSPonsors}
+        />
+        <SponsorTier
           title="Platform Sponsor"
           sponsors={platformSponsors}
         />
@@ -314,11 +339,15 @@ export default function Sponsor() {
           sponsors={digitalSponsors}
           columns={2}
         />
-        
+
         <SponsorTier
           title="In-Kind Sponsors"
           sponsors={inKindSponsors}
           columns={2}
+        />
+        <SponsorTier
+          title="Certificate Partner"
+          sponsors={certificateSponsors}
         />
       </div>
     </section>
