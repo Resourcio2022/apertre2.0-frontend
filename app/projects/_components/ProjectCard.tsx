@@ -116,16 +116,6 @@ export default function ProjectCard({
             </p>
           </div>
         </button>
-
-        {/* <div className="absolute -right-6 top-10 w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center border-1 border-gray-900">
-        <Image
-          src={profilePic}
-          alt="GitHub Profile"
-          width={64}
-          height={64}
-          className="rounded-full border-2 border-white"
-        />
-      </div> */}
       </div>
     </div>
   );
