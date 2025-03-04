@@ -3,8 +3,6 @@ import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
 import { Poppins } from "next/font/google";
 
-export const dynamic = 'force-dynamic';
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",
