@@ -45,30 +45,10 @@ export default function ProjectCard({
   return (
     <div className=" text-white relative w-[394px] h-[269px] max-w-md px-6 py-8">
       {ribbonText && (
-        <div className="absolute top-0 right-8 z-10">
-          <div className="relative">
-            <div
-              className="bg-red-600 text-white font-bold py-1 px-3 shadow-md text-center"
-              style={{
-                writingMode: "vertical-rl",
-                transform: "rotate(180deg)",
-                height: "110px",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                borderBottomLeftRadius: "4px",
-                borderBottomRightRadius: "4px",
-              }}
-            >
-              {ribbonText}
-            </div>
-            <div
-              className="absolute bottom-0 left-0 right-0 h-2 bg-red-800"
-              style={{
-                borderBottomLeftRadius: "4px",
-                borderBottomRightRadius: "4px",
-              }}
-            ></div>
-          </div>
+        <div className="absolute top-[7.5px] right-10 z-10">
+          <span className="bg-red-600 text-white font-bold py-1 px-3 rounded-bl-md rounded-br-md">
+            {ribbonText}
+          </span>
         </div>
       )}
       <Image
