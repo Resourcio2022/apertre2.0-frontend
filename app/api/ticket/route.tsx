@@ -1,6 +1,15 @@
 import { Role } from "@/app/(registration)/_utils/apiCalls";
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
+import { Poppins } from "next/font/google";
+
+export const dynamic = 'force-dynamic';
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 export async function GET(req: NextRequest) {
   try {
@@ -34,7 +43,7 @@ export async function GET(req: NextRequest) {
             justifyContent: "space-between",
             alignItems: "center",
             borderRadius: "32px",
-            fontFamily: "Arial, sans-serif",
+            fontFamily: poppins.className,
             position: "relative",
             width: "100%",
             height: "100%",
@@ -43,20 +52,20 @@ export async function GET(req: NextRequest) {
         >
           <img
             src={imageUrl}
-            width={1200}
-            height={600}
+            width={1920}
+            height={1080}
             alt=""
             style={{ position: "relative", width: "100%", height: "100%" }}
           />
           <p
-            style={{ fontSize: "30px", display: "flex", alignItems: "center", position: "absolute", left: "4rem", bottom: "8rem", zIndex: "10", color: "white" }}
+            style={{ fontSize: "5rem", display: "flex", alignItems: "center", position: "absolute", left: "8.5rem", bottom: "13.5rem", zIndex: "10", color: "white" }}
           >
             {name.split(" ")[0]}
           </p>
-          <div style={{ fontSize: "30px", display: "flex", alignItems: "center", position: "absolute", left: "10rem", bottom: "4rem", zIndex: "10", color: "yellow" }}>{github}</div>
+          <p style={{ fontSize: "3rem", display: "flex", alignItems: "center", position: "absolute", left: "17rem", bottom: "7rem", zIndex: "10", color: "yellow" }}>{github}</p>
         </div>
       ),
-      { width: 1200, height: 600 }
+      { width: 1980, height: 1080 }
     );
   }
   catch (error) {

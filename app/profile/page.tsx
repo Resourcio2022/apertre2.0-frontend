@@ -10,7 +10,6 @@ import { Loader } from "@/components/Loader";
 import { useState, useRef, useEffect } from "react";
 import type { Role } from "../(registration)/_utils/apiCalls";
 import { ChevronDown } from "lucide-react";
-import Ticket from "@/components/Ticket";
 
 export default function Page() {
   const { user } = useUser();
@@ -105,7 +104,7 @@ const RoleTabs = ({
         );
       default:
         return (
-          <span>GM</span>
+          <span className="text-white text-2xl">GM</span>
         );
     }
   };

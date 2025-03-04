@@ -11,6 +11,7 @@ interface ProjectCardProps {
   tags: string[];
   maintainerUsername: string;
   maintainerfFullname: string;
+  ribbonText?: string;
 }
 
 export default function ProjectCard({
@@ -21,6 +22,7 @@ export default function ProjectCard({
   tags,
   maintainerUsername,
   maintainerfFullname,
+  ribbonText,
 }: ProjectCardProps) {
   const [projectModal, setProjectModal] = useAtom(projectsStateAtom);
   const setAppModal = useSetAtom(modalStateAtom);
@@ -42,6 +44,13 @@ export default function ProjectCard({
 
   return (
     <div className=" text-white relative w-[394px] h-[269px] max-w-md px-6 py-8">
+      {ribbonText && (
+        <div className="absolute top-[7.5px] right-10 z-10">
+          <span className="bg-red-600 text-white font-bold py-1 px-3 rounded-bl-md rounded-br-md">
+            {ribbonText}
+          </span>
+        </div>
+      )}
       <Image
         src="/project-card.webp"
         alt="Animated rocket logo"
@@ -87,16 +96,6 @@ export default function ProjectCard({
             </p>
           </div>
         </button>
-
-        {/* <div className="absolute -right-6 top-10 w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center border-1 border-gray-900">
-        <Image
-          src={profilePic}
-          alt="GitHub Profile"
-          width={64}
-          height={64}
-          className="rounded-full border-2 border-white"
-        />
-      </div> */}
       </div>
     </div>
   );
