@@ -123,11 +123,13 @@ const Mentor = memo(function Mentor({ username, image }: MentorProps) {
             </div>
           </div>
         </div>
+        {profile.status === 'VERIFIED' && (
           <Ticket
             name={profile.fullname}
             github={profile.username}
             role="mentor"
           />
+        )}
       </div>
     </div>
   );

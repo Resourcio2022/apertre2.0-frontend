@@ -113,11 +113,13 @@ const ProjectAdmin = memo(function ProjectAdmin({
             )}
           </div>
         </div>
-        <Ticket
-          name={profile.fullname}
-          github={profile.username}
-          role="project admin"
-        />
+        {profile.status === 'VERIFIED' && (
+          <Ticket
+            name={profile.fullname}
+            github={profile.username}
+            role="project admin"
+          />
+        )}
       </div>
 
       <div className="my-5">
