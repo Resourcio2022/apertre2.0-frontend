@@ -50,20 +50,20 @@ export async function GET(req: NextRequest) {
         >
           <img
             src={imageUrl}
-            width={1920}
-            height={1080}
+            width={900}
+            height={491}
             alt=""
             style={{ position: "relative", width: "100%", height: "100%" }}
           />
           <p
-            style={{ fontSize: "5rem", display: "flex", alignItems: "center", position: "absolute", left: "8.5rem", bottom: "13.5rem", zIndex: "10", color: "white" }}
+            style={{ fontSize: "3rem", display: "flex", alignItems: "center", position: "absolute", left: "3.8rem", bottom: "6rem", zIndex: "10", color: "white" }}
           >
             {name.split(" ")[0]}
           </p>
-          <p style={{ fontSize: "3rem", display: "flex", alignItems: "center", position: "absolute", left: "17rem", bottom: "7rem", zIndex: "10", color: "yellow" }}>{github}</p>
+          <p style={{ fontSize: "2rem", display: "flex", alignItems: "center", position: "absolute", left: "7.5rem", bottom: "2.1rem", zIndex: "10", color: "yellow" }}>{github}</p>
         </div>
       ),
-      { width: 1980, height: 1080 }
+      { width: 900, height: 491 }
     );
   }
   catch (error) {
