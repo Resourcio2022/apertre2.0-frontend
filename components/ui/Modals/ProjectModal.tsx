@@ -46,11 +46,25 @@ function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
             </div>
             <div className="flex items-center gap-2">
               <p className=" text-gray-300">by</p>
-              <h3 className=" text-lg font-bold">
-                {projectData.projectAdmin.fullname}
-              </h3>
+              <Link
+                href={`https://www.github.com/${projectData.projectAdmin.username}`}
+                target="_blank"
+              >
+                <h3 className=" text-lg font-bold">
+                  {projectData.projectAdmin.fullname}
+                </h3>
+              </Link>
             </div>
-            <p className="text-gray-300 mt-1">Domain : {projectData.projectDomain.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ")}</p>
+            <p className="text-gray-300 mt-1">
+              Domain :{" "}
+              {projectData.projectDomain
+                .split("_")
+                .map(
+                  (word) =>
+                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                )
+                .join(" ")}
+            </p>
           </div>
           <p>
             Description :{" "}
@@ -69,11 +83,11 @@ function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
             ))}
           </div>
           <div className="w-full flex justify-center">
-              <Link href={projectData.repoURL} target="_blank">
-              <Button
-              className="bg-textyellow text-black font-bold py-2 px-4 rounded-md hover:bg-textyellow/30 hover:text-textyellow hover:border hover:border-textyellow"
-              >Go to project</Button>
-              </Link>
+            <Link href={projectData.repoURL} target="_blank">
+              <Button className="bg-textyellow text-black font-bold py-2 px-4 rounded-md hover:bg-textyellow/30 hover:text-textyellow hover:border hover:border-textyellow">
+                Go to project
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

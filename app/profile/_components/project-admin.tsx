@@ -53,67 +53,71 @@ const ProjectAdmin = memo(function ProjectAdmin({
 
   return (
     <div className="flex flex-col justify-center text-textyellow">
-      <div className="flex flex-col lg:flex-row w-full items-center gap-7">
-        {image && (
-          <Image
-            src={image}
-            alt=""
-            width={160}
-            height={160}
-            className="rounded-full border-textyellow border-2"
-          />
-        )}
-        <div className="flex flex-col justify-between items-baseline">
-          <div className="font-mokoto font-normal text-2xl text-nowrap flex flex-col md:flex-row">
-            <span className="text-white whitespace-nowrap">
-              {">"}_.. Hello&nbsp;
-            </span>
-            <TypewriterEffectSmooth
-              words={profile.fullname
-                .split(" ")
-                .map((word) => ({ text: word }))}
+      <div className="flex flex-col lg:flex-row w-full items-center gap-7 lg:justify-between">
+        <div className="flex flex-col lg:flex-row w-[70%] gap-4">
+          {image && (
+            <Image
+              src={image}
+              alt=""
+              width={160}
+              height={160}
+              className="rounded-full border-textyellow border-2 w-40 h-40"
             />
-          </div>
+          )}
+          <div className="flex flex-col justify-between items-baseline">
+            <div className="font-mokoto font-normal text-2xl text-nowrap flex flex-col md:flex-row">
+              <span className="text-white whitespace-nowrap">
+                {">"}_.. Hello&nbsp;
+              </span>
+              <TypewriterEffectSmooth
+                words={profile.fullname
+                  .split(" ")
+                  .map((word) => ({ text: word }))}
+              />
+            </div>
 
-          <div className="flex flex-col gap-2 py-3 mb-4 text-white">
-            <div className="flex gap-3 items-center">
-              <MdAlternateEmail className="size-6 text-textyellow" />
-              <span className="font-Poppins font-normal">{profile.email}</span>
+            <div className="flex flex-col gap-2 py-3 mb-4 text-white">
+              <div className="flex gap-3 items-center">
+                <MdAlternateEmail className="size-6 text-textyellow" />
+                <span className="font-Poppins font-normal">
+                  {profile.email}
+                </span>
+              </div>
+              <div className="flex gap-3 items-center">
+                <BsPhone className="size-6 text-textyellow" />
+                <span className="font-Poppins font-normal">
+                  {profile.phoneNumber}
+                </span>
+              </div>
+              <div className="flex gap-3 items-center">
+                <FaHome className="size-6 text-textyellow" />
+                <span className="font-Poppins font-normal">
+                  {profile.address}
+                </span>
+              </div>
             </div>
-            <div className="flex gap-3 items-center">
-              <BsPhone className="size-6 text-textyellow" />
-              <span className="font-Poppins font-normal">
-                {profile.phoneNumber}
-              </span>
-            </div>
-            <div className="flex gap-3 items-center">
-              <FaHome className="size-6 text-textyellow" />
-              <span className="font-Poppins font-normal">
-                {profile.address}
-              </span>
-            </div>
-          </div>
-          <div className="w-full flex gap-5 justify-center md:justify-start text-white">
-            <Link
-              href={`https://github.com/${profile.username}`}
-              target="_blank"
-            >
-              <FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
-            </Link>
-            <Link href={profile.linkedinUrl} target="_blank">
-              <FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />
-            </Link>
-            {profile.twitterUsername && (
+            <div className="w-full flex gap-5 justify-center md:justify-start text-white">
               <Link
-                href={`https://x.com/${profile.twitterUsername}`}
+                href={`https://github.com/${profile.username}`}
                 target="_blank"
               >
-                <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
+                <FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
               </Link>
-            )}
+              <Link href={profile.linkedinUrl} target="_blank">
+                <FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />
+              </Link>
+              {profile.twitterUsername && (
+                <Link
+                  href={`https://x.com/${profile.twitterUsername}`}
+                  target="_blank"
+                >
+                  <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
+                </Link>
+              )}
+            </div>
           </div>
         </div>
-        {profile.status === 'VERIFIED' && (
+        {profile.status === "VERIFIED" && (
           <Ticket
             name={profile.fullname}
             github={profile.username}
