@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useAtomValue } from "jotai";
 import { projectsStateAtom } from "@/states/projectsState";
 import Link from "next/link";
+import { Button } from "../button";
 
 function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
   const projectData = useAtomValue(projectsStateAtom);
@@ -66,6 +67,13 @@ function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
                 {tag}
               </span>
             ))}
+          </div>
+          <div className="w-full flex justify-center">
+              <Link href={projectData.repoURL} target="_blank">
+              <Button
+              className="bg-textyellow text-black font-bold py-2 px-4 rounded-md hover:bg-textyellow/30 hover:text-textyellow hover:border hover:border-textyellow"
+              >Go to project</Button>
+              </Link>
           </div>
         </div>
       </div>
