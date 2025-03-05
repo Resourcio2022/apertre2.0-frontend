@@ -72,7 +72,7 @@ export default function ProjectCard({
         </div>
 
         <div className="flex flex-wrap gap-2 my-4">
-          {tags.slice(0, 4).map((tag, index) => (
+          {tags.slice(0, 3).map((tag, index) => (
             <span
               key={index}
               className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm border border-gray-500"
@@ -80,9 +80,9 @@ export default function ProjectCard({
               {tag}
             </span>
           ))}
-          {tags.length > 4 && (
+          {tags.length > 3 && (
             <span className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm border border-gray-500">
-              {tags.length - 4} more+
+              {tags.length - 3} more+
             </span>
           )}
         </div>
