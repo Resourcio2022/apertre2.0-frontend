@@ -17,11 +17,7 @@ interface TicketProps {
 export default function Ticket({ name, github, role }: TicketProps) {
   const [img, setImg] = useState("");
   const [socials, setSocials] = useState({
-    twitter: "",
-    facebook: "",
     linkedin: "",
-    whatsapp: "",
-    telegram: "",
   });
 
   useEffect(() => {
@@ -35,21 +31,9 @@ export default function Ticket({ name, github, role }: TicketProps) {
   useEffect(() => {
     if (window) {
       const socialLinks = {
-        twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-          process.env.NEXT_PUBLIC_FRONTEND_URL + img
-        )}&text=Check out my ticket!`,
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-          process.env.NEXT_PUBLIC_FRONTEND_URL + img
-        )}`,
         linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
           process.env.NEXT_PUBLIC_FRONTEND_URL + img
-        )}`,
-        whatsapp: `https://api.whatsapp.com/send?text=Check out my ticket! ${encodeURIComponent(
-          process.env.NEXT_PUBLIC_FRONTEND_URL + img
-        )}`,
-        telegram: `https://t.me/share/url?url=${encodeURIComponent(
-          process.env.NEXT_PUBLIC_FRONTEND_URL + img
-        )}&text=Check out my ticket!`,
+        )}`
       };
       setSocials(socialLinks);
     }
@@ -78,9 +62,9 @@ export default function Ticket({ name, github, role }: TicketProps) {
           <Image
             src={img}
             alt="Generated Ticket"
-            width={1920}
-            height={1080}
-            className="my-4 rounded-xl w-[500px]"
+            width={900}
+            height={491}
+            className="my-4 rounded-xl w-[400px]"
             loading="lazy"
             blurDataURL={rgbDataURL(128, 128, 128)}
           />
@@ -93,7 +77,7 @@ export default function Ticket({ name, github, role }: TicketProps) {
               <BsLinkedin /> LinkedIn
             </Link>{" "}
           </div>
-          <Link href={img} download={img} target="_blank" className="text-customYellow">
+          <Link href={img} download={"ticket.png"} target="_blank" className="text-customYellow">
             <DownloadIcon />
           </Link>
         </div>
