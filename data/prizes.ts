@@ -1,0 +1,90 @@
+export const prizes = [
+  {
+    position: "Winner",
+    prizes: [
+      "Prize worth Rs. 5000",
+      "Apertre 2.0 Tshirt",
+      "Digital Membership",
+      "Swag Kit",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/winner.png",
+    glow: true,
+  },
+  {
+    position: "1st Runner Up",
+    prizes: [
+      "Prize worth Rs. 3000",
+      "Apertre 2.0 Tshirt",
+      "Digital Membership",
+      "Swag Kit",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/1strunner.png",
+    glow: true,
+  },
+  {
+    position: "2nd Runner Up",
+    prizes: [
+      "Prize worth Rs. 1500",
+      "Apertre 2.0 Tshirt",
+      "Digital Membership",
+      "Swag Kit",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/2ndrunner.png",
+    glow: true,
+  },
+  {
+    position: "Top 10 MENTEES",
+    prizes: [
+      "Apertre 2.0 Tshirt",
+      "Premium Stickers",
+      "Digital Membership",
+      "Social Media Shoutouts",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/top10.png",
+    glow: false,
+  },
+  {
+    position: "Top 25 MENTEES",
+    prizes: [
+      "Premium Stickers",
+      "Social Media Shoutouts",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/top25.png",
+    glow: false,
+  },
+  {
+    position: "Top 50 MENTEES",
+    prizes: ["Social Media Shoutouts", "Digital Certificates"],
+    imageUrl: "/prizes/top50.png",
+    glow: false,
+  },
+  {
+    position: "Active Project Admin",
+    prizes: [
+      "Apertre 2.0 T-Shirt",
+      "Digital Membership",
+      "Swag Kit",
+      "Social Media Shoutout",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/top10.png",
+    glow: false,
+  },
+  {
+    position: "Active Mentor",
+    prizes: [
+      "Apertre 2.0 T-Shirt",
+      "Digital Membership",
+      "Swag Kit",
+      "Social Media Shoutout",
+      "Digital Certificates",
+    ],
+    imageUrl: "/prizes/top10.png",
+    glow: false,
+  },
+];
