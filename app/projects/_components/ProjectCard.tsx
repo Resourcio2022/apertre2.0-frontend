@@ -11,7 +11,7 @@ interface ProjectCardProps {
   tags: string[];
   maintainerUsername: string;
   maintainerfFullname: string;
-  ribbonText?: string;
+  exclusivePrizes: boolean;
 }
 
 export default function ProjectCard({
@@ -22,7 +22,7 @@ export default function ProjectCard({
   tags,
   maintainerUsername,
   maintainerfFullname,
-  ribbonText,
+  exclusivePrizes,
 }: ProjectCardProps) {
   const [projectModal, setProjectModal] = useAtom(projectsStateAtom);
   const setAppModal = useSetAtom(modalStateAtom);
@@ -43,13 +43,15 @@ export default function ProjectCard({
   }
 
   return (
-    <div className=" text-white relative w-[394px] h-[269px] max-w-md px-6 py-8">
-      {ribbonText && (
-        <div className="absolute top-[7.5px] right-10 z-10">
-          <span className="bg-red-600 text-white font-bold py-1 px-3 rounded-bl-md rounded-br-md">
-            {ribbonText}
-          </span>
-        </div>
+    <div className={`text-white relative w-[394px] h-[269px] max-w-md px-6 py-8 ${exclusivePrizes && "mt-24 sm:mt-0"}`}>
+      {exclusivePrizes && (
+        <Image
+          src="/exciting-gifts.webp"
+          alt="Exciting gifts logo"
+          width={370}
+          height={136}
+          className="absolute z-20 -top-[108px] right-4"
+        />
       )}
       <Image
         src="/project-card.webp"
