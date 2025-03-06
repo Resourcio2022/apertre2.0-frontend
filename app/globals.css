@@ -3,100 +3,125 @@
 @tailwind utilities;
 
 * {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 *::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 html {
-    scroll-behavior: smooth;
-    user-select: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .spinnerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gradient-x {
-    0%, 100% {
-        background-size: 200% 200%;
-        background-position: left center;
-    }
-    50% {
-        background-size: 200% 200%;
-        background-position: right center;
-    }
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-gradient-x {
-    animation: gradient-x 3s ease infinite;
+  animation: gradient-x 3s ease infinite;
 }
 
 .animate-twinkle {
-    animation: twinkle 4s ease-in-out infinite;
+  animation: twinkle 4s ease-in-out infinite;
 }
 
 .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .loadingSpinner {
-    border-top: 2px solid #363636;
-    border-radius: 50%;
-    animation: spinner 1.5s linear infinite;
+  border-top: 2px solid #363636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }
 
 .animate-glow {
-    animation: twinkle 4s ease-in-out infinite;
-    background: linear-gradient(90deg,
-        rgba(255, 215, 0, 0.3),
-        rgba(255, 183, 0, 0.6),
-        rgba(255, 215, 0, 0.3));
-    background-size: 200% auto;
-    filter: blur(1px);
-    transition: filter 0.3s ease;
+  animation: twinkle 4s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.3),
+    rgba(255, 183, 0, 0.6),
+    rgba(255, 215, 0, 0.3)
+  );
+  background-size: 200% auto;
+  filter: blur(1px);
+  transition: filter 0.3s ease;
 }
 
 .animate-glow:hover {
-    filter: blur(1.5px);
+  filter: blur(1.5px);
 }
 
-
-
+.border03 {
+  height: 4px;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 50%,
+      #fff 90%,
+      #fff 100%
+    ),
+    linear-gradient(90deg, #ffffff00, #fbce1f, #ffffff00);
+  background-size: 20px 3px, 100% 3px;
+  border: none;
+}
 
 @layer base {
   body {
     @apply bg-background text-foreground;
-    }
+  }
 }
