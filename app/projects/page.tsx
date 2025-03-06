@@ -50,9 +50,9 @@ export default function ProjectsPage() {
           "linear-gradient(132.96deg, #0B0A0A 27.52%, #272323 84.97%)",
       }}
     >
-      <div className="flex flex-col sm:flex-row justify-between items-center sticky top-8 sm:top-20 z-20 backdrop-blur bg-black/50 px-8 py-6 w-full">
-        <div>
-          <h1 className="text-yellow-400 text-4xl font-bold font-mokoto">
+      <div className="flex flex-col gap-4 justify-center sm:flex-row sm:justify-between items-center sticky top-8 sm:top-20 z-20 backdrop-blur bg-black/50 p-8 w-full">
+        <div className="flex flex-col items-center md:items-start">
+          <h1 className="text-yellow-400 text-4xl font-bold font-mokoto w-fit">
             PROJECTS
           </h1>
           <p className="text-gray-300">Pick your choice and contribute</p>
@@ -79,7 +79,7 @@ export default function ProjectsPage() {
               tags={project.techstack}
               maintainerUsername={project.projectAdmin.username}
               maintainerfFullname={project.projectAdmin.fullname}
-              ribbonText={(page === 1 && index === 1) ? "WIN SWAGS" : undefined}
+              exclusivePrizes={project.repoName === 'OLake'}
             />
           ))
         ) : projects && projects.length === 0 ? (
