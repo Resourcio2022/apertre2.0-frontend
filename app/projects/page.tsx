@@ -79,7 +79,8 @@ export default function ProjectsPage() {
               tags={project.techstack}
               maintainerUsername={project.projectAdmin.username}
               maintainerfFullname={project.projectAdmin.fullname}
-              exclusivePrizes={project.repoName === 'OLake'}
+              exclusivePrizes={project.repoName === "OLake"}
+              mentors={project.mentors}
             />
           ))
         ) : projects && projects.length === 0 ? (
