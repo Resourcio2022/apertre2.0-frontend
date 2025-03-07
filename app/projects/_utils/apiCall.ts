@@ -52,7 +52,7 @@ export async function getProjectsByTechStack(
     .map((stack) => `techstack=${encodeURIComponent(stack)}`)
     .join("&");
 
-  const res = await fetch(`${API_URL}/github-repo/apertre/search?${query}`);
+  const res = await fetch(`${API_URL}/github-repo/apertre/search/techstack?${query}`);
   const data = await res.json();
 
   if (!res.ok) {
