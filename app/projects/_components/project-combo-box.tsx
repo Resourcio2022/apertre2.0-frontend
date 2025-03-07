@@ -81,7 +81,7 @@ export function ProjectTechStacks({ placeholder, value, onChange }: ComboBoxProp
             <ChevronsUpDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-fit p-0 ml-8">
+        <PopoverContent className="w-fit p-0">
           <Command className="bg-white">
             <CommandInput placeholder="Search framework..." />
             <CommandList>

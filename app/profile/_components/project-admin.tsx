@@ -130,34 +130,49 @@ const ProjectAdmin = memo(function ProjectAdmin({
         <h3 className="text-xl font-semibold my-5 font-mokoto">
           GitHub Repositories:
         </h3>
-        {profile.githubRepos.map((repo, index) => (
-          <div
-            key={index}
-            className="p-4 border rounded-lg text-textyellow flex flex-col gap-2 my-5"
-          >
-            <Link
-              href={repo.repoURL}
-              className="text-lg font-medium font-mokoto hover:underline"
+        <div className="flex items-center flex-wrap gap-8">
+          {profile.githubRepos.map((repo, index) => (
+            <div
+              key={index}
+              className="p-4 border rounded-lg text-textyellow flex flex-col gap-2 my-5 w-[350px]"
             >
-              {repo.repoName}
-            </Link>
-            <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
-              {repo.projectStatus}
-            </span>
-            <div className="mt-2">
-              <p className="font-semibold">Mentors:</p>
-              {repo.mentors.map(({ mentor }, idx) => (
-                <div
-                  key={idx}
-                  className="text-textyellow font-mokoto font-normal"
-                >
-                  <strong>{mentor.fullname}</strong> (@{mentor.username}) -{" "}
-                  {mentor.techstack.join(", ")}
+              <Link
+                href={repo.repoURL}
+                className="text-lg font-medium font-mokoto hover:underline"
+              >
+                {repo.repoName}
+              </Link>
+              <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                {repo.projectStatus}
+              </span>
+              <div className="mt-2">
+                <p className="font-semibold">Mentors:</p>
+                <div>
+                  {repo.mentors.length === 0 ? (
+                    <p className="text-white font-mokoto font-normal">
+                      No mentors assigned
+                    </p>
+                  ) : (
+                    repo.mentors.map(({ mentor }, idx) => (
+                      <div
+                        key={idx}
+                        className="text-white font-mokoto font-normal flex items-center gap-4"
+                      >
+                        <p className="text-wrap">{mentor.fullname}</p>{" "}
+                        <Link href={`https://github.com/${mentor.username}`}>
+                          <FaGithub size={24} />
+                        </Link>{" "}
+                        <Link href={mentor.linkedinUrl}>
+                          <FaLinkedin size={24} />
+                        </Link>
+                      </div>
+                    ))
+                  )}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { TechStacks } from "../(registration)/project-admin/_components/techstack-combo-box";
 import ProjectPagination from "./_components/Pagination";
 import ProjectCard from "./_components/ProjectCard";
-import { getGithubRepo, getProjectsByTechStack, Repo } from "./_utils/apiCall";
+import { getGithubRepo, getProjectsByTechStack, Repo, searchProjectsByName } from "./_utils/apiCall";
 import { ProjectTechStacks } from "./_components/project-combo-box";
+import { Input } from "@/components/ui/input";
 
 export default function ProjectsPage() {
   const [search, setSearch] = useState("");
+  const [nameSearch, setNameSearch] = useState("");
   const [projects, setProjects] = useState<Repo[] | undefined>();
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
@@ -42,6 +44,20 @@ export default function ProjectsPage() {
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
   };
+  const handleNameSearch = (val: string) => {
+    setNameSearch(val);
+    if (val === "") {
+      getGithubRepo(page, pageSize)
+        .then((data) => {
+          setProjects(data.data);
+        })
+        .catch((error) => console.error("Error fetching projects:", error));
+      return;
+    }
+    searchProjectsByName(val)
+      .then((data) => setProjects(data))
+      .catch((error) => console.error("Error fetching projects:", error));
+  };
 
   return (
     <div
@@ -58,17 +74,27 @@ export default function ProjectsPage() {
           </h1>
           <p className="text-gray-300">Pick your choice and contribute</p>
         </div>
-        <ProjectTechStacks
-          placeholder={"Select Techstacks*"}
-          value={search}
-          onChange={(value: string) => {
-            handleSearch(value);
-            setSearch(value);
-          }}
-        />
+        <div className="flex items-center justify-between gap-3 flex-col lg:flex-row">
+          <Input
+            type="text"
+            placeholder="Search by name"
+            onChange={(e) => handleNameSearch(e.target.value)}
+            className="w-[200px] border-textyellow"
+          />
+          <ProjectTechStacks
+            placeholder={"Search by Techstacks*"}
+            value={search}
+            onChange={(value: string) => {
+              handleSearch(value);
+              setSearch(value);
+            }}
+          />
+        </div>
       </div>
 
-      <div className={` gap-6 flex justify-center flex-wrap items-center pt-28 pb-8 px-4`}>
+      <div
+        className={` gap-6 flex justify-center flex-wrap items-center pt-28 pb-8 px-4`}
+      >
         {projects && projects.length > 0 ? (
           projects.map((project, index) => (
             <ProjectCard

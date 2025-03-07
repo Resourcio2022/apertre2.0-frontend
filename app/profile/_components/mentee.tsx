@@ -121,17 +121,15 @@ const Mentee = memo(function Mentee({ username, image }: MenteeProps) {
             </div>
           </div>
 
-          {profile.bonusPoints > 0 && (
-            <div className="flex flex-col gap-2 justify-center md:pl-4 pl-0">
-              <h1>Bonus Points : </h1>
-              <div className="flex flex-col gap-2 justify-center items-center border border-textyellow rounded-lg p-5 h-fit w-fit">
-                <span className="font-mokoto font-normal text-2xl text-nowrap">
-                  {" "}
-                  {profile.bonusPoints}
-                </span>
-              </div>
+          <div className="flex flex-col gap-2 justify-center md:pl-4 pl-0">
+            <h1>Bonus Points : </h1>
+            <div className="flex flex-col gap-2 justify-center items-center border border-textyellow rounded-lg p-5 h-fit w-fit">
+              <span className="font-mokoto font-normal text-2xl text-nowrap">
+                {" "}
+                {profile.bonusPoints}
+              </span>
             </div>
-          )}
+          </div>
         </div>
 
         <Ticket
