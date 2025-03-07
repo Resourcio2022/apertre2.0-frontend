@@ -10,7 +10,16 @@ export interface Repo {
     fullname: string;
     username: string;
   };
+  mentors: {
+    mentor: mentor;
+  }[];
 }
+
+export type mentor = {
+  fullname: string;
+  username: string;
+  linkedinUrl: string;
+};
 
 interface Meta {
   page: number;
@@ -36,7 +45,9 @@ export async function getGithubRepo(
   return { data: data.data, meta: data.meta };
 }
 
-export async function getProjectsByTechStack(techstacks: string[]): Promise<Repo[]> {
+export async function getProjectsByTechStack(
+  techstacks: string[]
+): Promise<Repo[]> {
   const query = techstacks
     .map((stack) => `techstack=${encodeURIComponent(stack)}`)
     .join("&");
