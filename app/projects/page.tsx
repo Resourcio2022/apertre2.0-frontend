@@ -74,7 +74,7 @@ export default function ProjectsPage() {
           </h1>
           <p className="text-gray-300">Pick your choice and contribute</p>
         </div>
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-3 flex-col lg:flex-row">
           <Input
             type="text"
             placeholder="Search by name"
