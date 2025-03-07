@@ -11,4 +11,13 @@ export const projectsStateAtom = atom<Repo>({
     fullname: "",
     username: "",
   },
+  mentors: [
+    {
+      mentor: {
+        fullname: "",
+        username: "",
+        linkedinUrl: "",
+      },
+    },
+  ],
 });

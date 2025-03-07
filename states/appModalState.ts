@@ -1,4 +1,4 @@
 import { atom } from "jotai";
 
-type modalStates = "projectCard" | null;
+type modalStates = "projectCard" | "mentorModal" | null;
 export const modalStateAtom = atom<modalStates>(null);

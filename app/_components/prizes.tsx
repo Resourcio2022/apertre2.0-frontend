@@ -72,7 +72,9 @@ function PrizesCard({
           </h1>
           <p className="z-20 flex flex-col gap-1">
             {prizes.map((prize, index) => (
-              <h1 className="text-white/80 group-hover:text-white text-start duration-300">
+              <h1 
+              key={index}
+              className="text-white/80 group-hover:text-white text-start duration-300">
                 {index + 1}. {prize}
               </h1>
             ))}
