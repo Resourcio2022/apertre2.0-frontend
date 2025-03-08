@@ -49,10 +49,26 @@ export async function getProjectsByTechStack(
   techstacks: string[]
 ): Promise<Repo[]> {
   const query = techstacks
-    .map((stack) => `techstack=${encodeURIComponent(stack)}`)
+    .map((stack) => `q=${encodeURIComponent(stack)}`)
     .join("&");
 
-  const res = await fetch(`${API_URL}/github-repo/apertre/search?${query}`);
+  const res = await fetch(
+    `${API_URL}/github-repo/apertre/search/techstack?${query}`
+  );
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message);
+  }
+
+  return data;
+}
+export async function searchProjectsByName(name: string): Promise<Repo[]> {
+  const query = `q=${encodeURIComponent(name)}`;
+
+  const res = await fetch(
+    `${API_URL}/github-repo/apertre/search/name?${query}`
+  );
   const data = await res.json();
 
   if (!res.ok) {

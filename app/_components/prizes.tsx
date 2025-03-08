@@ -1,4 +1,4 @@
-import { PixelCanvas } from "@/components/ui/pixel-canvas";
+import PixelCanvas from "@/components/ui/pixel-canvas";
 import { prizes } from "@/data/prizes";
 import Image from "next/image";
 import React from "react";
@@ -25,12 +25,12 @@ function Prizes() {
         *Note: The Visuals shown above may differ from actual Prizes
       </p>
       <div className="relative p-6 border-y border-dashed border-[#F9CB1A]">
-        <p className="text-center text-lg font-bold text-white space-y-2">
+        <div className="text-center text-lg font-bold text-white space-y-2">
           “Open source is about collaborating, not competing” -
           <h1 className="text-textyellow font-mokoto text-2xl">
             Kelsey Hightower
           </h1>
-        </p>
+        </div>
       </div>
     </div>
   );
@@ -64,21 +64,20 @@ function PrizesCard({
         />
         <div className="relative z-10 h-full w-full flex px-7 py-4 flex-col items-start drop-shadow-2xl gap-3">
           <h1
-            className={`text-2xl font-semibold text-yellow-400 group-hover:text-[var(--active-color)] duration-300 z-20 ${
-              glow && "drop-shadow-[0_0_10px_#F9CB1A]"
-            } font-mokoto`}
+            className={`text-2xl font-semibold text-yellow-400 group-hover:text-[var(--active-color)] duration-300 z-20 ${glow && "drop-shadow-[0_0_10px_#F9CB1A]"
+              } font-mokoto`}
           >
             {position.toUpperCase()}
           </h1>
-          <p className="z-20 flex flex-col gap-1">
+          <div className="z-20 flex flex-col gap-1">
             {prizes.map((prize, index) => (
-              <h1 
-              key={index}
-              className="text-white/80 group-hover:text-white text-start duration-300">
+              <h1
+                key={index}
+                className="text-white/80 group-hover:text-white text-start duration-300">
                 {index + 1}. {prize}
               </h1>
             ))}
-          </p>
+          </div>
           <Image
             src={imageUrl}
             width={200}

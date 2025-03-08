@@ -65,7 +65,7 @@ export default function ProjectCard({
   return (
     <div
       className={`text-white relative w-[394px] h-[269px] max-w-md px-6 py-8 ${
-        exclusivePrizes && "mt-24 sm:mt-0"
+        exclusivePrizes && "mt-24 lg:mt-0"
       }`}
     >
       {exclusivePrizes && (
