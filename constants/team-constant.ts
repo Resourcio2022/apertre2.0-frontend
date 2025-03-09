@@ -100,7 +100,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Suman Jain",
         image: "AEe6qhE96NSm8fMIYNg9hrWEHCQv4X1t6G38O5bqnKkxgdcR",
-        github: "https://github.com/L0rD-Op",
+        github: "https://github.com/Itz-snj",
         linkedin: "https://www.linkedin.com/in/suman-naresh-jain/"
       },
       {
@@ -230,7 +230,7 @@ export const teamSections: TeamSection[] = [
       {
         name: "Ankur Mukherjee",
         image: "AEe6qhE96NSmAxf4fP96NSmYqU7FZVdvyrJa14u50x8E9i3B",
-        github: "https://github.com/Ankur-Mukherjee",
+        github: "https://github.com/ankur-jod",
         linkedin: "https://www.linkedin.com/in/ankur-mukherjee01"
       },
       {
