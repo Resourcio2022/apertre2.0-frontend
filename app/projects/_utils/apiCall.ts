@@ -45,9 +45,7 @@ export async function getGithubRepo(
   return { data: data.data, meta: data.meta };
 }
 
-export async function getProjectsByTechStack(
-  techstacks: string[]
-): Promise<Repo[]> {
+export async function getProjectsByTechStack(techstacks: string[]): Promise<Repo[]> {
   const query = techstacks
     .map((stack) => `q=${encodeURIComponent(stack)}`)
     .join("&");
@@ -63,6 +61,7 @@ export async function getProjectsByTechStack(
 
   return data;
 }
+
 export async function searchProjectsByName(name: string): Promise<Repo[]> {
   const query = `q=${encodeURIComponent(name)}`;
 

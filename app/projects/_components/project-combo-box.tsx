@@ -1,23 +1,11 @@
 "use client";
 
-import { Check, ChevronsUpDown, X } from "lucide-react";
+import { Check, ChevronsUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useEffect, useState, useTransition } from "react";
-import { getTechStacks } from "@/app/(registration)/_utils/apiCalls"; 
+import { getTechStacks } from "@/app/(registration)/_utils/apiCalls";
 
 type Framework = {
   value: string;
@@ -26,8 +14,8 @@ type Framework = {
 
 type ComboBoxProps = {
   placeholder: string;
-  value: string; // comma separated string
-  onChange: (value: string) => void; // accepts comma separated string
+  value: string;
+  onChange: (value: string) => void;
 };
 
 export function ProjectTechStacks({ placeholder, value, onChange }: ComboBoxProps) {
@@ -55,14 +43,8 @@ export function ProjectTechStacks({ placeholder, value, onChange }: ComboBoxProp
       updatedValues = selectedValues.filter((v) => v !== selectedValue);
     } else {
       updatedValues = [...selectedValues, selectedValue];
-        
     }
 
-    onChange(updatedValues.join(" "));
-  };
-
-  const handleRemove = (removedValue: string) => {
-    const updatedValues = selectedValues.filter((v) => v !== removedValue);
     onChange(updatedValues.join(" "));
   };
 
@@ -94,7 +76,7 @@ export function ProjectTechStacks({ placeholder, value, onChange }: ComboBoxProp
                     onSelect={() => handleSelect(framework.value)}
                   >
                     {selectedValues.includes(framework.value) && (
-                        <Check className="mr-2 h-4 w-4" />
+                      <Check className="mr-2 h-4 w-4" />
                     )}
                     <span className="cursor-pointer hover:text-textyellow">
                       {framework.label}
