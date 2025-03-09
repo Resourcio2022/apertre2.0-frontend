@@ -57,68 +57,81 @@ const Mentee = memo(function Mentee({ username, image }: MenteeProps) {
   return (
     <div className="flex flex-col justify-center text-textyellow items-center gap-6">
       <div className="flex justify-between w-full flex-col lg:flex-row gap-8">
-        <div className="flex flex-col md:flex-row items-center gap-7">
-          {image && (
-            <Image
-              src={image}
-              alt=""
-              width={160}
-              height={160}
-              className="rounded-full border-textyellow border-2"
-            />
-          )}
-          <div className="flex flex-col justify-between items-baseline">
-            <div className="font-mokoto font-normal text-2xl text-nowrap flex flex-col md:flex-row">
-              <span className="text-white whitespace-nowrap">
-                {">"}_.. Hello&nbsp;
-              </span>
-              <TypewriterEffectSmooth
-                words={profile.fullname
-                  .split(" ")
-                  .map((word) => ({ text: word }))}
+        <div className="space-y-8">
+          <div className="flex flex-col md:flex-row items-center gap-7">
+            {image && (
+              <Image
+                src={image}
+                alt=""
+                width={160}
+                height={160}
+                className="rounded-full border-textyellow border-2"
               />
-            </div>
-            <div className="flex flex-col gap-2 py-3 mb-4 text-white">
-              <div className="flex gap-3 items-center">
-                <MdAlternateEmail className="size-6 text-textyellow" />
-                <span className="font-Poppins font-normal">
-                  {profile.email}
+            )}
+            <div className="flex flex-col justify-between items-baseline">
+              <div className="font-mokoto font-normal text-2xl text-nowrap flex flex-col md:flex-row">
+                <span className="text-white whitespace-nowrap">
+                  {">"}_.. Hello&nbsp;
                 </span>
+                <TypewriterEffectSmooth
+                  words={profile.fullname
+                    .split(" ")
+                    .map((word) => ({ text: word }))}
+                />
               </div>
-              <div className="flex gap-3 items-center">
-                <BsPhone className="size-6 text-textyellow" />
-                <span className="font-Poppins font-normal">
-                  {profile.phoneNumber}
-                </span>
+              <div className="flex flex-col gap-2 py-3 mb-4 text-white">
+                <div className="flex gap-3 items-center">
+                  <MdAlternateEmail className="size-6 text-textyellow" />
+                  <span className="font-Poppins font-normal">
+                    {profile.email}
+                  </span>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <BsPhone className="size-6 text-textyellow" />
+                  <span className="font-Poppins font-normal">
+                    {profile.phoneNumber}
+                  </span>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <FaHome className="size-6 text-textyellow" />
+                  <span className="font-Poppins font-normal">
+                    {profile.address}
+                  </span>
+                </div>
               </div>
-              <div className="flex gap-3 items-center">
-                <FaHome className="size-6 text-textyellow" />
-                <span className="font-Poppins font-normal">
-                  {profile.address}
-                </span>
-              </div>
-            </div>
-            <div className="w-full flex gap-5  text-white">
-              <Link
-                href={`https://github.com/${profile.username}`}
-                target="_blank"
-              >
-                <FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
-              </Link>
-              <Link href={profile.linkedinUrl} target="_blank">
-                <FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />
-              </Link>
-              {profile.twitterUsername && (
+              <div className="w-full flex gap-5  text-white">
                 <Link
-                  href={`https://x.com/${profile.twitterUsername}`}
+                  href={`https://github.com/${profile.username}`}
                   target="_blank"
                 >
-                  <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
+                  <FaGithub className="size-6 hover:text-textyellow transition-colors duration-150" />
                 </Link>
-              )}
+                <Link href={profile.linkedinUrl} target="_blank">
+                  <FaLinkedin className="size-6 hover:text-textyellow transition-colors duration-150" />
+                </Link>
+                {profile.twitterUsername && (
+                  <Link
+                    href={`https://x.com/${profile.twitterUsername}`}
+                    target="_blank"
+                  >
+                    <FaTwitter className="size-6 hover:text-textyellow transition-colors duration-150" />
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2 justify-center md:pl-4 pl-0">
+            <h1>Bonus Points : </h1>
+            <div className="flex flex-col gap-2 justify-center items-center border border-textyellow rounded-lg p-5 h-fit w-fit">
+              <span className="font-mokoto font-normal text-2xl text-nowrap">
+                {" "}
+                {profile.bonusPoints}
+              </span>
             </div>
           </div>
         </div>
+
         <Ticket
           name={profile.fullname}
           github={profile.username}

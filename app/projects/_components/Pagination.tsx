@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Pagination,
   PaginationContent,
@@ -9,17 +8,17 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-const ProjectPagination = ({
+export default function ProjectPagination({
   currentPage = 1,
   totalPages = 1,
-  setPage = () => {},
+  setPage = () => { },
   maxVisible = 5,
 }: {
   currentPage: number;
   totalPages: number;
   setPage: (page: number) => void;
   maxVisible?: number;
-}) => {
+}) {
   const getVisiblePages = () => {
     if (totalPages <= maxVisible) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -66,11 +65,12 @@ const ProjectPagination = ({
         <PaginationItem>
           <PaginationPrevious
             onClick={() => setPage(currentPage - 1)}
-            className={
-              currentPage <= 1
+            className={`
+              hidden sm:flex
+              ${currentPage <= 1
                 ? "pointer-events-none opacity-50"
                 : "cursor-pointer"
-            }
+              }`}
           />
         </PaginationItem>
 
@@ -82,7 +82,7 @@ const ProjectPagination = ({
               <PaginationLink
                 onClick={() => setPage(Number(page))}
                 isActive={page === currentPage}
-                className="cursor-pointer"
+                className="cursor-pointer border-textyellow/60"
               >
                 {page}
               </PaginationLink>
@@ -93,16 +93,15 @@ const ProjectPagination = ({
         <PaginationItem>
           <PaginationNext
             onClick={() => setPage(currentPage + 1)}
-            className={
-              currentPage >= totalPages
+            className={`
+              hidden sm:flex
+              ${currentPage >= totalPages
                 ? "pointer-events-none opacity-50"
                 : "cursor-pointer"
-            }
+              }`}
           />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
   );
 };
-
-export default ProjectPagination;

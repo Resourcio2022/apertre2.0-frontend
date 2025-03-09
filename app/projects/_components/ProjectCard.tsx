@@ -2,6 +2,7 @@ import { modalStateAtom } from "@/states/appModalState";
 import { projectsStateAtom } from "@/states/projectsState";
 import { useAtom, useSetAtom } from "jotai";
 import Image from "next/image";
+import { mentor } from "../_utils/apiCall";
 
 interface ProjectCardProps {
   projectName: string;
@@ -11,7 +12,8 @@ interface ProjectCardProps {
   tags: string[];
   maintainerUsername: string;
   maintainerfFullname: string;
-  ribbonText?: string;
+  exclusivePrizes: boolean;
+  mentors: { mentor: mentor }[];
 }
 
 export default function ProjectCard({
@@ -22,34 +24,58 @@ export default function ProjectCard({
   tags,
   maintainerUsername,
   maintainerfFullname,
-  ribbonText,
+  exclusivePrizes,
+  mentors,
 }: ProjectCardProps) {
   const [projectModal, setProjectModal] = useAtom(projectsStateAtom);
   const setAppModal = useSetAtom(modalStateAtom);
 
-  function handleSelect() {
-    setAppModal("projectCard");
-    setProjectModal({
-      repoName: projectName,
-      repoURL: projectURL,
-      description: projectDescription,
-      projectDomain: projectDomain,
-      techstack: tags,
-      projectAdmin: {
-        fullname: maintainerfFullname,
-        username: maintainerUsername,
-      },
-    });
+  function handleSelect(mode: "projectModal" | "mentorModal") {
+    if (mode === "projectModal") {
+      setAppModal("projectCard");
+      setProjectModal({
+        repoName: projectName,
+        repoURL: projectURL,
+        description: projectDescription,
+        projectDomain: projectDomain,
+        techstack: tags,
+        projectAdmin: {
+          fullname: maintainerfFullname,
+          username: maintainerUsername,
+        },
+        mentors: mentors,
+      });
+    } else if (mode === "mentorModal") {
+      setAppModal("mentorModal");
+      setProjectModal({
+        repoName: projectName,
+        repoURL: projectURL,
+        description: projectDescription,
+        projectDomain: projectDomain,
+        techstack: tags,
+        projectAdmin: {
+          fullname: maintainerfFullname,
+          username: maintainerUsername,
+        },
+        mentors: mentors,
+      });
+    }
   }
 
   return (
-    <div className=" text-white relative w-[394px] h-[269px] max-w-md px-6 py-8">
-      {ribbonText && (
-        <div className="absolute top-[7.5px] right-10 z-10">
-          <span className="bg-red-600 text-white font-bold py-1 px-3 rounded-bl-md rounded-br-md">
-            {ribbonText}
-          </span>
-        </div>
+    <div
+      className={`text-white relative w-[394px] h-[269px] max-w-md px-6 py-8 ${
+        exclusivePrizes && "mt-24 lg:mt-0"
+      }`}
+    >
+      {exclusivePrizes && (
+        <Image
+          src="/exciting-gifts.webp"
+          alt="Exciting gifts logo"
+          width={370}
+          height={136}
+          className="absolute z-20 -top-[108px] right-4"
+        />
       )}
       <Image
         src="/project-card.webp"
@@ -72,7 +98,7 @@ export default function ProjectCard({
         </div>
 
         <div className="flex flex-wrap gap-2 my-4">
-          {tags.slice(0, 4).map((tag, index) => (
+          {tags.slice(0, 3).map((tag, index) => (
             <span
               key={index}
               className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm border border-gray-500"
@@ -80,22 +106,34 @@ export default function ProjectCard({
               {tag}
             </span>
           ))}
-          {tags.length > 4 && (
+          {tags.length > 3 && (
             <span className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm border border-gray-500">
-              {tags.length - 4} more+
+              {tags.length - 3} more+
             </span>
           )}
         </div>
-        <button
-          onClick={() => handleSelect()}
-          className="bg-gradient-to-br from-[#FBCE1F] to-[#F01DD4] p-[1px] rounded-lg max-w-[80%] overflow-hidden mt-2 z-20"
-        >
-          <div className="bg-black rounded-lg">
-            <p className="w-full text-yellow-400 py-1 rounded-lg font-semibold font-mokoto bg-[#F01DD4]/15">
-              DETAILS
-            </p>
-          </div>
-        </button>
+        <div className="flex w-full pr-6 items-center gap-3">
+          <button
+            onClick={() => handleSelect("mentorModal")}
+            className="bg-gradient-to-br from-[#ab5cff] to-[#b531a4] p-[1px] rounded-lg max-w-[50%] overflow-hidden mt-2 z-20 w-full"
+          >
+            <div className="bg-black rounded-lg">
+              <p className="w-full text-yellow-400 py-1 rounded-lg font-semibold font-mokoto bg-[#F01DD4]/15">
+                Mentors
+              </p>
+            </div>
+          </button>
+          <button
+            onClick={() => handleSelect("projectModal")}
+            className="bg-gradient-to-br from-[#FBCE1F] to-[#F01DD4] p-[1px] rounded-lg max-w-[50%] overflow-hidden mt-2 z-20 w-full"
+          >
+            <div className="bg-black rounded-lg">
+              <p className="w-full text-yellow-400 py-1 rounded-lg font-semibold font-mokoto bg-[#F01DD4]/15">
+                DETAILS
+              </p>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );

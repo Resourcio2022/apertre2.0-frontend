@@ -4,8 +4,9 @@ import { useAtomValue } from "jotai";
 import { projectsStateAtom } from "@/states/projectsState";
 import Link from "next/link";
 import { Button } from "../button";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export default function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
+export default function MentorModal({ isVisible, onClose }: ModalLayoutProps) {
   const projectData = useAtomValue(projectsStateAtom);
   return (
     <ModalLayout isVisible={isVisible} onClose={onClose}>
@@ -51,33 +52,29 @@ export default function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
                 </h3>
               </Link>
             </div>
-            <p className="text-gray-300 mt-1">
-              <span className="text-textyellow">Domain :{" "}</span>
-              {projectData.projectDomain
-                .split("_")
-                .map(
-                  (word) =>
-                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                )
-                .join(" ")}
-            </p>
           </div>
-          <p>
-            <span className="text-textyellow">Description :{" "}</span>
-            {projectData.description.length > 100
-              ? `${projectData.description.slice(0, 150)}...`
-              : projectData.description}
-          </p>
-          <div className="flex flex-wrap gap-2 my-4">
-            {projectData.techstack.map((tag, index) => (
-              <span
-                key={index}
-                className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm border border-gray-500"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="flex flex-col gap-2">
+            <h1 className="text-lg text-textyellow">Mentors : </h1>
+            {projectData.mentors.length === 0 ? (
+              <p className="text-gray-300">No mentors assigned yet.</p>
+            ) : (
+              projectData.mentors.map(({ mentor }, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <h3 className="text-lg font-bold">{mentor.fullname}</h3>
+                  <Link
+                    href={`https://www.github.com/${mentor.username}`}
+                    target="_blank"
+                  >
+                    <FaGithub width={24} height={24} />
+                  </Link>
+                  <Link href={mentor.linkedinUrl} target="_blank">
+                    <FaLinkedin width={24} height={24} />
+                  </Link>
+                </div>
+              ))
+            )}
           </div>
+
           <div className="flex justify-center mt-10">
             <Link href={projectData.repoURL} target="_blank">
               <Button className="bg-textyellow text-black font-bold py-2 px-4 rounded-md hover:bg-textyellow/30 hover:text-textyellow hover:border hover:border-textyellow">
