@@ -30,6 +30,12 @@ const tasks: Task[] = [
     points: 10,
   },
   {
+    name: "Star Deskree Repo",
+    link: "https://github.com/deskree-inc/nanoservice-ts",
+    screenShotrequired: false,
+    points: 10,
+  },
+  {
     name: "Star LLMware.ai Repo",
     link: "https://github.com/llmware-ai/llmware",
     screenShotrequired: false,

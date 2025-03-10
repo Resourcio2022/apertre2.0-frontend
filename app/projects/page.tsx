@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { TechStacks } from "../(registration)/project-admin/_components/techstack-combo-box";
 import ProjectPagination from "./_components/Pagination";
 import ProjectCard from "./_components/ProjectCard";
 import { getGithubRepo, getProjectsByTechStack, Repo, searchProjectsByName } from "./_utils/apiCall";
@@ -9,7 +8,6 @@ import { Input } from "@/components/ui/input";
 
 export default function ProjectsPage() {
   const [search, setSearch] = useState("");
-  const [nameSearch, setNameSearch] = useState("");
   const [projects, setProjects] = useState<Repo[] | undefined>();
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
@@ -44,8 +42,8 @@ export default function ProjectsPage() {
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
   };
+
   const handleNameSearch = (val: string) => {
-    setNameSearch(val);
     if (val === "") {
       getGithubRepo(page, pageSize)
         .then((data) => {
@@ -82,7 +80,7 @@ export default function ProjectsPage() {
             className="w-[200px] border-textyellow"
           />
           <ProjectTechStacks
-            placeholder={"Search by Techstacks*"}
+            placeholder={"Search by Techstacks"}
             value={search}
             onChange={(value: string) => {
               handleSearch(value);
