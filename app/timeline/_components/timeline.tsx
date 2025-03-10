@@ -156,7 +156,7 @@ const TimelineDot = ({ active, isFirst, isLast, index, position }: { active: boo
   const getRotation = () => {
     // Keep index for animation but combine with position
     if (position === "left") {
-      return   '180deg'; // ulto korechi
+      return  '180deg';
     } else if(position === "right") {
       return  '0deg';
     }
