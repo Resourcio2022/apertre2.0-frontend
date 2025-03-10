@@ -149,9 +149,6 @@ const Mentor = memo(function Mentor({ username, image }: MentorProps) {
                 {githubRepo.repoName}
               </Link>
               <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
-                {githubRepo.description}
-              </span>
-              <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
                 {githubRepo.projectDomain}
               </span>
               <div className="flex flex-wrap gap-2">
