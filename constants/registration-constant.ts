@@ -25,7 +25,7 @@ export const registrationData = [
     content:
       "Register as a project admin. Showcase your projects to the contributors for enhancement and bug fixture.",
     registerlink: "/project-admin",
-    disabled: false,
+    disabled: true,
   },
   {
     usertype: "COMMUNITY PARTNER",

@@ -1,5 +1,4 @@
 "use client";
-
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
@@ -49,45 +48,43 @@ export function ProjectTechStacks({ placeholder, value, onChange }: ComboBoxProp
   };
 
   return (
-    <div className="flex items-center gap-4 flex-col sm:flex-row ">
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={open}
-            className="border-2 border-textyellow text-white"
-            disabled={isPending}
-          >
-            {placeholder}
-            <ChevronsUpDown className="opacity-50" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-fit p-0">
-          <Command className="bg-white">
-            <CommandInput placeholder="Search framework..." />
-            <CommandList>
-              <CommandEmpty>No framework found.</CommandEmpty>
-              <CommandGroup className="py-0">
-                {frameworks.map((framework, idx) => (
-                  <CommandItem
-                    key={idx}
-                    value={framework.value}
-                    onSelect={() => handleSelect(framework.value)}
-                  >
-                    {selectedValues.includes(framework.value) && (
-                      <Check className="mr-2 h-4 w-4" />
-                    )}
-                    <span className="cursor-pointer hover:text-textyellow">
-                      {framework.label}
-                    </span>
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
-    </div>
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="border-2 border-textyellow text-white"
+          disabled={isPending}
+        >
+          {placeholder}
+          <ChevronsUpDown className="opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-fit p-0">
+        <Command className="bg-white">
+          <CommandInput placeholder="Search framework..." />
+          <CommandList>
+            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandGroup className="py-0">
+              {frameworks.map((framework, idx) => (
+                <CommandItem
+                  key={idx}
+                  value={framework.value}
+                  onSelect={() => handleSelect(framework.value)}
+                >
+                  {selectedValues.includes(framework.value) && (
+                    <Check className="mr-2 h-4 w-4" />
+                  )}
+                  <span className="cursor-pointer hover:text-textyellow">
+                    {framework.label}
+                  </span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
   );
 }
