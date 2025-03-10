@@ -131,6 +131,52 @@ const Mentor = memo(function Mentor({ username, image }: MentorProps) {
           />
         )}
       </div>
+
+      <div className="my-5">
+        <h3 className="text-xl font-semibold my-5 font-mokoto">
+          GitHub Repositories:
+        </h3>
+        <div className="flex items-center flex-wrap gap-8">
+          {profile.githubRepos.map(({ githubRepo }, index) => (
+            <div
+              key={index}
+              className="p-4 border rounded-lg text-textyellow flex flex-col gap-2 my-5 w-[350px]"
+            >
+              <Link
+                href={githubRepo.repoURL}
+                className="text-lg font-medium font-mokoto hover:underline"
+              >
+                {githubRepo.repoName}
+              </Link>
+              <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                {githubRepo.description}
+              </span>
+              <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                {githubRepo.projectDomain}
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {githubRepo.techstack.map((tech, idx) => (
+                  <span key={idx} className="bg-footer p-2 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-2">
+                <p className="font-semibold">Maintainer:</p>
+                <div className="text-white font-mokoto font-normal flex items-center gap-4">
+                  <p className="text-wrap">{githubRepo.projectAdmin.fullname}</p>{" "}
+                  <Link href={`https://github.com/${githubRepo.projectAdmin.username}`}>
+                    <FaGithub size={24} />
+                  </Link>{" "}
+                  <Link href={githubRepo.projectAdmin.linkedinUrl}>
+                    <FaLinkedin size={24} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 });

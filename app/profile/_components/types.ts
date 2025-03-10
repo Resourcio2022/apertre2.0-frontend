@@ -98,6 +98,7 @@ type AssignedRepo = {
     fullname: string;
     username: string;
     discordUsername: string;
+    linkedinUrl: string;
   };
 };
 

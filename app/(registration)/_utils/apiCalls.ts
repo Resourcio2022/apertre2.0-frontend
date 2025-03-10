@@ -7,14 +7,6 @@ export type Role =
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
-export interface Repo {
-  repoName: string;
-  repoURL: string;
-  description: string;
-  projectDomain: string;
-  techstack: string[];
-}
-
 export async function evangelistSignup(
   clerk_userId: string,
   role: Role,
@@ -211,6 +203,14 @@ export async function menteeSignup(
   return data.message as string;
 }
 
+export interface Repo {
+  repoName: string;
+  repoURL: string;
+  description: string;
+  projectDomain: string;
+  techstack: string[];
+}
+
 export async function projectAdminSignup(
   clerk_userId: string,
   role: Role,
@@ -259,7 +259,9 @@ export async function projectAdminSignup(
 }
 
 export async function getTechStacks() {
-  const res = await fetch(`${API_URL}/common/techstack`);
+  const res = await fetch(`${API_URL}/common/techstack`, {
+    cache: 'force-cache'
+  });
 
   if (!res.ok) {
     return {};
@@ -270,7 +272,9 @@ export async function getTechStacks() {
 }
 
 export async function getProjectDomains() {
-  const res = await fetch(`${API_URL}/common/project-domain`);
+  const res = await fetch(`${API_URL}/common/project-domain`, {
+    cache: 'force-cache'
+  });
 
   if (!res.ok) {
     return {};
