@@ -146,18 +146,13 @@ const Mentor = memo(function Mentor({ username, image }: MentorProps) {
                 href={githubRepo.repoURL}
                 className="text-lg font-medium font-mokoto hover:underline"
               >
-                {githubRepo.repoName}
+                {githubRepo.repoName.length > 40
+                  ? githubRepo.repoName.slice(0, 40) + "..."
+                  : githubRepo.repoName}
               </Link>
               <span className="w-fit px-2 py-1 my-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
                 {githubRepo.projectDomain}
               </span>
-              <div className="flex flex-wrap gap-2">
-                {githubRepo.techstack.map((tech, idx) => (
-                  <span key={idx} className="bg-footer p-2 rounded">
-                    {tech}
-                  </span>
-                ))}
-              </div>
               <div className="mt-2">
                 <p className="font-semibold">Maintainer:</p>
                 <div className="text-white font-mokoto font-normal flex items-center gap-4">
