@@ -27,77 +27,77 @@ const events: TimelineEvent[] = [
   {
     title: "Mentor Registration",
     date: "4th FEB 2025",
-    status: "Ongoing",
+    status: "Done",
     size: "1016",
     position: "right",
   },
   {
     title: "Project Admin Registration",
     date: "15TH FEB 2025",
-    status: "Ongoing",
+    status: "Done",
     size: "1016",
     position: "left",
   },
   {
     title: "Offline Event Announcement",
     date: "24TH FEB 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "right",
   },
   {
     title: "Offline Event Venue Rveal & Registration",
     date: "27TH FEB 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "left",
   },
   {
     title: "Apertre 2.0 Session #1",
     date: "25TH FEB 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "right",
   },
   {
     title: "Project Announcement",
     date: "1ST MARCH 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "left",
   },
   {
     title: "Apertre 2.0 Session #2",
     date: "2ND MARCH 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "right",
   },
   {
     title: "Mentor Announcement",
     date: "3RD MARCH 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "left",
   },
   {
     title: "Doubts Clearing Session",
     date: "5TH MARCH 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "right",
   },
   {
     title: "Apertre 2.0 Kickoff",
     date: "7TH MARCH 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "left",
   },
   {
     title: "Apertre 2.0 Session #3",
     date: "9TH MARCH 2025",
-    status: "Upcoming",
+    status: "Done",
     size: "1000",
     position: "right",
   },
@@ -156,9 +156,9 @@ const TimelineDot = ({ active, isFirst, isLast, index, position }: { active: boo
   const getRotation = () => {
     // Keep index for animation but combine with position
     if (position === "left") {
-      return index == 1 ? '180deg' : '0deg';
-    } else {
-      return index == 1 ? '0deg' : '180deg';
+      return  '180deg';
+    } else if(position === "right") {
+      return  '0deg';
     }
   };
 
