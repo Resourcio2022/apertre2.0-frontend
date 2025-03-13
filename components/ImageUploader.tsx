@@ -2,6 +2,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import { ImageUp } from "lucide-react";
 import { toast } from "sonner";
 import dynamic from "next/dynamic";
+import { memo } from "react";
 
 interface SimpleImageUploaderProps {
   folderPath: string | undefined;
@@ -9,11 +10,7 @@ interface SimpleImageUploaderProps {
   isSignedIn: boolean | undefined;
 }
 
-function SimpleImageUploader({
-  isSignedIn,
-  folderPath,
-  taskName,
-}: SimpleImageUploaderProps) {
+const SimpleImageUploader = memo(function SimpleImageUploader({ isSignedIn, folderPath, taskName }: SimpleImageUploaderProps) {
   if (isSignedIn && folderPath) {
     return (
       <CldUploadWidget
@@ -29,7 +26,6 @@ function SimpleImageUploader({
           maxImageFileSize: 2621440, // 2.5MB
         }}
         onSuccess={(results, widget) => {
-          console.log(folderPath);
           toast.success(`Task ${taskName} completed`);
           widget.close();
         }}
@@ -39,7 +35,6 @@ function SimpleImageUploader({
             <button
               onClick={() => {
                 open();
-                console.log("open");
               }}
               className="bg-customYellow text-black font-medium px-3 py-1.5 rounded-md  min-w-[50%] flex items-center gap-2 justify-center"
             >
@@ -50,13 +45,14 @@ function SimpleImageUploader({
         }}
       </CldUploadWidget>
     );
-  } else {
+  }
+  else {
     return (
       <span className="bg-gray-500 text-white font-medium px-4 py-1.5 rounded-md border border-customYellow">
         Login first
       </span>
     );
   }
-}
+})
 
 export default dynamic(() => Promise.resolve(SimpleImageUploader));
