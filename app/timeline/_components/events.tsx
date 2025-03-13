@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 interface TimelineEvent {
     id: number;
     title: string;
@@ -9,11 +11,7 @@ interface TimelineEvent {
 }
 
 async function fetchEvents(): Promise<TimelineEvent[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/timeline`, {
-        next: {
-            revalidate: 21600
-        }
-    });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/timeline`);
 
     if (!res.ok) {
         return [];
@@ -243,6 +241,7 @@ function formatDate(isoDate: string) {
 }
 
 export async function Events() {
+    headers();
     const events = await fetchEvents();
 
     return (
