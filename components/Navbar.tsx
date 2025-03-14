@@ -22,7 +22,7 @@ export default function Navbar() {
     { name: "Sponsors", url: "/#sponsors" },
     { name: "Crew", url: "/crew" },
     { name: "Projects", url: "/projects" },
-    // { name: "Leaderboard", url: "/leaderboard" },
+    { name: "Leaderboard", url: "/leaderboard" },
     ...(isSignedIn ? [{ name: "Profile", url: "/profile" }] : [])
   ];
 
