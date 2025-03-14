@@ -20,13 +20,13 @@ export async function GET(req: NextRequest) {
     let imageUrl = "";
     switch (role) {
       case "mentee":
-        imageUrl = "https://hvqi4x3ywy.ufs.sh/f/zGAx50bBlDAfM9ZA3hXLa8AR5N4J0UF7dmZkXPspI16bixEf";
+        imageUrl = "https://res.cloudinary.com/di6gjfyoo/image/upload/v1741991632/mentee_p6vpdx.jpg";
         break;
       case "project admin":
-        imageUrl = "https://hvqi4x3ywy.ufs.sh/f/zGAx50bBlDAfgrrOaNgGh68fS5kJCqtuyDjn7Ne4KEW9QzPM";
+        imageUrl = "https://res.cloudinary.com/di6gjfyoo/image/upload/v1741991633/project-admin_mfvu4t.jpg";
         break;
       case "mentor":
-        imageUrl = "https://hvqi4x3ywy.ufs.sh/f/zGAx50bBlDAfWXxpzo6emUV4zvRdMxST6BohCrXZJktDGON2";
+        imageUrl = "https://res.cloudinary.com/di6gjfyoo/image/upload/v1741991632/mentor_f6buex.jpg";
         break;
       default:
         return new Response("Invalid role", { status: 400 });
