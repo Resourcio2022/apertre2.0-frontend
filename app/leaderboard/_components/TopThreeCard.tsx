@@ -44,7 +44,7 @@ function TopThreeCard({
           alt={name}
           width={rank == 1 ? 300 : 215}
           height={160}
-          className={`w-fit h-fit rounded-full object-cover ${rank == 1 ? "w-[290px]" : "w-[215px]"}`}
+          className={`w-fit h-fit rounded-full object-cover ${rank == 1 ? "w-[290px]" : "w-[200px]"}`}
         />
         <Image
           src="/leaderboard/rocket.png"
