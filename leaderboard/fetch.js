@@ -1,4 +1,5 @@
 const { Queue } = require('bullmq')
+const { writeFile } = require('./write')
 
 const queue = new Queue('apertre2.0', {
     connection: {
