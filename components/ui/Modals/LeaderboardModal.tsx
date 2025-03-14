@@ -1,4 +1,3 @@
-import React from "react";
 import ModalLayout, { ModalLayoutProps } from "./ModalLayout";
 import { leaderboardModalAtom } from "@/states/leaderboard";
 import { useAtomValue } from "jotai";
@@ -6,8 +5,6 @@ import Link from "next/link";
 
 function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
   const leaderboardData = useAtomValue(leaderboardModalAtom);
-  const colors = leaderboardData?.pr_urls.map((pr) => `bg-[#${pr.color}]`);
-  console.log(colors);
 
   return (
     <ModalLayout isVisible={isVisible} onClose={onClose}>
@@ -28,8 +25,7 @@ function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
                 {index + 1} : <span className="underline">{pr.url}</span>
               </Link>
               <span
-                // style={{ backgroundColor: `#${pr.color}`, opacity: 1 }}
-                className={`${pr.difficulty ==="Easy" ? "bg-green-500/40 border-green-500" : pr.difficulty ==="Medium" ? "bg-yellow-500/40 border-yellow-500" : "bg-red-500/40 border-red-500"} px-5 py-1 rounded-full text-sm font-medium text-white opacity-100 col-span-1 flex justify-center items-center border`}
+                className={`${pr.difficulty === "Easy" ? "bg-green-500/40 border-green-500" : pr.difficulty === "Medium" ? "bg-yellow-500/40 border-yellow-500" : "bg-red-500/40 border-red-500"} px-5 py-1 rounded-full text-sm font-medium text-white opacity-100 col-span-1 flex justify-center items-center border`}
               >
                 {pr.difficulty}
               </span>

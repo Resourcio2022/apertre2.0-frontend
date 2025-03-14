@@ -5,8 +5,7 @@ import { leaderboardModalAtom } from "@/states/leaderboard";
 import { useSetAtom } from "jotai";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const coins = [
   "/leaderboard/1st_coin.png",
@@ -17,12 +16,14 @@ const coins = [
 function TopThreeCard({
   rank,
   github_url,
+  linkedin_url,
   name,
   score,
   avatar,
   prs,
 }: {
   github_url: string;
+  linkedin_url: string;
   rank: number;
   name: string;
   score: number;
@@ -36,20 +37,14 @@ function TopThreeCard({
     setModal("leaderboardModal");
   }
   return (
-    <div
-      className={`${
-        rank !== 1 && "md:translate-y-10"
-      } flex flex-col gap-4 items-center`}
-    >
+    <div className={`${rank !== 1 && "md:translate-y-10"} flex flex-col gap-4 items-center`}>
       <div className="rounded-full border-2 border-textyellow flex items-center justify-center relative w-fit h-fit">
         <Image
           src={avatar}
           alt={name}
           width={rank == 1 ? 300 : 215}
           height={160}
-          className={`w-fit h-fit rounded-full object-cover ${
-            rank == 1 ? "w-[290px]" : "w-[215px]"
-          }`}
+          className={`w-fit h-fit rounded-full object-cover ${rank == 1 ? "w-[290px]" : "w-[215px]"}`}
         />
         <Image
           src="/leaderboard/rocket.png"
@@ -72,8 +67,11 @@ function TopThreeCard({
       </div>
       <h1 className="text-2xl font-mokoto mt-8">{name}</h1>
       <div className="flex items-center gap-4">
-        <Link href={github_url}>
+        <Link href={github_url} target="_blank">
           <FaGithub size={30} className="text-textyellow" />
+        </Link>
+        <Link href={linkedin_url} target="_blank">
+          <FaLinkedin size={30} className="text-textyellow" />
         </Link>
         <button onClick={handleOpen}>
           <Image
