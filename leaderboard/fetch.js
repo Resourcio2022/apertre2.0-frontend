@@ -1,6 +1,7 @@
 const { Queue } = require('bullmq')
-const { writeFile } = require('./write')
-require('dotenv').config()
+const { loadEnvFile } = require('node:process')
+
+loadEnvFile()
 
 const queue = new Queue('apertre', {
     connection: {
