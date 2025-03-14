@@ -1,7 +1,4 @@
 const { Queue } = require('bullmq')
-const { loadEnvFile } = require('node:process')
-
-loadEnvFile()
 
 const queue = new Queue('apertre', {
     connection: {
