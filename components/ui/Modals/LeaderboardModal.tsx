@@ -10,7 +10,7 @@ function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
     <ModalLayout isVisible={isVisible} onClose={onClose}>
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-mokoto text-white">Pull Requests :</h1>
-        <div className="flex flex-col gap-4 w-[600px] h-[300px] overflow-y-scroll border border-textyellow p-4 rounded-lg bg-[#515144] divide-y-2 divide-textyellow/50">
+        <div className="flex flex-col gap-4 w-[90vw] md:w-[600px] min-h-[300px] max-h-[80vh] overflow-y-scroll border border-textyellow p-4 rounded-lg bg-[#515144] divide-y-2 divide-textyellow/50">
           {leaderboardData?.pr_urls.map((pr, index) => (
             <div
               key={index}
@@ -25,7 +25,15 @@ function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
                 {index + 1} : <span className="underline">{pr.url}</span>
               </Link>
               <span
-                className={`${pr.difficulty === "Easy" ? "bg-green-500/40 border-green-500" : pr.difficulty === "Medium" ? "bg-yellow-500/40 border-yellow-500" : "bg-red-500/40 border-red-500"} px-5 py-1 rounded-full text-sm font-medium text-white opacity-100 col-span-1 flex justify-center items-center border`}
+                className={`${
+                  pr.difficulty === "Easy"
+                    ? "bg-green-500/40 border-green-500"
+                    : pr.difficulty === "Medium"
+                    ? "bg-yellow-500/40 border-yellow-500"
+                    : pr.difficulty === "Doc"
+                    ? "bg-blue-500/40 border-blue-500"
+                    : "bg-red-500/40 border-red-500"
+                } px-5 py-1 rounded-full text-sm font-medium text-white opacity-100 col-span-1 flex justify-center items-center border`}
               >
                 {pr.difficulty}
               </span>
