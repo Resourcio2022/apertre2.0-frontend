@@ -1,6 +1,6 @@
 const { Queue } = require('bullmq')
 
-const queue = new Queue('apertre', {
+const queue = new Queue('apertre2.0', {
     connection: {
         host: process.env.VALKEY_HOST,
         port: process.env.VALKEY_PORT,
