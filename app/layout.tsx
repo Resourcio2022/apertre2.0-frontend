@@ -47,7 +47,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
-            <Toaster position="bottom-right" />
+            <Toaster position="bottom-right" richColors />
             <ModalManager />
           </Provider>
         </body>
