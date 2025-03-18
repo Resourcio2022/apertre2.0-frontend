@@ -149,8 +149,7 @@ export default function Page() {
                     className="absolute top-0 left-0 object-fill w-full h-full -z-0"
                     unoptimized
                   />
-
-                  <div className="w-1/5 text-center z-[1]">{item.rank}</div>
+                  <span className="w-1/5 text-center z-[1]">{item.rank}</span>
                   <div className="w-1/5 text-left z-[1] flex items-center gap-2">
                     <Image
                       src={item.avatar_url}
@@ -175,16 +174,17 @@ export default function Page() {
                       onClick={() => handleOpen({ pr_urls: item.pr_urls })}
                     >
                       <Image
-                        src={"/leaderboard/prs.png"}
+                        src="/leaderboard/prs.png"
                         alt="prs"
-                        width={30}
-                        height={30}
+                        width={20}
+                        height={20}
+                        unoptimized
                       />
                     </button>
                   </div>
-                  <div className="w-1/5 text-center pl-1 z-[1]">
+                  <span className="w-1/5 text-center pl-1 z-[1]">
                     {item.total_points}
-                  </div>
+                  </span>
                 </div>
               );
             })

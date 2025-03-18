@@ -32,6 +32,7 @@ function TopThreeCard({
 }) {
   const setLeaderboardModal = useSetAtom(leaderboardModalAtom);
   const setModal = useSetAtom(modalStateAtom);
+
   function handleOpen() {
     setLeaderboardModal({ pr_urls: prs.pr_urls });
     setModal("leaderboardModal");
@@ -44,21 +45,24 @@ function TopThreeCard({
           alt={name}
           width={rank == 1 ? 300 : 215}
           height={160}
-          className={`w-fit h-fit rounded-full object-cover ${rank == 1 ? "w-[290px]" : "w-[200px]"}`}
+          className="rounded-full"
+          unoptimized
         />
         <Image
           src="/leaderboard/rocket.png"
           alt="rocket"
           width={rank == 1 ? 100 : 70}
           height={160}
-          className="w-fit h-fit absolute top-0 right-0 translate-x-1/3 -translate-y-1/3"
+          className="absolute top-0 right-0 -translate-y-1/3"
+          unoptimized
         />
         <Image
           src={coins[rank - 1]}
           alt="rocket"
-          width={70}
+          width={rank == 1 ? 100 : 70}
           height={160}
-          className="w-fit h-fit absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
+          unoptimized
         />
         <div className="rounded-tl-xl rounded-md bg-[#515144] border-2 border-textyellow px-6 text-white font-semibold font-mokoto text-lg absolute bottom-4 -right-9 py-1">
           <p className="text-sm text-left leading-4">Points:</p>
@@ -75,10 +79,11 @@ function TopThreeCard({
         </Link>
         <button onClick={handleOpen}>
           <Image
-            src={"/leaderboard/prs.png"}
+            src="/leaderboard/prs.png"
             alt="prs"
-            width={30}
-            height={30}
+            width={25}
+            height={25}
+            unoptimized
           />
         </button>
       </div>
