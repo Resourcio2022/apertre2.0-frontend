@@ -45,7 +45,6 @@ function TopThreeCard({
           width={rank == 1 ? 300 : 215}
           height={160}
           className={`w-fit h-fit rounded-full object-cover ${rank == 1 ? "w-[290px]" : "w-[200px]"}`}
-          unoptimized
         />
         <Image
           src="/leaderboard/rocket.png"
@@ -53,12 +52,11 @@ function TopThreeCard({
           width={rank == 1 ? 100 : 70}
           height={160}
           className="w-fit h-fit absolute top-0 right-0 translate-x-1/3 -translate-y-1/3"
-          unoptimized
         />
         <Image
           src={coins[rank - 1]}
           alt="rocket"
-          width={rank == 1 ? 100 : 70}
+          width={70}
           height={160}
           className="w-fit h-fit absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
         />
