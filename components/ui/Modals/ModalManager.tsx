@@ -5,8 +5,9 @@ import ProjectModal from "./ProjectModal";
 import MentorModal from "./MentorModal";
 import LeaderboardModal from "./LeaderboardModal";
 
-function ModalManager() {
+export default function ModalManager() {
   const [appModals, setAppModals] = useAtom(modalStateAtom);
+  
   return (
     <>
       <ProjectModal
@@ -24,5 +25,3 @@ function ModalManager() {
     </>
   );
 }
-
-export default ModalManager;

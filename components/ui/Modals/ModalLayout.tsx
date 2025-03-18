@@ -5,7 +5,8 @@ export interface ModalLayoutProps {
   children?: React.ReactNode;
   onClose: () => void;
 }
-function ModalLayout({ isVisible, children, onClose }: ModalLayoutProps) {
+
+export default function ModalLayout({ isVisible, children, onClose }: ModalLayoutProps) {
   return (
     isVisible && (
       <div
@@ -17,5 +18,3 @@ function ModalLayout({ isVisible, children, onClose }: ModalLayoutProps) {
     )
   );
 }
-
-export default ModalLayout;

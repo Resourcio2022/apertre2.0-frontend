@@ -16,17 +16,8 @@ interface ProjectCardProps {
   mentors: { mentor: mentor }[];
 }
 
-export default function ProjectCard({
-  projectName,
-  projectURL,
-  projectDescription,
-  projectDomain,
-  tags,
-  maintainerUsername,
-  maintainerfFullname,
-  exclusivePrizes,
-  mentors,
-}: ProjectCardProps) {
+export default function ProjectCard({ projectName, projectURL, projectDescription, projectDomain, tags, maintainerUsername, maintainerfFullname, exclusivePrizes, mentors }: ProjectCardProps) {
+
   const [projectModal, setProjectModal] = useAtom(projectsStateAtom);
   const setAppModal = useSetAtom(modalStateAtom);
 
@@ -45,7 +36,8 @@ export default function ProjectCard({
         },
         mentors: mentors,
       });
-    } else if (mode === "mentorModal") {
+    }
+    else if (mode === "mentorModal") {
       setAppModal("mentorModal");
       setProjectModal({
         repoName: projectName,
@@ -63,11 +55,7 @@ export default function ProjectCard({
   }
 
   return (
-    <div
-      className={`text-white relative w-[394px] h-[269px] max-w-md px-6 py-8 ${
-        exclusivePrizes && "mt-24 lg:mt-0"
-      }`}
-    >
+    <div className={`text-white relative w-[394px] h-[269px] max-w-md px-6 py-8 ${exclusivePrizes && "mt-24 lg:mt-0"}`}>
       {exclusivePrizes && (
         <Image
           src="/exciting-gifts.webp"

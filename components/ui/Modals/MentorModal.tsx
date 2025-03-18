@@ -8,6 +8,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function MentorModal({ isVisible, onClose }: ModalLayoutProps) {
   const projectData = useAtomValue(projectsStateAtom);
+  
   return (
     <ModalLayout isVisible={isVisible} onClose={onClose}>
       <div className="relative w-[95vw] md:w-[50vw] min-h-[50vh]">
