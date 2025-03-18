@@ -3,7 +3,7 @@ import { leaderboardModalAtom } from "@/states/leaderboard";
 import { useAtomValue } from "jotai";
 import Link from "next/link";
 
-function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
+export default function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
   const leaderboardData = useAtomValue(leaderboardModalAtom);
 
   return (
@@ -25,15 +25,14 @@ function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
                 {index + 1} : <span className="underline">{pr.url}</span>
               </Link>
               <span
-                className={`${
-                  pr.difficulty === "Easy"
+                className={`${pr.difficulty === "Easy"
                     ? "bg-green-500/40 border-green-500"
                     : pr.difficulty === "Medium"
-                    ? "bg-yellow-500/40 border-yellow-500"
-                    : pr.difficulty === "Doc"
-                    ? "bg-blue-500/40 border-blue-500"
-                    : "bg-red-500/40 border-red-500"
-                } px-5 py-1 rounded-full text-sm font-medium text-white opacity-100 col-span-1 flex justify-center items-center border`}
+                      ? "bg-yellow-500/40 border-yellow-500"
+                      : pr.difficulty === "Doc"
+                        ? "bg-blue-500/40 border-blue-500"
+                        : "bg-red-500/40 border-red-500"
+                  } px-5 py-1 rounded-full text-sm font-medium text-white opacity-100 col-span-1 flex justify-center items-center border`}
               >
                 {pr.difficulty}
               </span>
@@ -44,5 +43,3 @@ function LeaderboardModal({ isVisible, onClose }: ModalLayoutProps) {
     </ModalLayout>
   );
 }
-
-export default LeaderboardModal;

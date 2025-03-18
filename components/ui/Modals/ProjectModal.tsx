@@ -7,6 +7,7 @@ import { Button } from "../button";
 
 export default function ProjectModal({ isVisible, onClose }: ModalLayoutProps) {
   const projectData = useAtomValue(projectsStateAtom);
+
   return (
     <ModalLayout isVisible={isVisible} onClose={onClose}>
       <div className="relative w-[95vw] md:w-[50vw] min-h-[50vh]">
