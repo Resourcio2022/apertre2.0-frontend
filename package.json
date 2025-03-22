@@ -16,7 +16,7 @@
     "@radix-ui/react-popover": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
     "@vercel/og": "^0.6.5",
-    "bullmq": "^5.44.1",
+    "bullmq": "^5.44.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
