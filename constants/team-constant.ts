@@ -321,6 +321,11 @@ export const teamSections: TeamSection[] = [
         image: "AEe6qhE96NSmD3qCFzrMUzwZTLtKiJYHg98kW1bcPxONAnhp",
         github: "https://github.com/rajdeep13-coder",
         linkedin: "https://www.linkedin.com/in/rajdeep-paul-013z/"
+      },{
+        name: "Titas Ghosh",
+        image: "AEe6qhE96NSmqdl7m7bVhoR4ftaE5Pu1SBreNZGXTCks8vng",
+        github: "https://github.com/Titas40",
+        linkedin: "https://www.linkedin.com/in/titas-ghosh-712714306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       },
       {
         name: "Jyotirupa Saha",
