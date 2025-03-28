@@ -9,20 +9,24 @@ jobs:
     name: Fetch LeaderBoard
     runs-on: ubuntu-latest
     steps:
-        - name: Echo message
-          run: echo "Frontend workflow triggered"
-    #   - uses: actions/checkout@v4.2.2
-    #   - name: Setup Node.js environment
-    #     uses: actions/setup-node@v4.2.0
-    #     with:
-    #       node-version: 20
-    #   - run: yarn install
-    #   - run: yarn fetch:leaderboard
-    #     env:
-    #       REDIS_HOST: ${{ secrets.REDIS_HOST }}
-    #       REDIS_PORT: ${{ secrets.REDIS_PORT }}
-    #       REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
 
-    #   - uses: stefanzweifel/git-auto-commit-action@v5.0.1
-    #     with:
-    #       commit_message: "feat: updated leaderboard using GitHub workflow"
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.2.0
+        with:
+          node-version: 22.14.0
+
+      - name: Install BullMQ
+        run: npm install bullmq
+
+      - name: Fetch LeaderBoard data
+        run: node leaderboard/fetch.js
+        env:
+          VALKEY_HOST: ${{ secrets.VALKEY_HOST }}
+          VALKEY_PORT: ${{ secrets.VALKEY_PORT }}
+          VALKEY_PASSWORD: ${{ secrets.VALKEY_PASSWORD }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v5.0.1
+        with:
+          commit_message: "feat: updated leaderboard using GitHub workflow"

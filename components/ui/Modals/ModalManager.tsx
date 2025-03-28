@@ -3,9 +3,11 @@ import { modalStateAtom } from "@/states/appModalState";
 import { useAtom } from "jotai";
 import ProjectModal from "./ProjectModal";
 import MentorModal from "./MentorModal";
+import LeaderboardModal from "./LeaderboardModal";
 
-function ModalManager() {
+export default function ModalManager() {
   const [appModals, setAppModals] = useAtom(modalStateAtom);
+  
   return (
     <>
       <ProjectModal
@@ -16,8 +18,10 @@ function ModalManager() {
         isVisible={appModals === "mentorModal"}
         onClose={() => setAppModals(null)}
       />
+      <LeaderboardModal
+        isVisible={appModals === "leaderboardModal"}
+        onClose={() => setAppModals(null)}
+      />
     </>
   );
 }
-
-export default ModalManager;

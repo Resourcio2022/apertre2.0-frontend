@@ -18,7 +18,7 @@ export const registrationData = [
     content:
       "Register as a mentor. Guide enthusiast contributors through your expertise and help them become technically strong.",
     registerlink: "/mentor",
-    disabled: false,
+    disabled: true,
   },
   {
     usertype: "PROJECT ADMIN",

@@ -1,9 +1,8 @@
 import PixelCanvas from "@/components/ui/pixel-canvas";
 import { prizes } from "@/data/prizes";
 import Image from "next/image";
-import React from "react";
 
-function Prizes() {
+export default function Prizes() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0B0A0A] to-[#272323] w-full p-10 md:p-20 flex flex-col items-center gap-10 justify-between">
       <h2 className="text-textyellow text-2xl md:text-6xl font-mokoto text-center">
@@ -36,14 +35,7 @@ function Prizes() {
   );
 }
 
-export default Prizes;
-
-function PrizesCard({
-  position,
-  prizes,
-  imageUrl,
-  glow = false,
-}: {
+function PrizesCard({ position, prizes, imageUrl, glow = false }: {
   position: string;
   prizes: string[];
   imageUrl: string;

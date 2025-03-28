@@ -29,10 +29,7 @@ interface Meta {
   hasPreviousPage: boolean;
 }
 
-export async function getGithubRepo(
-  page: number,
-  pageSize: number
-): Promise<{ data: Repo[]; meta: Meta }> {
+export async function getGithubRepo(page: number, pageSize: number): Promise<{ data: Repo[]; meta: Meta }> {
   const res = await fetch(
     `${API_URL}/github-repo/apertre?page=${page}&pagesize=${pageSize}`
   );

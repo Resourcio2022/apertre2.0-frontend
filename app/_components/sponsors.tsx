@@ -56,6 +56,7 @@ function SponsorCard({ imageUrl, alt, websiteUrl }: { imageUrl: string, alt?: st
             width={alt === "O lake" ? 160 : alt === "DotStark" ? 150 : 100}
             height={alt === "O lake" ? 160 : alt === "DotStark" ? 150 : 100}
             className={`${alt === "O lake" ? "w-[90px] h-[90px] md:w-[160px] md:h-[160px]" : ""}`}
+            unoptimized
           />
         </div>
         <div className="stroke stroke-yellow-400 absolute -top-8 sm:-top-3 -left-4 sm:left-4 w-22 h-22 rounded-xl">
