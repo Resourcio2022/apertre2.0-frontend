@@ -11,7 +11,7 @@ export const registrationData = [
     content:
       "Register as a contributor. Contribute you skills, showcase your creativity and strengthen your tech knowledge",
     registerlink: "/mentee",
-    disabled: false,
+    disabled: true,
   },
   {
     usertype: "MENTOR",
