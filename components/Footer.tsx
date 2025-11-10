@@ -57,7 +57,7 @@ export default function Footer() {
 
             <div className="text-white flex gap-3 text-md">
               <span>Checkout</span>
-              <Link href="https://apertre.resourcio.in" target="_blank" className="flex gap-2 border-b-[3px] border-white text-textyellow hover:text-white hover:border-yellow-500 transition-colors duration-300">
+              <Link href="https://s1.apertre.resourcio.in" target="_blank" className="flex gap-2 border-b-[3px] border-white text-textyellow hover:text-white hover:border-yellow-500 transition-colors duration-300">
                 Season 1
               </Link>
             </div>
